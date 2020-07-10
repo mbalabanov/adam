@@ -63,13 +63,9 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
 ## Daten in der DB
 
 - Artifact: name, short description, long description, category, system, first appearance, tags, images, videos, artist, artist collective, collection, exhibition
-
 - Artist (grahics artist, programmer, musician, curator): name, country, short description, long description, specialization, active since, active until, tags, images, videos, artifacts, artist collective, exhibitions, art collections
-
 - Art Collection: name, short description, long description, curator, start date, tags, images, videos, artifacts, artists, exhibitions
-
 - Exhibition: name, short description, long description, systems, exhibition dates, tags, images, videos, artifacts, artists, artist collectives, art collections
-
 - Artist Collective: name, description, tags, artists, artifacts, images, videos
 
 ### Datenmodell
@@ -87,15 +83,10 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
 *Webfrontend:*
 
 - Angular
-
 - Bootstrap
-
 - jQuery
-
 - TinyMCE
-
 - Datatables JS
-
 - ChartJS (optional)
 
 *Registrierung und Usermanagement:*
@@ -105,51 +96,23 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
 *API Server:*
 
 - nodeJS
-
 - Express
-
 - MongoDB
-
 - Heroku
 
 *Mobile App:*
 
 - nodeJS
-
 - Cordova
-
 - onsen UI
 
 ## Project Timeline
 
-*Bis 16. Juli 2020*
-
-- Konzept, Wireframes, Datenmodell und detaillierter Ablaufplan.
-
-*Bis 24. Juli 2020*
-
-- API-Server mit Musterdatensätzen. API-Aufrufe funktionieren und liefern Daten zurück
-
-*Bis 31. Juli 2020*
-
-- Öffentlicher Teil des Webfrontends fertiggestellt. Frontend zeigt die vier unterschiedlichen Ansichten, kann über die API Musterdaten abrufen und anzeigen.
-
-*Bis 28. August 2020*
-
-- Redaktionsbereich und Admin-Bereich (nicht-öffentlicher Bereich des Webfrontends) mit Login, Registrierung, neue Einträge erstellen, Einträge bearbeiten, Einträge deaktivieren und reaktivieren, Benutzer deaktivieren und reaktivieren
-
-*Bis 4. September 2020*
-
-- Mobile App mit (vorläufig) Einträge erstellen, Fotos aufnehmen und mit einem Eintrag assoziieren.
-
-*Bis 11. September 2020*
-
-- Mobile App mit Login und Upload.
-
-*Bis 18. September 2020*
-
-- Tests und Bugfixes, Zusammenspiel der Komponenten anpassen.
-
-*Bis 25. September 2020*
-
-- Tests und Bugfixes, Zusammenspiel der Komponenten anpassen.
+- *Bis 16. Juli 2020:* Konzept, Wireframes, Datenmodell und detaillierter Ablaufplan.
+- *Bis 24. Juli 2020:* API-Server mit Musterdatensätzen. API-Aufrufe funktionieren und liefern Daten zurück
+- *Bis 31. Juli 2020:* Öffentlicher Teil des Webfrontends fertiggestellt. Frontend zeigt die vier unterschiedlichen Ansichten, kann über die API Musterdaten abrufen und anzeigen.
+- *Bis 28. August 2020:* Redaktionsbereich und Admin-Bereich (nicht-öffentlicher Bereich des Webfrontends) mit Login, Registrierung, neue Einträge erstellen, Einträge bearbeiten, Einträge deaktivieren und reaktivieren, Benutzer deaktivieren und reaktivieren
+- *Bis 4. September 2020:* Mobile App mit (vorläufig) Einträge erstellen, Fotos aufnehmen und mit einem Eintrag assoziieren.
+- *Bis 11. September 2020:* Mobile App mit Login und Upload.
+- *Bis 18. September 2020:* Tests und Bugfixes, Zusammenspiel der Komponenten anpassen.
+- *Bis 25. September 2020:* Tests und Bugfixes, Zusammenspiel der Komponenten anpassen.
