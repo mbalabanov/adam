@@ -38,6 +38,8 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
 
 5. Seite für den *Login bzw. die Registrierung* über den auth0.com Service
 
+### Wireframes (unvollständig)
+
 ![ADAM - Wireframes](documentation/assets/adam-wireframes-v0_5.png)
 
 ### 3. *Nicht-öffentlicher Bereich* im selben Web-Frontend mit...
@@ -62,13 +64,15 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
 
 - Artifact: name, short description, long description, category, system, first appearance, tags, images, videos, artist, artist collective, collection, exhibition
 
-- Person (artist, programmer, musician, curator): name, country, short description, long description, specialization, active since, active until, tags, images, videos, artifacts, artist collective, exhibitions, art collections
+- Artist (grahics artist, programmer, musician, curator): name, country, short description, long description, specialization, active since, active until, tags, images, videos, artifacts, artist collective, exhibitions, art collections
 
 - Art Collection: name, short description, long description, curator, start date, tags, images, videos, artifacts, artists, exhibitions
 
 - Exhibition: name, short description, long description, systems, exhibition dates, tags, images, videos, artifacts, artists, artist collectives, art collections
 
 - Artist Collective: name, description, tags, artists, artifacts, images, videos
+
+### Datenmodell
 
 ![ADAM - Data Model](documentation/assets/adam-data-model.png)
 
