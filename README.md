@@ -7,14 +7,14 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
 
 ## Die Struktur von ADAM
 
-1. _API-Server_ auf Heroku unter Verwendung von MongoDB mit Schnittstellen für...
+### 1. _API-Server_ auf Heroku unter Verwendung von MongoDB mit Schnittstellen für...
 
     1. *Ansehen/holen* bestehender Einträge (GET)
     2. *Erstellen* neuer Einträge (POST)
     3. *Bearbeiten* bestehender Einträge (PUT)
     4. Es gibt kein Delete, sondern nur ein PUT, um einen *Eintrag als gelöscht* zu markieren
 
-2. _Öffentlicher Bereich im Web-Frontend_ und fünf Arten von Ansichten:
+### 2. _Öffentlicher Bereich im Web-Frontend_ und fünf Arten von Ansichten:
 
     1. *Startseite* mit Karussell für Einträge, die von Admins als "besonders interessant" markierte wurden, sowie ein Grid mit acht der chronologisch zuletzt publizierten Einträge, allgemeine Informationen über die Plattform, Suchfunktion und eine Kategorienauswahl, die beide auf die Suchergebnisseite mit Filtermöglichkeiten führt.
     
@@ -36,13 +36,13 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
 
     5. Seite für den *Login bzw. die Registrierung* über den auth0.com Service
 
-3. *Nicht-öffentlicher Bereich* im selben Web-Frontend mit...
+### 3. *Nicht-öffentlicher Bereich* im selben Web-Frontend mit...
 
     1. _Admin-Bereich,_ um Benutzer zu verwalten (deaktivieren und reaktivieren), und um Einträge zu publizieren, auf "interessant" zu stellen (für das Karussel auf der Startseite), sowie um sie auf nicht-veröffentlicht zu setzen.
     
     2. _Redaktionsansicht_ in der Benutzer mit Editor-Rechten bestehende Einträge bearbeiten können (Edit-Funktion wird nur nach dem Einloggen sichtbar) sowie neue Einträge erstellen können (Funktion für einen neuen Eintrag ist auch erst nach dem Einloggen sichtbar).
 
-4. *Mobile App*
+### 4. *Mobile App* (Optional)
 
     1. Ansicht aller lokal vorbereiteter Einträge
     
@@ -54,7 +54,7 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
     
     5. Eintrag mit Fotos und Video URLs hochladen
 
-### Daten in der DB
+## Daten in der DB
 
 - Artifact: name, short description, long description, category, system, first appearance, tags, images, videos, artist, artist collective, collection, exhibition
 
@@ -66,7 +66,7 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
 
 - Artist Collective: name, description, tags, artists, artifacts, images, videos
 
-### Benutzerrollen
+## Benutzerrollen
 
 1. *Admin:* Kann Einträge erstellen, bearbeiten und auf nicht-öffentlich stellen, sowie andere Benutzer deaktivieren, reaktivieren und ihre Rolle ändern
 
