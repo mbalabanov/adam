@@ -86,36 +86,36 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
 
 *Mobile App:* nodeJS, Cordova
 
-## Timeline
+## Project Timeline
 
-*16. Juli 2020*
+*Bis 16. Juli 2020*
 
 - Konzept, Wireframes, Datenmodell und detaillierter Ablaufplan.
 
-*24. Juli 2020*
+*Bis 24. Juli 2020*
 
 - API-Server mit Musterdatensätzen. API-Aufrufe funktionieren und liefern Daten zurück
 
-*31. Juli 2020*
+*Bis 31. Juli 2020*
 
 - Öffentlicher Teil des Webfrontends fertiggestellt. Frontend zeigt die vier unterschiedlichen Ansichten, kann über die API Musterdaten abrufen und anzeigen.
 
-*28. August 2020*
+*Bis 28. August 2020*
 
 - Redaktionsbereich und Admin-Bereich (nicht-öffentlicher Bereich des Webfrontends) mit Login, Registrierung, neue Einträge erstellen, Einträge bearbeiten, Einträge deaktivieren und reaktivieren, Benutzer deaktivieren und reaktivieren
 
-*4. September 2020*
+*Bis 4. September 2020*
 
 - Mobile App mit (vorläufig) Einträge erstellen, Fotos aufnehmen und mit einem Eintrag assoziieren.
 
-*11. September 2020*
+*Bis 11. September 2020*
 
 - Mobile App mit Login und Upload.
 
-*18. September 2020*
+*Bis 18. September 2020*
 
 - Tests und Bugfixes, Zusammenspiel der Komponenten anpassen.
 
-*25. September 2020*
+*Bis 25. September 2020*
 
 - Tests und Bugfixes, Zusammenspiel der Komponenten anpassen.
