@@ -1,3 +1,5 @@
+![ADAM - Archive of Digital Art & Media](documentation/assets/adam-logo.png)
+
 # ADAM - Archive of Digital Art & Media
 
 ## Beschreibung
@@ -36,6 +38,8 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
 
 5. Seite für den *Login bzw. die Registrierung* über den auth0.com Service
 
+![ADAM - Wireframes](documentation/assets/adam-wireframes-v0_5.png)
+
 ### 3. *Nicht-öffentlicher Bereich* im selben Web-Frontend mit...
 
 1. _Admin-Bereich,_ um Benutzer zu verwalten (deaktivieren und reaktivieren), und um Einträge zu publizieren, auf "interessant" zu stellen (für das Karussel auf der Startseite), sowie um sie auf nicht-veröffentlicht zu setzen.
@@ -65,6 +69,8 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
 - Exhibition: name, short description, long description, systems, exhibition dates, tags, images, videos, artifacts, artists, artist collectives, art collections
 
 - Artist Collective: name, description, tags, artists, artifacts, images, videos
+
+![ADAM - Data Model](documentation/assets/adam-data-model.png)
 
 ## Benutzerrollen
 
