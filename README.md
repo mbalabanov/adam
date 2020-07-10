@@ -84,11 +84,35 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
 
 ## Technologien
 
-*Webfrontend:* Angular, jQuery, Bootstrap
+*Webfrontend:*
 
-*API Server:* nodeJS, Express
+- Angular
 
-*Mobile App:* nodeJS, Cordova
+- Bootstrap
+
+- Bootstrap
+
+*Registrierung und Usermanagement*
+
+- auth0.com
+
+*API Server:*
+
+- nodeJS
+
+- Express
+
+- MongoDB
+
+- Heroku
+
+*Mobile App:*
+
+- nodeJS
+
+- Cordova
+
+- onsen UI
 
 ## Project Timeline
 
