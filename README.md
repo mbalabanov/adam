@@ -9,16 +9,16 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
 
 ### 1. _API-Server_ auf Heroku unter Verwendung von MongoDB mit Schnittstellen für...
 
-    1. *Ansehen/holen* bestehender Einträge (GET)
-    2. *Erstellen* neuer Einträge (POST)
-    3. *Bearbeiten* bestehender Einträge (PUT)
-    4. Es gibt kein Delete, sondern nur ein PUT, um einen *Eintrag als gelöscht* zu markieren
+1. *Ansehen/holen* bestehender Einträge (GET)
+2. *Erstellen* neuer Einträge (POST)
+3. *Bearbeiten* bestehender Einträge (PUT)
+4. Es gibt kein Delete, sondern nur ein PUT, um einen *Eintrag als gelöscht* zu markieren
 
 ### 2. _Öffentlicher Bereich im Web-Frontend_ und fünf Arten von Ansichten:
 
-    1. *Startseite* mit Karussell für Einträge, die von Admins als "besonders interessant" markierte wurden, sowie ein Grid mit acht der chronologisch zuletzt publizierten Einträge, allgemeine Informationen über die Plattform, Suchfunktion und eine Kategorienauswahl, die beide auf die Suchergebnisseite mit Filtermöglichkeiten führt.
+1. *Startseite* mit Karussell für Einträge, die von Admins als "besonders interessant" markierte wurden, sowie ein Grid mit acht der chronologisch zuletzt publizierten Einträge, allgemeine Informationen über die Plattform, Suchfunktion und eine Kategorienauswahl, die beide auf die Suchergebnisseite mit Filtermöglichkeiten führt.
     
-    2. *Suchergebnisseite* auf der die Suchergebnisse gefiltert werden können.
+2. *Suchergebnisseite* auf der die Suchergebnisse gefiltert werden können.
   
     3. *Detailseite,* die für die Detailansicht eines Artefakts, eines Künstlers, einer Sammlung, und einer Ausstellung verwendet wird. Das Layout besteht aus einer Beschreibung, eines Fotobereichs, eines Bereichs für ein eingebettetes Video und darunter einer Liste an verwandten Einträgen:
 
@@ -71,3 +71,45 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
 1. *Admin:* Kann Einträge erstellen, bearbeiten und auf nicht-öffentlich stellen, sowie andere Benutzer deaktivieren, reaktivieren und ihre Rolle ändern
 
 2. *Editor:* Kann Einträge erstellen und bearbeiten
+
+## Technologien
+
+*Webfrontend:* Angular, jQuery, Bootstrap
+
+*API Server:* nodeJS, Express
+
+*Mobile App:* nodeJS, Cordova
+
+## Timeline
+
+*16. Juli 2020*
+
+Konzept, Wireframes, Datenmodell und detaillierter Ablaufplan.
+
+*24. Juli 2020*
+
+API-Server mit Musterdatensätzen. API-Aufrufe funktionieren und liefern Daten zurück
+
+*31. Juli 2020*
+
+Öffentlicher Teil des Webfrontends fertiggestellt. Frontend zeigt die vier unterschiedlichen Ansichten, kann über die API Musterdaten abrufen und anzeigen.
+
+*28. August 2020*
+
+Redaktionsbereich und Admin-Bereich (nicht-öffentlicher Bereich des Webfrontends) mit Login, Registrierung, neue Einträge erstellen, Einträge bearbeiten, Einträge deaktivieren und reaktivieren, Benutzer deaktivieren und reaktivieren
+
+*4. September 2020*
+
+Mobile App mit (vorläufig) Einträge erstellen, Fotos aufnehmen und mit einem Eintrag assoziieren.
+
+*11. September 2020*
+
+Mobile App mit Login und Upload
+
+*18. September 2020*
+
+Tests und Bugfixes, Zusammenspiel der Komponenten anpassen
+
+*25. September 2020*
+
+Tests und Bugfixes, Zusammenspiel der Komponenten anpassen
