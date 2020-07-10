@@ -90,7 +90,13 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
 
 - Bootstrap
 
-- Bootstrap
+- jQuery
+
+- TinyMCE
+
+- Datatables JS
+
+- ChartJS (optional)
 
 *Registrierung und Usermanagement:*
 
