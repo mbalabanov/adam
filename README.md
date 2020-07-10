@@ -108,7 +108,7 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
 
 ## Project Timeline
 
-- *Bis 16. Juli 2020:* Konzept, Wireframes, Datenmodell und detaillierter Ablaufplan.
+- *Bis 16. Juli 2020:* Konzept, Wireframes, Datenmodell, detaillierter Ablaufplan und Projektplan.
 - *Bis 24. Juli 2020:* API-Server mit Musterdatensätzen. API-Aufrufe funktionieren und liefern Daten zurück
 - *Bis 31. Juli 2020:* Öffentlicher Teil des Webfrontends fertiggestellt. Frontend zeigt die vier unterschiedlichen Ansichten, kann über die API Musterdaten abrufen und anzeigen.
 - *Bis 28. August 2020:* Redaktionsbereich und Admin-Bereich (nicht-öffentlicher Bereich des Webfrontends) mit Login, Registrierung, neue Einträge erstellen, Einträge bearbeiten, Einträge deaktivieren und reaktivieren, Benutzer deaktivieren und reaktivieren
