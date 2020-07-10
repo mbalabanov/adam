@@ -18,14 +18,18 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
 
     1. *Startseite* mit Karussell für Einträge, die von Admins als "besonders interessant" markierte wurden, sowie ein Grid mit acht der chronologisch zuletzt publizierten Einträge, allgemeine Informationen über die Plattform, Suchfunktion und eine Kategorienauswahl, die beide auf die Suchergebnisseite mit Filtermöglichkeiten führt.
     
-    2. *Suchergebnisseite auf der die Suchergebnisse gefiltert werden können.
+    2. *Suchergebnisseite* auf der die Suchergebnisse gefiltert werden können.
   
     3. *Detailseite,* die für die Detailansicht eines Artefakts, eines Künstlers, einer Sammlung, und einer Ausstellung verwendet wird. Das Layout besteht aus einer Beschreibung, eines Fotobereichs, eines Bereichs für ein eingebettetes Video und darunter einer Liste an verwandten Einträgen:
 
         a. Bei einer _Künstler-Detailseite_ eine Liste der Arbeiten des Künstlers.
+
         b. Bei einer _Artefakt-Detailseite_ eine Liste der Künstler, die das Kunstwerk erschaffen haben
+
         c. Bei einer _Künstler-Kollektiv-Seite_ eine Liste der Künstler und der Artefakte.
+
         d. Bei einer _Detailseite über eine Sammlung_ eine Liste der Einträge der Artefakte, die Teil der Sammlung sind.
+
         e. Bei einer _Detailseite über eine Ausstellung_ eine Liste der ausgestellten Werke.
 
     4. *Informationsseite,* in der allgemeine Informationen zu einem Thema stehen mit Text und Bildern, z.B. Artikel über Neuigkeiten, aber auch Nutzungsbedingungen und Datenschutzerklärung
@@ -35,23 +39,35 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
 3. *Nicht-öffentlicher Bereich* im selben Web-Frontend mit...
 
     1. _Admin-Bereich,_ um Benutzer zu verwalten (deaktivieren und reaktivieren), und um Einträge zu publizieren, auf "interessant" zu stellen (für das Karussel auf der Startseite), sowie um sie auf nicht-veröffentlicht zu setzen.
+    
     2. _Redaktionsansicht_ in der Benutzer mit Editor-Rechten bestehende Einträge bearbeiten können (Edit-Funktion wird nur nach dem Einloggen sichtbar) sowie neue Einträge erstellen können (Funktion für einen neuen Eintrag ist auch erst nach dem Einloggen sichtbar).
 
 4. *Mobile App*
+
     1. Ansicht aller lokal vorbereiteter Einträge
+    
     2. Neuen Eintrag auf dem mobilen Gerät erstellen für Artefakt, Künstler, Künstlerkollektiv, Sammlung, Ausstellung.
+    
     3. Fotos und Videos auswählen
+    
     4. Einloggen
+    
     5. Eintrag mit Fotos und Video URLs hochladen
 
 ### Daten in der DB
 
 - Artifact: name, short description, long description, category, system, first appearance, tags, images, videos, artist, artist collective, collection, exhibition
+
 - Person (artist, programmer, musician, curator): name, country, short description, long description, specialization, active since, active until, tags, images, videos, artifacts, artist collective, exhibitions, art collections
+
 - Art Collection: name, short description, long description, curator, start date, tags, images, videos, artifacts, artists, exhibitions
+
 - Exhibition: name, short description, long description, systems, exhibition dates, tags, images, videos, artifacts, artists, artist collectives, art collections
+
 - Artist Collective: name, description, tags, artists, artifacts, images, videos
 
 ### Benutzerrollen
+
 1. *Admin:* Kann Einträge erstellen, bearbeiten und auf nicht-öffentlich stellen, sowie andere Benutzer deaktivieren, reaktivieren und ihre Rolle ändern
+
 2. *Editor:* Kann Einträge erstellen und bearbeiten
