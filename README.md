@@ -1,6 +1,6 @@
-![ADAM - Archive of Digital Art & Media](documentation/assets/adam-logo.png)
-
 # ADAM - Archive of Digital Art & Media
+
+![ADAM - Archive of Digital Art & Media](documentation/assets/adam-logo.png)
 
 ## Beschreibung
 In ADAM, dem Archive of Digital Art & Media, können Benutzer nach digitalen Kunstwerken suchen. Auf den Detailseiten finden sie eine Beschreibung des jeweiligen Kunstwerks, sowie Fotos/Screenshots und eingebettete Videos, und falls vorhanden ZIP-Dateien oder Diskimages mit den Originaldateien des Kunstwerks. Zudem finden sich Informationen über die Künstler, die Sammlung der das Kunstwerk angehört, und in welchen Ausstellungen es ausgestellt wurde.
