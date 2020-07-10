@@ -92,7 +92,7 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
 
 - Bootstrap
 
-*Registrierung und Usermanagement*
+*Registrierung und Usermanagement:*
 
 - auth0.com
 
