@@ -1,196 +1,285 @@
-let artifactsdata = 
-{ "artifacts":
-	[
-		{
-			"_id": "a0",
-			"category": "demoscene",
-			"name": "README.PRG",
-			"shortDescription": "",
-			"longDescription": "README.PRG by The Exceptions [TEX]. Released in 1987. This is the first demo ever released for the Atari ST. It used more than 16 colors on the screen and featured smooth horizontal scrolling.",
-			"firstAppearance": "1987-03-01",
-			"system": "Atari ST",
-			"tags": ["The Exceptions", "512 colors"],
-			"images": [
-				{"url": "http://content.pouet.net/files/screenshots/00014/00014032.gif","name": "README.PRG by the Exceptions", "description": "The README.PRG demo only consists of one screen and a scrolling text."} ],
-			"videos": [
-				{"url": "https://youtu.be/Ecx5cmnW-bo","name": "README.PRG by the Exceptions", "description": "Screen recording of the full README.PRG demo by the Exceptions."} ],
-			"websiteURLs": [
-				{"name": "Thalion Webshrine", "url": "http://thalion.exotica.org.uk"}
-			],
-			"artistIDs": ["0", "1", "2"],
-			"teamIDs": ["0"],
-			"collectionIDs": ["0"],
-			"exhibitionIDs": ["0"],
-			"published": "true"
-		},
-		{
-			"_id": "a1",
-			"category": "demoscene",
-			"name": "Little Sound Demo",
-			"shortDescription": "",
-			"longDescription": "",
-			"firstAppearance": "1987-05-02",
-			"system": "Atari ST",
-			"tags": ["The Exceptions", "SID"],
-			"images": [
-				{"url": "..","name": "Lorem", "description": "The quick brown fox."}
-				{"url": "...","name": "Ipsum", "description": "Jumps over the lazy dog!"} ],
-			"videos": [
-				{"url": "..","name": "Lorem", "description": "The quick brown fox."}
-				{"url": "...","name": "Ipsum", "description": "Jumps over the lazy dog!"} ],
-			"artistIDs": ["0", "1", "2"],
-			"teamIDs": ["0"],
-			"collectionIDs": ["0"],
-			"exhibitionIDs": ["0"],
-			"published": "true"
-		},
-		{
-			"_id": "a2",
-			"category": "demoscene",
-			"name": "Little Color Demo",
-			"shortDescription": "",
-			"longDescription": "",
-			"firstAppearance": "1987-06-12",
-			"system": "Atari ST",
-			"tags": ["The Exceptions", "SID"],
-			"images": [
-				{"url": "..","name": "Lorem", "description": "The quick brown fox."}
-				{"url": "...","name": "Ipsum", "description": "Jumps over the lazy dog!"} ],
-			"videos": [
-				{"url": "..","name": "Lorem", "description": "The quick brown fox."}
-				{"url": "...","name": "Ipsum", "description": "Jumps over the lazy dog!"} ],
-			"artistIDs": ["", "", "", ""],
-			"teamIDs": ["", "", "", ""],
-			"collectionIDs": ["", "", "", ""],
-			"exhibitionIDs": ["", "", "", ""],
-			"published": "true"
-		}
-	]
-};
-
-let artistsdata = 
-{ "artists":
-	[
-		{
-			"_id": "p0",
-			"category": "artist",
-			"name": "Jochen Hippel",
-			"alias": "Mad Max",
-			"shortDescription": "",
-			"longDescription": "",
-			"activeSince": "1988",
-			"activeUntil": "1995",
-			"systems": ["Atari ST", "Commodore Amiga"],
-			"tags": ["Chiptunes", "musician", "SID", "Digisound"],
-			"images": [
-				{"url": "..","name": "Lorem", "description": "The quick brown fox."}
-				{"url": "...","name": "Ipsum", "description": "Jumps over the lazy dog!"} ],
-			"videos": [
-				{"url": "..","name": "Lorem", "description": "The quick brown fox."}
-				{"url": "...","name": "Ipsum", "description": "Jumps over the lazy dog!"} ],
-			"teamID": "",
-			"artifactIDs": ["", "", "", ""],
-			"collectionIDs": ["", "", "", ""],
-			"exhibitionIDs": ["", "", "", ""],
-			"published": "true"
-		},
-		{
-			"_id": "p1",
-			"category": "artist",
-			"name": "Erik Simon",
-			"alias": "ES",
-			"shortDescription": "",
-			"longDescription": "",
-			"activeSince": "1987",
-			"activeUntil": "1995",
-			"systems": ["Atari ST", "Commodore Amiga"],
-			"tags": ["Chiptunes", "musician", "SID", "Digisound"],
-			"images": [
-				{"url": "..","name": "Lorem", "description": "The quick brown fox."}
-				{"url": "...","name": "Ipsum", "description": "Jumps over the lazy dog!"} ],
-			"videos": [
-				{"url": "..","name": "Lorem", "description": "The quick brown fox."}
-				{"url": "...","name": "Ipsum", "description": "Jumps over the lazy dog!"} ],
-			"teamID": "",
-			"artifactIDs": ["", "", "", ""],
-			"collectionIDs": ["", "", "", ""],
-			"exhibitionIDs": ["", "", "", ""],
-			"published": "true"
-		},
-		{
-			"_id": "p2",
-			"category": "coder",
-			"name": "Udo Fischer",
-			"alias": "-ME-",
-			"shortDescription": "",
-			"longDescription": "",
-			"activeSince": "1987",
-			"activeUntil": "1995",
-			"systems": ["Atari ST", "Commodore Amiga"],
-			"tags": ["Motorola 68000", "Assembly", "Coding", "Effects"],
-			"images": [
-				{"url": "..","name": "Lorem", "description": "The quick brown fox."}
-				{"url": "...","name": "Ipsum", "description": "Jumps over the lazy dog!"} ],
-			"videos": [
-				{"url": "..","name": "Lorem", "description": "The quick brown fox."}
-				{"url": "...","name": "Ipsum", "description": "Jumps over the lazy dog!"} ],
-			"teamID": "",
-			"artifactIDs": ["", "", "", ""],
-			"collectionIDs": ["", "", "", ""],
-			"exhibitionIDs": ["", "", "", ""],
-			"published": "true"
-		}
-	]
-};
-
-let collectionsdata = 
-{ "artists":
-	[
-		{
-			"uid": "0",
-			"category": "artist",
-			"name": "Jochen Hippel",
-			"alias": "Mad Max",
-			"shortDescription": "",
-			"longDescription": "",
-			"activeSince": "1988",
-			"activeUntil": "1995",
-			"systems": ["Atari ST", "Commodore Amiga"],
-			"tags": ["Chiptunes", "musician", "SID", "Digisound"],
-			"images": [
-				{"url": "..","name": "Lorem", "description": "The quick brown fox."}
-				{"url": "...","name": "Ipsum", "description": "Jumps over the lazy dog!"} ],
-			"videos": [
-				{"url": "..","name": "Lorem", "description": "The quick brown fox."}
-				{"url": "...","name": "Ipsum", "description": "Jumps over the lazy dog!"} ],
-			"teamID": "",
-			"artifactIDs": ["", "", "", ""],
-			"collectionIDs": ["", "", "", ""],
-			"exhibitionIDs": ["", "", "", ""],
-			"published": "true"
-		},
-		{
-			"uid": "1",
-			"category": "artist",
-			"name": "Erik Simon",
-			"alias": "ES",
-			"shortDescription": "",
-			"longDescription": "",
-			"activeSince": "1988",
-			"activeUntil": "1995",
-			"systems": ["Atari ST", "Commodore Amiga"],
-			"tags": ["Pixel Artist", "graphician", "Graphics Artist", "NEOChrome"],
-			"images": [
-				{"url": "..","name": "Lorem", "description": "The quick brown fox."}
-				{"url": "...","name": "Ipsum", "description": "Jumps over the lazy dog!"} ],
-			"videos": [
-				{"url": "..","name": "Lorem", "description": "The quick brown fox."}
-				{"url": "...","name": "Ipsum", "description": "Jumps over the lazy dog!"} ],
-			"teamID": "",
-			"artifactIDs": ["", "", "", ""],
-			"collectionIDs": ["", "", "", ""],
-			"exhibitionIDs": ["", "", "", ""],
-			"published": "true"
-		},
-	]
-};
+{ "adamdata":
+	{ "artifacts":
+		[
+			{
+				"_id": "a0",
+				"category": "demoscene",
+				"name": "README.PRG",
+				"shortDescription": "",
+				"longDescription": "README.PRG by The Exceptions [TEX]. Released in 1987. This is the first demo ever released for the Atari ST. It used more than 16 colors on the screen and featured smooth horizontal scrolling.",
+				"firstAppearance": "1987-03-01",
+				"system": "Atari ST",
+				"tags": ["The Exceptions", "512 colors", "Raster Effects"],
+				"images": [
+					{"url": "http://content.pouet.net/files/screenshots/00014/00014032.gif","name": "README.PRG by the Exceptions", "description": "The README.PRG demo only consists of one screen and a scrolling text."} ],
+				"videos": [
+					{"url": "https://youtu.be/Ecx5cmnW-bo","name": "README.PRG by the Exceptions", "description": "Screen recording of the full README.PRG demo by the Exceptions."} ],
+				"websiteURLs": [ {"name": "Thalion Webshrine", "url": "http://thalion.exotica.org.uk"} ],
+				"assets": [ {"name": "Native executable", "url": "http://pacidemo.planet-d.net/archives/POV003.ZIP"} ],
+				"artistIDs": ["p0", "p1", "p2"],
+				"teamIDs": ["t0"],
+				"collectionIDs": ["c0"],
+				"exhibitionIDs": ["e0"],
+				"published": "true",
+				"publishedOn": "2020-07-12"
+			},
+			{
+				"_id": "a1",
+				"category": "demoscene",
+				"name": "Little Sound Demo (LSD)",
+				"shortDescription": "The second demo by the Exceptions with chiptunes converted from the C64.",
+				"longDescription": "The second demo by the Exceptions with chiptunes converted from games on the Commodore 64 that use the fabled SID chip (Sound Interface Device).",
+				"firstAppearance": "1987-06-01",
+				"system": "Atari ST",
+				"tags": ["The Exceptions", "SID"],
+				"images": [
+					{"url": "http://content.pouet.net/files/screenshots/00014/00014033.gif","name": "Screenshot of the Little Sound Demo (LSD)", "description": "The main screen of the Little Sound Demo (LSD) by the Exceptions with a music selection and a scrolling text."} ],
+				"videos": [
+					{"url": "https://youtu.be/O6Z_eK3EQsE","name": "Video recording of the Little Sound Demo (LSD)", "description": "The main screen of the Little Sound Demo (LSD) by the Exceptions with a music selection and a scrolling text."}],
+				"assets": [ {"name": "Native executable", "url": "http://pacidemo.planet-d.net/archives/POV003.ZIP"} ],
+				"artistIDs": ["p0", "p1", "p3"],
+				"teamIDs": ["t0"],
+				"collectionIDs": ["c0"],
+				"exhibitionIDs": ["e0"],
+				"featured": "true",
+				"published": "true",
+				"publishedOn": "2020-07-12"
+			},
+			{
+				"_id": "a2",
+				"category": "demoscene",
+				"name": "Little Color Demo (LCD)",
+				"shortDescription": "Little Color Demo is the third demo by the Exceptions. It features raster effects, chiptunes converted from the C64's SID chip and the first 'Reset-Demo' on the Atari ST.",
+				"longDescription": "Little Color Demo is the third demo by the Exceptions, published in the fall of 1987. The LCD not only features raster effects and chiptunes converted from the C64's SID chip, but also the very first 'Reset-Demo' on the Atari ST.",
+				"firstAppearance": "1987-09-01",
+				"system": "Atari ST",
+				"tags": ["The Exceptions", "SID"],
+				"images": [ {"url": "http://content.pouet.net/files/screenshots/00014/00014034.gif","name": "Little Color Demo (LCD)", "description": "The Little Color Demo (LCD) with a vertical scrolling text and a multicolor horizontal scrolling text while playing chiptunes converted from the Commodore 64 SID chip."} ],
+				"videos": [ {"url": "https://youtu.be/ULl4Ot3GgLw","name": "Video recording of the Little Color Demo (LCD)", "description": "The Little Color Demo (LCD) with a vertical scrolling text and a multicolor horizontal scrolling text while playing chiptunes converted from the Commodore 64 SID chip."} ],
+				"assets": [ {"name": "Executables", "url": "http://pacidemo.planet-d.net/archives/POV003.ZIP"} ],
+				"artistIDs": ["p0", "p1", "p3"],
+				"teamIDs": ["t0"],
+				"collectionIDs": ["c0"],
+				"exhibitionIDs": ["e0"],
+				"featured": "true",
+				"published": "true",
+				"publishedOn": "2020-07-12"
+			}
+		]
+	},
+	{ "artists":
+		[
+			{
+				"_id": "p0",
+				"category": "graphician",
+				"name": "Erik Simon",
+				"alias": "ES",
+				"shortDescription": "Erik Simon is ES, the graphician from The Exceptions and the Union on the Atari ST.",
+				"longDescription": "Erik Simon is ES, the graphician and pixel artist from The Exceptions and the Union. Mainly actibve on the Atari ST, but in the late 80s moved into games development on the Commodore Amiga as well.",
+				"activeSince": "1987",
+				"activeUntil": "1995",
+				"systems": ["Atari ST", "Commodore Amiga"],
+				"tags": ["Pixel Art", "Graphician", "NEOChrome"],
+				"images": [
+					{"url": "https://www.mobygames.com/images/portraits/large/1225026016-00.jpg","name": "Erik 'ES' Simon", "description": "Erik Simon is ES, the graphician from The Exceptions and the Union on the Atari ST."} ],
+				"videos": [ ],
+				"teamIDs": ["t0", "t1"],
+				"artifactIDs": ["a0", "a1", "a1"],
+				"collectionIDs": ["c0", "c1"],
+				"exhibitionIDs": ["e0"],
+				"featured": "true",
+				"published": "true",
+				"publishedOn": "2020-07-08"
+			},
+			{
+				"_id": "p1",
+				"category": "coder",
+				"name": "Udo Fischer",
+				"alias": "-ME-",
+				"shortDescription": "",
+				"longDescription": "Udo Fischer is one of the main coders of The Exceptions and the Union. He calls himself -ME- and has specialized in compression, raster effects and smooth horizontal scrolling on the Atari ST. Together with other members of The Exceptions he founded Thalion Software and became a games developer for 16-bit machines such as the Atari ST and the Commodore Amiga.",
+				"activeSince": "1987",
+				"activeUntil": "1995",
+				"systems": ["Atari ST", "Commodore Amiga"],
+				"tags": ["Motorola 68000", "Assembly", "Coding", "Effects"],
+				"images": [ {"url": "assets/img/person-no-photo.png","name": "Udo -ME- Fischer", "description": "The quick brown fox."} ],
+				"videos": [ ],
+				"teamIDs": ["t0", "t1"],
+				"artifactIDs": ["a0", "a1", "a1"],
+				"collectionIDs": ["c0", "c1"],
+				"exhibitionIDs": ["e0", "e1"],
+				"featured": "true",
+				"published": "true",
+				"publishedOn": "2020-07-09"
+			},
+			{
+				"_id": "p2",
+				"category": "musician",
+				"name": "Holger Gehrmann",
+				"alias": "None",
+				"shortDescription": "Holger Gehrmann wrote the fun, energetic music for the ST game Extensor. The Exceptions ripped it and used in their demo README.PRG.",
+				"longDescription": "Holger Gehrmann is not actually affiliated with a demo-group. He wrote the fun, energetic music for the ST game Extensor. The demo group, the Exceptions, ripped the sound file and used in their demo README.PRG. According to MobyGames, Holger Gehrmann passed away on February 11, 2008, at the age of 39.",
+				"activeSince": "1986",
+				"activeUntil": "2008",
+				"systems": ["Atari ST", "Commodore Amiga"],
+				"tags": ["Chiptunes", "musician", "SID", "Digisound"],
+				"images": [
+					{"url": "https://www.mobygames.com/images/portraits/small/1083109721-00.jpg","name": "Holger Gehrmann", "description": "Holger Gehrmann was a games developer and chiptunes musician."} ],
+				"videos": [ ],
+				"teamIDs": [ ],
+				"artifactIDs": ["a0", "a1", "a1"],
+				"collectionIDs": ["c0", "c1"],
+				"exhibitionIDs": ["e0"],
+				"featured": "true",
+				"published": "true",
+				"publishedOn": "2020-07-10"
+			},
+			{
+				"_id": "p3",
+				"category": "musician",
+				"name": "Jochen Hippel",
+				"alias": "Mad Max",
+				"shortDescription": "",
+				"longDescription": "",
+				"activeSince": "1988",
+				"activeUntil": "1995",
+				"systems": ["Atari ST", "Commodore Amiga"],
+				"tags": ["Chiptunes", "musician", "SID", "Digisound"],
+				"images": [
+					{"url": "..","name": "Lorem", "description": "The quick brown fox."}
+					{"url": "...","name": "Ipsum", "description": "Jumps over the lazy dog!"} ],
+				"videos": [
+					{"url": "..","name": "Lorem", "description": "The quick brown fox."}
+					{"url": "...","name": "Ipsum", "description": "Jumps over the lazy dog!"} ],
+				"teamIDs": ["t0", "t1"],
+				"artifactIDs": ["a1", "a2"],
+				"collectionIDs": ["c0", "c1"],
+				"exhibitionIDs": ["e0"],
+				"featured": "true",
+				"published": "true",
+				"publishedOn": "2020-07-12"
+			}
+		]
+	},
+	{ "teams":
+		[
+			{
+				"_id": "t0",
+				"category": "team",
+				"name": "The Exceptions",
+				"alias": "TEX",
+				"shortDescription": "",
+				"longDescription": "",
+				"activeSince": "1987",
+				"activeUntil": "1995",
+				"systems": ["Atari ST", "Commodore Amiga"],
+				"tags": ["Chiptunes", "musician", "SID", "Digisound"],
+				"images": [ {"url": "http://www.retroplaythrus.com/2019/11/atari-st-cracktro-061-exceptions-tex.html","name": "The Exceptions", "description": "The Exceptions aka. TEX were founded in 1987. They were the first demo-group on the Atari ST."} ],
+				"videos": [ ],
+				"artistIDs": ["p0", "p1", "p3"],
+				"artifactIDs": ["a0", "a1", "a2"],
+				"collectionIDs": ["c0", "c1"],
+				"exhibitionIDs": ["e0"],
+				"featured": "true",
+				"published": "true",
+				"publishedOn": "2020-07-12"
+			},
+			{
+				"_id": "t0",
+				"category": "team",
+				"name": "The Union ",
+				"alias": "",
+				"shortDescription": "",
+				"longDescription": "",
+				"activeSince": "1987",
+				"activeUntil": "1995",
+				"systems": ["Atari ST"],
+				"tags": ["Chiptunes", "musician", "SID", "Digisound"],
+				"images": [ { "url": "https://www7.in.tum.de/~brandtf/unionlogo.gif", "name": "The Union", "description": "The Union was the demo-making collective formed out of the demo-groups The CareBears (TCB), Delta-Force, The Exceptions and others."} ],
+				"videos": [ ],
+				"artistIDs": [ "p0", "p1", "p2"],
+				"artifactIDs": [ ],
+				"collectionIDs": ["c0", "c1"],
+				"exhibitionIDs": ["e0"],
+				"featured": "true",
+				"published": "true",
+				"publishedOn": "2020-07-12"
+			}
+		]
+	},
+	{ "collections":
+		[
+			{
+				"uid": "c0",
+				"category": "demoscene",
+				"name": "Pouet.net",
+				"alias": "",
+				"url": "http://www.pouet.net/",
+				"curator": "Pouet",
+				"shortDescription": "",
+				"longDescription": "",
+				"startDate": "1995",
+				"tags": ["Chiptunes", "musician", "SID", "Digisound"],
+				"images": [
+					{"url": "..","name": "Lorem", "description": "The quick brown fox."} ],
+				"videos": [
+					{"url": "...","name": "Ipsum", "description": "Jumps over the lazy dog!"} ],
+				"teamIDs": [""],
+				"artifactIDs": ["", "", "", ""],
+				"collectionIDs": ["", "", "", ""],
+				"exhibitionIDs": ["", "", "", ""],
+				"featured": "true",
+				"published": "true",
+				"publishedOn": "2020-07-12"
+			},
+			{
+				"uid": "c1",
+				"category": "demoscene",
+				"name": "Demozoo",
+				"alias": "",
+				"url": "http://www.pouet.net/",
+				"curator": "Demozoo Team",
+				"shortDescription": "",
+				"longDescription": "",
+				"startDate": "1995",
+				"tags": ["Chiptunes", "musician", "SID", "Digisound"],
+				"images": [ {"url": "..","name": "Lorem", "description": "The quick brown fox."} ],
+				"videos": [ {"url": "...","name": "Ipsum", "description": "Jumps over the lazy dog!"} ],
+				"teamIDs": [""],
+				"artifactIDs": ["", "", "", ""],
+				"collectionIDs": ["", "", "", ""],
+				"exhibitionIDs": ["", "", "", ""],
+				"featured": "true",
+				"published": "true",
+				"publishedOn": "2020-07-12"
+			}
+		]
+	},
+	{ "exhibitions":
+		[
+			{
+				"uid": "e0",
+				"category": "demoscene",
+				"name": "ST-News International Christmas Coding Conference",
+				"alias": "STNICC90",
+				"url": "http://www.pouet.net/",
+				"curator": "Richard Karsmakers",
+				"shortDescription": "",
+				"longDescription": "",
+				"startDate": "1990-12-23",
+				"endDate": "1990-12-31",
+				"tags": ["Chiptunes", "musician", "SID", "Digisound"],
+				"images": [
+					{"url": "https://ftp.untergrund.net/users/ltk_tscc/fujiology/GFX/ES/STGR16/STNICCC.GIF","name": "STNICC90", "description": "ST-News International Christmas Coding Conference in 1990."} ],
+				"videos": [ ],
+				"teamIDs": [""],
+				"artifactIDs": ["", "", "", ""],
+				"collectionIDs": ["", "", "", ""],
+				"exhibitionIDs": ["", "", "", ""],
+				"featured": "true",
+				"published": "true",
+				"publishedOn": "2020-07-12"
+			}
+		]
+	}
+}

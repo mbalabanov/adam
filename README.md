@@ -7,6 +7,24 @@ In ADAM, dem Archive of Digital Art & Media, können Benutzer nach digitalen Kun
 
 ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnittstellen, um die Daten abzurufen, sowie einer Website mit einem _öffentlichen Bereich,_ in dem Besucher die Informationen über die digitalen Kunstwerke finden, und einem _Redaktionsbereich,_ in dem Redakteure neue Inhalte einpflegen und bearbeiten können, und Administratoren die Rechte verwalten können. Zu guter Letzt gibt es eine _Mobile-App,_ mit der man Einträge erstellen kann, Fotos und Videos hochladen kann.
 
+## Project Timeline
+
+- *Bis 16. Juli 2020:* Konzept, Wireframes, Datenmodell, detaillierter Ablaufplan und Projektplan. API-Server mit Musterdatensätzen auf Heroku. API-Aufrufe funktionieren und liefern Daten zurück.
+
+- *Bis 24. Juli 2020:* Funktionierendes und implementiertes Design des Webfrontends in Angular.
+
+- *Bis 31. Juli 2020:* Öffentlicher Teil des Webfrontends fertiggestellt. Frontend zeigt die vier unterschiedlichen Ansichten, kann über die API Musterdaten abrufen und anzeigen.
+
+- *Bis 28. August 2020:* Redaktionsbereich und Admin-Bereich (nicht-öffentlicher Bereich des Webfrontends) mit Login, Registrierung, neue Einträge erstellen, Einträge bearbeiten, Einträge deaktivieren und reaktivieren, Benutzer deaktivieren und reaktivieren.
+
+- *Bis 4. September 2020:* Redaktionsbereich und Admin-Bereich.
+
+- *Bis 11. September 2020:* Mobile App mit (vorläufig) Einträge erstellen, Fotos aufnehmen und mit einem Eintrag assoziieren.
+
+- *Bis 18. September 2020:* Mobile App mit Login und Upload.
+
+- *Bis 25. September 2020:* Mobile App mit Login und Upload.
+
 ## Die Struktur von ADAM
 
 ### 1. _API-Server_ auf Heroku unter Verwendung von MongoDB mit Schnittstellen für...
@@ -56,11 +74,11 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
 
 ## Daten in der DB
 
-- Artifact: name, short description, long description, category, system, first appearance, tags, images, videos, artist, artist collective, collection, exhibition
-- Artist (grahics artist, programmer, musician, curator): name, country, short description, long description, specialization, active since, active until, tags, images, videos, artifacts, artist collective, exhibitions, art collections
-- Art Collection: name, short description, long description, curator, start date, tags, images, videos, artifacts, artists, exhibitions
-- Exhibition: name, short description, long description, systems, exhibition dates, tags, images, videos, artifacts, artists, artist collectives, art collections
-- Artist Collective: name, description, tags, artists, artifacts, images, videos
+- *Artifact:* name, short description, long description, category, system, first appearance, tags, images, videos, artist, team, collection, exhibition
+- *Artist* (grahics artist, programmer, musician, curator): name, country, short description, long description, specialization, active since, active until, tags, images, videos, artifacts, team, exhibitions, art collections
+- *Art Collection:* name, short description, long description, curator, start date, tags, images, videos, artifacts, artists, exhibitions
+- *Exhibition:* name, short description, long description, systems, exhibition dates, tags, images, videos, artifacts, artists, team, art collections
+- *Artist Team:* name, description, tags, artists, artifacts, images, videos
 
 ### Datenmodell
 
@@ -93,22 +111,4 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
 *Mobile App:*
 - nodeJS
 - Cordova
-- onsen UI
-
-## Project Timeline
-
-- *Bis 16. Juli 2020:* Konzept, Wireframes, Datenmodell, detaillierter Ablaufplan und Projektplan.
-
-- *Bis 24. Juli 2020:* API-Server mit Musterdatensätzen. API-Aufrufe funktionieren und liefern Daten zurück.
-
-- *Bis 31. Juli 2020:* Öffentlicher Teil des Webfrontends fertiggestellt. Frontend zeigt die vier unterschiedlichen Ansichten, kann über die API Musterdaten abrufen und anzeigen.
-
-- *Bis 28. August 2020:* Redaktionsbereich und Admin-Bereich (nicht-öffentlicher Bereich des Webfrontends) mit Login, Registrierung, neue Einträge erstellen, Einträge bearbeiten, Einträge deaktivieren und reaktivieren, Benutzer deaktivieren und reaktivieren.
-
-- *Bis 4. September 2020:* Mobile App mit (vorläufig) Einträge erstellen, Fotos aufnehmen und mit einem Eintrag assoziieren.
-
-- *Bis 11. September 2020:* Mobile App mit Login und Upload.
-
-- *Bis 18. September 2020:* Tests und Bugfixes, Zusammenspiel der Komponenten anpassen.
-
-- *Bis 25. September 2020:* Tests und Bugfixes, Zusammenspiel der Komponenten anpassen.
+- Onsen UI
