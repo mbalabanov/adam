@@ -93,7 +93,7 @@ Als Datenbank wird MongoDB verwendet, das ein Dokument-basiertes Datenmodell hat
 
 ### JSON-Beispiel (Artifact)
 
-`
+```
 {
     "_id": "a1",
     "category": "demoscene",
@@ -115,7 +115,7 @@ Als Datenbank wird MongoDB verwendet, das ein Dokument-basiertes Datenmodell hat
     "published": "true",
     "publishedOn": "2020-07-12"
 }
-`
+```
 
 ## Benutzerrollen
 
