@@ -101,7 +101,7 @@ Als Datenbank wird MongoDB verwendet, das ein Dokument-basiertes Datenmodell hat
     "shortDescription": "The second demo by the Exceptions with chiptunes converted from the C64.",
     "longDescription": "The second demo by the Exceptions with chiptunes converted from games on the Commodore 64 that use the fabled SID chip (Sound Interface Device).",
     "firstAppearance": "1987-06-01",
-    "system": "Atari ST",
+    "systems": [ "Atari ST" ],
     "tags": ["The Exceptions", "SID"],
     "images": [
         {"url": "http://content.pouet.net/files/screenshots/00014/00014033.gif","name": "Screenshot of the Little Sound Demo (LSD)", "description": "The main screen of the Little Sound Demo (LSD) by the Exceptions with a music selection and a scrolling text."} ],
