@@ -62,7 +62,7 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
 
 ### Wireframes Redaktionsansicht
 
-![ADAM - Data Model](documentation/assets/frontend-wireframes/create-object.png)
+![ADAM - Data Model](documentation/assets/create-object.png)
 
 ### 4. *Mobile App* (Optional)
 
