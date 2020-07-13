@@ -143,10 +143,10 @@
 					"systems": ["Atari ST", "Commodore Amiga"],
 					"tags": ["Chiptunes", "musician", "SID", "Digisound"],
 					"images": [
-						{"url": "..","name": "Lorem", "description": "The quick brown fox."}
+						{"url": "..","name": "Lorem", "description": "The quick brown fox."},
 						{"url": "...","name": "Ipsum", "description": "Jumps over the lazy dog!"} ],
 					"videos": [
-						{"url": "..","name": "Lorem", "description": "The quick brown fox."}
+						{"url": "..","name": "Lorem", "description": "The quick brown fox."},
 						{"url": "...","name": "Ipsum", "description": "Jumps over the lazy dog!"} ],
 					"teamIDs": ["t0", "t1"],
 					"artifactIDs": ["a1", "a2"],
