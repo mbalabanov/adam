@@ -148,4 +148,4 @@ Als Datenbank wird MongoDB verwendet, das ein Dokument-basiertes Datenmodell hat
 ## Aktualisierungen
 - *13. Juli 2020:* Datenmodelldiagramm und Wireframes aktualisiert
 - *12. Juli 2020:* Testdaten als JSON-Datei
-- *6. Juli 2020:* Erstfassung der Dokumentation 
+- *8. Juli 2020:* Erstfassung der Dokumentation 
