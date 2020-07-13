@@ -51,7 +51,7 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
 
 5. Seite für den *Login bzw. die Registrierung* über den auth0.com Service
 
-### Wireframes (unvollständig)
+### Wireframes Besucheransicht
 
 ![ADAM - Wireframes](documentation/assets/adam-wireframes-v0_5.png)
 
@@ -59,6 +59,10 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
 
 1. _Admin-Bereich,_ um Benutzer zu verwalten (deaktivieren und reaktivieren), und um Einträge zu publizieren, auf "interessant" zu stellen (für das Karussel auf der Startseite), sowie um sie auf nicht-veröffentlicht zu setzen.
 2. _Redaktionsansicht_ in der Benutzer mit Editor-Rechten bestehende Einträge bearbeiten können (Edit-Funktion wird nur nach dem Einloggen sichtbar) sowie neue Einträge erstellen können (Funktion für einen neuen Eintrag ist auch erst nach dem Einloggen sichtbar).
+
+### Wireframes Redaktionsansicht
+
+![ADAM - Data Model](documentation/assets/frontend-wireframes/create-object.png)
 
 ### 4. *Mobile App* (Optional)
 
