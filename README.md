@@ -128,7 +128,7 @@ Als Datenbank wird MongoDB verwendet, das ein Dokument-basiertes Datenmodell hat
 - Angular (Funktionalität)
 - Bootstrap (Design)
 - jQuery (Allgemein)
-- Datatables JS (User Management)
+- Datatables JS (Benutzertabellen und Artikellisten)
 - Lunr JS (Suche)
 
 *Registrierung und Usermanagement:*
