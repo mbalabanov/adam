@@ -78,6 +78,8 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
 
 ## Daten in der DB
 
+Als Datenbank wird MongoDB verwendet, das ein Dokument-basiertes Datenmodell hat.
+
 - *Artifacts:* ID of This Object (Text), Category (Text), Name (Text), Short Description (Text), Long Description (Text), First Appearance (Date), Systems (Array), Tags (Array), Images (Array) [ URL (Text), Name (Text), Description (Text) ], Videos (Array) [ URL (Text), Name (Text) Description (Text) ], Website URLs  (Array) [ Name (Text), URL (Text) ], Assets (Array) [ Name (Text), URL (Text) ], Artist IDs (Array), Team IDs (Array), Collection IDs (Array), Exhibition IDs (Array), Published (Boolean), Published On (Date)
 - *Persons:* ID of This Object (Text),Category (Text), Name (Text), Alias (Text), Short Description (Text), Long Description (Text), Active Since (Date), Active Until (Date), Systems (Text), Tags (Array), Images (Array) [ URL (Text), Name (Text), Description (Text) ], Videos  (Array) [URL (Text), Name (Text), Description (Text) ], Artifact IDs (Array), Team IDs (Array), Collection IDs (Array), Exhibition IDs (Array), Published (Boolean), Published On (Date)
 - *Teams:* ID of This Object (Text), Category (Text), Name (Text), Alias (Text), Short Description (Text), Long Description (Text), Active Since (Date), Active Until (Date), Systems (Array), Tags (Array), Artifact IDs (Array), Artist IDs (Array), Team IDs (Array), Collection IDs (Array), Exhibition IDs (Array), Published (Boolean), Published On (Date)
@@ -88,6 +90,32 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
 ### Datenmodell
 
 ![ADAM - Data Model](documentation/assets/datamodel.png)
+
+### JSON-Beispiel (Artifact)
+
+`
+{
+    "_id": "a1",
+    "category": "demoscene",
+    "name": "Little Sound Demo (LSD)",
+    "shortDescription": "The second demo by the Exceptions with chiptunes converted from the C64.",
+    "longDescription": "The second demo by the Exceptions with chiptunes converted from games on the Commodore 64 that use the fabled SID chip (Sound Interface Device).",
+    "firstAppearance": "1987-06-01",
+    "system": "Atari ST",
+    "tags": ["The Exceptions", "SID"],
+    "images": [
+        {"url": "http://content.pouet.net/files/screenshots/00014/00014033.gif","name": "Screenshot of the Little Sound Demo (LSD)", "description": "The main screen of the Little Sound Demo (LSD) by the Exceptions with a music selection and a scrolling text."} ],
+    "videos": [
+        {"url": "https://youtu.be/O6Z_eK3EQsE","name": "Video recording of the Little Sound Demo (LSD)", "description": "The main screen of the Little Sound Demo (LSD) by the Exceptions with a music selection and a scrolling text."}],
+    "assets": [ {"name": "Native executable", "url": "http://pacidemo.planet-d.net/archives/POV003.ZIP"} ],
+    "artistIDs": ["p0", "p1", "p3"],
+    "teamIDs": ["t0"],
+    "collectionIDs": ["c0"],
+    "exhibitionIDs": ["e0"],
+    "published": "true",
+    "publishedOn": "2020-07-12"
+}
+`
 
 ## Benutzerrollen
 
