@@ -83,7 +83,7 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
 
 ### Datenmodell
 
-![ADAM - Data Model](documentation/assets/data-model.png)
+![ADAM - Data Model](documentation/assets/datamodel.png)
 
 ## Benutzerrollen
 
