@@ -114,6 +114,6 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
 - Onsen UI
 
 ## Aktualisierungen
-*13. Juli 2020:* Aktualisiertes Datenmodelldiagramm
-*12. Juli 2020:* Testdaten als JSON-Datei
-*6. Juli 2020:* Erstfassung der Dokumentation 
+- *13. Juli 2020:* Aktualisiertes Datenmodelldiagramm
+- *12. Juli 2020:* Testdaten als JSON-Datei
+- *6. Juli 2020:* Erstfassung der Dokumentation 
