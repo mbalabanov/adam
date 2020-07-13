@@ -41,7 +41,6 @@
 				"teamIDs": ["t0"],
 				"collectionIDs": ["c0"],
 				"exhibitionIDs": ["e0"],
-				"featured": "true",
 				"published": "true",
 				"publishedOn": "2020-07-12"
 			},
@@ -67,7 +66,7 @@
 			}
 		]
 	},
-	{ "artists":
+	{ "persons":
 		[
 			{
 				"_id": "p0",
@@ -87,7 +86,6 @@
 				"artifactIDs": ["a0", "a1", "a1"],
 				"collectionIDs": ["c0", "c1"],
 				"exhibitionIDs": ["e0"],
-				"featured": "true",
 				"published": "true",
 				"publishedOn": "2020-07-08"
 			},
@@ -108,7 +106,6 @@
 				"artifactIDs": ["a0", "a1", "a1"],
 				"collectionIDs": ["c0", "c1"],
 				"exhibitionIDs": ["e0", "e1"],
-				"featured": "true",
 				"published": "true",
 				"publishedOn": "2020-07-09"
 			},
@@ -130,7 +127,6 @@
 				"artifactIDs": ["a0", "a1", "a1"],
 				"collectionIDs": ["c0", "c1"],
 				"exhibitionIDs": ["e0"],
-				"featured": "true",
 				"published": "true",
 				"publishedOn": "2020-07-10"
 			},
@@ -155,7 +151,6 @@
 				"artifactIDs": ["a1", "a2"],
 				"collectionIDs": ["c0", "c1"],
 				"exhibitionIDs": ["e0"],
-				"featured": "true",
 				"published": "true",
 				"publishedOn": "2020-07-12"
 			}
@@ -180,7 +175,6 @@
 				"artifactIDs": ["a0", "a1", "a2"],
 				"collectionIDs": ["c0", "c1"],
 				"exhibitionIDs": ["e0"],
-				"featured": "true",
 				"published": "true",
 				"publishedOn": "2020-07-12"
 			},
@@ -201,7 +195,6 @@
 				"artifactIDs": [ ],
 				"collectionIDs": ["c0", "c1"],
 				"exhibitionIDs": ["e0"],
-				"featured": "true",
 				"published": "true",
 				"publishedOn": "2020-07-12"
 			}
@@ -210,12 +203,12 @@
 	{ "collections":
 		[
 			{
-				"uid": "c0",
+				"_id": "c0",
 				"category": "demoscene",
 				"name": "Pouet.net",
 				"alias": "",
 				"url": "http://www.pouet.net/",
-				"curator": "Pouet",
+				"curatorIDs": [ "Pouet" ],
 				"shortDescription": "",
 				"longDescription": "",
 				"startDate": "1995",
@@ -228,12 +221,11 @@
 				"artifactIDs": ["", "", "", ""],
 				"collectionIDs": ["", "", "", ""],
 				"exhibitionIDs": ["", "", "", ""],
-				"featured": "true",
 				"published": "true",
 				"publishedOn": "2020-07-12"
 			},
 			{
-				"uid": "c1",
+				"_id": "c1",
 				"category": "demoscene",
 				"name": "Demozoo",
 				"alias": "",
@@ -249,7 +241,6 @@
 				"artifactIDs": ["", "", "", ""],
 				"collectionIDs": ["", "", "", ""],
 				"exhibitionIDs": ["", "", "", ""],
-				"featured": "true",
 				"published": "true",
 				"publishedOn": "2020-07-12"
 			}
@@ -258,12 +249,12 @@
 	{ "exhibitions":
 		[
 			{
-				"uid": "e0",
+				"_id": "e0",
 				"category": "demoscene",
 				"name": "ST-News International Christmas Coding Conference",
 				"alias": "STNICC90",
 				"url": "http://www.pouet.net/",
-				"curator": "Richard Karsmakers",
+				"curatorIDs": [ "Richard Karsmakers" ],
 				"shortDescription": "",
 				"longDescription": "",
 				"startDate": "1990-12-23",
@@ -276,7 +267,6 @@
 				"artifactIDs": ["", "", "", ""],
 				"collectionIDs": ["", "", "", ""],
 				"exhibitionIDs": ["", "", "", ""],
-				"featured": "true",
 				"published": "true",
 				"publishedOn": "2020-07-12"
 			}

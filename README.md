@@ -74,15 +74,16 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
 
 ## Daten in der DB
 
-- *Artifact:* name, short description, long description, category, system, first appearance, tags, images, videos, artist, team, collection, exhibition
-- *Artist* (grahics artist, programmer, musician, curator): name, country, short description, long description, specialization, active since, active until, tags, images, videos, artifacts, team, exhibitions, art collections
-- *Art Collection:* name, short description, long description, curator, start date, tags, images, videos, artifacts, artists, exhibitions
-- *Exhibition:* name, short description, long description, systems, exhibition dates, tags, images, videos, artifacts, artists, team, art collections
-- *Artist Team:* name, description, tags, artists, artifacts, images, videos
+- *Artifacts:* ID of This Object (Text), Category (Text), Name (Text), Short Description (Text), Long Description (Text), First Appearance (Date), Systems (Array), Tags (Array), Images (Array) [ URL (Text), Name (Text), Description (Text) ], Videos (Array) [ URL (Text), Name (Text) Description (Text) ], Website URLs  (Array) [ Name (Text), URL (Text) ], Assets (Array) [ Name (Text), URL (Text) ], Artist IDs (Array), Team IDs (Array), Collection IDs (Array), Exhibition IDs (Array), Published (Boolean), Published On (Date)
+- *Persons:* ID of This Object (Text),Category (Text), Name (Text), Alias (Text), Short Description (Text), Long Description (Text), Active Since (Date), Active Until (Date), Systems (Text), Tags (Array), Images (Array) [ URL (Text), Name (Text), Description (Text) ], Videos  (Array) [URL (Text), Name (Text), Description (Text) ], Artifact IDs (Array), Team IDs (Array), Collection IDs (Array), Exhibition IDs (Array), Published (Boolean), Published On (Date)
+- *Teams:* ID of This Object (Text), Category (Text), Name (Text), Alias (Text), Short Description (Text), Long Description (Text), Active Since (Date), Active Until (Date), Systems (Array), Tags (Array), Artifact IDs (Array), Artist IDs (Array), Team IDs (Array), Collection IDs (Array), Exhibition IDs (Array), Published (Boolean), Published On (Date)
+- *Collections:* ID of This Object (Text), Category (Text), Name (Text), Alias (Text), Website URL (Text), CuratorIDs (Array), Short Description (Text), Long Description (Text), Start Date (Date), Tags (Array), Images (Array) [ URL (Text), Name (Text), Description (Text) ], Videos (Array) [ URL (Text), Name (Text), Description (Text) ], Artifact IDs (Array), Team IDs (Array), Published (Boolean), Published On (Date)
+- *Exhibition:* ID of This Object (Text), Category (Text), Name (Text), Alias (Text), Website URL (Text), CuratorIDs (Array), Short Description (Text), Long Description (Text), Start Date (Date), End Date (Date), Tags (Array), Images (Array) [ URL (Text), Name (Text), Description (Text) ], Videos (Array) [ URL (Text), Name (Text), Description (Text) ], Artifact IDs (Array), Team IDs (Array), Published (Boolean), Published On (Date)
+- *Featured:* Featured Objects (Array) [ Featured Object ID (Text), Large Image URL (Text) ]
 
 ### Datenmodell
 
-![ADAM - Data Model](documentation/assets/adam-data-model.png)
+![ADAM - Data Model](documentation/assets/data-model.png)
 
 ## Benutzerrollen
 
@@ -92,23 +93,27 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
 ## Technologien
 
 *Webfrontend:*
-- Angular
-- Bootstrap
-- jQuery
-- TinyMCE
-- Datatables JS
-- ChartJS (optional)
+- Angular (Funktionalität)
+- Bootstrap (Design)
+- jQuery (Allgemein)
+- Datatables JS (User Management)
+- Lunr JS (Suche)
 
 *Registrierung und Usermanagement:*
-- auth0.com
+- auth0.com (Login, Registrierung, Benutzerprofil)
 
 *API Server:*
-- nodeJS
+- Node JS
 - Express
 - MongoDB
-- Heroku
+- Heroku (Hosting)
 
 *Mobile App:*
-- nodeJS
+- Node JS
 - Cordova
 - Onsen UI
+
+## Aktualisierungen
+*13. Juli 2020:* Aktualisiertes Datenmodelldiagramm
+*12. Juli 2020:* Testdaten als JSON-Datei
+*6. Juli 2020:* Erstfassung der Dokumentation 
