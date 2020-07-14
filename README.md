@@ -36,6 +36,8 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
 
 ### 2. _Öffentlicher Bereich im Web-Frontend_ und fünf Arten von Ansichten:
 
+![ADAM - Data Model](documentation/assets/sitemap-public.png)
+
 1. *Startseite* mit Karussell für Einträge, die von Admins als "besonders interessant" markierte wurden, sowie ein Grid mit acht der chronologisch zuletzt publizierten Einträge, allgemeine Informationen über die Plattform, Suchfunktion und eine Kategorienauswahl, die beide auf die Suchergebnisseite mit Filtermöglichkeiten führt.
     
 2. *Suchergebnisseite* auf der die Suchergebnisse gefiltert werden können.
