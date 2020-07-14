@@ -30,6 +30,15 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
 ### 1. _API-Server_ auf Heroku unter Verwendung von MongoDB mit Schnittstellen für...
 
 1. *Ansehen/holen* bestehender Einträge (GET)
+    a. /artifacts
+    b. /artifacts/:id
+    c. /persons
+    d. /persons/:id
+    e. /collections
+    f. /collections/:id
+    g. /exhibitions
+    h. /exhibitions/:id
+    i. /featured
 2. *Erstellen* neuer Einträge (POST)
 3. *Bearbeiten* bestehender Einträge (PUT)
 4. Es gibt kein Delete, sondern nur ein PUT, um einen *Eintrag als gelöscht* zu markieren
