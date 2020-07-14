@@ -1,0 +1,22 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "API server for digital art and media archive data.",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main",
+    "dev2": "nodemon main",
+    "dev": "node monitor"
+  },
+  "keywords": [
+    "Digital Archive",
+    "ADAM",
+    "API",
+    "Server"
+  ],
+  "author": "Marin Balabanov",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
