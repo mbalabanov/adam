@@ -266,12 +266,5 @@
             "published": "true",
             "publishedOn": "2020-07-12"
         }
-	],
-    "featured":
-    [
-        {
-            "featuredID": "a0",
-            "largeImageURL": "https://democyclopedia.files.wordpress.com/2017/04/panorama.jpg"
-        }
     ]
 }

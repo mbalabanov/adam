@@ -34,6 +34,8 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
     - /artifacts/:id
     - /persons
     - /persons/:id
+    - /teams
+    - /teams/:id
     - /collections
     - /collections/:id
     - /exhibitions
@@ -157,6 +159,6 @@ Als Datenbank wird MongoDB verwendet, das ein Dokument-basiertes Datenmodell hat
 - Onsen UI
 
 ## Aktualisierungen
-- *13. Juli 2020:* Datenmodelldiagramm und Wireframes aktualisiert
+- *13. Juli 2020:* Datenmodelldiagramm, Sitemap und Wireframes aktualisiert
 - *12. Juli 2020:* Testdaten als JSON-Datei
 - *8. Juli 2020:* Erstfassung der Dokumentation 
