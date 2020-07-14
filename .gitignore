@@ -2,3 +2,5 @@
 .DS_Store
 server/node_modules/*
 server/package-lock.json
+webfrontend/package-lock.json
+package-lock.json

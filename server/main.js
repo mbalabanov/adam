@@ -1,29 +1,23 @@
-const fs = require('fs');
-const path = require('path');
-const express = require('express');
-const bodyParser = require('body-parser');
+var express = require( 'express' );
+var bp = require( 'body-parser' );
+var fs = require( 'fs' );
 
-// Init express
+// Initialisierung von express
 const app = express();
-const PORT = 5003;
+const serverport = 5003;
 
-// Express middleware
-app.use(bodyParser.json());
+/* Serverport definieren */
+app.listen(serverport);
+console.log('Express started on port ' + serverport);
 
-// Load data from json-file & make data transformations on in-memory data while server is running
-let archivedata = JSON.parse(fs.readFileSync('data/archivedata.json'));
 
-// @route GET /artifacts
-// @desc Get all data - names + birthday
-app.get('/artifacts', (req, res) => {
-  console.log('GET /artifacts');
-  if (users) {
-    res.status(200).json(archivedata);
-  } else {
-    res.status(500).json({ msg: 'Internal Server Error (500)' });
-  }
-});
+/* Alle Daten zurückgeben */
+app.get('/alldata', function(req, res){
 
-app.listen(PORT, () => {
-  console.log(`Server running and listening on PORT ${PORT}`);
-});
+    fs.readFile('data/archivedata.json', 'utf8', function(err, contents) {
+      var alledaten = {};
+      alledaten = contents;
+      res.send(alledaten);
+    });
+  
+  });
