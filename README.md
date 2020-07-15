@@ -89,6 +89,9 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
     
 5. Eintrag mit Fotos und Video URLs hochladen
 
+### Mobile App Wireframes
+![Mobile App](documentation/assets/mobile-app-wireframes.png)
+
 ## Daten in der DB
 
 Als Datenbank wird MongoDB verwendet, das ein Dokument-basiertes Datenmodell hat.
