@@ -162,6 +162,7 @@ Als Datenbank wird MongoDB verwendet, das ein Dokument-basiertes Datenmodell hat
 - Onsen UI
 
 ## Aktualisierungen
+- *24. Juli 2020:* Erster unvollständiger Versuch, mit der API und dem Webfrontend (noch ohne Angular) zu Versuchszwecken.
 - *15. Juli 2020:* Mobile App Wireframes hinzugefügt, API aktualisiert, GET-API-Aufrufe bereit, Domain demoarchive.art registriert.
 - *13. Juli 2020:* Datenmodelldiagramm, Sitemap und Wireframes aktualisiert
 - *12. Juli 2020:* Testdaten als JSON-Datei
