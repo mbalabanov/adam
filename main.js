@@ -3,6 +3,7 @@ const bp = require( 'body-parser' );
 const morgan = require('morgan');
 const { loadData, instructions, getItems, getItem, deleteItem, editArtifact, editPerson, editTeam, editCollection, editExhibition, editFeatured } = require('./controller');
 const app = express();
+const port = process.env.PORT || 5003;
 
 app.use( bp.urlencoded({ extended:false}) );
 
@@ -16,8 +17,8 @@ app.use(bp.urlencoded({ extended: false }));
 app.use(morgan('common', { immediate: true }));
 
 /* Server-Port */
-app.listen(5003);
-console.log('Express started on port 5003');
+app.listen(port);
+console.log('Express started on port ' + port);
 
 loadData();
 
