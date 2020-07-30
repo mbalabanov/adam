@@ -217,7 +217,7 @@ _Bitte beachten Sie, dass auf der Startseite ausgewiesenen Beiträge (featured i
 _Bitte beachten Sie, dass kein neuer auf der Startseite ausgewiesenen Beitrag (featured item) erstellt werden sollte. Auf der Startseite sollten möglichst nur drei Beiträge ausgewiesen sein._
 
 ## Aktualisierungen
-- *30. Juli 2020:* API fertiggestellt und auf Heroku gestellt (Deployment noch fehlerhaft).
+- *30. Juli 2020:* API fertiggestellt und auf https://adam-interface.herokuapp.com gestellt.
 - *24. Juli 2020:* Erster unvollständiger Versuch, mit der API und dem Webfrontend (noch ohne Angular) zu Versuchszwecken.
 - *15. Juli 2020:* Mobile App Wireframes hinzugefügt, API aktualisiert, GET-API-Aufrufe bereit, Domain demoarchive.art registriert.
 - *13. Juli 2020:* Datenmodelldiagramm, Sitemap und Wireframes aktualisiert
