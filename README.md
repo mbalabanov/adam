@@ -31,50 +31,26 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
 
 ### 1. _API-Server_ auf Heroku unter Verwendung von MongoDB mit Schnittstellen für...
 
-#### GET:
-- _/_ - Anleitung
+- Ansehen/holen bestehender Einträge (GET)
+    - /artifacts
+    - /artifacts/:id
+    - /persons
+    - /persons/:id
+    - /teams
+    - /teams/:id
+    - /collections
+    - /collections/:id
+    - /exhibitions
+    - /exhibitions/:id
+    - /featured
 
-#### GET (OHNE einer ID):
-- _/artifacts_ - Alle artifacts (Kunstwerke).
-- _/persons_ - Alle persons (Künstler, Kuratoren).
-- _/teams_ - Alle teams (Künstlerkollektive).
-- _/collections_ - Alle collections (Kunstsammlungen).
-- _/exhibitions_ - Alle exhibitions (Ausstellungen.
-- _/featured_ - Die drei auf der Startseite ausgewiesenen Einträge.
+- Erstellen neuer Einträge (POST)
 
-#### GET (MIT einer ID):
-- _/artifacts/id_ - Ein einzelnes artifact (Kunstwerk).
-- _/persons/id_ - Eine einzelne person (Künstler, Kuratoren).
-- _/teams/id_ - Ein einzelnes team (Künstlerkollektiv).
-- _/collections/id_ - Eine einzelne collection (Kunstsammlungen).
-- _/exhibitions/id_ - Eine einzelne exhibition (Ausstellungen).
-- _/featured/id_ - Einen der drei auf der Startseite ausgewiesenen Beiträge.
+- Bearbeiten bestehender Einträge (PUT)
 
-#### DELETE (MIT einer ID):
-- _/artifacts/id_ - Ein einzelnes artifact (Kunstwerk) auf unveröffentlicht setzen.
-- _/persons/id_ - Eine einzelne person (Künstler, Kuratoren) auf unveröffentlicht setzen.
-- _/teams/id_ - Ein einzelnes team (Künstlerkollektiv) auf unveröffentlicht setzen.
-- _/collections/id_ - Eine einzelne collection (Kunstsammlung) auf unveröffentlicht setzen.
-- _/exhibitions/id_ - Eine einzelne exhibition (Ausstellungen) auf unveröffentlicht setzen.
+- Einträge auf unveröffentlicht/gelöscht setzen (DELETE)
 
-_Bitte beachten Sie, dass auf der Startseite ausgewiesenen Beiträge (featured items) nicht auf unveröffentlicht gesetzt werden können._
-
-#### PUT (MIT einer ID):
-- _/artifacts/id_ - Ein einzelnes artifact (Kunstwerk) bearbeiten.
-- _/persons/id_ - Eine einzelne person (Künstler, Kuratoren) bearbeiten.
-- _/teams/id_ - Ein einzelnes team (Künstlerkollektiv) bearbeiten.
-- _/collections/id_ - Eine einzelne collection (Kunstsammlung) bearbeiten.
-- _/exhibitions/id_ - Eine einzelne exhibition (Ausstellungen)bearbeiten.
-
-#### POST (MIT der Parameter new):
-- _/artifacts/new_ - Ein einzelnes artifact (Kunstwerk) erstellen.
-- _/persons/new_ - Eine einzelne person (Künstler, Kuratoren) erstellen.
-- _/teams/new_ - Ein einzelnes team (Künstlerkollektiv) erstellen.
-- _/collections/new_ - Eine einzelne collection (Kunstsammlung) erstellen.
-- _/exhibitions/new_ - Eine einzelne exhibition (Ausstellungen) erstellen.
-
-_Bitte beachten Sie, dass kein neuer auf der Startseite ausgewiesenen Beitrag (featured item) erstellt werden sollte. Auf der Startseite sollten möglichst nur drei Beiträge ausgewiesen sein._
-
+Für mehr Details zur API siehe Dokumentation weiter unten.
 
 ### 2. _Öffentlicher Bereich im Web-Frontend_ und fünf Arten von Ansichten:
 
@@ -191,6 +167,54 @@ Als Datenbank wird MongoDB verwendet, das ein Dokument-basiertes Datenmodell hat
 - Node JS
 - Cordova
 - Onsen UI
+
+## API-Dokumentation
+
+Die API ist verfügbar unter https://adam-interface.herokuapp.com
+
+#### GET:
+- _/_ - Anleitung
+
+#### GET (OHNE einer ID):
+- _/artifacts_ - Alle artifacts (Kunstwerke).
+- _/persons_ - Alle persons (Künstler, Kuratoren).
+- _/teams_ - Alle teams (Künstlerkollektive).
+- _/collections_ - Alle collections (Kunstsammlungen).
+- _/exhibitions_ - Alle exhibitions (Ausstellungen.
+- _/featured_ - Die drei auf der Startseite ausgewiesenen Einträge.
+
+#### GET (MIT einer ID):
+- _/artifacts/id_ - Ein einzelnes artifact (Kunstwerk).
+- _/persons/id_ - Eine einzelne person (Künstler, Kuratoren).
+- _/teams/id_ - Ein einzelnes team (Künstlerkollektiv).
+- _/collections/id_ - Eine einzelne collection (Kunstsammlungen).
+- _/exhibitions/id_ - Eine einzelne exhibition (Ausstellungen).
+- _/featured/id_ - Einen der drei auf der Startseite ausgewiesenen Beiträge.
+
+#### DELETE (MIT einer ID):
+- _/artifacts/id_ - Ein einzelnes artifact (Kunstwerk) auf unveröffentlicht setzen.
+- _/persons/id_ - Eine einzelne person (Künstler, Kuratoren) auf unveröffentlicht setzen.
+- _/teams/id_ - Ein einzelnes team (Künstlerkollektiv) auf unveröffentlicht setzen.
+- _/collections/id_ - Eine einzelne collection (Kunstsammlung) auf unveröffentlicht setzen.
+- _/exhibitions/id_ - Eine einzelne exhibition (Ausstellungen) auf unveröffentlicht setzen.
+
+_Bitte beachten Sie, dass auf der Startseite ausgewiesenen Beiträge (featured items) nicht auf unveröffentlicht gesetzt werden können._
+
+#### PUT (MIT einer ID):
+- _/artifacts/id_ - Ein einzelnes artifact (Kunstwerk) bearbeiten.
+- _/persons/id_ - Eine einzelne person (Künstler, Kuratoren) bearbeiten.
+- _/teams/id_ - Ein einzelnes team (Künstlerkollektiv) bearbeiten.
+- _/collections/id_ - Eine einzelne collection (Kunstsammlung) bearbeiten.
+- _/exhibitions/id_ - Eine einzelne exhibition (Ausstellungen)bearbeiten.
+
+#### POST (MIT der Parameter new):
+- _/artifacts/new_ - Ein einzelnes artifact (Kunstwerk) erstellen.
+- _/persons/new_ - Eine einzelne person (Künstler, Kuratoren) erstellen.
+- _/teams/new_ - Ein einzelnes team (Künstlerkollektiv) erstellen.
+- _/collections/new_ - Eine einzelne collection (Kunstsammlung) erstellen.
+- _/exhibitions/new_ - Eine einzelne exhibition (Ausstellungen) erstellen.
+
+_Bitte beachten Sie, dass kein neuer auf der Startseite ausgewiesenen Beitrag (featured item) erstellt werden sollte. Auf der Startseite sollten möglichst nur drei Beiträge ausgewiesen sein._
 
 ## Aktualisierungen
 - *24. Juli 2020:* Erster unvollständiger Versuch, mit der API und dem Webfrontend (noch ohne Angular) zu Versuchszwecken.
