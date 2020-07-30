@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADAM API-Instructions</title>
+        <style>
+            body {font-family:Arial, Helvetica, sans-serif; background-color: lightskyblue;}
+            .instructions {width: 80%; padding: 2rem; margin: 0 auto; border: solid gray 1px; background-color: white;}
+        </style>
+    </head>
+
+    <body>
+        <div class="instructions">
+            <h1>Welcome to the ADAM-API</h1>
+
+            <p>This is the application programming interface of the <strong>Archive of Digital Art and Media</strong>. You can access <strong>artifacts</strong>, <strong>persons</strong> (artists, curators), <strong>teams</strong> (artists' collectives), <strong>collections</strong>, <strong>exhibitions</strong> and the <strong>featured</strong> items.</p>
+
+            <h2>GET (WITHOUT an ID):</h2>
+            <ul>
+                <li><strong>/artifacts</strong> - All artifacts.</li>
+                <li><strong>/persons</strong> - All persons.</li>
+                <li><strong>/teams</strong> - All teams (artists' collectives).</li>
+                <li><strong>/collections</strong> - All collections of artifacts.</li>
+                <li><strong>/exhibitions</strong> - All exhibitions.</li>
+                <li><strong>/featured</strong> - The three items to be featured on the frontpage.</li>
+            </ul>
+
+            <h2>GET (WITH an ID):</h2>
+            <ul>
+                <li><strong>/artifacts/id</strong> - A specific item from the list of artifacts.</li>
+                <li><strong>/persons/id</strong> - A specific item from the list of persons.</li>
+                <li><strong>/teams/id</strong> - A specific item from the list of teams (artists' collectives).</li>
+                <li><strong>/collections/id</strong> - A specific item from the list of collections of artifacts.</li>
+                <li><strong>/exhibitions/id</strong> - A specific item from the list of exhibitions.</li>
+                <li><strong>/featured/id</strong> - A specific item of the three featured on the frontpage.</li>
+            </ul>
+
+            <h2>DELETE (WITH an ID):</h2>
+            <ul>
+                <li><strong>/artifacts/id</strong> - Set a specific item from the list of artifacts to unpublished.</li>
+                <li><strong>/persons/id</strong> - Set a specific item from the list of persons to unpublished.</li>
+                <li><strong>/teams/id</strong> - Set a specific item from the list of teams (artists' collectives)  to unpublished.</li>
+                <li><strong>/collections/id</strong> - Set a specific item from the list of collections of artifacts to unpublished.</li>
+                <li><strong>/exhibitions/id</strong> - Set a specific item from the list of exhibitions to unpublished.</li>
+            </ul>
+            <p><em>Please note that featured items cannot be deleted/unpublished.</em></p>
+
+            <h2>PUT (WITH an ID):</h2>
+            <ul>
+                <li><strong>/artifacts/id</strong> - Edit a specific item from the list of artifacts.</li>
+                <li><strong>/persons/id</strong> - Edit a specific item from the list of persons.</li>
+                <li><strong>/teams/id</strong> - Edit a specific item from the list of teams (artists' collectives).</li>
+                <li><strong>/collections/id</strong> - Edit a specific item from the list of collections of artifacts.</li>
+                <li><strong>/exhibitions/id</strong> - Edit a specific item from the list of exhibitions.</li>
+                <li><strong>/featured/id</strong> - Edit a specific item from the list of featured on the frontpage.</li>
+            </ul>
+
+            <h2>POST (WITH the parameter 'new'):</h2>
+            <ul>
+                <li><strong>/artifacts/new</strong> - Create a new item in the list of artifacts.</li>
+                <li><strong>/persons/new</strong> - Create a new item in the list of persons.</li>
+                <li><strong>/teams/new</strong> - Create a new item in the list of teams (artists' collectives).</li>
+                <li><strong>/collections/new</strong> - Create a new item in the list of collections of artifacts.</li>
+                <li><strong>/exhibitions/new</strong> - Create a new item in the list of exhibitions.</li>
+            </ul>
+            <p><em>Please note that new featured items should not be created. The total number should be kept at three featured items.</em></p>
+        </div>
+    </body>
+</html>

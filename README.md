@@ -31,21 +31,52 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
 
 ### 1. _API-Server_ auf Heroku unter Verwendung von MongoDB mit Schnittstellen für...
 
-1. *Ansehen/holen* bestehender Einträge (GET)
-    - /artifacts
-    - /artifacts/:id
-    - /persons
-    - /persons/:id
-    - /teams
-    - /teams/:id
-    - /collections
-    - /collections/:id
-    - /exhibitions
-    - /exhibitions/:id
-    - /featured
-2. *Erstellen* neuer Einträge (POST)
-3. *Bearbeiten* bestehender Einträge (PUT)
-4. Es gibt kein Delete, sondern nur ein PUT, um einen *Eintrag als gelöscht* zu markieren
+## GET (OHNE einer ID):
+
+- _/artifacts_ - Alle artifacts (Kunstwerke).
+- _/persons_ - Alle persons (Künstler, Kuratoren).
+- _/teams_ - Alle teams (Künstlerkollektive).
+- _/collections_ - Alle collections (Kunstsammlungen).
+- _/exhibitions_ - Alle exhibitions (Ausstellungen.
+- _/featured_ - Die drei auf der Startseite ausgewiesenen Einträge.
+
+## GET (MIT einer ID):
+
+- _/artifacts/id_ - Ein einzelnes artifact (Kunstwerk).
+- _/persons/id_ - Eine einzelne person (Künstler, Kuratoren).
+- _/teams/id_ - Ein einzelnes team (Künstlerkollektiv).
+- _/collections/id_ - Eine einzelne collection (Kunstsammlungen).
+- _/exhibitions/id_ - Eine einzelne exhibition (Ausstellungen).
+- _/featured/id_ - Einen der drei auf der Startseite ausgewiesenen Beiträge.
+
+## DELETE (MIT einer ID):
+
+- _/artifacts/id_ - Ein einzelnes artifact (Kunstwerk) auf unveröffentlicht setzen.
+- _/persons/id_ - Eine einzelne person (Künstler, Kuratoren) auf unveröffentlicht setzen.
+- _/teams/id_ - Ein einzelnes team (Künstlerkollektiv) auf unveröffentlicht setzen.
+- _/collections/id_ - Eine einzelne collection (Kunstsammlung) auf unveröffentlicht setzen.
+- _/exhibitions/id_ - Eine einzelne exhibition (Ausstellungen) auf unveröffentlicht setzen.
+
+_Bitte beachten Sie, dass auf der Startseite ausgewiesenen Beiträge (featured items) nicht auf unveröffentlicht gesetzt werden können._
+
+## PUT (MIT einer ID):
+
+- _/artifacts/id_ - Ein einzelnes artifact (Kunstwerk) bearbeiten.
+- _/persons/id_ - Eine einzelne person (Künstler, Kuratoren) bearbeiten.
+- _/teams/id_ - Ein einzelnes team (Künstlerkollektiv) bearbeiten.
+- _/collections/id_ - Eine einzelne collection (Kunstsammlung) bearbeiten.
+- _/exhibitions/id_ - Eine einzelne exhibition (Ausstellungen)bearbeiten.
+
+## POST (MIT der Parameter new):
+
+- _/artifacts/new_ - Ein einzelnes artifact (Kunstwerk) erstellen.
+- _/persons/new_ - Eine einzelne person (Künstler, Kuratoren) erstellen.
+- _/teams/new_ - Ein einzelnes team (Künstlerkollektiv) erstellen.
+- _/collections/new_ - Eine einzelne collection (Kunstsammlung) erstellen.
+- _/exhibitions/new_ - Eine einzelne exhibition (Ausstellungen) erstellen.
+
+_Bitte beachten Sie, dass kein neuer auf der Startseite ausgewiesenen Beitrag (featured item) erstellt werden sollte. Auf der Startseite sollten möglichst nur drei Beiträge ausgewiesen sein._
+
 
 ### 2. _Öffentlicher Bereich im Web-Frontend_ und fünf Arten von Ansichten:
 
@@ -99,10 +130,10 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ mit einer Datenbank und Schnitt
 Als Datenbank wird MongoDB verwendet, das ein Dokument-basiertes Datenmodell hat.
 
 - *Artifacts:* ID of This Object (Text), Category (Text), Name (Text), Short Description (Text), Long Description (Text), First Appearance (Date), Systems (Array), Tags (Array), Images (Array) [ URL (Text), Name (Text), Description (Text) ], Videos (Array) [ URL (Text), Name (Text) Description (Text) ], Website URLs  (Array) [ Name (Text), URL (Text) ], Assets (Array) [ Name (Text), URL (Text) ], Artist IDs (Array), Team IDs (Array), Collection IDs (Array), Exhibition IDs (Array), Published (Boolean), Published On (Date)
-- *Persons:* ID of This Object (Text),Category (Text), Name (Text), Alias (Text), Short Description (Text), Long Description (Text), Active Since (Date), Active Until (Date), Systems (Text), Tags (Array), Images (Array) [ URL (Text), Name (Text), Description (Text) ], Videos  (Array) [URL (Text), Name (Text), Description (Text) ], Artifact IDs (Array), Team IDs (Array), Collection IDs (Array), Exhibition IDs (Array), Published (Boolean), Published On (Date)
-- *Teams:* ID of This Object (Text), Category (Text), Name (Text), Alias (Text), Short Description (Text), Long Description (Text), Active Since (Date), Active Until (Date), Systems (Array), Tags (Array), Artifact IDs (Array), Artist IDs (Array), Team IDs (Array), Collection IDs (Array), Exhibition IDs (Array), Published (Boolean), Published On (Date)
-- *Collections:* ID of This Object (Text), Category (Text), Name (Text), Alias (Text), Website URL (Text), CuratorIDs (Array), Short Description (Text), Long Description (Text), Start Date (Date), Tags (Array), Images (Array) [ URL (Text), Name (Text), Description (Text) ], Videos (Array) [ URL (Text), Name (Text), Description (Text) ], Artifact IDs (Array), Team IDs (Array), Published (Boolean), Published On (Date)
-- *Exhibition:* ID of This Object (Text), Category (Text), Name (Text), Alias (Text), Website URL (Text), CuratorIDs (Array), Short Description (Text), Long Description (Text), Start Date (Date), End Date (Date), Tags (Array), Images (Array) [ URL (Text), Name (Text), Description (Text) ], Videos (Array) [ URL (Text), Name (Text), Description (Text) ], Artifact IDs (Array), Team IDs (Array), Published (Boolean), Published On (Date)
+- *Persons:* ID of This Object (Text),Category (Text), Name (Text), Alias (Text), Short Description (Text), Long Description (Text), Active Since (Date), Active Until (Date), Systems (Text), Tags (Array), Images (Array) [ URL (Text), Name (Text), Description (Text) ], Videos  (Array) [URL (Text), Name (Text), Description (Text) ], Website URLs  (Array) [ Name (Text), URL (Text) ], Artifact IDs (Array), Team IDs (Array), Collection IDs (Array), Exhibition IDs (Array), Published (Boolean), Published On (Date)
+- *Teams:* ID of This Object (Text), Category (Text), Name (Text), Alias (Text), Short Description (Text), Long Description (Text), Active Since (Date), Active Until (Date), Systems (Array), Tags (Array), Images (Array) [ URL (Text), Name (Text), Description (Text) ], Videos  (Array) [URL (Text), Name (Text), Description (Text) ], Website URLs  (Array) [ Name (Text), URL (Text) ], Artifact IDs (Array), Artist IDs (Array), Collection IDs (Array), Exhibition IDs (Array), Published (Boolean), Published On (Date)
+- *Collections:* ID of This Object (Text), Category (Text), Name (Text), Alias (Text), Website URL (Text), CuratorIDs (Array), Short Description (Text), Long Description (Text), Start Date (Date), Tags (Array), Images (Array) [ URL (Text), Name (Text), Description (Text) ], Videos (Array) [ URL (Text), Name (Text), Description (Text) ], Website URLs  (Array) [ Name (Text), URL (Text) ], Artifact IDs (Array), Team IDs (Array), Published (Boolean), Published On (Date)
+- *Exhibition:* ID of This Object (Text), Category (Text), Name (Text), Alias (Text), Website URL (Text), CuratorIDs (Array), Short Description (Text), Long Description (Text), Start Date (Date), End Date (Date), Tags (Array), Images (Array) [ URL (Text), Name (Text), Description (Text) ], Videos (Array) [ URL (Text), Name (Text), Description (Text) ], Website URLs  (Array) [ Name (Text), URL (Text) ], Artifact IDs (Array), Team IDs (Array), Published (Boolean), Published On (Date)
 - *Featured:* Featured Objects (Array) [ Featured Object ID (Text), Large Image URL (Text) ]
 
 ### Datenmodell
