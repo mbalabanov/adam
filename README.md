@@ -172,47 +172,47 @@ Als Datenbank wird MongoDB verwendet, das ein Dokument-basiertes Datenmodell hat
 
 Die API ist verfügbar unter https://adam-interface.herokuapp.com
 
-#### GET:
-- _/_ - Anleitung
+#### GET (Root):
+- _/_ Anleitung
 
 #### GET (OHNE einer ID):
-- _/artifacts_ - Alle artifacts (Kunstwerke).
-- _/persons_ - Alle persons (Künstler, Kuratoren).
-- _/teams_ - Alle teams (Künstlerkollektive).
-- _/collections_ - Alle collections (Kunstsammlungen).
-- _/exhibitions_ - Alle exhibitions (Ausstellungen.
-- _/featured_ - Die drei auf der Startseite ausgewiesenen Einträge.
+- _/artifacts_ Alle artifacts (Kunstwerke).
+- _/persons_ Alle persons (Künstler, Kuratoren).
+- _/teams_ Alle teams (Künstlerkollektive).
+- _/collections_ Alle collections (Kunstsammlungen).
+- _/exhibitions_ Alle exhibitions (Ausstellungen.
+- _/featured_ Die drei auf der Startseite ausgewiesenen Einträge.
 
 #### GET (MIT einer ID):
-- _/artifacts/id_ - Ein einzelnes artifact (Kunstwerk).
-- _/persons/id_ - Eine einzelne person (Künstler, Kuratoren).
-- _/teams/id_ - Ein einzelnes team (Künstlerkollektiv).
-- _/collections/id_ - Eine einzelne collection (Kunstsammlungen).
-- _/exhibitions/id_ - Eine einzelne exhibition (Ausstellungen).
-- _/featured/id_ - Einen der drei auf der Startseite ausgewiesenen Beiträge.
+- _/artifacts/id_ Ein einzelnes artifact (Kunstwerk).
+- _/persons/id_ Eine einzelne person (Künstler, Kuratoren).
+- _/teams/id_ Ein einzelnes team (Künstlerkollektiv).
+- _/collections/id_ Eine einzelne collection (Kunstsammlungen).
+- _/exhibitions/id_ Eine einzelne exhibition (Ausstellungen).
+- _/featured/id_ Einen der drei auf der Startseite ausgewiesenen Beiträge.
 
 #### DELETE (MIT einer ID):
-- _/artifacts/id_ - Ein einzelnes artifact (Kunstwerk) auf unveröffentlicht setzen.
-- _/persons/id_ - Eine einzelne person (Künstler, Kuratoren) auf unveröffentlicht setzen.
-- _/teams/id_ - Ein einzelnes team (Künstlerkollektiv) auf unveröffentlicht setzen.
-- _/collections/id_ - Eine einzelne collection (Kunstsammlung) auf unveröffentlicht setzen.
-- _/exhibitions/id_ - Eine einzelne exhibition (Ausstellungen) auf unveröffentlicht setzen.
+- _/artifacts/id_ Ein einzelnes artifact (Kunstwerk) auf unveröffentlicht setzen.
+- _/persons/id_ Eine einzelne person (Künstler, Kuratoren) auf unveröffentlicht setzen.
+- _/teams/id_ Ein einzelnes team (Künstlerkollektiv) auf unveröffentlicht setzen.
+- _/collections/id_ Eine einzelne collection (Kunstsammlung) auf unveröffentlicht setzen.
+- _/exhibitions/id_ Eine einzelne exhibition (Ausstellungen) auf unveröffentlicht setzen.
 
 _Bitte beachten Sie, dass auf der Startseite ausgewiesenen Beiträge (featured items) nicht auf unveröffentlicht gesetzt werden können._
 
 #### PUT (MIT einer ID):
-- _/artifacts/id_ - Ein einzelnes artifact (Kunstwerk) bearbeiten.
-- _/persons/id_ - Eine einzelne person (Künstler, Kuratoren) bearbeiten.
-- _/teams/id_ - Ein einzelnes team (Künstlerkollektiv) bearbeiten.
-- _/collections/id_ - Eine einzelne collection (Kunstsammlung) bearbeiten.
-- _/exhibitions/id_ - Eine einzelne exhibition (Ausstellungen)bearbeiten.
+- _/artifacts/id_ Ein einzelnes artifact (Kunstwerk) bearbeiten.
+- _/persons/id_ Eine einzelne person (Künstler, Kuratoren) bearbeiten.
+- _/teams/id_ Ein einzelnes team (Künstlerkollektiv) bearbeiten.
+- _/collections/id_ Eine einzelne collection (Kunstsammlung) bearbeiten.
+- _/exhibitions/id_ Eine einzelne exhibition (Ausstellungen)bearbeiten.
 
 #### POST (MIT der Parameter new):
-- _/artifacts/new_ - Ein einzelnes artifact (Kunstwerk) erstellen.
-- _/persons/new_ - Eine einzelne person (Künstler, Kuratoren) erstellen.
-- _/teams/new_ - Ein einzelnes team (Künstlerkollektiv) erstellen.
-- _/collections/new_ - Eine einzelne collection (Kunstsammlung) erstellen.
-- _/exhibitions/new_ - Eine einzelne exhibition (Ausstellungen) erstellen.
+- _/artifacts/new_ Ein einzelnes artifact (Kunstwerk) erstellen.
+- _/persons/new_ Eine einzelne person (Künstler, Kuratoren) erstellen.
+- _/teams/new_ Ein einzelnes team (Künstlerkollektiv) erstellen.
+- _/collections/new_ Eine einzelne collection (Kunstsammlung) erstellen.
+- _/exhibitions/new_ Eine einzelne exhibition (Ausstellungen) erstellen.
 
 _Bitte beachten Sie, dass kein neuer auf der Startseite ausgewiesenen Beitrag (featured item) erstellt werden sollte. Auf der Startseite sollten möglichst nur drei Beiträge ausgewiesen sein._
 
