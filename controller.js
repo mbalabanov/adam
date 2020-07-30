@@ -62,8 +62,6 @@ function deleteItem(request, response) {
     var checkId = parseInt(deleteId);
     var maxId = eval(dataType).length;
 
-    console.log(maxId);
-
     if (checkId >= maxId) {
         response.send(deleteId + ' not a valid ID.');
     } else {
