@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HeaderComponent } from './header/header.component';
 import { IntroComponent } from './intro/intro.component';
+import { SearchComponent } from './search/search.component';
 import { ListComponent } from './list/list.component';
 import { FeaturesComponent } from './features/features.component';
 import { NewsComponent } from './news/news.component';
@@ -28,6 +29,7 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
     NavbarComponent,
     HeaderComponent,
     IntroComponent,
+    SearchComponent,
     ListComponent,
     FeaturesComponent,
     NewsComponent,
