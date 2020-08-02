@@ -15,7 +15,6 @@ import { BlogComponent } from './blog/blog.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { StandardheaderComponent } from './standardheader/standardheader.component';
 import { BlogpostComponent } from './blogpost/blogpost.component';
-import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 import { CategorydetailComponent } from './categorydetail/categorydetail.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
@@ -39,7 +38,6 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
     PortfolioComponent,
     StandardheaderComponent,
     BlogpostComponent,
-    ShoppingcartComponent,
     CategorydetailComponent,
     AboutComponent,
     ContactComponent,
