@@ -3,7 +3,7 @@
     linear-gradient( rgba(0, 0, 0, 0.5), transparent), /* bottom, image */
     url('assets/img/new-media-art-background.jpg');
     background-size: cover;
-    height: 36rem;
+    height: 38rem;
 }
 
 .mainheader h1 {

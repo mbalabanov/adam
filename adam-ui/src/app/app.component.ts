@@ -8,14 +8,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent {
 
-  url = 'https://adam-interface.herokuapp.com/artifacts';
-
   title = 'Archive of Digital Art & Media';
+  url = 'https://adam-interface.herokuapp.com/all';
+  allDataReveived;
 
   constructor(private http: HttpClient) {
 
     this.http.get(this.url).toPromise().then(data => {
       console.log(data);
+      this.allDataReveived = data;
     });
 
   }

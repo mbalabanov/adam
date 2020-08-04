@@ -29,6 +29,10 @@ app.get('/', function(request, response) {
   instructions(request, response);
 });
 
+app.get('/all', function(request, response) {
+  getAll(request, response);
+});
+
 app.get(['/artifacts', '/artifacts/', '/persons', '/persons/', '/teams', '/teams/', '/collections', '/collections/', '/exhibitions', '/exhibitions/', '/featured', '/featured/'], function(request, response) {
   getItems(request, response);
 });

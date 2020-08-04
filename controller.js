@@ -1,6 +1,7 @@
 const bp = require( 'body-parser' );
 const fs = require( 'fs' );
 
+let allData = {};
 let artifacts = [];
 let persons = [];
 let teams = [];
@@ -17,7 +18,7 @@ function loadData() {
 
     fs.readFile('data/archivedata.json', 'utf8', function(err, contents) {
 
-        const allData = JSON.parse(contents);
+        allData = JSON.parse(contents);
 
         artifacts = allData.artifacts;
         persons = allData.persons;
@@ -31,6 +32,11 @@ function loadData() {
         instructiontext = contents;
     });
 
+};
+
+function getAll(request, response) {
+    response.setHeader('Content-Type', 'application/json');
+    response.send(allData);
 };
 
 function getItems(request, response) {
