@@ -1,26 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { photoCategories } from '../photoinfos';
+import { archiveCategories } from '../photoinfos';
 import { FormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @Component({
-  selector: 'app-categorydetail',
-  templateUrl: './categorydetail.component.html',
-  styleUrls: ['./categorydetail.component.css']
+  selector: 'app-archivedetail',
+  templateUrl: './archivedetail.component.html',
+  styleUrls: ['./archivedetail.component.css']
 })
-export class CategorydetailComponent implements OnInit {
+export class ArchivedetailComponent implements OnInit {
 
-	photoCategories = photoCategories;
-	photoCategory;
+	archiveCategories = archiveCategories;
+	archiveCategory;
 	searchText;
 
 	constructor(private route: ActivatedRoute) { }
 
 	ngOnInit(): void {
     function getCategoryIndex(arg) {
-                for(var i = 0; i < photoCategories.length; i += 1) {
-                    if(photoCategories[i].name.toLowerCase() === arg) {
+                for(var i = 0; i < archiveCategories.length; i += 1) {
+                    if(archiveCategories[i].name.toLowerCase() === arg) {
                         return i;
                     }
                 }
@@ -29,7 +29,7 @@ export class CategorydetailComponent implements OnInit {
       this.route.paramMap.subscribe(params => {
           let slug = params.get('categoryId');
           let theIndex = getCategoryIndex(slug);
-          this.photoCategory = photoCategories[theIndex];
+          this.archiveCategory = archiveCategories[theIndex];
       });
 	}
 

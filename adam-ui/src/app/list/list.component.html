@@ -7,13 +7,13 @@
             </div>
         </div>
         <div class="row px-3">
-			<div class="col-lg-4 col-sm-6 text-center my-3" *ngFor="let photoCategory of photoCategories">
+			<div class="col-lg-4 col-sm-6 text-center my-3" *ngFor="let archiveCategory of archiveCategories">
                 <div class="relative text-center">
-                    <a [routerLink]="['/category', (photoCategory.name).toLowerCase()]">
-    				    <img src="{{ photoCategory.photo }}" alt="{{ photoCategory.name }}" class="img-fluid rounded">
+                    <a [routerLink]="['/category', (archiveCategory.name).toLowerCase()]">
+    				    <img src="{{ archiveCategory.photo }}" alt="{{ archiveCategory.name }}" class="img-fluid rounded">
                     </a>
                     <div class="absolute text-white">
-                        <h3 class="pt-1 px-2"><a [routerLink]="['/category', (photoCategory.name).toLowerCase()]">{{ photoCategory.name }}</a></h3>
+                        <h3 class="pt-1 px-2"><a [routerLink]="['/category', (archiveCategory.name).toLowerCase()]">{{ archiveCategory.name }}</a></h3>
                     </div>
                 </div>
 			</div>

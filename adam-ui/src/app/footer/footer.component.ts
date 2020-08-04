@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { newsitems } from '../blogdata';
+import { newsitems } from '../newsdata';
 
 @Component({
   selector: 'app-footer',

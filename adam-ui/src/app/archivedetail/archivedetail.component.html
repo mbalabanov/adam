@@ -5,34 +5,35 @@
             <nav aria-label="breadcrumb" class="mt-2">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a  routerLink="/">Home</a></li>
-                    <li class="breadcrumb-item"><a  routerLink="/portfolio">Archive</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Archive Category: {{ photoCategory.name }}</li>
+                    <li class="breadcrumb-item"><a  routerLink="/archive">Archive</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Archive Category: {{ archiveCategory.name }}</li>
                 </ol>
             </nav>
 			<div class="dropdown ml-2 mb-2">
 				<button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					Categories
+					Archive Categories
 				</button>
 				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
-					<a class="dropdown-item" *ngFor="let photoCategory of photoCategories" [routerLink]="['/category', (photoCategory.name).toLowerCase()]">{{ photoCategory.name }}</a>
+					<a class="dropdown-item" *ngFor="let archiveCategory of archiveCategories" [routerLink]="['/category', (archiveCategory.name).toLowerCase()]">{{ archiveCategory.name }}</a>
 				</div>
 			</div>
 		</div>
 	</div>
     <div class="row">
 		<div class="col-10 offset-1 text-center">
-			<h2>Archive Category: {{ photoCategory.name }}</h2>
-			<h3>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</h3> 
+			<h2>Archive Category: {{ archiveCategory.name }}</h2>
+			<h3>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</h3>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-6 offset-3 text-center mb-4">
-			<h4 class="mt-3">Search {{ photoCategory.name }}</h4>
+			<h4 class="mt-3">Search {{ archiveCategory.name }}</h4>
 			<input matInput placeholder="Search..." [(ngModel)]="searchText" name="search" type="text" autofocus class="p-2 search-field">
 		</div>
 	</div>
-	<div class="row px-5 mb-5">
-		<div class="col-lg-4 col-sm-6 text-center my-3" *ngFor="let item of photoCategory.content | filter:searchText">
+	<div class="container">
+	  <div class="row px-5 mb-5">
+		<div class="col-lg-4 col-sm-6 text-center my-3" *ngFor="let item of archiveCategory.content | filter:searchText">
 
 			<!-- Modal -->
 			<div class="modal fade" id="id{{ item.id }}" tabindex="-1" role="dialog" [attr.aria-labelledby]="'id' + item.id" aria-hidden="true">
@@ -62,6 +63,7 @@
 		    <h3 class="mt-2">{{ item.name }}</h3>
 			<p><a class="btn btn-outline-success ml-1 mt-2" href="{{ item.fullPhoto }}" target="_blank">Show full image</a></p>
 		</div>
+    </div>
 	</div>
 </div>
 <app-footer></app-footer>

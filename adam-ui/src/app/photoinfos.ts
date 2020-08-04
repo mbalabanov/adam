@@ -1,4 +1,4 @@
-export let photoCategories = [
+export let archiveCategories = [
 	{
 		name: 'Collections',
 		photo: 'assets/img/collections/collections1.jpg',

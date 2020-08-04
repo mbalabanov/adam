@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { photoCategories } from '../photoinfos';
+import { archiveCategories } from '../photoinfos';
 
 @Component({
   selector: 'app-list',
@@ -9,7 +9,7 @@ import { photoCategories } from '../photoinfos';
 })
 export class ListComponent implements OnInit {
 
-  photoCategories = photoCategories;
+  archiveCategories = archiveCategories;
 
   ngOnInit(): void {
   }

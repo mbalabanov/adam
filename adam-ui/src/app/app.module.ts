@@ -15,7 +15,7 @@ import { BlogComponent } from './blog/blog.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { StandardheaderComponent } from './standardheader/standardheader.component';
 import { BlogpostComponent } from './blogpost/blogpost.component';
-import { CategorydetailComponent } from './categorydetail/categorydetail.component';
+import { ArchivedetailComponent } from './archivedetail/archivedetail.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -39,7 +39,7 @@ import { ItemdetailsComponent } from './itemdetails/itemdetails.component';
     PortfolioComponent,
     StandardheaderComponent,
     BlogpostComponent,
-    CategorydetailComponent,
+    ArchivedetailComponent,
     AboutComponent,
     ContactComponent,
     TestimonialsComponent,
