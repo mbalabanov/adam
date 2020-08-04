@@ -4,9 +4,9 @@
 		<div class="col-12">
         <nav aria-label="breadcrumb" class="mt-2">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a  routerLink="/">Home</a></li>
-                <li class="breadcrumb-item"><a  routerLink="/archive">Archive</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Archive Category: {{ urlCategory}}</li>
+                <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+                <li class="breadcrumb-item"><a routerLink="/archive">Archive</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Archive Category: {{ urlCategory }}</li>
             </ol>
         </nav>
 			<div class="dropdown ml-2 mb-2">
@@ -35,13 +35,13 @@
 	  <div class="row px-5 mb-5">
 		<div class="col-lg-4 col-sm-6 text-center my-3" *ngFor="let item of archiveCategory.content | filter:searchText">
 			<div class="relative">
-				<a href="/item/{{ urlCategory }}/{{ item.id }}"><img src="{{ item.photo }}" alt="{{ item.name }}" class="img-fluid rounded"></a>
+				<a routerLink="/item/{{ urlCategory }}/{{ item.id }}"><img src="{{ item.photo }}" alt="{{ item.name }}" class="img-fluid rounded"></a>
 				<div class="absolute">
-					<button type="button" class="btn btn-outline-light btn-sm" data-toggle="modal" [attr.data-target]="'#id'+item.id">Details</button>
+					<a class="btn btn-outline-light btn-sm" routerLink="/item/{{ urlCategory }}/{{ item.id }}">Details</a>
 				</div>
 			</div>
 		    <h3 class="mt-2">{{ item.name }}</h3>
-			<p><a class="btn btn-outline-secondary ml-1 mt-2" href="/item/{{ urlCategory }}/{{ item.id }}" target="_blank">Details</a></p>
+			<p><a class="btn btn-outline-secondary ml-1 mt-2" routerLink="/item/{{ urlCategory }}/{{ item.id }}">Details</a></p>
 		</div>
     </div>
 	</div>
