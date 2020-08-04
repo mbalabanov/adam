@@ -8,7 +8,7 @@
           <ol class="breadcrumb">
               <li class="breadcrumb-item"><a  routerLink="/">Home</a></li>
               <li class="breadcrumb-item"><a  routerLink="/archive">Archive</a></li>
-              <li class="breadcrumb-item"><a  routerLink="/category/{{ urlCategory }}">Archive Category</a></li>
+              <li class="breadcrumb-item"><a  routerLink="/category/{{ archiveCategory.name | lowercase }}">Archive Category: {{ archiveCategory.name }}</a></li>
               <li class="breadcrumb-item active" aria-current="page">{{ archiveItem.name }}</li>
           </ol>
       </nav>

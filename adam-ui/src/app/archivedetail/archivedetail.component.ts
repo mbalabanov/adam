@@ -13,7 +13,6 @@ export class ArchivedetailComponent implements OnInit {
 
 	archiveCategories = archiveCategories;
 	archiveCategory;
-	urlCategory;
 	searchText;
 
 	constructor(private route: ActivatedRoute) { }
@@ -30,9 +29,7 @@ export class ArchivedetailComponent implements OnInit {
       this.route.paramMap.subscribe(params => {
           let slug = params.get('categoryId');
           let theIndex = getCategoryIndex(slug);
-          let categoryName = (archiveCategories[theIndex].name).toLowerCase();
           this.archiveCategory = archiveCategories[theIndex];
-          this.urlCategory = categoryName;
       });
 	}
 

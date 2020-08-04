@@ -3,7 +3,10 @@ const bp = require( 'body-parser' );
 const morgan = require('morgan');
 const { loadData, instructions, getItems, getItem, deleteItem, editArtifact, editPerson, editTeam, editCollection, editExhibition, editFeatured } = require('./controller');
 const app = express();
+var cors = require('cors');
 const port = process.env.PORT || 5003;
+
+app.use(cors());
 
 app.use( bp.urlencoded({ extended:false}) );
 

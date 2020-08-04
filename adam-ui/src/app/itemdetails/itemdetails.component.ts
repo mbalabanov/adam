@@ -12,7 +12,6 @@ export class ItemdetailsComponent implements OnInit {
 
 	archiveCategories = archiveCategories;
 	archiveCategory;
-	urlCategory;
 	archiveItem;
 
 	constructor(private route: ActivatedRoute) { }
@@ -30,10 +29,8 @@ export class ItemdetailsComponent implements OnInit {
           let catSlug = params.get('categoryId');
           let itemSlug = params.get('itemId');
           let catIndex = getCategoryIndex(catSlug);
-          let categoryName = (archiveCategories[catIndex].name).toLowerCase();
           this.archiveCategory = archiveCategories[catIndex];
           this.archiveItem = archiveCategories[catIndex].content[itemSlug];
-          this.urlCategory = categoryName;
       });
 	}
 

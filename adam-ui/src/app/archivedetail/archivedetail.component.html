@@ -6,7 +6,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
                 <li class="breadcrumb-item"><a routerLink="/archive">Archive</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Archive Category: {{ urlCategory }}</li>
+                <li class="breadcrumb-item active" aria-current="page">Archive Category: {{ archiveCategory.name }}</li>
             </ol>
         </nav>
 			<div class="dropdown ml-2 mb-2">
@@ -35,13 +35,13 @@
 	  <div class="row px-5 mb-5">
 		<div class="col-lg-4 col-sm-6 text-center my-3" *ngFor="let item of archiveCategory.content | filter:searchText">
 			<div class="relative">
-				<a routerLink="/item/{{ urlCategory }}/{{ item.id }}"><img src="{{ item.photo }}" alt="{{ item.name }}" class="img-fluid rounded"></a>
+				<a routerLink="/item/{{ archiveCategory.name | lowercase }}/{{ item.id }}"><img src="{{ item.photo }}" alt="{{ item.name }}" class="img-fluid rounded"></a>
 				<div class="absolute">
-					<a class="btn btn-outline-light btn-sm" routerLink="/item/{{ urlCategory }}/{{ item.id }}">Details</a>
+					<a class="btn btn-outline-light btn-sm" routerLink="/item/{{ archiveCategory.name | lowercase }}/{{ item.id }}">Details</a>
 				</div>
 			</div>
 		    <h3 class="mt-2">{{ item.name }}</h3>
-			<p><a class="btn btn-outline-secondary ml-1 mt-2" routerLink="/item/{{ urlCategory }}/{{ item.id }}">Details</a></p>
+			<p><a class="btn btn-outline-secondary ml-1 mt-2" routerLink="/item/{{ archiveCategory.name | lowercase }}/{{ item.id }}">Details</a></p>
 		</div>
     </div>
 	</div>
