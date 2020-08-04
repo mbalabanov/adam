@@ -5,11 +5,11 @@ import { FormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @Component({
-  selector: 'app-categorydetail',
-  templateUrl: './categorydetail.component.html',
-  styleUrls: ['./categorydetail.component.css']
+  selector: 'app-itemdetails',
+  templateUrl: './itemdetails.component.html',
+  styleUrls: ['./itemdetails.component.css']
 })
-export class CategorydetailComponent implements OnInit {
+export class ItemdetailsComponent implements OnInit {
 
 	photoCategories = photoCategories;
 	photoCategory;

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { blogitems } from '../blogdata';
+import { newsitems } from '../blogdata';
 
 @Component({
   selector: 'app-footer',
@@ -8,7 +8,7 @@ import { blogitems } from '../blogdata';
 })
 export class FooterComponent implements OnInit {
 
-  blogitems = blogitems;
+  newsitems = newsitems;
 
   constructor() { }
 

@@ -1,4 +1,4 @@
-export let blogitems = [
+export let newsitems = [
 	{
  		title: 'Consetetur Sadipscing Elitr',
         urlAddress: 'consetetur-sadipscing-elitr',

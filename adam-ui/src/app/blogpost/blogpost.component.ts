@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { blogitems } from '../blogdata';
+import { newsitems } from '../blogdata';
 
 @Component({
   selector: 'app-blogpost',
@@ -9,14 +9,14 @@ import { blogitems } from '../blogdata';
 })
 export class BlogpostComponent implements OnInit {
   blogitem;
-  blogitems = blogitems;
+  blogitems = newsitems;
 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     function getPostIndex(arg) {
-               for(var i = 0; i < blogitems.length; i += 1) {
-                   if(blogitems[i].urlAddress.toLowerCase() === arg) {
+               for(var i = 0; i < newsitems.length; i += 1) {
+                   if(newsitems[i].urlAddress.toLowerCase() === arg) {
                        return i;
                    }
                }
@@ -25,7 +25,7 @@ export class BlogpostComponent implements OnInit {
        this.route.paramMap.subscribe(params => {
           let slug = params.get('postId');
           let theIndex = getPostIndex(slug);
-          this.blogitem = blogitems[theIndex];
+          this.blogitem = newsitems[theIndex];
        });
   }
 

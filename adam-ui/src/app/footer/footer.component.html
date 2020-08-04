@@ -10,13 +10,14 @@
                 <li class="my-2"><a routerLink="/" class="text-white">Home</a></li>
                 <li class="my-2"><a routerLink="/about" class="text-white">About ADAM</a></li>
                 <li class="my-2"><a routerLink="/blog" class="text-white">ADAM News</a></li>
+                <li class="my-2"><a routerLink="/portfolio" class="text-white">Archive</a></li>
                 <li class="my-2"><a routerLink="/contact" class="text-white">Contact</a></li>
             </ul>
         </div>
         <div class="col-lg-3 col-sm-6">
             <h4 class="my-4">Latest News</h4>
 			<ul>
-				<li *ngFor="let item of blogitems" class="my-2"><a [routerLink]="['/blogpost', (item.urlAddress).toLowerCase()]" class="text-white">{{ item.title }}</a></li>
+				<li *ngFor="let item of newsitems" class="my-2"><a [routerLink]="['/blogpost', (item.urlAddress).toLowerCase()]" class="text-white">{{ item.title }}</a></li>
             </ul>
         </div>
         <div class="col-lg-3 col-sm-6">
