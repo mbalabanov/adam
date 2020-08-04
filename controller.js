@@ -414,6 +414,7 @@ function editFeatured(request, response) {
 module.exports = {
     loadData,
     instructions,
+    getAll,
     getItems,
     getItem,
     deleteItem,
