@@ -1,9 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BlogpostComponent } from './blogpost.component';
+import { NewsarticleComponent } from './newsarticle.component';
 
-describe('BlogpostComponent', () => {
-  let component: BlogpostComponent;
+describe('NewsarticleComponent', () => {
+  let component: NewsarticleComponent;
   let fixture: ComponentFixture<BlogpostComponent>;
 
   beforeEach(async(() => {

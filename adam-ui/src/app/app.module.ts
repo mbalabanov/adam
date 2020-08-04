@@ -6,15 +6,15 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HeaderComponent } from './header/header.component';
 import { IntroComponent } from './intro/intro.component';
 import { SearchComponent } from './search/search.component';
-import { ListComponent } from './list/list.component';
+import { ArchivelistComponent } from './archivelist/archivelist.component';
 import { FeaturesComponent } from './features/features.component';
 import { NewsComponent } from './news/news.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { BlogComponent } from './blog/blog.component';
-import { PortfolioComponent } from './portfolio/portfolio.component';
+import { NewslistComponent } from './newslist/newslist.component';
+import { ArchiveComponent } from './archive/archive.component';
 import { StandardheaderComponent } from './standardheader/standardheader.component';
-import { BlogpostComponent } from './blogpost/blogpost.component';
+import { NewsarticleComponent } from './newsarticle/newsarticle.component';
 import { ArchivedetailComponent } from './archivedetail/archivedetail.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
@@ -30,15 +30,15 @@ import { ItemdetailsComponent } from './itemdetails/itemdetails.component';
     HeaderComponent,
     IntroComponent,
     SearchComponent,
-    ListComponent,
+    ArchivelistComponent,
     FeaturesComponent,
     NewsComponent,
     FooterComponent,
     HomeComponent,
-    BlogComponent,
-    PortfolioComponent,
+    NewslistComponent,
+    ArchiveComponent,
     StandardheaderComponent,
-    BlogpostComponent,
+    NewsarticleComponent,
     ArchivedetailComponent,
     AboutComponent,
     ContactComponent,

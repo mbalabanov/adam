@@ -17,7 +17,7 @@
         <div class="col-lg-3 col-sm-6">
             <h4 class="my-4">Latest News</h4>
 			<ul>
-				<li *ngFor="let item of newsitems" class="my-2"><a [routerLink]="['/blogpost', (item.urlAddress).toLowerCase()]" class="text-white">{{ item.title }}</a></li>
+				<li *ngFor="let item of newsitems" class="my-2"><a [routerLink]="['/newsarticle', (item.urlAddress).toLowerCase()]" class="text-white">{{ item.title }}</a></li>
       </ul>
         </div>
         <div class="col-lg-3 col-sm-6">

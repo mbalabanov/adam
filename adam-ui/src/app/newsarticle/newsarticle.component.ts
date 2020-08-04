@@ -3,11 +3,11 @@ import { ActivatedRoute } from '@angular/router';
 import { newsitems } from '../newsdata';
 
 @Component({
-  selector: 'app-blogpost',
-  templateUrl: './blogpost.component.html',
-  styleUrls: ['./blogpost.component.css']
+  selector: 'app-newsarticle',
+  templateUrl: './newsarticle.component.html',
+  styleUrls: ['./newsarticle.component.css']
 })
-export class BlogpostComponent implements OnInit {
+export class NewsarticleComponent implements OnInit {
   blogitem;
   blogitems = newsitems;
 

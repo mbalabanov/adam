@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { archiveCategories } from '../photoinfos';
+import { archiveCategories } from '../archivedata';
 
 @Component({
   selector: 'app-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css']
+  templateUrl: './archivelist.component.html',
+  styleUrls: ['./archivelist.component.css']
 })
-export class ListComponent implements OnInit {
+export class ArchivelistComponent implements OnInit {
 
   archiveCategories = archiveCategories;
 

@@ -5,9 +5,9 @@
 </div>
 <div class="row px-md-4">
     <div class="col-md-4 text-left pb-5 bloglist" *ngFor="let item of newsitems; index as postId">
-        <img src="{{ item.photo }}" alt="{{ item.title }}" [routerLink]="['/blogpost', (item.urlAddress).toLowerCase()]" class="rounded-lg">
-        <h3 class="py-2"><a [routerLink]="['/blogpost', (item.urlAddress).toLowerCase()]">{{ item.title }}</a></h3>
+        <img src="{{ item.photo }}" alt="{{ item.title }}" [routerLink]="['/newsarticle', (item.urlAddress).toLowerCase()]" class="rounded-lg">
+        <h3 class="py-2"><a [routerLink]="['/newsarticle', (item.urlAddress).toLowerCase()]">{{ item.title }}</a></h3>
         <p>{{ item.teaser }}</p>
-        <p><a class="btn btn-outline-secondary" [routerLink]="['/blogpost', (item.urlAddress).toLowerCase()]">Read article</a></p>
+        <p><a class="btn btn-outline-secondary" [routerLink]="['/newsarticle', (item.urlAddress).toLowerCase()]">Read article</a></p>
     </div>
 </div>
