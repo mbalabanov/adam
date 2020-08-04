@@ -10,13 +10,12 @@ export class AppComponent {
 
   title = 'Archive of Digital Art & Media';
   url = 'https://adam-interface.herokuapp.com/all';
-  allDataReveived;
+  allDataRetrieved;
 
   constructor(private http: HttpClient) {
 
     this.http.get(this.url).toPromise().then(data => {
-      console.log(data);
-      this.allDataReveived = data;
+      this.allDataRetrieved = data;
     });
 
   }
