@@ -6,27 +6,27 @@
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a  routerLink="/">Home</a></li>
                     <li class="breadcrumb-item"><a  routerLink="/news">News</a></li>
-                    <li class="breadcrumb-item active" aria-current="page"><span class="blogPostBreadcrumb">{{ blogitem.title }}</span></li>
+                    <li class="breadcrumb-item active" aria-current="page"><span class="blogPostBreadcrumb">{{ newsitem.title }}</span></li>
                 </ol>
             </nav>
         </div>
     </div>
     <div class="row">
         <div class="col-lg-7 col-sm-12 offset-md-1">
-            <div *ngIf="blogitem" class="mt-2 mb-5">
-                <h2 class="mr-4 my-4">{{ blogitem.title }}</h2>
-                <h3 class="mr-4 mb-4">{{ blogitem.teaser }}</h3>
+            <div *ngIf="newsitem" class="mt-2 mb-5">
+                <h2 class="mr-4 my-4">{{ newsitem.title }}</h2>
+                <h3 class="mr-4 mb-4">{{ newsitem.teaser }}</h3>
                 <div class="mr-4 mb-5">
-                    <img src="{{ blogitem.photo }}" alt="{{ blogitem.title }}" align="right" class="ml-4 mt-2 mb-4 rounded img-fluid">
-                    <div [innerHTML]="blogitem.blogtext"></div>
+                    <img src="{{ newsitem.photo }}" alt="{{ newsitem.title }}" align="right" class="ml-4 mt-2 mb-4 rounded img-fluid">
+                    <div [innerHTML]="newsitem.blogtext"></div>
                 </div>
-                <div class="mr-4 mb-4"><img src="{{ blogitem.largeimage }}" class="img-fluid"></div>
+                <div class="mr-4 mb-4"><img src="{{ newsitem.largeimage }}" class="img-fluid"></div>
             </div>
         </div>
         <div class="col-lg-4 col-sm-12">
             <h4 class="my-4">All Posts</h4>
             <ul>
-                <li *ngFor="let item of blogitems" class="my-2"><a [routerLink]="['/newsarticle', (item.urlAddress).toLowerCase()]">{{ item.title }}</a></li>
+                <li *ngFor="let item of newsitems" class="my-2"><a [routerLink]="['/newsarticle', (item.urlAddress).toLowerCase()]">{{ item.title }}</a></li>
             </ul>
         </div>
     </div>

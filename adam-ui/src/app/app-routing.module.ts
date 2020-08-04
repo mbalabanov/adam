@@ -26,16 +26,13 @@ const routes: Routes = [
     path: 'category/:categoryId', component: ArchivedetailComponent
   },
   {
-    path: 'item/:itemId', component: ItemdetailsComponent
+    path: 'item/:categoryId/:itemId', component: ItemdetailsComponent
   },
   {
     path: 'about', component: AboutComponent
   },
   {
     path: 'contact', component: ContactComponent
-  },
-  {
-    path: 'details/:itemId', component: ItemdetailsComponent
   }
 ];
 

@@ -4,17 +4,17 @@ import { NewsarticleComponent } from './newsarticle.component';
 
 describe('NewsarticleComponent', () => {
   let component: NewsarticleComponent;
-  let fixture: ComponentFixture<BlogpostComponent>;
+  let fixture: ComponentFixture<NewsarticleComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BlogpostComponent ]
+      declarations: [ NewsarticleComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BlogpostComponent);
+    fixture = TestBed.createComponent(NewsarticleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

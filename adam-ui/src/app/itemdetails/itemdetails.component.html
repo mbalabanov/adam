@@ -1,5 +1,33 @@
 <app-standardheader></app-standardheader>
 
-<p>Item details Page works</p>
+<div class="container-fluid">
+
+  <div class="row my-2">
+    <div class="col-12">
+      <nav aria-label="breadcrumb" class="mt-2">
+          <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a  routerLink="/">Home</a></li>
+              <li class="breadcrumb-item"><a  routerLink="/archive">Archive</a></li>
+              <li class="breadcrumb-item"><a  routerLink="/category/{{ urlCategory }}">Archive Category</a></li>
+              <li class="breadcrumb-item active" aria-current="page">{{ archiveItem.name }}</li>
+          </ol>
+      </nav>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="container">
+  <div class="row my-4">
+    <div class="col-8">
+      <h3>{{ archiveItem.name }}</h3>
+      <p>{{ archiveItem.description }}</p>
+    </div>
+    <div class="col-4">
+      <p><img src="{{ archiveItem.photo }}" alt="{{ archiveItem.name }}" class="img-fluid"></p>
+    </div>
+  </div>
+</div>
 
 <app-footer></app-footer>

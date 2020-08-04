@@ -8,8 +8,8 @@ import { newsitems } from '../newsdata';
   styleUrls: ['./newsarticle.component.css']
 })
 export class NewsarticleComponent implements OnInit {
-  blogitem;
-  blogitems = newsitems;
+  newsitems = newsitems;
+  newsitem;
 
   constructor(private route: ActivatedRoute) { }
 
@@ -25,7 +25,7 @@ export class NewsarticleComponent implements OnInit {
        this.route.paramMap.subscribe(params => {
           let slug = params.get('postId');
           let theIndex = getPostIndex(slug);
-          this.blogitem = newsitems[theIndex];
+          this.newsitem = newsitems[theIndex];
        });
   }
 

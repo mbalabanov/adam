@@ -2,13 +2,13 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-12">
-            <nav aria-label="breadcrumb" class="mt-2">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a  routerLink="/">Home</a></li>
-                    <li class="breadcrumb-item"><a  routerLink="/archive">Archive</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Archive Category: {{ archiveCategory.name }}</li>
-                </ol>
-            </nav>
+        <nav aria-label="breadcrumb" class="mt-2">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a  routerLink="/">Home</a></li>
+                <li class="breadcrumb-item"><a  routerLink="/archive">Archive</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Archive Category: {{ urlCategory}}</li>
+            </ol>
+        </nav>
 			<div class="dropdown ml-2 mb-2">
 				<button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					Archive Categories
@@ -34,34 +34,14 @@
 	<div class="container">
 	  <div class="row px-5 mb-5">
 		<div class="col-lg-4 col-sm-6 text-center my-3" *ngFor="let item of archiveCategory.content | filter:searchText">
-
-			<!-- Modal -->
-			<div class="modal fade" id="id{{ item.id }}" tabindex="-1" role="dialog" [attr.aria-labelledby]="'id' + item.id" aria-hidden="true">
-				<div class="modal-dialog modal-lg" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" [attr.id]="'id'+item.id+'Label'">{{ item.name }}</h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-			        		</button>
-						</div>
-						<div class="modal-body">
-							<p class="text-left">{{ item.description }}</p>
-							<p><a class="btn btn-outline-primary ml-1" href="{{ item.fullPhoto }}" target="_blank">Show full image </a></p>
-							<img src="{{ item.fullPhoto }}" class="img-fluid" alt="{{ item.name }}">
-						</div>
-					</div>
-				</div>
-			</div>
-
 			<div class="relative">
-				<img src="{{ item.photo }}" alt="{{ item.name }}" class="img-fluid rounded" data-toggle="modal" [attr.data-target]="'#id'+item.id">
+				<a href="/item/{{ urlCategory }}/{{ item.id }}"><img src="{{ item.photo }}" alt="{{ item.name }}" class="img-fluid rounded"></a>
 				<div class="absolute">
 					<button type="button" class="btn btn-outline-light btn-sm" data-toggle="modal" [attr.data-target]="'#id'+item.id">Details</button>
 				</div>
 			</div>
 		    <h3 class="mt-2">{{ item.name }}</h3>
-			<p><a class="btn btn-outline-primary ml-1 mt-2" href="{{ item.fullPhoto }}" target="_blank">Show full image</a></p>
+			<p><a class="btn btn-outline-secondary ml-1 mt-2" href="/item/{{ urlCategory }}/{{ item.id }}" target="_blank">Details</a></p>
 		</div>
     </div>
 	</div>

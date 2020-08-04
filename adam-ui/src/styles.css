@@ -17,13 +17,13 @@
 .mainheader h2 {
     font-size: 200%;
     text-shadow: 0 0 3px black;
-    color: rgb(87,202,239);
+    color: rgb(0,123,255);
 }
 
 .mainheader p {
     font-size: 140%;
     text-shadow: 0 0 3px black;
-    color: rgb(87,202,239);
+    color: rgb(0,123,255);
 }
 
 #mainnav {
@@ -68,7 +68,7 @@ h2 {
 h3 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-style: italic;
-    color: rgb(87,202,239);
+    color: rgb(0,123,255);
 }
 
 .search-field {
@@ -76,8 +76,8 @@ h3 {
     text-align: center;
     padding:0.4rem;
     border-radius: 0.4rem;
-    border: solid 2px rgb(87,202,239);
-    color: rgb(87,202,239);
+    border: solid 2px rgb(0,123,255);
+    color: rgb(0,123,255);
 }
 
 .darkened {

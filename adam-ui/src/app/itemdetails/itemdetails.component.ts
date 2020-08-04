@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { archiveCategories } from '../archivedata';
 import { FormsModule } from '@angular/forms';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @Component({
   selector: 'app-itemdetails',
@@ -13,7 +12,8 @@ export class ItemdetailsComponent implements OnInit {
 
 	archiveCategories = archiveCategories;
 	archiveCategory;
-	searchText;
+	urlCategory;
+	archiveItem;
 
 	constructor(private route: ActivatedRoute) { }
 
@@ -27,9 +27,13 @@ export class ItemdetailsComponent implements OnInit {
             }
 
       this.route.paramMap.subscribe(params => {
-          let slug = params.get('categoryId');
-          let theIndex = getCategoryIndex(slug);
-          this.archiveCategory = archiveCategories[theIndex];
+          let catSlug = params.get('categoryId');
+          let itemSlug = params.get('itemId');
+          let catIndex = getCategoryIndex(catSlug);
+          let categoryName = (archiveCategories[catIndex].name).toLowerCase();
+          this.archiveCategory = archiveCategories[catIndex];
+          this.archiveItem = archiveCategories[catIndex].content[itemSlug];
+          this.urlCategory = categoryName;
       });
 	}
 
