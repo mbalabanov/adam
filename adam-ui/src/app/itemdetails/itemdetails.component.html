@@ -21,10 +21,10 @@
   <div class="row my-4">
     <div class="col-8">
       <h3>{{ archiveItem.name }}</h3>
-      <p>{{ archiveItem.description }}</p>
+      <p>{{ archiveItem.longdescription }}</p>
     </div>
     <div class="col-4">
-      <p><img src="{{ archiveItem.photo }}" alt="{{ archiveItem.name }}" class="img-fluid"></p>
+      <p><img src="{{ archiveItem.images[0].url }}" alt="{{ archiveItem.name }}" class="img-fluid"></p>
     </div>
   </div>
 </div>

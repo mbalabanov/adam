@@ -20,7 +20,7 @@
 			<div class="col-lg-4 col-sm-6 text-center my-3" *ngFor="let archiveCategory of archiveCategories">
         <div class="relative text-center">
           <a [routerLink]="['/category', (archiveCategory.name).toLowerCase()]">
-            <img src="{{ archiveCategory.photo }}" alt="{{ archiveCategory.name }}" class="img-fluid rounded">
+            <img src="{{ archiveCategory.coverimage }}" alt="{{ archiveCategory.name }}" class="img-fluid rounded">
           </a>
           <div class="absolute text-white">
             <h3 class="pt-1 px-2"><a [routerLink]="['/category', (archiveCategory.name).toLowerCase()]">{{ archiveCategory.name }}</a></h3>

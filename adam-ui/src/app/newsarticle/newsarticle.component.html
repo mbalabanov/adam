@@ -15,10 +15,10 @@
         <div class="col-lg-7 col-sm-12 offset-md-1">
             <div *ngIf="newsitem" class="mt-2 mb-5">
                 <h2 class="mr-4 my-4">{{ newsitem.title }}</h2>
-                <h3 class="mr-4 mb-4">{{ newsitem.teaser }}</h3>
+                <h3 class="mr-4 mb-4">{{ newsitem.shortdescription }}</h3>
                 <div class="mr-4 mb-5">
-                    <img src="{{ newsitem.photo }}" alt="{{ newsitem.title }}" align="right" class="ml-4 mt-2 mb-4 rounded img-fluid">
-                    <div [innerHTML]="newsitem.blogtext"></div>
+                    <img src="{{ newsitem.image}}" alt="{{ newsitem.title }}" align="right" class="ml-4 mt-2 mb-4 rounded img-fluid">
+                    <div [innerHTML]="newsitem.articletext"></div>
                 </div>
                 <div class="mr-4 mb-4"><img src="{{ newsitem.largeimage }}" class="img-fluid"></div>
             </div>

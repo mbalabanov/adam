@@ -28,19 +28,20 @@
 	<div class="row">
 		<div class="col-6 offset-3 text-center mb-4">
 			<h4 class="mt-3">Search {{ archiveCategory.name }}</h4>
-			<input matInput placeholder="Search..." [(ngModel)]="searchText" name="search" type="text" autofocus class="p-2 search-field">
+			<input matInput placeholder="Search..." [(ngModel)]="searchText" name="search" type="text" class="p-2 search-field">
 		</div>
 	</div>
 	<div class="container">
 	  <div class="row px-5 mb-5">
 		<div class="col-lg-4 col-sm-6 text-center my-3" *ngFor="let item of archiveCategory.content | filter:searchText">
 			<div class="relative">
-				<a routerLink="/item/{{ archiveCategory.name | lowercase }}/{{ item.id }}"><img src="{{ item.photo }}" alt="{{ item.name }}" class="img-fluid rounded"></a>
+				<a routerLink="/item/{{ archiveCategory.name | lowercase }}/{{ item.id }}"><img src="{{ item.images[0].url }}" alt="{{ item.name }}" class="img-fluid rounded"></a>
 				<div class="absolute">
 					<a class="btn btn-outline-light btn-sm" routerLink="/item/{{ archiveCategory.name | lowercase }}/{{ item.id }}">Details</a>
 				</div>
 			</div>
-		    <h3 class="mt-2">{{ item.name }}</h3>
+			<h3 class="mt-2">{{ item.name }}</h3>
+			<p>{{ item.shortdescription }}</p>
 			<p><a class="btn btn-outline-secondary ml-1 mt-2" routerLink="/item/{{ archiveCategory.name | lowercase }}/{{ item.id }}">Details</a></p>
 		</div>
     </div>

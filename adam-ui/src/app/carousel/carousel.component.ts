@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { featured } from '../featured';
 
 @Component({
   selector: 'app-carousel',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./carousel.component.css']
 })
 export class CarouselComponent implements OnInit {
+
+  featured = featured;
 
   constructor() { }
 
