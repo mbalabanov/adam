@@ -1,29 +1,17 @@
-.mainheader {
-    background: /* top, transparent red */
-    linear-gradient( rgba(0, 0, 0, 0.5), transparent), /* bottom, image */
-    url('assets/img/new-media-art-background.jpg');
-    background-size: cover;
-    height: 38rem;
-}
 
-.mainheader h1 {
+.carousel-caption h4 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-style: italic;
-    font-size: 400%;
+    font-size: 180%;
     text-shadow: 0 0 3px black;
-    color: rgb(255,121,159);
+    color: white;
 }
 
-.mainheader h2 {
-    font-size: 200%;
+.carousel-caption p {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 120%;
     text-shadow: 0 0 3px black;
-    color: rgb(0,123,255);
-}
-
-.mainheader p {
-    font-size: 140%;
-    text-shadow: 0 0 3px black;
-    color: rgb(0,123,255);
+    color: white;
 }
 
 #mainnav {
@@ -57,11 +45,15 @@
 }
 
 h1 {
-    font-size: 3rem!important;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 2.6rem!important;
     color: rgb(255,121,159);
 }
 
 h2 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
     color: rgb(255,121,159);
 }
 

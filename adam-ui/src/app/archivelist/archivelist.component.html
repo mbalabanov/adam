@@ -3,9 +3,18 @@
     <div class="row p-3">
       <div class="col-12 text-center">
         <h2>Archive Categories</h2>
-        <h3>Browse Our New Media Art Archive.</h3>
+        <h3>Search Our New Media Art Archive.</h3>
       </div>
     </div>
+
+    <div class="row m-1">
+      <div class="col-md-8 offset-md-2 text-center">
+        <p><input matInput placeholder="Search the Archive of Digital Art & Media" name="search" type="text" class="p-2 search-field"></p>
+        <p><a class="btn btn-outline-secondary" routerLink="/archive">Search</a></p>
+      </div>
+    </div>
+    
+
     <div class="row px-3">
 
 			<div class="col-lg-4 col-sm-6 text-center my-3" *ngFor="let archiveCategory of archiveCategories">
