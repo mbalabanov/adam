@@ -23,7 +23,21 @@
             <li class="nav-item ml-2">
                 <a class="nav-link" routerLink="/contact" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Contact</a>
             </li>
+            <li class="nav-item dropdown ml-2">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Users
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Sign in</a>
+                  <a class="dropdown-item" href="#">Register</a>
+                </div>
+            </li>
         </ul>
-        <button class="btn btn-outline-light btn-sm ml-auto" routerLink="/login">Sign In</button>
+        <form class="form-inline ml-auto my-lg-0">
+            <input class="form-control mr-sm-1" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-light my-2 mr-sm-4" type="submit">Search</button>
+
+        </form>
+
     </div>
 </nav>

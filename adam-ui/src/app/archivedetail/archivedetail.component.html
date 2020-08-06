@@ -40,7 +40,7 @@
 					<a class="btn btn-outline-light btn-sm" routerLink="/item/{{ archiveCategory.name | lowercase }}/{{ item.id }}">Details</a>
 				</div>
 			</div>
-			<h3 class="mt-2">{{ item.name }}</h3>
+			<h3 class="mt-2"><a routerLink="/item/{{ archiveCategory.name | lowercase }}/{{ item.id }}">{{ item.name }}</a></h3>
 			<p>{{ item.shortdescription }}</p>
 			<p><a class="btn btn-outline-secondary ml-1 mt-2" routerLink="/item/{{ archiveCategory.name | lowercase }}/{{ item.id }}">Details</a></p>
 		</div>

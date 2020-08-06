@@ -68,8 +68,7 @@ h3 {
     text-align: center;
     padding:0.4rem;
     border-radius: 0.4rem;
-    border: solid 2px rgb(0,123,255);
-    color: rgb(0,123,255);
+    border: solid 1px gray;
 }
 
 .darkened {
