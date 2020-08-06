@@ -28,7 +28,25 @@
       <p>{{ archiveItem.longdescription }}</p>
     </div>
     <div class="col-4">
-      <p><img src="{{ archiveItem.images[0].url }}" alt="{{ archiveItem.name }}" class="img-fluid"></p>
+
+      <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item" *ngFor="let item of archiveItem.images; let isFirst = first" [class.active]="isFirst">
+            <img src="{{ item.url }}" class="d-block w-100" alt="{{ item.title }}" data-interval="2200">
+            <div class="carousel-caption darkened d-none d-md-block">
+              <p>{{ item.description }}</p>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
     </div>
   </div>
 </div>
