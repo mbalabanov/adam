@@ -3,14 +3,15 @@
 ![ADAM - Archive of Digital Art & Media](documentation/assets/adam-logo.png)
 
 ## Beschreibung
-In ADAM, dem Archive of Digital Art & Media auf [demoarchive.art](http://demoarchive.art/), können Benutzer nach digitalen Kunstwerken suchen. Auf den Detailseiten finden sie eine Beschreibung des jeweiligen Kunstwerks, sowie Fotos/Screenshots und eingebettete Videos, und falls vorhanden ZIP-Dateien oder Diskimages mit den Originaldateien des Kunstwerks. Zudem finden sich Informationen über die Künstler, die Sammlung der das Kunstwerk angehört, und in welchen Ausstellungen es ausgestellt wurde.
+In ADAM, dem Archive of Digital Art & Media auf [demoarchive.art](http://demoarchive.art/), können Benutzer nach digitalen Kunstwerken suchen. Auf den Detailseiten finden sie eine Beschreibung des jeweiligen Kunstwerks, sowie Fotos/Screenshots und eingebettete Videos, und falls vorhanden ZIP-Dateien oder Diskimages mit den Originaldateien des Kunstwerks. Zudem finden sich Informationen über die Künstler, und bei welchen Events ihre Werke ausgestellt wurden.
 
 Dieses Projekt dient nur zu Übungszwecken und wurde vom "Archive of Digital Art" (ADA) der Donau Universität Krems inspiriert. Im Gegensatz zu ADA der Donau Uni verwendet ADAM zeitgemäße Technologien wie NodeJS, Angular und Heroku.
 
 ADAM besteht aus vier Teilen: Einem _API-Server_ auf [adam-interface.herokuapp.com](https://adam-interface.herokuapp.com) mit einer Datenbank und Schnittstellen, um die Daten abzurufen, sowie einer Website mit einem _öffentlichen Bereich_ auf [demoarchive.art](http://demoarchive.art/), in dem Besucher die Informationen über die digitalen Kunstwerke finden, und einem _Redaktionsbereich,_ in dem Redakteure neue Inhalte einpflegen und bearbeiten können, und Administratoren die Rechte verwalten können. Zu guter Letzt gibt es eine _Mobile-App,_ mit der man Einträge erstellen kann, Fotos und Videos hochladen kann.
 
 ## Aktualisierungen
-- *31. Juli 2020:* Erste Fassung des Webfrontends auf [demoarchive.art](http://demoarchive.art/) fertiggestellt (allerdings letzteres noch ohne API-Anbindung).
+- *6. August 2020:* Erweitertes Angular-Frontend, konsolodiertes Datenmodell und angepasste API.
+- *31. Juli 2020:* Erste Fassung des Webfrontends auf [demoarchive.art](http://demoarchive.art/) fertiggestellt (allerdings noch ohne API-Anbindung).
 - *30. Juli 2020:* Erste Fassung der API auf [adam-interface.herokuapp.com](https://adam-interface.herokuapp.com) fertiggestellt.
 - *24. Juli 2020:* Erster unvollständiger Versuch, mit der API und dem Webfrontend (noch ohne Angular) zu Versuchszwecken.
 - *15. Juli 2020:* Mobile App Wireframes hinzugefügt, API aktualisiert, GET-API-Aufrufe bereit, Domain demoarchive.art registriert.
@@ -27,12 +28,10 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ auf [adam-interface.herokuapp.c
     - /artifacts/:id
     - /persons
     - /persons/:id
-    - /teams
-    - /teams/:id
-    - /collections
-    - /collections/:id
-    - /exhibitions
-    - /exhibitions/:id
+    - /events
+    - /events/:id
+    - /news
+    - /news/:id
     - /featured
 
 - Erstellen neuer Einträge (POST)
@@ -51,16 +50,16 @@ Für mehr Details zur API siehe Dokumentation weiter unten.
     
 2. *Suchergebnisseite* auf der die Suchergebnisse gefiltert werden können.
   
-3. *Detailseite,* die für die Detailansicht eines Artefakts, eines Künstlers, einer Sammlung, und einer Ausstellung verwendet wird. Das Layout besteht aus einer Beschreibung, eines Fotobereichs, eines Bereichs für ein eingebettetes Video und darunter einer Liste an verwandten Einträgen:
+3. *Detailseite,* die für die Detailansicht eines Artefakts, eines Künstlers und eines Events verwendet wird. Das Layout besteht aus einer Beschreibung, eines Fotobereichs, eines Bereichs für ein eingebettetes Video und darunter einer Liste an verwandten Einträgen:
     a. Bei einer _Künstler-Detailseite_ eine Liste der Arbeiten des Künstlers.
     b. Bei einer _Artefakt-Detailseite_ eine Liste der Künstler, die das Kunstwerk erschaffen haben
-    c. Bei einer _Künstler-Kollektiv-Seite_ eine Liste der Künstler und der Artefakte.
-    d. Bei einer _Detailseite über eine Sammlung_ eine Liste der Einträge der Artefakte, die Teil der Sammlung sind.
-    e. Bei einer _Detailseite über eine Ausstellung_ eine Liste der ausgestellten Werke.
+    e. Bei einer _Detailseite über ein Event_ eine Liste der ausgestellten Werke.
 
 4. *Informationsseite,* in der allgemeine Informationen zu einem Thema stehen mit Text und Bildern, z.B. Artikel über Neuigkeiten, aber auch Nutzungsbedingungen und Datenschutzerklärung
 
 5. Seite für den *Login bzw. die Registrierung* über den auth0.com Service
+
+6. Diverse statische Seiten über die allgemeine Bedienung des Kunstarchivs (z.B. "About", "Contact", sowie die Complaince-Seiten).
 
 ### Wireframes Besucheransicht
 
@@ -94,12 +93,9 @@ Für mehr Details zur API siehe Dokumentation weiter unten.
 
 Als Datenbank wird MongoDB verwendet, das ein Dokument-basiertes Datenmodell hat.
 
-- *Artifacts:* ID of This Object (Text), Category (Text), Name (Text), Short Description (Text), Long Description (Text), First Appearance (Date), Systems (Array), Tags (Array), Images (Array) [ URL (Text), Name (Text), Description (Text) ], Videos (Array) [ URL (Text), Name (Text) Description (Text) ], Website URLs  (Array) [ Name (Text), URL (Text) ], Assets (Array) [ Name (Text), URL (Text) ], Artist IDs (Array), Team IDs (Array), Collection IDs (Array), Exhibition IDs (Array), Published (Boolean), Published On (Date)
-- *Persons:* ID of This Object (Text),Category (Text), Name (Text), Alias (Text), Short Description (Text), Long Description (Text), Active Since (Date), Active Until (Date), Systems (Text), Tags (Array), Images (Array) [ URL (Text), Name (Text), Description (Text) ], Videos  (Array) [URL (Text), Name (Text), Description (Text) ], Website URLs  (Array) [ Name (Text), URL (Text) ], Artifact IDs (Array), Team IDs (Array), Collection IDs (Array), Exhibition IDs (Array), Published (Boolean), Published On (Date)
-- *Teams:* ID of This Object (Text), Category (Text), Name (Text), Alias (Text), Short Description (Text), Long Description (Text), Active Since (Date), Active Until (Date), Systems (Array), Tags (Array), Images (Array) [ URL (Text), Name (Text), Description (Text) ], Videos  (Array) [URL (Text), Name (Text), Description (Text) ], Website URLs  (Array) [ Name (Text), URL (Text) ], Artifact IDs (Array), Artist IDs (Array), Collection IDs (Array), Exhibition IDs (Array), Published (Boolean), Published On (Date)
-- *Collections:* ID of This Object (Text), Category (Text), Name (Text), Alias (Text), Website URL (Text), CuratorIDs (Array), Short Description (Text), Long Description (Text), Start Date (Date), Tags (Array), Images (Array) [ URL (Text), Name (Text), Description (Text) ], Videos (Array) [ URL (Text), Name (Text), Description (Text) ], Website URLs  (Array) [ Name (Text), URL (Text) ], Artifact IDs (Array), Team IDs (Array), Published (Boolean), Published On (Date)
-- *Exhibition:* ID of This Object (Text), Category (Text), Name (Text), Alias (Text), Website URL (Text), CuratorIDs (Array), Short Description (Text), Long Description (Text), Start Date (Date), End Date (Date), Tags (Array), Images (Array) [ URL (Text), Name (Text), Description (Text) ], Videos (Array) [ URL (Text), Name (Text), Description (Text) ], Website URLs  (Array) [ Name (Text), URL (Text) ], Artifact IDs (Array), Team IDs (Array), Published (Boolean), Published On (Date)
-- *Featured:* Featured Objects (Array) [ Featured Object ID (Text), Large Image URL (Text) ]
+- *Artifacts, Persons, Events:* id (integer), name (string), aliases (array of strings), shortdescription (string), longdescription (string), dates (array of dates), tags (array), images (array with id, url, name and description for each object), videos (array with id, url, name and description for each object), websiteURLs (array with id, name and url for each object), assets (array mit id, name and url for each object), artifactIDs (array), personIDs (array), eventIDs (array), published (boolean), createdOn (date), lastChangeOn (date)
+- *News:* id (integer), title (string), urlAddress (string), image (string), largeimage (string), shortdescription (string), articletext (string), published (boolean)
+- *Featured:* id (integer), image (string), title (string), description (string), link (string)
 
 ### Datenmodell
 
@@ -109,25 +105,61 @@ Als Datenbank wird MongoDB verwendet, das ein Dokument-basiertes Datenmodell hat
 
 ```
 {
-    "_id": "a1",
-    "category": "demoscene",
-    "name": "Little Sound Demo (LSD)",
-    "shortDescription": "The second demo by the Exceptions with chiptunes converted from the C64.",
-    "longDescription": "The second demo by the Exceptions with chiptunes converted from games on the Commodore 64 that use the fabled SID chip (Sound Interface Device).",
-    "firstAppearance": "1987-06-01",
-    "systems": [ "Atari ST" ],
-    "tags": ["The Exceptions", "SID"],
+    "id": "0",
+    "name": "Lorem Ipsum ",
+    "aliases": [],
+    "shortdescription": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.",
+    "longdescription": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est.",
+    "dates": ["1987-03-01"],
+    "tags": ["Pharetra Tortor","Commodo"],
     "images": [
-        {"url": "http://content.pouet.net/files/screenshots/00014/00014033.gif","name": "Screenshot of the Little Sound Demo (LSD)", "description": "The main screen of the Little Sound Demo (LSD) by the Exceptions with a music selection and a scrolling text."} ],
+        {
+            "id": "0",
+            "url": "assets/img/artifacts/artifacts1.jpg",
+            "name": "Venenatis Cursus Nullam",
+            "description": "Cras justo odio, dapibus ac facilisis in, egestas eget quam."
+        },
+        {
+            "id": "1",
+            "url": "assets/img/collections/collections1.jpg",
+            "name": "Sed diam nonumy eirmod tempor",
+            "description": "Labore et dolore magna aliquyam erat, sed diam voluptua."
+        }
+    ],
     "videos": [
-        {"url": "https://youtu.be/O6Z_eK3EQsE","name": "Video recording of the Little Sound Demo (LSD)", "description": "The main screen of the Little Sound Demo (LSD) by the Exceptions with a music selection and a scrolling text."}],
-    "assets": [ {"name": "Native executable", "url": "http://pacidemo.planet-d.net/archives/POV003.ZIP"} ],
-    "artistIDs": ["p0", "p1", "p3"],
-    "teamIDs": ["t0"],
-    "collectionIDs": ["c0"],
-    "exhibitionIDs": ["e0"],
+        {
+            "id": "0",
+            "url": "https://youtu.be/Ecx5cmnW-bo",
+            "name": "Consetetur sadipscing",
+            "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
+        }
+    ],
+    "websiteURLs": [
+        {
+            "id": "0",
+            "name": "Medien Art Net",
+            "url": "http://www.medienkunstnetz.de/mediaartnet/"
+        }
+    ],
+    "assets": [
+        {
+            "id": "0",
+            "name": "Native executable",
+            "url": "http://pacidemo.planet-d.net/archives/POV003.ZIP"
+        }
+    ],
+    "artifactIDs": [],
+    "personIDs": [
+        "0",
+        "1",
+        "2"
+    ],
+    "eventIDs": [
+        "0"
+    ],
     "published": "true",
-    "publishedOn": "2020-07-12"
+    "createdOn": "2020-07-10",
+    "lastChangeOn": "2020-07-12"
 }
 ```
 
@@ -166,46 +198,45 @@ Die API ist verfügbar unter https://adam-interface.herokuapp.com
 #### GET (Root):
 - _/_ Anleitung
 
+#### GET (mit all als Parameter):
+- _/all_ Alle Daten
+
 #### GET (OHNE einer ID):
 - _/artifacts_ Alle artifacts (Kunstwerke).
 - _/persons_ Alle persons (Künstler, Kuratoren).
-- _/teams_ Alle teams (Künstlerkollektive).
-- _/collections_ Alle collections (Kunstsammlungen).
-- _/exhibitions_ Alle exhibitions (Ausstellungen.
-- _/featured_ Die drei auf der Startseite ausgewiesenen Einträge.
+- _/events_ Alle Events (Ausstellungen, Vernisagen, Performances).
+- _/news_ Die News-Artikel und ihre Inhalte.
+- _/featured_ Die vier auf der Startseite ausgewiesenen Einträge.
 
 #### GET (MIT einer ID):
-- _/artifacts/id_ Ein einzelnes artifact (Kunstwerk).
-- _/persons/id_ Eine einzelne person (Künstler, Kuratoren).
-- _/teams/id_ Ein einzelnes team (Künstlerkollektiv).
-- _/collections/id_ Eine einzelne collection (Kunstsammlungen).
-- _/exhibitions/id_ Eine einzelne exhibition (Ausstellungen).
+- _/artifacts/id_ Ein einzelnes Artifact (Kunstwerk).
+- _/persons/id_ Eine einzelne Person (Künstler, Kuratoren).
+- _/events/id_ Ein einzelner Event (Ausstellung, Vernisage, Performance).
+- _/news_ Ein einzelner News-Artikel und seine Inhalte.
 - _/featured/id_ Einen der drei auf der Startseite ausgewiesenen Beiträge.
 
 #### DELETE (MIT einer ID):
-- _/artifacts/id_ Ein einzelnes artifact (Kunstwerk) auf unveröffentlicht setzen.
-- _/persons/id_ Eine einzelne person (Künstler, Kuratoren) auf unveröffentlicht setzen.
-- _/teams/id_ Ein einzelnes team (Künstlerkollektiv) auf unveröffentlicht setzen.
-- _/collections/id_ Eine einzelne collection (Kunstsammlung) auf unveröffentlicht setzen.
-- _/exhibitions/id_ Eine einzelne exhibition (Ausstellungen) auf unveröffentlicht setzen.
+- _/artifacts/id_ Ein einzelnes Artifact (Kunstwerk) auf unveröffentlicht setzen.
+- _/persons/id_ Eine einzelne Person (Künstler, Kuratoren) auf unveröffentlicht setzen.
+- _/events/id_ Einen einzelnen Event (Ausstellung, Vernisage, Performance) auf unveröffentlicht setzen.
+- _/news/id_ Einen einzelnen News-Artikel auf unveröffentlicht setzen.
 
 _Bitte beachten Sie, dass auf der Startseite ausgewiesenen Beiträge (featured items) nicht auf unveröffentlicht gesetzt werden können._
 
 #### PUT (MIT einer ID):
-- _/artifacts/id_ Ein einzelnes artifact (Kunstwerk) bearbeiten.
-- _/persons/id_ Eine einzelne person (Künstler, Kuratoren) bearbeiten.
-- _/teams/id_ Ein einzelnes team (Künstlerkollektiv) bearbeiten.
-- _/collections/id_ Eine einzelne collection (Kunstsammlung) bearbeiten.
-- _/exhibitions/id_ Eine einzelne exhibition (Ausstellungen)bearbeiten.
+- _/artifacts/id_ Ein einzelnes Artifact (Kunstwerk) bearbeiten.
+- _/persons/id_ Eine einzelne Person (Künstler, Kuratoren) bearbeiten.
+- _/events/id_ Einen einzelnen Event (Ausstellung, Vernisage, Performance) bearbeiten.
+- _/news/id_ Einen einzelnen News-Artikel bearbeiten.
+- _/featured/id_ Einen einzelnen Featured-Item bearbeiten.
 
 #### POST (MIT der Parameter new):
-- _/artifacts/new_ Ein einzelnes artifact (Kunstwerk) erstellen.
-- _/persons/new_ Eine einzelne person (Künstler, Kuratoren) erstellen.
-- _/teams/new_ Ein einzelnes team (Künstlerkollektiv) erstellen.
-- _/collections/new_ Eine einzelne collection (Kunstsammlung) erstellen.
-- _/exhibitions/new_ Eine einzelne exhibition (Ausstellungen) erstellen.
+- _/artifacts/new_ Ein einzelnes Artifact (Kunstwerk) erstellen.
+- _/persons/new_ Eine einzelne Person (Künstler, Kuratoren) erstellen.
+- _/events/new_ Einen einzelnen Event (Ausstellung, Vernisage, Performance) erstellen.
+- _/news/new_ Einen einzelnen News-Artikel erstellen.
 
-_Bitte beachten Sie, dass kein neuer auf der Startseite ausgewiesenen Beitrag (featured item) erstellt werden sollte. Auf der Startseite sollten möglichst nur drei Beiträge ausgewiesen sein._
+_Bitte beachten Sie, dass kein neuer auf der Startseite ausgewiesenen Beitrag (featured item) erstellt werden sollte. Auf der Startseite sollten möglichst nur vier Beiträge ausgewiesen sein._
 
 ## Project Timeline
 

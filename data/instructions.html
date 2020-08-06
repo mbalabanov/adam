@@ -12,7 +12,7 @@
         <div class="instructions">
             <h1>Welcome to the ADAM-API</h1>
 
-            <p>Here at <a href="https://adam-interface.herokuapp.com">adam-interface.herokuapp.com</a> you can find the application programming interface of the <strong>Archive of Digital Art and Media</strong>. You can access <strong>artifacts</strong>, <strong>persons</strong> (artists, curators), <strong>teams</strong> (artists' collectives), <strong>collections</strong>, <strong>exhibitions</strong> and the <strong>featured</strong> items.</p>
+            <p>Here at <a href="https://adam-interface.herokuapp.com">adam-interface.herokuapp.com</a> you can find the application programming interface of the <strong>Archive of Digital Art and Media</strong>. You can access <strong>artifacts</strong>, <strong>persons</strong> (artists, curators), <strong>events</strong>, <strong>news</strong> and the <strong>featured</strong> items.</p>
             <p>This is a project by Marin Balabanov. For more information please visit <a href="https://mbalabanov.github.io/adam/">mbalabanov.github.io/adam/</a>.</p>
 
             <h2>GET (root):</h2>
@@ -21,15 +21,20 @@
                 <li><strong>/</strong> - These instructions.</li>
             </ul>
 
+            <h2>GET all:</h2>
+            <p>Example: GET <a href="https://adam-interface.herokuapp.com/all">adam-interface.herokuapp.com/all</a></p>
+            <ul>
+                <li><strong>/all</strong> - The complete set of data.</li>
+            </ul>
+
             <h2>GET (WITHOUT an ID):</h2>
             <p>Example: GET <a href="https://adam-interface.herokuapp.com/artifacts">adam-interface.herokuapp.com/artifacts</a></p>
             <ul>
                 <li><strong>/artifacts</strong> - All artifacts.</li>
                 <li><strong>/persons</strong> - All persons.</li>
-                <li><strong>/teams</strong> - All teams (artists' collectives).</li>
-                <li><strong>/collections</strong> - All collections of artifacts.</li>
-                <li><strong>/exhibitions</strong> - All exhibitions.</li>
-                <li><strong>/featured</strong> - The three items to be featured on the frontpage.</li>
+                <li><strong>/events</strong> - All events.</li>
+                <li><strong>/news</strong> - All news items.</li>
+                <li><strong>/featured</strong> - The four items to be featured on the frontpage.</li>
             </ul>
 
             <h2>GET (WITH an ID):</h2>
@@ -37,10 +42,9 @@
             <ul>
                 <li><strong>/artifacts/id</strong> - A specific item from the list of artifacts.</li>
                 <li><strong>/persons/id</strong> - A specific item from the list of persons.</li>
-                <li><strong>/teams/id</strong> - A specific item from the list of teams (artists' collectives).</li>
-                <li><strong>/collections/id</strong> - A specific item from the list of collections of artifacts.</li>
-                <li><strong>/exhibitions/id</strong> - A specific item from the list of exhibitions.</li>
-                <li><strong>/featured/id</strong> - A specific item of the three featured on the frontpage.</li>
+                <li><strong>/events/id</strong> - A specific item from the list of events.</li>
+                <li><strong>/news/id</strong> - A specific news item from the news list.</li>
+                <li><strong>/featured/id</strong> - A specific item of the four featured on the frontpage.</li>
             </ul>
 
             <h2>DELETE (WITH an ID):</h2>
@@ -48,9 +52,8 @@
             <ul>
                 <li><strong>/artifacts/id</strong> - Set a specific item from the list of artifacts to unpublished.</li>
                 <li><strong>/persons/id</strong> - Set a specific item from the list of persons to unpublished.</li>
-                <li><strong>/teams/id</strong> - Set a specific item from the list of teams (artists' collectives)  to unpublished.</li>
-                <li><strong>/collections/id</strong> - Set a specific item from the list of collections of artifacts to unpublished.</li>
-                <li><strong>/exhibitions/id</strong> - Set a specific item from the list of exhibitions to unpublished.</li>
+                <li><strong>/events/id</strong> - Set a specific item from the list of events to unpublished.</li>
+                <li><strong>/news/id</strong> - Set a specific news item to unpublished.</li>
             </ul>
             <p><em>Please note that featured items cannot be deleted/unpublished.</em></p>
 
@@ -59,9 +62,8 @@
             <ul>
                 <li><strong>/artifacts/id</strong> - Edit a specific item from the list of artifacts.</li>
                 <li><strong>/persons/id</strong> - Edit a specific item from the list of persons.</li>
-                <li><strong>/teams/id</strong> - Edit a specific item from the list of teams (artists' collectives).</li>
-                <li><strong>/collections/id</strong> - Edit a specific item from the list of collections of artifacts.</li>
-                <li><strong>/exhibitions/id</strong> - Edit a specific item from the list of exhibitions.</li>
+                <li><strong>/events/id</strong> - Edit a specific item from the list of events.</li>
+                <li><strong>/news/id</strong> - Edit a specific news item.</li>
                 <li><strong>/featured/id</strong> - Edit a specific item from the list of featured on the frontpage.</li>
             </ul>
 
@@ -70,11 +72,10 @@
             <ul>
                 <li><strong>/artifacts/new</strong> - Create a new item in the list of artifacts.</li>
                 <li><strong>/persons/new</strong> - Create a new item in the list of persons.</li>
-                <li><strong>/teams/new</strong> - Create a new item in the list of teams (artists' collectives).</li>
-                <li><strong>/collections/new</strong> - Create a new item in the list of collections of artifacts.</li>
-                <li><strong>/exhibitions/new</strong> - Create a new item in the list of exhibitions.</li>
+                <li><strong>/events/new</strong> - Create a new item in the list of events.</li>
+                <li><strong>/news/new</strong> - Create a new news item.</li>
             </ul>
-            <p><em>Please note that new featured items should not be created. The total number should be kept at three featured items.</em></p>
+            <p><em>Please note that new featured items should not be created. The total number should be kept at four featured items.</em></p>
         </div>
     </body>
 </html>
