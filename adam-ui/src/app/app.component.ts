@@ -12,6 +12,10 @@ export class AppComponent {
   url = 'https://adam-interface.herokuapp.com/all';
   allDataRetrieved;
 
+  onActivate(event) {
+    window.scroll(0,0);
+  }
+
   constructor(private http: HttpClient) {
 
     this.http.get(this.url).toPromise().then(data => {
