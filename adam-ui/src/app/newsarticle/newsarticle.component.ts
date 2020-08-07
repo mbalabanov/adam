@@ -26,9 +26,9 @@ export class NewsarticleComponent implements OnInit {
         .subscribe(news => {
             this.newsitems = news;
                 console.log(this.newsitems.content);
-                for (var i = 0; i < this.newsitems.content.length; i += 1) {
-                    if(this.newsitems.content[i].urlAddress.toLowerCase() == articleSlug ) {
-                        articleIndex = i;
+                for (var item in this.newsitems.content) {
+                    if(this.newsitems.content[item].urlAddress.toLowerCase() == articleSlug ) {
+                        articleIndex = item;
                     }
                 };
                 this.newsitem = this.newsitems.content[articleIndex];

@@ -30,9 +30,9 @@ export class ItemdetailsComponent implements OnInit {
             .subscribe(data => {
                 this.archiveCategories = Object.values(data);
 
-                    for (var i = 0; i < this.archiveCategories.length; i += 1) {
-                        if(this.archiveCategories[i].name.toLowerCase() == catSlug ) {
-                            catIndex = i;
+                    for (var index in this.archiveCategories) {
+                        if(this.archiveCategories[index].name.toLowerCase() == catSlug ) {
+                            catIndex = index;
                         }
                     };
                     this.archiveCategory = this.archiveCategories[catIndex];
