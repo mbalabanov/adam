@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { newsitems } from '../newsdata';
+import { ApirequestsService } from '../apirequests.service';
 
 @Component({
   selector: 'app-footer',
@@ -8,11 +8,17 @@ import { newsitems } from '../newsdata';
 })
 export class FooterComponent implements OnInit {
 
-  newsitems = newsitems;
+  public newsitems;
 
-  constructor() { }
+  constructor(private _apirequestsService: ApirequestsService) { }
 
   ngOnInit(): void {
+
+    this._apirequestsService.getNews()
+        .subscribe(news => {
+        this.newsitems = news;
+    });
+
   }
 
 }
