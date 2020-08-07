@@ -10,9 +10,9 @@ Dieses Projekt dient nur zu Übungszwecken und wurde vom "Archive of Digital Art
 ADAM besteht aus vier Teilen: Einem _API-Server_ auf [adam-interface.herokuapp.com](https://adam-interface.herokuapp.com) mit einer Datenbank und Schnittstellen, um die Daten abzurufen, sowie einer Website mit einem _öffentlichen Bereich_ auf [demoarchive.art](http://demoarchive.art/), in dem Besucher die Informationen über die digitalen Kunstwerke finden, und einem _Redaktionsbereich,_ in dem Redakteure neue Inhalte einpflegen und bearbeiten können, und Administratoren die Rechte verwalten können. Zu guter Letzt gibt es eine _Mobile-App,_ mit der man Einträge erstellen kann, Fotos und Videos hochladen kann.
 
 ## Aktualisierungen
-- *7. August 2020:* Öffentliches Web Frontend bezieht nun sämtliche Daten von der API (allerdings treten noch Fehler in der Console auf und einige Routes funktionieren noch nicht richtig).
+- *7. August 2020:* Öffentliches Web-Frontend bezieht nun sämtliche Daten von der API (allerdings treten noch Fehler in der Console auf und einige Routes funktionieren noch nicht richtig).
 - *6. August 2020:* Erweitertes Angular-Frontend, konsolodiertes Datenmodell und angepasste API.
-- *31. Juli 2020:* Erste Fassung des Webfrontends auf [demoarchive.art](http://demoarchive.art/) fertiggestellt (allerdings noch ohne API-Anbindung).
+- *31. Juli 2020:* Erste Fassung des Web-Frontends auf [demoarchive.art](http://demoarchive.art/) fertiggestellt (allerdings noch ohne API-Anbindung).
 - *30. Juli 2020:* Erste Fassung der API auf [adam-interface.herokuapp.com](https://adam-interface.herokuapp.com) fertiggestellt.
 - *24. Juli 2020:* Erster unvollständiger Versuch, mit der API und dem Webfrontend (noch ohne Angular) zu Versuchszwecken.
 - *15. Juli 2020:* Mobile App Wireframes hinzugefügt, API aktualisiert, GET-API-Aufrufe bereit, Domain demoarchive.art registriert.
@@ -245,7 +245,7 @@ _Bitte beachten Sie, dass kein neuer auf der Startseite ausgewiesenen Beitrag (f
 
 - *Bis 24. Juli 2020:* Funktionierendes und implementiertes Design des Webfrontends in Angular.
 
-- *Bis 31. Juli 2020:* Öffentlicher Teil des Webfrontends fertiggestellt. Frontend zeigt die vier unterschiedlichen Ansichten, kann über die API Musterdaten abrufen und anzeigen.
+- *Bis 31. Juli 2020:* Öffentlicher Teil des Web-Frontends fertiggestellt. Frontend zeigt die vier unterschiedlichen Ansichten, kann über die API Musterdaten abrufen und anzeigen.
 
 - *Bis 28. August 2020:* Redaktionsbereich und Admin-Bereich (nicht-öffentlicher Bereich des Webfrontends) mit Login, Registrierung, neue Einträge erstellen, Einträge bearbeiten, Einträge deaktivieren und reaktivieren, Benutzer deaktivieren und reaktivieren.
 
