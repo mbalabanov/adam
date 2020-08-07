@@ -20,6 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { ItemdetailsComponent } from './itemdetails/itemdetails.component';
 import { CarouselComponent } from './carousel/carousel.component';
+import { ApirequestsService } from './apirequests.service';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,7 @@ import { CarouselComponent } from './carousel/carousel.component';
     Ng2SearchPipeModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ApirequestsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

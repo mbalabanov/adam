@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { newsitems } from '../newsdata';
+import { ApirequestsService } from '../apirequests.service';
 
 @Component({
   selector: 'app-newsarticle',
@@ -8,25 +8,32 @@ import { newsitems } from '../newsdata';
   styleUrls: ['./newsarticle.component.css']
 })
 export class NewsarticleComponent implements OnInit {
-  newsitems = newsitems;
+  public newsitems;
   newsitem;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private _apirequestsService: ApirequestsService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    function getPostIndex(arg) {
-               for(var i = 0; i < newsitems.length; i += 1) {
-                   if(newsitems[i].urlAddress.toLowerCase() === arg) {
-                       return i;
-                   }
-               }
-           }
 
-       this.route.paramMap.subscribe(params => {
-          let slug = params.get('postId');
-          let theIndex = getPostIndex(slug);
-          this.newsitem = newsitems[theIndex];
-       });
+    let articleSlug;
+    let articleIndex;
+
+    this.route.paramMap.subscribe(params => {
+        articleSlug = params.get('postId');
+    });
+
+    this._apirequestsService.getNews()
+        .subscribe(news => {
+            this.newsitems = news;
+                console.log(this.newsitems.content);
+                for (var i = 0; i < this.newsitems.content.length; i += 1) {
+                    if(this.newsitems.content[i].urlAddress.toLowerCase() == articleSlug ) {
+                        articleIndex = i;
+                    }
+                };
+                this.newsitem = this.newsitems.content[articleIndex];
+        });
+
   }
 
 }

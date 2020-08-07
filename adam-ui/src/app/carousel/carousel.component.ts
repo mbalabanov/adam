@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { featured } from '../featured';
+import { ApirequestsService } from '../apirequests.service';
 
 @Component({
   selector: 'app-carousel',
@@ -8,11 +8,17 @@ import { featured } from '../featured';
 })
 export class CarouselComponent implements OnInit {
 
-  featured = featured;
+  public featured;
 
-  constructor() { }
+  constructor(private _apirequestsService: ApirequestsService) { }
 
   ngOnInit(): void {
+
+    this._apirequestsService.getFeatured()
+        .subscribe(featured => {
+        this.featured = featured;
+    });
+
   }
 
 }

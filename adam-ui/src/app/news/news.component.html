@@ -4,7 +4,7 @@
     </div>
 </div>
 <div class="row px-md-4">
-    <div class="col-md-4 text-left pb-5 bloglist" *ngFor="let item of newsitems; index as postId">
+    <div class="col-md-4 text-left pb-5 bloglist" *ngFor="let item of newsitems.content; index as postId">
         <img src="{{ item.image }}" alt="{{ item.title }}" [routerLink]="['/newsarticle', (item.urlAddress).toLowerCase()]" class="rounded-lg">
         <h3 class="py-2"><a [routerLink]="['/newsarticle', (item.urlAddress).toLowerCase()]">{{ item.title }}</a></h3>
         <p>{{ item.shortdescription }}</p>

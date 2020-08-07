@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { archiveCategories } from '../archivedata';
+import { ApirequestsService } from '../apirequests.service';
 
 @Component({
   selector: 'app-list',
@@ -9,9 +8,17 @@ import { archiveCategories } from '../archivedata';
 })
 export class ArchivelistComponent implements OnInit {
 
-  archiveCategories = archiveCategories;
+  public archiveCategories;
 
+  constructor(private _apirequestsService: ApirequestsService) { }
+  
   ngOnInit(): void {
+
+    this._apirequestsService.getData()
+        .subscribe(data => {
+        this.archiveCategories = Object.values(data);
+    });
+
   }
 
 }

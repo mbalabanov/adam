@@ -26,7 +26,7 @@
         <div class="col-lg-4 col-sm-12">
             <h4 class="my-4">All Posts</h4>
             <ul>
-                <li *ngFor="let item of newsitems" class="my-2"><a [routerLink]="['/newsarticle', (item.urlAddress).toLowerCase()]">{{ item.title }}</a></li>
+                <li *ngFor="let item of newsitems.content" class="my-2"><a [routerLink]="['/newsarticle', (item.urlAddress).toLowerCase()]">{{ item.title }}</a></li>
             </ul>
         </div>
     </div>

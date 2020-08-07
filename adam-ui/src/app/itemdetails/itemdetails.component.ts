@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { archiveCategories } from '../archivedata';
-import { FormsModule } from '@angular/forms';
+import { ApirequestsService } from '../apirequests.service';
 
 @Component({
   selector: 'app-itemdetails',
@@ -10,28 +9,36 @@ import { FormsModule } from '@angular/forms';
 })
 export class ItemdetailsComponent implements OnInit {
 
-	archiveCategories = archiveCategories;
+	public archiveCategories = [];
 	archiveCategory;
 	archiveItem;
 
-	constructor(private route: ActivatedRoute) { }
+	constructor(private _apirequestsService: ApirequestsService, private route: ActivatedRoute) { }
 
 	ngOnInit(): void {
-    function getCategoryIndex(arg) {
-                for(var i = 0; i < archiveCategories.length; i += 1) {
-                    if(archiveCategories[i].name.toLowerCase() === arg) {
-                        return i;
-                    }
-                }
-            }
 
-      this.route.paramMap.subscribe(params => {
-          let catSlug = params.get('categoryId');
-          let itemSlug = params.get('itemId');
-          let catIndex = getCategoryIndex(catSlug);
-          this.archiveCategory = archiveCategories[catIndex];
-          this.archiveItem = archiveCategories[catIndex].content[itemSlug];
-      });
-	}
+        let catSlug;
+        let itemSlug;
+        let catIndex;
+
+        this.route.paramMap.subscribe(params => {
+            catSlug = params.get('categoryId');
+            itemSlug = params.get('itemId');
+        });
+
+        this._apirequestsService.getData()
+            .subscribe(data => {
+                this.archiveCategories = Object.values(data);
+
+                    for (var i = 0; i < this.archiveCategories.length; i += 1) {
+                        if(this.archiveCategories[i].name.toLowerCase() == catSlug ) {
+                            catIndex = i;
+                        }
+                    };
+                    this.archiveCategory = this.archiveCategories[catIndex];
+                    this.archiveItem = this.archiveCategories[catIndex].content[itemSlug];
+            });
+
+    }
 
 }

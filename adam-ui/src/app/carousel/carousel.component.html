@@ -6,7 +6,7 @@
       <li data-target="#carouselFrontpageCaptions" data-slide-to="3"></li>
     </ol>
     <div class="carousel-inner">
-      <div class="carousel-item" *ngFor="let item of featured; let isFirst = first" [class.active]="isFirst">
+      <div class="carousel-item" *ngFor="let item of featured.content; let isFirst = first" [class.active]="isFirst">
         <a routerLink="/item/{{ item.link }}"><img src="{{ item.image }}" class="d-block w-100" alt="{{ item.title }}" data-interval="2200"></a>
         <div class="carousel-caption darkened d-none d-md-block">
           <h4>{{ item.title }}</h4>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { archiveCategories } from '../archivedata';
+import { ApirequestsService } from '../apirequests.service';
 import { FormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
@@ -11,26 +11,33 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 })
 export class ArchivedetailComponent implements OnInit {
 
-	archiveCategories = archiveCategories;
-	archiveCategory;
-	searchText;
+    public archiveCategories = [];
+    archiveCategory;
+    searchText;
 
-	constructor(private route: ActivatedRoute) { }
+	constructor(private _apirequestsService: ApirequestsService, private route: ActivatedRoute) { }
 
 	ngOnInit(): void {
-    function getCategoryIndex(arg) {
-                for(var i = 0; i < archiveCategories.length; i += 1) {
-                    if(archiveCategories[i].name.toLowerCase() === arg) {
-                        return i;
-                    }
-                }
-            }
 
-      this.route.paramMap.subscribe(params => {
-          let slug = params.get('categoryId');
-          let theIndex = getCategoryIndex(slug);
-          this.archiveCategory = archiveCategories[theIndex];
-      });
-	}
+        let catSlug;
+        let catIndex;
+
+        this.route.paramMap.subscribe(params => {
+            catSlug = params.get('categoryId');
+        });
+
+        this._apirequestsService.getData()
+            .subscribe(data => {
+                this.archiveCategories = Object.values(data);
+
+                    for (var i = 0; i < this.archiveCategories.length; i += 1) {
+                        if(this.archiveCategories[i].name.toLowerCase() == catSlug ) {
+                            catIndex = i;
+                        }
+                    };
+                    this.archiveCategory = this.archiveCategories[catIndex];
+                });
+
+    }
 
 }
