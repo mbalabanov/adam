@@ -348,7 +348,7 @@
     },
     "persons": {
         "name": "Persons",
-        "coverimage": "assets/img/portraits/tn-portrait01.jpg",
+        "coverimage": "assets/img/portraits/portrait01.jpg",
         "content": [
             {
                 "id": "0",
@@ -365,7 +365,7 @@
                 "images": [
                     {
                         "id": "0",
-                        "url": "assets/img/portraits/tn-portrait01.jpg",
+                        "url": "assets/img/portraits/portrait01.jpg",
                         "name": "Cursus Ultricies Risus",
                         "description": "Nulla vitae elit libero, a pharetra augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                     },
@@ -412,7 +412,7 @@
                 "images":[
                     {
                         "id": "0",
-                        "url": "assets/img/portraits/tn-portrait02.jpg",
+                        "url": "assets/img/portraits/portrait02.jpg",
                         "name": "Cursus Ultricies Risus",
                         "description": "Nulla vitae elit libero, a pharetra augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                     },
@@ -458,7 +458,7 @@
                 "images":[
                     {
                         "id": "0",
-                        "url": "assets/img/portraits/tn-portrait03.jpg",
+                        "url": "assets/img/portraits/portrait03.jpg",
                         "name": "Cursus Ultricies Risus",
                         "description": "Nulla vitae elit libero, a pharetra augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                     },
@@ -505,7 +505,7 @@
                 "images":[
                     {
                         "id": "0",
-                        "url": "assets/img/portraits/tn-portrait04.jpg",
+                        "url": "assets/img/portraits/portrait04.jpg",
                         "name": "Cursus Ultricies Risus",
                         "description": "Nulla vitae elit libero, a pharetra augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                     },
@@ -552,7 +552,7 @@
                 "images":[
                     {
                         "id": "0",
-                        "url": "assets/img/portraits/tn-portrait05.jpg",
+                        "url": "assets/img/portraits/portrait05.jpg",
                         "name": "Cursus Ultricies Risus",
                         "description": "Nulla vitae elit libero, a pharetra augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                     },
@@ -599,7 +599,7 @@
                 "images":[
                     {
                         "id": "0",
-                        "url": "assets/img/portraits/tn-portrait06.jpg",
+                        "url": "assets/img/portraits/portrait06.jpg",
                         "name": "Cursus Ultricies Risus",
                         "description": "Nulla vitae elit libero, a pharetra augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                     }
