@@ -29,13 +29,7 @@ const routes: Routes = [
     path: 'item/:categoryId/:itemId', component: ItemdetailsComponent
   },
   {
-    path: 'about', component: ComplianceComponent
-  },
-  {
-    path: 'terms', component: ComplianceComponent
-  },
-  {
-    path: 'privacy', component: ComplianceComponent
+    path: 'compliance/:categoryId', component: ComplianceComponent
   },
   {
     path: 'contact', component: ContactComponent
