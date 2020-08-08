@@ -11,7 +11,10 @@ export class ItemdetailsComponent implements OnInit {
 
 	public archiveCategories = [];
 	archiveCategory;
-	archiveItem;
+    archiveItem;
+    relatedArtifacts;
+    relatedPersons;
+    relatedEvents;
 
 	constructor(private _apirequestsService: ApirequestsService, private route: ActivatedRoute) { }
 
@@ -37,6 +40,8 @@ export class ItemdetailsComponent implements OnInit {
                     };
                     this.archiveCategory = this.archiveCategories[catIndex];
                     this.archiveItem = this.archiveCategories[catIndex].content[itemSlug];
+
+                    console.log(this.archiveItem.personIDs);
             });
 
     }

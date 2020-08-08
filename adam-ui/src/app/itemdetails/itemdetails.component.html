@@ -33,6 +33,9 @@
             <strong>Tags:</strong>
             <span class="alert alert-info m-1" *ngFor="let tag of archiveItem.tags">{{ tag }}</span>
           </p>
+          <div class="alert alert-danger" *ngFor="let relatedPerson of archiveItem.persons">
+            {{ relatedPerson }}
+          </div>
 				</div>
 			</div>
 
