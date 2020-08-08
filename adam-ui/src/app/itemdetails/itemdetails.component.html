@@ -3,7 +3,7 @@
 <div class="container-fluid">
 
   <div class="row">
-    <div class="col-10">
+    <div class="col-lg-8">
       <nav aria-label="breadcrumb" class="mt-2">
           <ol class="breadcrumb">
               <li class="breadcrumb-item"><a  routerLink="/">Home</a></li>
@@ -13,9 +13,9 @@
           </ol>
       </nav>
     </div>
-    <div class="col-2 mt-2">
-      <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&layout=button&size=large&width=77&height=28&appId" width="77" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe><br>
-      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="btn btn-sm btn-primary twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <div class="col-lg-4 mt-2">
+        <a class="btn btn-sm btn-primary mt-3 mr-1" href="https://www.facebook.com/sharer/sharer.php?u=http://demoarchive.art/items/{{ pageUrl }}" target="_blank"><img src="../assets/img/fb-icon.png" height="16px" alt="Facebook" class="mr-1">Share on Facebook</a>
+        <a class="btn btn-sm btn-primary mt-3 mr-1" href="https://twitter.com/intent/tweet?url=http://demoarchive.art/items/{{ pageUrl }}" target="_blank"><img src="../assets/img/tw-icon.png" height="16px" alt="Twitter" class="mr-1">Share on Twitter</a>
     </div>
   </div>
 
@@ -23,25 +23,22 @@
 
 <div class="container">
   <div class="row my-4">
-    <div class="col-8">
-      <h3>{{ archiveItem.name }}</h3>
+    <div class="col-lg-8">
+      <h3>{{ archiveCategory.name }}: {{ archiveItem.name }}</h3>
       <p>{{ archiveItem.longdescription }}</p>
 
 			<div class="row">
 				<div class="col-12">
 					<p class="mt-4">
             <strong>Tags:</strong>
-            <span class="alert alert-info m-1" *ngFor="let tag of archiveItem.tags">{{ tag }}</span>
+            <span class="btn btn-warning m-1" *ngFor="let tag of archiveItem.tags">{{ tag }}</span>
           </p>
-          <div class="alert alert-danger" *ngFor="let relatedPerson of archiveItem.persons">
-            {{ relatedPerson }}
-          </div>
+
 				</div>
 			</div>
 
     </div>
-    <div class="col-4">
-
+    <div class="col-lg-4">
       <div id="carouselCaptions" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselCaptions" data-slide-to="{{ item.id }}" *ngFor="let item of archiveItem.images; let isFirst = first" [class.active]="isFirst"></li>
@@ -79,7 +76,39 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
+      <div class="text-center">
+        <span class="badge badge-secondary">Click image to magnify.</span>
+      </div>
+    </div>
+  </div>
 
+  <div class="row">
+    <div class="col-12">
+      <div class="dropdown-divider"></div>
+      <h4>Related</h4>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Related persons -->
+    <div class="col-lg-2 col-md-3 text-center my-1" *ngFor="let item of relatedPersons">
+      <a routerLink="/item/persons/{{ item.id }}"><img src="{{ item.images[0].url }}" alt="{{ item.name }}" class="img-fluid rounded"></a>
+      <span class="badge badge-secondary">Person</span>
+      <p><a routerLink="/item/{{ archiveCategory.name | lowercase }}/{{ item.id }}">{{ item.name }}</a></p>
+    </div>
+
+    <!-- Related artifacts -->
+    <div class="col-lg-2 col-md-3 text-center my-1" *ngFor="let item of relatedArtifacts">
+      <a routerLink="/item/artifacts/{{ item.id }}"><img src="{{ item.images[0].url }}" alt="{{ item.name }}" class="img-fluid rounded"></a>
+      <span class="badge badge-secondary">Artifact</span>
+      <p><a routerLink="/item/{{ archiveCategory.name | lowercase }}/{{ item.id }}">{{ item.name }}</a></p>
+    </div>
+
+    <!-- Related events -->
+    <div class="col-lg-2 col-md-3 text-center my-1" *ngFor="let item of relatedEvents">
+      <a routerLink="/item/events/{{ item.id }}"><img src="{{ item.images[0].url }}" alt="{{ item.name }}" class="img-fluid rounded"></a>
+      <span class="badge badge-secondary">Event</span>
+      <p><a routerLink="/item/{{ archiveCategory.name | lowercase }}/{{ item.id }}">{{ item.name }}</a></p>
     </div>
   </div>
 </div>

@@ -9,12 +9,13 @@ import { ApirequestsService } from '../apirequests.service';
 })
 export class ItemdetailsComponent implements OnInit {
 
-	public archiveCategories = [];
+	archiveCategories = [];
 	archiveCategory;
     archiveItem;
-    relatedArtifacts;
-    relatedPersons;
-    relatedEvents;
+    pageUrl: string;
+    relatedArtifacts: Array<object> = [];
+    relatedPersons: Array<object> = [];
+    relatedEvents: Array<object> = [];
 
 	constructor(private _apirequestsService: ApirequestsService, private route: ActivatedRoute) { }
 
@@ -27,6 +28,7 @@ export class ItemdetailsComponent implements OnInit {
         this.route.paramMap.subscribe(params => {
             catSlug = params.get('categoryId');
             itemSlug = params.get('itemId');
+            this.pageUrl = catSlug + '/' + itemSlug;
         });
 
         this._apirequestsService.getData()
@@ -38,10 +40,28 @@ export class ItemdetailsComponent implements OnInit {
                             catIndex = index;
                         }
                     };
+
                     this.archiveCategory = this.archiveCategories[catIndex];
                     this.archiveItem = this.archiveCategories[catIndex].content[itemSlug];
 
-                    console.log(this.archiveItem.personIDs);
+                    for (let individualPerson of this.archiveItem.persons) {
+                        this._apirequestsService.getPerson(individualPerson).subscribe(data => {
+                            this.relatedPersons.push(data);
+                        });
+                    };
+
+                    for (let individualArtifact of this.archiveItem.artifacts) {
+                        this._apirequestsService.getArtifact(individualArtifact).subscribe(data => {
+                            this.relatedArtifacts.push(data);
+                        });
+                    };
+
+                    for (let individualEvent of this.archiveItem.events) {
+                        this._apirequestsService.getEvent(individualEvent).subscribe(data => {
+                            this.relatedEvents.push(data);
+                        });
+                    };
+
             });
 
     }

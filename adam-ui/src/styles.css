@@ -34,6 +34,22 @@
     text-decoration: none;
 }
 
+.absolute-sm {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    border-radius: 0.3rem;
+    padding: 0.1rem 0.1rem 0 0.1rem;
+    font-size: 70%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.absolute-sm a {
+    color: white;
+    text-decoration: none;
+}
+
 .relative {
     position: relative;
 }
