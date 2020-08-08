@@ -6,8 +6,10 @@
             <h2>{{ complianceCategory.title }}</h2>
             <div [innerHTML]="complianceCategory.articletext"></div>
         </div>
-		<div class="col-lg-6 text-center" *ngFor="let image of complianceCategory.images">
-			<img class="img-fluid" src="{{ image }}" alt="{{ complianceCategory.title }}">
+		<div class="col-lg-6 text-center">
+            <div *ngFor="let image of complianceCategory.images">
+                <img class="img-fluid" src="{{ image }}" alt="{{ complianceCategory.title }}">
+            </div>
         </div>
 
 	</div>
