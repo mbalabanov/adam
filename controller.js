@@ -35,6 +35,11 @@ function loadData() {
         news = tempData;
     });
 
+    fs.readFile('data/compliance.json', 'utf8', function(err, contents) {
+        var tempData = JSON.parse(contents);
+        compliance = tempData;
+    });
+
     fs.readFile('data/instructions.html', 'utf8', function(err, contents) {
         instructiontext = contents;
     });
