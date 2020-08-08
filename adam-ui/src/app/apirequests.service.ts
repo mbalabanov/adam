@@ -10,6 +10,7 @@ export class ApirequestsService {
   private archiveUrl: string = 'https://adam-interface.herokuapp.com/all';
   private newsUrl: string = 'https://adam-interface.herokuapp.com/news';
   private featuredUrl: string = 'https://adam-interface.herokuapp.com/featured';
+  private complianceUrl: string = 'https://adam-interface.herokuapp.com/compliance';
 
   constructor(private http: HttpClient) { }
 
@@ -22,6 +23,10 @@ export class ApirequestsService {
   }
 
   getFeatured() {
+    return this.http.get(this.featuredUrl);
+  }
+
+  getCompliance() {
     return this.http.get(this.featuredUrl);
   }
   

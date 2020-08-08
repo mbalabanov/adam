@@ -33,7 +33,7 @@ app.get('/all', function(request, response) {
   getAll(request, response);
 });
 
-app.get(['/artifacts', '/artifacts/', '/persons', '/persons/', '/events', '/events/', '/featured', '/featured/', '/news', '/news/'], function(request, response) {
+app.get(['/artifacts', '/artifacts/', '/persons', '/persons/', '/events', '/events/', '/featured', '/featured/', '/news', '/news/', '/compliance', '/compliance/'], function(request, response) {
   getItems(request, response);
 });
 

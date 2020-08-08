@@ -5,7 +5,7 @@ import { ArchiveComponent } from './archive/archive.component';
 import { NewslistComponent } from './newslist/newslist.component';
 import { NewsarticleComponent } from './newsarticle/newsarticle.component';
 import { ArchivedetailComponent } from './archivedetail/archivedetail.component';
-import { AboutComponent } from './about/about.component';
+import { ComplianceComponent } from './compliance/compliance.component';
 import { ContactComponent } from './contact/contact.component';
 import { ItemdetailsComponent } from './itemdetails/itemdetails.component';
 
@@ -29,7 +29,13 @@ const routes: Routes = [
     path: 'item/:categoryId/:itemId', component: ItemdetailsComponent
   },
   {
-    path: 'about', component: AboutComponent
+    path: 'about', component: ComplianceComponent
+  },
+  {
+    path: 'terms', component: ComplianceComponent
+  },
+  {
+    path: 'privacy', component: ComplianceComponent
   },
   {
     path: 'contact', component: ContactComponent

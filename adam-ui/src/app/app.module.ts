@@ -14,13 +14,13 @@ import { NewslistComponent } from './newslist/newslist.component';
 import { ArchiveComponent } from './archive/archive.component';
 import { NewsarticleComponent } from './newsarticle/newsarticle.component';
 import { ArchivedetailComponent } from './archivedetail/archivedetail.component';
-import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { ItemdetailsComponent } from './itemdetails/itemdetails.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { ApirequestsService } from './apirequests.service';
+import { ComplianceComponent } from './compliance/compliance.component';
 
 @NgModule({
   declarations: [
@@ -36,10 +36,10 @@ import { ApirequestsService } from './apirequests.service';
     ArchiveComponent,
     NewsarticleComponent,
     ArchivedetailComponent,
-    AboutComponent,
     ContactComponent,
     ItemdetailsComponent,
     CarouselComponent,
+    ComplianceComponent,
   ],
   imports: [
     BrowserModule,
