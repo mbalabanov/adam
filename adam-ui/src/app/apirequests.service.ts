@@ -27,7 +27,7 @@ export class ApirequestsService {
   }
 
   getCompliance() {
-    return this.http.get(this.featuredUrl);
+    return this.http.get(this.complianceUrl);
   }
   
 }

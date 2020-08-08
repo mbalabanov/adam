@@ -12,17 +12,24 @@
                 <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
             </li>
             <li class="nav-item ml-2">
-                <a class="nav-link" routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">About</a>
-            </li>
-            <li class="nav-item ml-2">
                 <a class="nav-link" routerLink="/archive" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Archive</a>
             </li>
             <li class="nav-item ml-2">
                 <a class="nav-link" routerLink="/news" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">News</a>
             </li>
-            <li class="nav-item ml-2">
-                <a class="nav-link" routerLink="/contact" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Contact</a>
+            <li class="nav-item dropdown ml-2">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  About
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" routerLink="/compliance/about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">About ADAM</a>
+                  <a class="dropdown-item" routerLink="/contact" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Contact</a>
+                  <a class="dropdown-item" routerLink="/compliance/privacy" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Privacy Policy</a>
+                  <a class="dropdown-item" routerLink="/compliance/terms" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Terms of Use</a>
+                  <a class="dropdown-item" routerLink="/compliance/imprint" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Legal Imprint</a>
+                </div>
             </li>
+
             <li class="nav-item dropdown ml-2">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Account
