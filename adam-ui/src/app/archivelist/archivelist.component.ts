@@ -8,15 +8,34 @@ import { ApirequestsService } from '../apirequests.service';
 })
 export class ArchivelistComponent implements OnInit {
 
-  public archiveCategories;
+  public artifactCategory;
+  public eventCategory;
+  public personCategory;
 
   constructor(private _apirequestsService: ApirequestsService) { }
   
   ngOnInit(): void {
 
-    this._apirequestsService.getData()
+    var randomCategoryID1 = Math.floor(Math.random() * 4);
+    var randomCategoryID2 = Math.floor(Math.random() * 4);
+    var randomCategoryID3 = Math.floor(Math.random() * 4);
+
+    this._apirequestsService.getArtifact(randomCategoryID1)
         .subscribe(data => {
-        this.archiveCategories = Object.values(data);
+        this.artifactCategory = data;
+        console.log(this.artifactCategory.images[0]);
+    });
+
+    this._apirequestsService.getEvent(randomCategoryID2)
+        .subscribe(data => {
+        console.log(data);
+        this.eventCategory = data;
+    });
+
+    this._apirequestsService.getPerson(randomCategoryID3)
+        .subscribe(data => {
+        console.log(data);
+        this.personCategory = data;
     });
 
   }

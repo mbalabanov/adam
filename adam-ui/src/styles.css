@@ -45,11 +45,6 @@
     color: white;
 }
 
-.absolute-sm a {
-    color: white;
-    text-decoration: none;
-}
-
 .relative {
     position: relative;
 }
@@ -77,6 +72,11 @@ h3 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-style: italic;
     color: rgb(0,123,255);
+}
+
+h4 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(255,121,159);
 }
 
 .search-field {

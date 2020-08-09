@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApirequestsService } from '../apirequests.service';
-import { FormsModule } from '@angular/forms';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @Component({
   selector: 'app-archivedetail',
@@ -26,17 +24,23 @@ export class ArchivedetailComponent implements OnInit {
             catSlug = params.get('categoryId');
         });
 
-        this._apirequestsService.getData()
-            .subscribe(data => {
-                this.archiveCategories = Object.values(data);
-
-                    for (var index in this.archiveCategories) {
-                        if(this.archiveCategories[index].name.toLowerCase() == catSlug ) {
-                            catIndex = index;
-                        }
-                    };
-                    this.archiveCategory = this.archiveCategories[catIndex];
-                });
+        switch (catSlug) {
+            case 'events':
+                this._apirequestsService.getEvents()
+                .subscribe(data => {
+                    this.archiveCategory = data;
+                    });
+            case 'persons':
+                this._apirequestsService.getPersons()
+                .subscribe(data => {
+                    this.archiveCategory = data;
+                    });
+            default:
+                this._apirequestsService.getArtifacts()
+                .subscribe(data => {
+                    this.archiveCategory = data;
+                    });
+          }
 
     }
 

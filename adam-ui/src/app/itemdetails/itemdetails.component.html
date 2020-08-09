@@ -8,14 +8,14 @@
           <ol class="breadcrumb">
               <li class="breadcrumb-item"><a  routerLink="/">Home</a></li>
               <li class="breadcrumb-item"><a  routerLink="/archive">Archive</a></li>
-              <li class="breadcrumb-item"><a  routerLink="/category/{{ archiveCategory.name | lowercase }}">Archive Category: {{ archiveCategory.name }}</a></li>
+              <li class="breadcrumb-item"><a  routerLink="/category/{{ archiveCategory }}">Archive category: {{ archiveCategory }}</a></li>
               <li class="breadcrumb-item active" aria-current="page">{{ archiveItem.name }}</li>
           </ol>
       </nav>
     </div>
     <div class="col-lg-4 mt-2">
-        <a class="btn btn-sm btn-primary mt-3 mr-1" href="https://www.facebook.com/sharer/sharer.php?u=http://demoarchive.art/items/{{ pageUrl }}" target="_blank"><img src="../assets/img/fb-icon.png" height="16px" alt="Facebook" class="mr-1">Share on Facebook</a>
-        <a class="btn btn-sm btn-primary mt-3 mr-1" href="https://twitter.com/intent/tweet?url=http://demoarchive.art/items/{{ pageUrl }}" target="_blank"><img src="../assets/img/tw-icon.png" height="16px" alt="Twitter" class="mr-1">Share on Twitter</a>
+        <a class="btn btn-sm btn-primary mt-3 mr-1" href="https://www.facebook.com/sharer/sharer.php?u=http://demoarchive.art/item/{{ pageUrl }}" target="_blank"><img src="../assets/img/fb-icon.png" height="16px" alt="Facebook" class="mr-1">Share on Facebook</a>
+        <a class="btn btn-sm btn-primary mt-3 mr-1" href="https://twitter.com/intent/tweet?url=http://demoarchive.art/item/{{ pageUrl }}" target="_blank"><img src="../assets/img/tw-icon.png" height="16px" alt="Twitter" class="mr-1">Share on Twitter</a>
     </div>
   </div>
 
@@ -24,7 +24,8 @@
 <div class="container">
   <div class="row my-4">
     <div class="col-lg-8">
-      <h3>{{ archiveCategory.name }}: {{ archiveItem.name }}</h3>
+      <span class="badge badge-primary">{{ archiveCategory | titlecase }}</span>
+      <h3>{{ archiveItem.name }}</h3>
       <p>{{ archiveItem.longdescription }}</p>
 
 			<div class="row">

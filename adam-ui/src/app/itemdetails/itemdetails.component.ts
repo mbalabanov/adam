@@ -9,7 +9,6 @@ import { ApirequestsService } from '../apirequests.service';
 })
 export class ItemdetailsComponent implements OnInit {
 
-	archiveCategories = [];
 	archiveCategory;
     archiveItem;
     pageUrl: string;
@@ -17,52 +16,88 @@ export class ItemdetailsComponent implements OnInit {
     relatedPersons: Array<object> = [];
     relatedEvents: Array<object> = [];
 
+
 	constructor(private _apirequestsService: ApirequestsService, private route: ActivatedRoute) { }
 
 	ngOnInit(): void {
 
         let catSlug;
         let itemSlug;
-        let catIndex;
 
         this.route.paramMap.subscribe(params => {
-            catSlug = params.get('categoryId');
+            this.archiveCategory = params.get('categoryId');
             itemSlug = params.get('itemId');
-            this.pageUrl = catSlug + '/' + itemSlug;
+            this.pageUrl = this.archiveCategory + '/' + itemSlug;
         });
 
-        this._apirequestsService.getData()
-            .subscribe(data => {
-                this.archiveCategories = Object.values(data);
-
-                    for (var index in this.archiveCategories) {
-                        if(this.archiveCategories[index].name.toLowerCase() == catSlug ) {
-                            catIndex = index;
-                        }
+        switch (this.archiveCategory) {
+            case 'events':
+                this._apirequestsService.getEvent(itemSlug)
+                .subscribe(data => {
+                    this.archiveItem = data;
+                    for (let individualPerson of this.archiveItem.persons) {
+                        this._apirequestsService.getPerson(individualPerson).subscribe(data => {
+                            this.relatedPersons.push(data);
+                        });
                     };
+                    for (let individualArtifact of this.archiveItem.artifacts) {
+                        this._apirequestsService.getArtifact(individualArtifact).subscribe(data => {
+                            this.relatedArtifacts.push(data);
+                        });
+                    };
+                    for (let individualEvent of this.archiveItem.events) {
+                        this._apirequestsService.getEvent(individualEvent).subscribe(data => {
+                            this.relatedEvents.push(data);
+                        });
+                    };
+                });
 
-                    this.archiveCategory = this.archiveCategories[catIndex];
-                    this.archiveItem = this.archiveCategories[catIndex].content[itemSlug];
+            case 'persons':
+                this._apirequestsService.getPerson(itemSlug)
+                .subscribe(data => {
+                    this.archiveItem = data;
+                    for (let individualPerson of this.archiveItem.persons) {
+                        this._apirequestsService.getPerson(individualPerson).subscribe(data => {
+                            this.relatedPersons.push(data);
+                        });
+                    };
+                    for (let individualArtifact of this.archiveItem.artifacts) {
+                        this._apirequestsService.getArtifact(individualArtifact).subscribe(data => {
+                            this.relatedArtifacts.push(data);
+                        });
+                    };
+                    for (let individualEvent of this.archiveItem.events) {
+                        this._apirequestsService.getEvent(individualEvent).subscribe(data => {
+                            this.relatedEvents.push(data);
+                        });
+                    };
+                });
+
+            case 'artifacts':
+                this._apirequestsService.getArtifact(itemSlug)
+                .subscribe(data => {
+                    this.archiveItem = data;
 
                     for (let individualPerson of this.archiveItem.persons) {
                         this._apirequestsService.getPerson(individualPerson).subscribe(data => {
                             this.relatedPersons.push(data);
                         });
                     };
-
+            
                     for (let individualArtifact of this.archiveItem.artifacts) {
                         this._apirequestsService.getArtifact(individualArtifact).subscribe(data => {
                             this.relatedArtifacts.push(data);
                         });
                     };
-
+            
                     for (let individualEvent of this.archiveItem.events) {
                         this._apirequestsService.getEvent(individualEvent).subscribe(data => {
                             this.relatedEvents.push(data);
                         });
                     };
 
-            });
+                });
+        }
 
     }
 

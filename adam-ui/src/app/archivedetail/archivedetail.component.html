@@ -6,7 +6,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
                 <li class="breadcrumb-item"><a routerLink="/archive">Archive</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Archive Category: {{ archiveCategory.name }}</li>
+                <li class="breadcrumb-item active" aria-current="page">Archive category: {{ archiveCategory.name | lowercase }}</li>
             </ol>
         </nav>
 			<div class="dropdown ml-2 mb-2">
@@ -14,7 +14,9 @@
 					Archive Categories
 				</button>
 				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
-					<a class="dropdown-item" *ngFor="let archiveCategory of archiveCategories" [routerLink]="['/category', (archiveCategory.name).toLowerCase()]">{{ archiveCategory.name }}</a>
+					<a class="dropdown-item" [routerLink]="['/category/artifacts']">Artifacts</a>
+					<a class="dropdown-item" [routerLink]="['/category/events']">Events</a>
+					<a class="dropdown-item" [routerLink]="['/category/persons']">Persons</a>
 				</div>
 			</div>
 		</div>
@@ -32,19 +34,19 @@
 		</div>
 	</div>
 	<div class="container">
-	  <div class="row px-5 mb-5">
-		<div class="col-lg-4 col-sm-6 text-center my-3" *ngFor="let item of archiveCategory.content | filter:searchText">
-			<div class="relative">
-				<a routerLink="/item/{{ archiveCategory.name | lowercase }}/{{ item.id }}"><img src="{{ item.images[0].url }}" alt="{{ item.name }}" class="img-fluid rounded"></a>
-				<div class="absolute">
-					<a class="btn btn-outline-light btn-sm" routerLink="/item/{{ archiveCategory.name | lowercase }}/{{ item.id }}">Details</a>
+		<div class="row px-5 mb-5">
+			<div class="col-lg-4 col-sm-6 text-center my-3" *ngFor="let item of archiveCategory.content | filter:searchText">
+				<div class="relative">
+					<a routerLink="/item/{{ archiveCategory.name | lowercase }}/{{ item.id }}"><img src="{{ item.images[0].url }}" alt="{{ item.name }}" class="img-fluid rounded"></a>
+					<div class="absolute">
+						<a class="btn btn-outline-light btn-sm" routerLink="/item/{{ archiveCategory.name | lowercase }}/{{ item.id }}">Details</a>
+					</div>
 				</div>
+				<h3 class="mt-2"><a routerLink="/item/{{ archiveCategory.name | lowercase }}/{{ item.id }}">{{ item.name }}</a></h3>
+				<p>{{ item.shortdescription }}</p>
+				<p><a class="btn btn-outline-secondary ml-1 mt-2" routerLink="/item/{{ archiveCategory.name | lowercase }}/{{ item.id }}">Details</a></p>
 			</div>
-			<h3 class="mt-2"><a routerLink="/item/{{ archiveCategory.name | lowercase }}/{{ item.id }}">{{ item.name }}</a></h3>
-			<p>{{ item.shortdescription }}</p>
-			<p><a class="btn btn-outline-secondary ml-1 mt-2" routerLink="/item/{{ archiveCategory.name | lowercase }}/{{ item.id }}">Details</a></p>
-		</div>
-    </div>
+    	</div>
 	</div>
 </div>
 <app-footer></app-footer>
