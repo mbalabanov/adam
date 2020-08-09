@@ -24,6 +24,7 @@
 <div class="container">
   <div class="row my-4">
     <div class="col-lg-8">
+      <p>{{ warningMessage }}</p>
       <span class="badge badge-primary">{{ archiveCategory | titlecase }}</span>
       <h3>{{ archiveItem.name }}</h3>
       <p>{{ archiveItem.longdescription }}</p>
@@ -95,21 +96,21 @@
     <div class="col-lg-2 col-md-3 text-center my-1" *ngFor="let item of relatedPersons">
       <a routerLink="/item/persons/{{ item.id }}"><img src="{{ item.images[0].url }}" alt="{{ item.name }}" class="img-fluid rounded"></a>
       <span class="badge badge-secondary">Person</span>
-      <p><a routerLink="/item/{{ archiveCategory.name | lowercase }}/{{ item.id }}">{{ item.name }}</a></p>
+      <p><a routerLink="/item/persons/{{ item.id }}">{{ item.name }}</a></p>
     </div>
 
     <!-- Related artifacts -->
     <div class="col-lg-2 col-md-3 text-center my-1" *ngFor="let item of relatedArtifacts">
       <a routerLink="/item/artifacts/{{ item.id }}"><img src="{{ item.images[0].url }}" alt="{{ item.name }}" class="img-fluid rounded"></a>
       <span class="badge badge-secondary">Artifact</span>
-      <p><a routerLink="/item/{{ archiveCategory.name | lowercase }}/{{ item.id }}">{{ item.name }}</a></p>
+      <p><a routerLink="/item/artifacts/{{ item.id }}">{{ item.name }}</a></p>
     </div>
 
     <!-- Related events -->
     <div class="col-lg-2 col-md-3 text-center my-1" *ngFor="let item of relatedEvents">
       <a routerLink="/item/events/{{ item.id }}"><img src="{{ item.images[0].url }}" alt="{{ item.name }}" class="img-fluid rounded"></a>
       <span class="badge badge-secondary">Event</span>
-      <p><a routerLink="/item/{{ archiveCategory.name | lowercase }}/{{ item.id }}">{{ item.name }}</a></p>
+      <p><a routerLink="/item/events/{{ item.id }}">{{ item.name }}</a></p>
     </div>
   </div>
 </div>

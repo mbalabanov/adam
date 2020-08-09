@@ -11,6 +11,7 @@ export class ItemdetailsComponent implements OnInit {
 
 	archiveCategory;
     archiveItem;
+    warningMessage = '';
     pageUrl: string;
     relatedArtifacts: Array<object> = [];
     relatedPersons: Array<object> = [];
@@ -97,6 +98,8 @@ export class ItemdetailsComponent implements OnInit {
                     };
 
                 });
+            default:
+                this.warningMessage = "Category cannot be found.";
         }
 
     }

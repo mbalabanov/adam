@@ -23,18 +23,15 @@ export class ArchivelistComponent implements OnInit {
     this._apirequestsService.getArtifact(randomCategoryID1)
         .subscribe(data => {
         this.artifactCategory = data;
-        console.log(this.artifactCategory.images[0]);
     });
 
     this._apirequestsService.getEvent(randomCategoryID2)
         .subscribe(data => {
-        console.log(data);
         this.eventCategory = data;
     });
 
     this._apirequestsService.getPerson(randomCategoryID3)
         .subscribe(data => {
-        console.log(data);
         this.personCategory = data;
     });
 
