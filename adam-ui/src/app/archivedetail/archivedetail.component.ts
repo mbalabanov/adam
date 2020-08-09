@@ -18,7 +18,6 @@ export class ArchivedetailComponent implements OnInit {
 	ngOnInit(): void {
 
         let catSlug;
-        let catIndex;
 
         this.route.paramMap.subscribe(params => {
             catSlug = params.get('categoryId');

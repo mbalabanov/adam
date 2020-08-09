@@ -20,22 +20,22 @@ const routes: Routes = [
     path:"archive", component: ArchiveComponent
   },
   {
-    path: 'newsarticle/:postId', component: NewsarticleComponent
+    path:"newsarticle/:postId", component: NewsarticleComponent
   },
   {
-    path: 'category/:categoryId', component: ArchivedetailComponent
+    path:"category/:categoryId", component: ArchivedetailComponent
   },
   {
-    path: 'item/:categoryId/:itemId', component: ItemdetailsComponent
+    path:"item/:categoryId/:itemId", component: ItemdetailsComponent
   },
   {
-    path: 'compliance/:categoryId', component: ComplianceComponent
+    path:"compliance/:categoryId", component: ComplianceComponent
   },
   {
-    path: 'contact', component: ContactComponent
+    path:"contact", component: ContactComponent
   },
   {
-    path: "**", component: HomeComponent
+    path:"**", component: HomeComponent
   }
 ];
 

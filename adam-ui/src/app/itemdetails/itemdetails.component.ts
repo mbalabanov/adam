@@ -17,12 +17,22 @@ export class ItemdetailsComponent implements OnInit {
     relatedPersons: Array<object> = [];
     relatedEvents: Array<object> = [];
 
+    setCarouselActiveID(id){
+        var elems = document.querySelectorAll('.active');
+        [].forEach.call(elems, function(el) {
+            el.classList.remove('active');
+        });
+        var activeElem = document.getElementById(id);
+        activeElem.classList.add('active');
+    };
 
 	constructor(private _apirequestsService: ApirequestsService, private route: ActivatedRoute) { }
 
 	ngOnInit(): void {
 
-        let catSlug;
+        this.relatedArtifacts = [];
+        this.relatedPersons = [];
+        this.relatedEvents = [];
         let itemSlug;
 
         this.route.paramMap.subscribe(params => {
@@ -98,8 +108,6 @@ export class ItemdetailsComponent implements OnInit {
                     };
 
                 });
-            default:
-                this.warningMessage = "Category cannot be found.";
         }
 
     }

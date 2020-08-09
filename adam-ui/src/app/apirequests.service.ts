@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -17,47 +18,47 @@ export class ApirequestsService {
 
   constructor(private http: HttpClient) { }
 
-  getData() {
-    return this.http.get(this.archiveUrl);
+  getData(): Observable<any> {
+    return this.http.get<any>(this.archiveUrl);
   }
 
-  getArtifacts() {
-    return this.http.get(this.artifactsUrl);
+  getArtifacts(): Observable<any> {
+    return this.http.get<any>(this.artifactsUrl);
   }
 
-  getPersons() {
-    return this.http.get(this.personsUrl);
+  getPersons(): Observable<any> {
+    return this.http.get<any>(this.personsUrl);
   }
 
-  getEvents() {
-    return this.http.get(this.eventsUrl);
+  getEvents(): Observable<any> {
+    return this.http.get<any>(this.eventsUrl);
   }
 
-  getArtifact(id) {
+  getArtifact(id): Observable<any> {
     let tempUrl = this.artifactsUrl + '/' + id;
-    return this.http.get(tempUrl);
+    return this.http.get<any>(tempUrl);
   }
 
-  getPerson(id) {
+  getPerson(id): Observable<any> {
     let tempUrl = this.personsUrl + '/' + id;
-    return this.http.get(tempUrl);
+    return this.http.get<any>(tempUrl);
   }
 
-  getEvent(id) {
+  getEvent(id): Observable<any> {
     let tempUrl = this.eventsUrl + '/' + id;
-    return this.http.get(tempUrl);
+    return this.http.get<any>(tempUrl);
   }
 
-  getNews() {
-    return this.http.get(this.newsUrl);
+  getNews(): Observable<any> {
+    return this.http.get<any>(this.newsUrl);
   }
 
-  getFeatured() {
-    return this.http.get(this.featuredUrl);
+  getFeatured(): Observable<any> {
+    return this.http.get<any>(this.featuredUrl);
   }
 
-  getCompliance() {
-    return this.http.get(this.complianceUrl);
+  getCompliance(): Observable<any> {
+    return this.http.get<any>(this.complianceUrl);
   }
   
 }

@@ -14,14 +14,15 @@
 					Archive Categories
 				</button>
 				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
-					<a class="dropdown-item" [routerLink]="['/category/artifacts']">Artifacts</a>
-					<a class="dropdown-item" [routerLink]="['/category/events']">Events</a>
-					<a class="dropdown-item" [routerLink]="['/category/persons']">Persons</a>
+					<a href="#" class="dropdown-item" routerLink="/category/artifacts" routerLinkActive="active">Artifacts</a>
+					<a href="#" class="dropdown-item" routerLink="/category/events" routerLinkActive="active">Events</a>
+					<a href="#" class="dropdown-item" routerLink="/category/persons" routerLinkActive="active">Persons</a>
 				</div>
 			</div>
 		</div>
 	</div>
-    <div class="row">
+
+	<div class="row">
 		<div class="col-10 offset-1 text-center">
 			<h2>Archive Category: {{ archiveCategory.name }}</h2>
 			<h3>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</h3>
