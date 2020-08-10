@@ -398,14 +398,21 @@
                         "url": "https://en.m.wikipedia.org/wiki/New_media_art"
                     }
                 ],
+                "assets": [
+                    {
+                        "id": "0",
+                        "name": "Native executable",
+                        "url": "http://pacidemo.planet-d.net/archives/POV003.ZIP"
+                    }
+                ],
                 "artifacts": [
-                    "0",
-                    "1",
-                    "2"
+                    "a0",
+                    "a1",
+                    "a2"
                 ],
                 "persons": [],
                 "events": [
-                    "1"
+                    "e1"
                 ],
                 "published": "true",
                 "createdOn": "2020-07-04",
@@ -444,14 +451,21 @@
                         "url": "https://en.m.wikipedia.org/wiki/New_media_art"
                     }
                 ],
+                "assets": [
+                    {
+                        "id": "0",
+                        "name": "Native executable",
+                        "url": "http://pacidemo.planet-d.net/archives/POV003.ZIP"
+                    }
+                ],
                 "artifacts":[
-                    "0",
-                    "1",
-                    "2"
+                    "a0",
+                    "a1",
+                    "a2"
                 ],
                 "persons": [],
                 "events":[
-                    "0"
+                    "e0"
                 ],
                 "published": "true",
                 "createdOn": "2020-07-04",
@@ -491,14 +505,21 @@
                         "url": "https://en.m.wikipedia.org/wiki/New_media_art"
                     }
                 ],
+                "assets": [
+                    {
+                        "id": "0",
+                        "name": "Native executable",
+                        "url": "http://pacidemo.planet-d.net/archives/POV003.ZIP"
+                    }
+                ],
                 "artifacts":[
-                    "0",
-                    "1",
-                    "2"
+                    "a3",
+                    "a4",
+                    "a5"
                 ],
                 "persons": [],
                 "events":[
-                    "1"
+                    "a5"
                 ],
                 "published": "true",
                 "createdOn": "2020-07-04",
@@ -538,14 +559,21 @@
                         "url": "https://en.m.wikipedia.org/wiki/New_media_art"
                     }
                 ],
+                "assets": [
+                    {
+                        "id": "0",
+                        "name": "Native executable",
+                        "url": "http://pacidemo.planet-d.net/archives/POV003.ZIP"
+                    }
+                ],
                 "artifacts":[
-                    "0",
-                    "1",
-                    "2"
+                    "a1",
+                    "a3",
+                    "a5"
                 ],
                 "persons": [],
                 "events":[
-                    "2"
+                    "e4"
                 ],
                 "published": "true",
                 "createdOn": "2020-07-04",
@@ -559,7 +587,7 @@
                 "longdescription": "Chauntsph Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
                 "dates": ["1987", "1995"],
                 "tags":[
-                    "Pixel Art",
+                    "Temporal",
                     "Cyberformance",
                     "Bio Art"
                 ],
@@ -585,14 +613,21 @@
                         "url": "https://en.m.wikipedia.org/wiki/New_media_art"
                     }
                 ],
+                "assets": [
+                    {
+                        "id": "0",
+                        "name": "Native executable",
+                        "url": "http://pacidemo.planet-d.net/archives/POV003.ZIP"
+                    }
+                ],
                 "artifacts":[
-                    "0",
-                    "1",
-                    "2"
+                    "a0",
+                    "a1",
+                    "a4"
                 ],
                 "persons": [],
                 "events":[
-                    "3"
+                    "e1"
                 ],
                 "published": "true",
                 "createdOn": "2020-07-04",
@@ -626,14 +661,21 @@
                         "url": "https://en.m.wikipedia.org/wiki/New_media_art"
                     }
                 ],
+                "assets": [
+                    {
+                        "id": "0",
+                        "name": "Native executable",
+                        "url": "http://pacidemo.planet-d.net/archives/POV003.ZIP"
+                    }
+                ],
                 "artifacts":[
-                    "0",
-                    "1",
-                    "2"
+                    "a1",
+                    "a4",
+                    "a5"
                 ],
                 "persons": [],
                 "events":[
-                    "4"
+                    "a4"
                 ],
                 "published": "true",
                 "createdOn": "2020-07-04",
@@ -674,14 +716,22 @@
                         "url": "http://www.medienkunstnetz.de/mediaartnet/"
                     }
                 ],
+                "assets": [
+                    {
+                        "id": "0",
+                        "name": "Native executable",
+                        "url": "http://pacidemo.planet-d.net/archives/POV003.ZIP"
+                    }
+                ],
                 "artifacts":[
-                    "0",
-                    "2",
-                    "3",
-                    "4"
+                    "a0",
+                    "a2",
+                    "a3",
+                    "a4"
                 ],
                 "persons": [
-                    "2"
+                    "p2",
+                    "p3"
                 ],
                 "events": [],
                 "published": "true",
@@ -717,12 +767,19 @@
                         "url": "http://www.medienkunstnetz.de/mediaartnet/"
                     }
                 ],
+                "assets": [
+                    {
+                        "id": "0",
+                        "name": "Native executable",
+                        "url": "http://pacidemo.planet-d.net/archives/POV003.ZIP"
+                    }
+                ],
                 "artifacts":[
-                    "3",
-                    "4"
+                    "a3",
+                    "a4"
                 ],
                 "persons": [
-                    "0"
+                    "p0"
                 ],
                 "events": [],
                 "published": "true",
@@ -758,13 +815,20 @@
                         "url": "http://www.medienkunstnetz.de/mediaartnet/"
                     }
                 ],
+                "assets": [
+                    {
+                        "id": "0",
+                        "name": "Native executable",
+                        "url": "http://pacidemo.planet-d.net/archives/POV003.ZIP"
+                    }
+                ],
                 "artifacts":[
-                    "1",
-                    "3",
-                    "5"
+                    "a1",
+                    "a3",
+                    "a5"
                 ],
                 "persons": [
-                    "1"
+                    "p1"
                 ],
                 "events": [],
                 "published": "true",
@@ -800,13 +864,20 @@
                         "url": "http://www.medienkunstnetz.de/mediaartnet/"
                     }
                 ],
+                "assets": [
+                    {
+                        "id": "0",
+                        "name": "Native executable",
+                        "url": "http://pacidemo.planet-d.net/archives/POV003.ZIP"
+                    }
+                ],
                 "artifacts":[
-                    "0",
-                    "1",
-                    "2"
+                    "a0",
+                    "a3",
+                    "a5"
                 ],
                 "persons": [
-                    "2"
+                    "p2"
                 ],
                 "events": [],
                 "published": "true",
@@ -842,14 +913,23 @@
                         "url": "http://www.medienkunstnetz.de/mediaartnet/"
                     }
                 ],
+                "assets": [
+                    {
+                        "id": "0",
+                        "name": "Native executable",
+                        "url": "http://pacidemo.planet-d.net/archives/POV003.ZIP"
+                    }
+                ],
                 "artifacts":[
-                    "0",
-                    "2",
-                    "3",
-                    "4"
+                    "a2",
+                    "a3",
+                    "a4",
+                    "a5"
                 ],
                 "persons": [],
-                "events": [],
+                "events": [
+                    "e5"
+                ],
                 "published": "true",
                 "createdOn": "2020-07-14",
                 "lastChangeOn": "2020-07-16"
@@ -882,11 +962,20 @@
                         "url": "http://www.medienkunstnetz.de/mediaartnet/"
                     }
                 ],
-                "artifacts":[
-                    "4",
-                    "5"
+                "assets": [
+                    {
+                        "id": "0",
+                        "name": "Native executable",
+                        "url": "http://pacidemo.planet-d.net/archives/POV003.ZIP"
+                    }
                 ],
-                "persons": [],
+                "artifacts":[
+                    "a4",
+                    "a5"
+                ],
+                "persons": [
+                    "p1"
+                ],
                 "events": [],
                 "published": "true",
                 "createdOn": "2020-07-14",
