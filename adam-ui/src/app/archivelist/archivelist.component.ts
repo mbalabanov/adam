@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { ApirequestsService } from '../apirequests.service';
 
 @Component({
@@ -34,7 +33,7 @@ export class ArchivelistComponent implements OnInit {
     this._apirequestsService.getEvent(randomCategoryID2)
         .subscribe(data => {
         this.eventCategory = data;
-        this.artifactImage = this.eventCategory.images[0];
+        this.eventImage = this.eventCategory.images[0];
       });
 
     this._apirequestsService.getPerson(randomCategoryID3)
