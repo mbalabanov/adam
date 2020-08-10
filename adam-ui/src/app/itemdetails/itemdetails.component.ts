@@ -11,7 +11,6 @@ export class ItemdetailsComponent implements OnInit {
 
 	archiveCategory;
     archiveItem;
-    warningMessage = '';
     pageUrl: string;
     relatedArtifacts: Array<object> = [];
     relatedPersons: Array<object> = [];
@@ -30,85 +29,92 @@ export class ItemdetailsComponent implements OnInit {
 
 	ngOnInit(): void {
 
-        this.relatedArtifacts = [];
-        this.relatedPersons = [];
-        this.relatedEvents = [];
         let itemSlug;
 
         this.route.paramMap.subscribe(params => {
             this.archiveCategory = params.get('categoryId');
             itemSlug = params.get('itemId');
             this.pageUrl = this.archiveCategory + '/' + itemSlug;
+            this.relatedArtifacts = [];
+            this.relatedPersons = [];
+            this.relatedEvents = [];
+            switch (this.archiveCategory) {
+                case 'events': {
+                    this._apirequestsService.getEvent(itemSlug)
+                    .subscribe(data => {
+                        this.archiveItem = data;
+                        for (let individualPerson of this.archiveItem.persons) {
+                            this._apirequestsService.getPerson(individualPerson).subscribe(data => {
+                                this.relatedPersons.push(data);
+                            });
+                        };
+                
+                        for (let individualArtifact of this.archiveItem.artifacts) {
+                            this._apirequestsService.getArtifact(individualArtifact).subscribe(data => {
+                                this.relatedArtifacts.push(data);
+                            });
+                        };
+                
+                        for (let individualEvent of this.archiveItem.events) {
+                            this._apirequestsService.getEvent(individualEvent).subscribe(data => {
+                                this.relatedEvents.push(data);
+                            });
+                        };
+                    });
+                    break;
+                }
+
+                case 'persons': {
+                    this._apirequestsService.getPerson(itemSlug)
+                    .subscribe(data => {
+                        this.archiveItem = data;
+                        for (let individualPerson of this.archiveItem.persons) {
+                            this._apirequestsService.getPerson(individualPerson).subscribe(data => {
+                                this.relatedPersons.push(data);
+                            });
+                        };
+                
+                        for (let individualArtifact of this.archiveItem.artifacts) {
+                            this._apirequestsService.getArtifact(individualArtifact).subscribe(data => {
+                                this.relatedArtifacts.push(data);
+                            });
+                        };
+                
+                        for (let individualEvent of this.archiveItem.events) {
+                            this._apirequestsService.getEvent(individualEvent).subscribe(data => {
+                                this.relatedEvents.push(data);
+                            });
+                        };
+                    });
+                    break;
+                }
+
+                case 'artifacts': {
+                    this._apirequestsService.getArtifact(itemSlug)
+                    .subscribe(data => {
+                        this.archiveItem = data; 
+                        for (let individualPerson of this.archiveItem.persons) {
+                            this._apirequestsService.getPerson(individualPerson).subscribe(data => {
+                                this.relatedPersons.push(data);
+                            });
+                        };
+                
+                        for (let individualArtifact of this.archiveItem.artifacts) {
+                            this._apirequestsService.getArtifact(individualArtifact).subscribe(data => {
+                                this.relatedArtifacts.push(data);
+                            });
+                        };
+                
+                        for (let individualEvent of this.archiveItem.events) {
+                            this._apirequestsService.getEvent(individualEvent).subscribe(data => {
+                                this.relatedEvents.push(data);
+                            });
+                        };  
+                    });
+                    break;
+                }
+            }
         });
-
-        switch (this.archiveCategory) {
-            case 'events':
-                this._apirequestsService.getEvent(itemSlug)
-                .subscribe(data => {
-                    this.archiveItem = data;
-                    for (let individualPerson of this.archiveItem.persons) {
-                        this._apirequestsService.getPerson(individualPerson).subscribe(data => {
-                            this.relatedPersons.push(data);
-                        });
-                    };
-                    for (let individualArtifact of this.archiveItem.artifacts) {
-                        this._apirequestsService.getArtifact(individualArtifact).subscribe(data => {
-                            this.relatedArtifacts.push(data);
-                        });
-                    };
-                    for (let individualEvent of this.archiveItem.events) {
-                        this._apirequestsService.getEvent(individualEvent).subscribe(data => {
-                            this.relatedEvents.push(data);
-                        });
-                    };
-                });
-
-            case 'persons':
-                this._apirequestsService.getPerson(itemSlug)
-                .subscribe(data => {
-                    this.archiveItem = data;
-                    for (let individualPerson of this.archiveItem.persons) {
-                        this._apirequestsService.getPerson(individualPerson).subscribe(data => {
-                            this.relatedPersons.push(data);
-                        });
-                    };
-                    for (let individualArtifact of this.archiveItem.artifacts) {
-                        this._apirequestsService.getArtifact(individualArtifact).subscribe(data => {
-                            this.relatedArtifacts.push(data);
-                        });
-                    };
-                    for (let individualEvent of this.archiveItem.events) {
-                        this._apirequestsService.getEvent(individualEvent).subscribe(data => {
-                            this.relatedEvents.push(data);
-                        });
-                    };
-                });
-
-            case 'artifacts':
-                this._apirequestsService.getArtifact(itemSlug)
-                .subscribe(data => {
-                    this.archiveItem = data;
-
-                    for (let individualPerson of this.archiveItem.persons) {
-                        this._apirequestsService.getPerson(individualPerson).subscribe(data => {
-                            this.relatedPersons.push(data);
-                        });
-                    };
-            
-                    for (let individualArtifact of this.archiveItem.artifacts) {
-                        this._apirequestsService.getArtifact(individualArtifact).subscribe(data => {
-                            this.relatedArtifacts.push(data);
-                        });
-                    };
-            
-                    for (let individualEvent of this.archiveItem.events) {
-                        this._apirequestsService.getEvent(individualEvent).subscribe(data => {
-                            this.relatedEvents.push(data);
-                        });
-                    };
-
-                });
-        }
 
     }
 

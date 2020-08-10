@@ -9,7 +9,7 @@ import { ApirequestsService } from '../apirequests.service';
 })
 export class ArchivedetailComponent implements OnInit {
 
-    public archiveCategories = [];
+    archiveCategories = [];
     archiveCategory;
     searchText;
 
@@ -21,25 +21,32 @@ export class ArchivedetailComponent implements OnInit {
 
         this.route.paramMap.subscribe(params => {
             catSlug = params.get('categoryId');
-        });
 
-        switch (catSlug) {
-            case 'events':
-                this._apirequestsService.getEvents()
-                .subscribe(data => {
-                    this.archiveCategory = data;
-                    });
-            case 'persons':
-                this._apirequestsService.getPersons()
-                .subscribe(data => {
-                    this.archiveCategory = data;
-                    });
-            default:
-                this._apirequestsService.getArtifacts()
-                .subscribe(data => {
-                    this.archiveCategory = data;
-                    });
-          }
+            switch (catSlug) {
+                case 'events': {
+                    this._apirequestsService.getEvents()
+                    .subscribe(data => {
+                        this.archiveCategory = data;
+                        });
+                        break;
+                    }
+                case 'persons': {
+                    this._apirequestsService.getPersons()
+                    .subscribe(data => {
+                        this.archiveCategory = data;
+                        });
+                        break;
+                    }
+                case 'artifacts': {
+                    this._apirequestsService.getArtifacts()
+                    .subscribe(data => {
+                        this.archiveCategory = data;
+                        });
+                        break;
+                    }
+            }
+
+        });
 
     }
 

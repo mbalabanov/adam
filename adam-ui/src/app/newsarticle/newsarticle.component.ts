@@ -16,24 +16,17 @@ export class NewsarticleComponent implements OnInit {
   ngOnInit(): void {
 
     let articleSlug;
-    let articleIndex;
 
     this.route.paramMap.subscribe(params => {
-        articleSlug = params.get('postId');
-    });
+      articleSlug = params.get('postId');
 
-    this._apirequestsService.getNews()
-        .subscribe(news => {
-            this.newsitems = news;
-                console.log(this.newsitems.content);
-                for (var item in this.newsitems.content) {
-                    if(this.newsitems.content[item].urlAddress.toLowerCase() == articleSlug ) {
-                        articleIndex = item;
-                    }
-                };
-                this.newsitem = this.newsitems.content[articleIndex];
+      this._apirequestsService.getNews()
+      .subscribe(news => {
+          this.newsitems = news;
+          this.newsitem = this.newsitems.content[articleSlug];
         });
-
+    });
+  
   }
 
 }
