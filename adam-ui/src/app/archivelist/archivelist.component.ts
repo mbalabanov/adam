@@ -17,9 +17,9 @@ export class ArchivelistComponent implements OnInit {
   
   ngOnInit(): void {
 
-    var randomCategoryID1 = Math.floor(Math.random() * 4);
-    var randomCategoryID2 = Math.floor(Math.random() * 4);
-    var randomCategoryID3 = Math.floor(Math.random() * 4);
+    var randomCategoryID1 = 'a' + Math.floor(Math.random() * 4);
+    var randomCategoryID2 = 'e' +  Math.floor(Math.random() * 4);
+    var randomCategoryID3 = 'p' +  Math.floor(Math.random() * 4);
 
     this._apirequestsService.getArtifact(randomCategoryID1)
         .subscribe(data => {
