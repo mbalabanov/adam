@@ -9,8 +9,8 @@ import { ApirequestsService } from '../apirequests.service';
 })
 export class ItemdetailsComponent implements OnInit {
 
-	archiveCategory;
-    archiveItem;
+	archiveCategory: string = '';
+    archiveItem: any = {};
     pageUrl: string;
     relatedArtifacts: Array<object> = [];
     relatedPersons: Array<object> = [];
@@ -94,7 +94,7 @@ export class ItemdetailsComponent implements OnInit {
                 case 'artifacts': {
                     this._apirequestsService.getArtifact(itemSlug)
                     .subscribe(data => {
-                        this.archiveItem = data; 
+                        this.archiveItem = data;
                         for (let individualPerson of this.archiveItem.persons) {
                             this._apirequestsService.getPerson(individualPerson).subscribe(data => {
                                 this.relatedPersons.push(data);

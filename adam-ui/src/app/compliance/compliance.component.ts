@@ -9,8 +9,8 @@ import { ApirequestsService } from '../apirequests.service';
 })
 export class ComplianceComponent implements OnInit {
 
-  public complianceCategories = [];
-  complianceCategory;
+  complianceCategories: Array<object> = [];
+  complianceCategory: any = {};
 
 	constructor(private _apirequestsService: ApirequestsService, private route: ActivatedRoute) { }
 

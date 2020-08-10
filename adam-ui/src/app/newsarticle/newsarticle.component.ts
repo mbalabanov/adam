@@ -8,8 +8,8 @@ import { ApirequestsService } from '../apirequests.service';
   styleUrls: ['./newsarticle.component.css']
 })
 export class NewsarticleComponent implements OnInit {
-  newsitems;
-  newsitem;
+  newsitems: any = {};
+  newsitem: any = {};
 
   constructor(private _apirequestsService: ApirequestsService, private route: ActivatedRoute) { }
 

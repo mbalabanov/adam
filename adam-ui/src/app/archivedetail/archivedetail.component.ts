@@ -9,8 +9,8 @@ import { ApirequestsService } from '../apirequests.service';
 })
 export class ArchivedetailComponent implements OnInit {
 
-    archiveCategories = [];
-    archiveCategory;
+    archiveCategories: Array<object> = [];
+    archiveCategory: any = {};
     searchText;
 
 	constructor(private _apirequestsService: ApirequestsService, private route: ActivatedRoute) { }

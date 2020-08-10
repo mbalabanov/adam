@@ -9,15 +9,15 @@ import { ApirequestsService } from '../apirequests.service';
 })
 export class CarouselComponent implements OnInit {
 
-  public featured;
+  featured: any = {};
 
   constructor(private _apirequestsService: ApirequestsService) { }
 
   ngOnInit(): void {
 
     this._apirequestsService.getFeatured()
-        .subscribe(featured => {
-        this.featured = featured;
+        .subscribe(featuredData => {
+        this.featured = featuredData;
     });
 
   }
