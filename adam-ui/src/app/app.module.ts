@@ -21,6 +21,7 @@ import { ItemdetailsComponent } from './itemdetails/itemdetails.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { ApirequestsService } from './apirequests.service';
 import { ComplianceComponent } from './compliance/compliance.component';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [

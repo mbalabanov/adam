@@ -2,7 +2,7 @@
     "content":
     [
         {
-            "id": "0",
+            "id": "n0",
             "title": "Consetetur Sadipscing Elitr",
             "urlAddress": "consetetur-sadipscing-elitr",
             "image": "assets/img/news/news01.jpg",
@@ -12,7 +12,7 @@
             "published": "true"
         },
          {
-            "id": "1",
+            "id": "n1",
             "title": "Iure Dolor in Hendrerit in Vulputate",
             "urlAddress": "iriure-dolor-in-hendrerit-in-vulputate",
             "image": "assets/img/news/news02.jpg",
@@ -22,7 +22,7 @@
             "published": "true"
         },
         {
-            "id": "2",
+            "id": "n2",
             "title": "Tellus Ac Cursus Commodo",
             "urlAddress": "tellus-ac-cursus-commodo",
             "image": "assets/img/news/news03.jpg",

@@ -1,7 +1,7 @@
 {
     "about":
         {
-            "id": "0",
+            "id": "about",
             "category": "about",
             "title": "About ADAM",
             "images": [ "assets/img/mediaart/virtual-room5.jpg", "assets/img/mediaart/virtual-room4.jpg" ],
@@ -9,7 +9,7 @@
         },
     "privacy":
         {
-            "id": "1",
+            "id": "privacy",
             "category": "privacy",
             "title": "Privacy Policy",
             "images": [ "assets/img/mediaart/privacy1.jpg", "assets/img/mediaart/privacy2.jpg" ],
@@ -17,7 +17,7 @@
         },
     "terms":
         {
-            "id": "2",
+            "id": "terms",
             "category": "terms",
             "title": "Terms of Use",
             "images": [ "assets/img/mediaart/terms1.jpg", "assets/img/mediaart/terms2.jpg" ],
@@ -25,7 +25,7 @@
         },
     "imprint":
         {
-            "id": "3",
+            "id": "imprint",
             "category": "imprint",
             "title": "Legal Imprint",
             "images": [ "assets/img/mediaart/imprint1.jpg", "assets/img/mediaart/imprint2.jpg" ],

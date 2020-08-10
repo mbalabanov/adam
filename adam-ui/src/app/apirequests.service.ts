@@ -53,6 +53,10 @@ export class ApirequestsService {
     return this.http.get<any>(this.newsUrl);
   }
 
+  getNewsItem(id): Observable<any> {
+    return this.http.get<any>(this.newsUrl + '/' + id);
+  }
+
   getFeatured(): Observable<any> {
     return this.http.get<any>(this.featuredUrl);
   }
@@ -61,4 +65,8 @@ export class ApirequestsService {
     return this.http.get<any>(this.complianceUrl);
   }
   
+  getCompliancePage(id): Observable<any> {
+    return this.http.get<any>(this.complianceUrl + '/' + id);
+  }
+
 }

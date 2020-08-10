@@ -8,7 +8,7 @@ import { ApirequestsService } from '../apirequests.service';
   styleUrls: ['./newsarticle.component.css']
 })
 export class NewsarticleComponent implements OnInit {
-  public newsitems;
+  newsitems;
   newsitem;
 
   constructor(private _apirequestsService: ApirequestsService, private route: ActivatedRoute) { }
@@ -19,12 +19,14 @@ export class NewsarticleComponent implements OnInit {
 
     this.route.paramMap.subscribe(params => {
       articleSlug = params.get('postId');
-
+      this._apirequestsService.getNewsItem(articleSlug)
+      .subscribe(news => {
+          this.newsitem = news;
+      });
       this._apirequestsService.getNews()
       .subscribe(news => {
           this.newsitems = news;
-          this.newsitem = this.newsitems.content[articleSlug];
-        });
+      });
     });
   
   }
