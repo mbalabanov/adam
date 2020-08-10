@@ -57,15 +57,13 @@ function getItem(request, response) {
     var requestURL = request.url.split('/');
     var dataType = eval(requestURL[1]);
     var itemId = request.params.id;
-    var checkId = parseInt(itemId);
-    var maxId = dataType.content.length;
-
-    if (checkId >= maxId) {
-        response.send(itemId + ' not a valid ID.');
-    } else {
+    var singleItem = dataType.content.find(dataType => dataType.id === itemId);
+    if(singleItem) {
         response.setHeader('Content-Type', 'application/json');
-        response.send(dataType.content[itemId]);
-    };
+        response.send(singleItem);        
+    } else {
+        response.send(itemId + ' is not a valid ID for ' + requestURL + '.');
+    }
 };
 
 function getNewsItem(request, response) {
