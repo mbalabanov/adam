@@ -37,7 +37,7 @@ app.get(['/artifacts', '/artifacts/', '/persons', '/persons/', '/events', '/even
   getItems(request, response);
 });
 
-app.get(['/artifacts/:id', '/persons/:id', '/events/:id', '/featured/:id'], function(request, response) {
+app.get(['/artifacts/:id', '/persons/:id', '/events/:id', '/featured/:id', '/compliance/:id'], function(request, response) {
   getItem(request, response);
 });
 
