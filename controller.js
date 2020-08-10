@@ -2,9 +2,6 @@ const bp = require( 'body-parser' );
 const fs = require( 'fs' );
 
 let allData = {};
-let artifacts = [];
-let persons = [];
-let events = [];
 let featured = [];
 let news = [];
 let instructiontext = ``;
@@ -16,9 +13,7 @@ function instructions(request, response) {
 function loadData() {
 
     fs.readFile('data/archivedata.json', 'utf8', function(err, contents) {
-
         allData = JSON.parse(contents);
-
         artifacts = allData.artifacts;
         persons = allData.persons;
         events = allData.events;
@@ -73,13 +68,24 @@ function getItem(request, response) {
     };
 };
 
+function getNewsItem(request, response) {
+    var itemId = request.params.id;
+    var newsItems = Object.values(news.content);
+    var singleItem = newsItems.find(newsItems => newsItems.id === itemId);
+    if(singleItem) {
+        response.setHeader('Content-Type', 'application/json');
+        response.send(singleItem);        
+    } else {
+        response.send(itemId + ' is not a valid ID for news.');
+    }
+};
+
 function deleteItem(request, response) {
     var requestURL = request.url.split('/');
     var dataType = eval(requestURL[1]);
     var deleteId = request.params.id;
     var checkId = parseInt(deleteId);
     var maxId = dataType.content.length;
-
     if (checkId >= maxId) {
         response.send(deleteId + ' not a valid ID.');
     } else {
@@ -94,7 +100,6 @@ function editItem(request, response) {
     var editId = request.params.id;
     var checkId = parseInt(editId);
     var maxId = dataType.content.length;
-    console.log(maxId);
     var today = new Date();
 
     if(editId == 'new') {
@@ -215,5 +220,6 @@ module.exports = {
     deleteItem,
     editItem,
     editFeatured,
-    editNews
+    editNews,
+    getNewsItem
 };

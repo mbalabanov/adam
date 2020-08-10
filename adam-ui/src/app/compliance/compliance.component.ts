@@ -22,15 +22,9 @@ export class ComplianceComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
         catSlug = params.get('categoryId');
 
-        this._apirequestsService.getCompliance()
+        this._apirequestsService.getCompliancePage(catSlug)
         .subscribe(data => {
-          this.complianceCategories = Object.values(data);
-          for (var index in this.complianceCategories) {
-              if(this.complianceCategories[index].category == catSlug ) {
-                  catIndex = index;
-              }
-          };
-          this.complianceCategory = this.complianceCategories[catIndex];
+          this.complianceCategory = data;
         });
 
     });

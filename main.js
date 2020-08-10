@@ -1,7 +1,7 @@
 const express = require( 'express' );
 const bp = require( 'body-parser' );
 const morgan = require('morgan');
-const { loadData, instructions, getAll, getItems, getItem, deleteItem, editItem, editFeatured, editNews } = require('./controller');
+const { loadData, instructions, getAll, getItems, getItem, deleteItem, editItem, editFeatured, editNews, getNewsItem } = require('./controller');
 const app = express();
 var cors = require('cors');
 const port = process.env.PORT || 5003;
@@ -37,8 +37,12 @@ app.get(['/artifacts', '/artifacts/', '/persons', '/persons/', '/events', '/even
   getItems(request, response);
 });
 
-app.get(['/artifacts/:id', '/persons/:id', '/events/:id', '/featured/:id', '/news/:id'], function(request, response) {
+app.get(['/artifacts/:id', '/persons/:id', '/events/:id', '/featured/:id'], function(request, response) {
   getItem(request, response);
+});
+
+app.get('/newsitem/:id', function(request, response) {
+  getNewsItem(request, response);
 });
 
 app.delete(['/artifacts/:id', '/persons/:id', '/events/:id'], function(request, response) {

@@ -13,6 +13,7 @@ export class ApirequestsService {
   private personsUrl: string = 'https://adam-interface.herokuapp.com/persons';
   private eventsUrl: string = 'https://adam-interface.herokuapp.com/events';
   private newsUrl: string = 'https://adam-interface.herokuapp.com/news';
+  private newsItemUrl: string = 'https://adam-interface.herokuapp.com/newsitem';
   private featuredUrl: string = 'https://adam-interface.herokuapp.com/featured';
   private complianceUrl: string = 'https://adam-interface.herokuapp.com/compliance';
 
@@ -54,7 +55,7 @@ export class ApirequestsService {
   }
 
   getNewsItem(id): Observable<any> {
-    return this.http.get<any>(this.newsUrl + '/' + id);
+    return this.http.get<any>(this.newsItemUrl + '/' + id);
   }
 
   getFeatured(): Observable<any> {
