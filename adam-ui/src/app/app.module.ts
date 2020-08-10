@@ -21,7 +21,8 @@ import { ItemdetailsComponent } from './itemdetails/itemdetails.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { ApirequestsService } from './apirequests.service';
 import { ComplianceComponent } from './compliance/compliance.component';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { SearchresultsComponent } from './searchresults/searchresults.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
     ItemdetailsComponent,
     CarouselComponent,
     ComplianceComponent,
+    SearchresultsComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,8 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
     FormsModule,
     ReactiveFormsModule,
     Ng2SearchPipeModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [ApirequestsService],
   bootstrap: [AppComponent]

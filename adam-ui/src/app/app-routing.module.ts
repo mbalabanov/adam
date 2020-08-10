@@ -8,6 +8,7 @@ import { ArchivedetailComponent } from './archivedetail/archivedetail.component'
 import { ComplianceComponent } from './compliance/compliance.component';
 import { ContactComponent } from './contact/contact.component';
 import { ItemdetailsComponent } from './itemdetails/itemdetails.component';
+import { SearchresultsComponent } from './searchresults/searchresults.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,9 @@ const routes: Routes = [
   },
   {
     path:"contact", component: ContactComponent
+  },
+  {
+    path:"search", component: SearchresultsComponent
   },
   {
     path:"**", component: HomeComponent
