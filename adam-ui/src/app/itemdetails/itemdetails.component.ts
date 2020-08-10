@@ -35,9 +35,11 @@ export class ItemdetailsComponent implements OnInit {
             this.archiveCategory = params.get('categoryId');
             itemSlug = params.get('itemId');
             this.pageUrl = this.archiveCategory + '/' + itemSlug;
+
             this.relatedArtifacts = [];
             this.relatedPersons = [];
             this.relatedEvents = [];
+
             switch (this.archiveCategory) {
                 case 'events': {
                     this._apirequestsService.getEvent(itemSlug)
