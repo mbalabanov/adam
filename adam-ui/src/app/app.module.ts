@@ -23,6 +23,7 @@ import { ApirequestsService } from './apirequests.service';
 import { ComplianceComponent } from './compliance/compliance.component';
 import { SearchresultsComponent } from './searchresults/searchresults.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { OrnamentComponent } from './ornament/ornament.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     CarouselComponent,
     ComplianceComponent,
     SearchresultsComponent,
+    OrnamentComponent,
   ],
   imports: [
     BrowserModule,

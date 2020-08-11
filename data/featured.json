@@ -13,7 +13,7 @@
             "image": "assets/img/featured2.jpg",
             "title": "Mollis Vulputate",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "link": "person/p4"
+            "link": "persons/p4"
         },
         {
             "id": "2",
@@ -27,7 +27,7 @@
             "image": "assets/img/featured4.jpg",
             "title": "Sem Porta",
             "description": "Praesent commodo cursus magna, vel scelerisque nisl consectetur.",
-            "link": "artifacts/4"
+            "link": "artifacts/a4"
         }
     ]
 }
