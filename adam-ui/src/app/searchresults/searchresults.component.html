@@ -2,17 +2,16 @@
 <div class="container">
     <div class="row">
         <div class="col-12 text-center my-5">
-
-            <label class="control"><h3>Search the Archive of Digital Art & Media</h3>
-                <input type="text" class="form-control text-center" placeholder="Search the items" [(ngModel)]="filter" >
+            <h2>Search</h2>
+            <label class="control"><h3>Search the whole archive</h3>
+                <input type="text" [(ngModel)]="searchText" class="form-control text-center search-field" placeholder="Search the items" name="search" type="text">
             </label>
-
         </div>
     </div>
 
     <div class="row">
         <div class="col-12 text-center">
-
+            <h4 *ngIf="searchText">Search results for "{{ searchText }}":</h4>
             <pagination-template #p="paginationApi" [id]="config.id" (pageChange)="config.currentPage = $event">
 
                 <nav aria-label="Search results">
@@ -26,7 +25,7 @@
                             <button type="button" class="btn btn-light" (click)="p.setCurrent(page.value)" *ngIf="p.getCurrent() !== page.value">
                                 <span>{{ page.label }}</span>
                             </button>
-                            <button type="button" class="btn btn-primary" aria-current="page" *ngIf="p.getCurrent() === page.value" >
+                            <button type="button" class="btn btn-secondary" aria-current="page" *ngIf="p.getCurrent() === page.value" >
                                 <span>{{ page.label }}</span>
                             </button>
                         </div>
@@ -40,10 +39,13 @@
 
             </pagination-template>
 
-            <div class="row mb-5">
-                <div class="col-lg-3 col-md-3 col-sm-6 text-center my-1" *ngFor="let item of allData | paginate: config">
+            <div class="row mb-5 ">
+                <div class="col-lg-3 col-md-3 col-sm-6 text-center border" *ngFor="let item of allData | filter:searchText | paginate: config">
+                    <a class="badge badge-primary mt-3" routerLink="/item/{{ item.category }}/{{ item.id }}">{{ item.category | titlecase }}</a>
                     <a routerLink="/item/{{ item.category }}/{{ item.id }}"><img src="{{ item.images[0].url }}" alt="{{ item.name }}" class="img-fluid rounded"></a>
-                    <p><a routerLink="/item/{{ item.category }}/{{ item.id }}">{{ item.name }}</a></p>
+                    <h4><a routerLink="/item/{{ item.category }}/{{ item.id }}">{{ item.name }}</a></h4>
+                    <p>{{ item.shortdescription }}</p>
+                    <p><a class="btn btn-outline-secondary ml-1 mt-2" routerLink="/item/{{ item.category | lowercase }}/{{ item.id }}">Details</a></p>
                 </div>
             </div>
 

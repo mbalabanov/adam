@@ -41,10 +41,9 @@
                 </div>
             </li>
         </ul>
-        <form class="form-inline ml-auto my-lg-0">
-            <input class="form-control mr-sm-1" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-light my-2 mr-sm-4" type="submit">Search</button>
+        <form (ngSubmit)="search(navSearchForm.value)" #navSearchForm="ngForm" class="form-inline ml-auto my-lg-0" >
+            <input class="form-control mr-sm-1" type="search" placeholder="Search archive" aria-label="Search archive" id="searchInput" name="searchInput" ngModel>
+            <input type="submit" value="Search" class="btn btn-outline-light my-2 mr-sm-4">
         </form>
-
     </div>
 </nav>

@@ -22,7 +22,7 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { ApirequestsService } from './apirequests.service';
 import { ComplianceComponent } from './compliance/compliance.component';
 import { SearchresultsComponent } from './searchresults/searchresults.component';
-import {NgxPaginationModule} from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [

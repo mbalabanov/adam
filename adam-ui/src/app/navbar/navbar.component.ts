@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-navbar',
@@ -8,7 +9,13 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) { }
+  searchString: Object = {};
+
+  constructor(private route: ActivatedRoute, private router: Router, private forms: FormsModule) { }
+
+  search(value) {
+    this.router.navigateByUrl('/search/' + value.searchInput);
+  }
 
   ngOnInit(): void {
   }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApirequestsService } from '../apirequests.service';
+import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-list',
@@ -7,6 +9,8 @@ import { ApirequestsService } from '../apirequests.service';
   styleUrls: ['./archivelist.component.css']
 })
 export class ArchivelistComponent implements OnInit {
+
+  searchString: Object = {};
 
   artifactCategory: any = {};
   eventCategory: any = {};
@@ -16,8 +20,12 @@ export class ArchivelistComponent implements OnInit {
   personImage: any = {};
   eventImage: any = {};
 
-  constructor(private _apirequestsService: ApirequestsService) { }
+  constructor(private _apirequestsService: ApirequestsService, private router: Router,) { }
   
+  onpageSearch(value) {
+    this.router.navigateByUrl('/search/' + value.onpageSearchInput);
+  }
+
   ngOnInit(): void {
 
     var randomCategoryID1 = 'a' + Math.floor(Math.random() * 5);
