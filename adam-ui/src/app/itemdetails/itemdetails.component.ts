@@ -25,7 +25,7 @@ export class ItemdetailsComponent implements OnInit {
         activeElem.classList.add('active');
     };
 
-	constructor(private _apirequestsService: ApirequestsService, private route: ActivatedRoute) { }
+	constructor(private _apirequestsService: ApirequestsService, private route: ActivatedRoute ) { }
 
 	ngOnInit(): void {
 
