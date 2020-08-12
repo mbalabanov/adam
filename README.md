@@ -10,7 +10,7 @@ Dieses Projekt dient nur zu Übungszwecken und wurde vom "Archive of Digital Art
 ADAM besteht aus vier Teilen: Einem _API-Server_ auf [adam-interface.herokuapp.com](https://adam-interface.herokuapp.com) mit einer Datenbank und Schnittstellen, um die Daten abzurufen, sowie einer Website mit einem _öffentlichen Bereich_ auf [demoarchive.art](http://demoarchive.art/), in dem Besucher die Informationen über die digitalen Kunstwerke finden, und einem _Redaktionsbereich,_ in dem Redakteure neue Inhalte einpflegen und bearbeiten können, und Administratoren die Rechte verwalten können. Zu guter Letzt gibt es eine _Mobile-App,_ mit der man Einträge erstellen kann, Fotos und Videos hochladen kann.
 
 ## Aktualisierungen
--*12. August 2020:* Öffentliches Web-Frontend ist soweit fertig und alle Consolen-Fehler sind beseitigt. Die gesamte Suchfunktion läuft über Angular Search-Filter und nicht über LunrJS. Die ersten Schritte für das Redaktions-Backend sind mit der vorläufig unvollständigen Integration von auth0.com gemacht.
+- *12. August 2020:* Öffentliches Web-Frontend ist soweit fertig und alle Consolen-Fehler sind beseitigt. Die gesamte Suchfunktion läuft über Angular Search-Filter (und nicht über LunrJS). Die ersten Schritte für das Redaktions-Backend sind mit der vorläufig unvollständigen Integration von auth0.com gemacht.
 - *7. August 2020:* Öffentliches Web-Frontend bezieht nun sämtliche Daten von der API (allerdings treten noch Fehler in der Console auf und einige Routes funktionieren noch nicht richtig).
 - *6. August 2020:* Erweitertes Angular-Frontend, konsolodiertes Datenmodell und angepasste API.
 - *31. Juli 2020:* Erste Fassung des Web-Frontends auf [demoarchive.art](http://demoarchive.art/) fertiggestellt (allerdings noch ohne API-Anbindung).
@@ -109,13 +109,20 @@ Als Datenbank wird MongoDB verwendet, das ein Dokument-basiertes Datenmodell hat
 
 ```
 {
-    "id": "0",
-    "name": "Lorem Ipsum ",
+    "id": "a0",
+    "category": "artifacts",
+    "name": "Varoph Lorem Ipsum",
     "aliases": [],
-    "shortdescription": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.",
-    "longdescription": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est.",
+    "shortdescription": "Varoph Lorem ipsum dolor sit amet, test consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
+    "longdescription": "<p>Varoph Lorem ipsum dolor sit amet, test consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum.</p><p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum.</p><p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>",
     "dates": ["1987-03-01"],
-    "tags": ["Pharetra Tortor","Commodo"],
+    "tags": [
+        "Pharetra Tortor",
+        "Commodo",
+        "generative",
+        "gustatory",
+        "hypermediacy"
+    ],
     "images": [
         {
             "id": "0",
@@ -133,7 +140,13 @@ Als Datenbank wird MongoDB verwendet, das ein Dokument-basiertes Datenmodell hat
     "videos": [
         {
             "id": "0",
-            "url": "https://youtu.be/Ecx5cmnW-bo",
+            "url": "https://www.youtube.com/watch?v=9lNZ_Rnr7Jc",
+            "name": "Fusce Tristique Ligula",
+            "description": "Maecenas sed diam eget risus varius blandit sit amet non magna."
+        },
+        {
+            "id": "1",
+            "url": "https://www.youtube.com/watch?v=w54uNAuqE1Y",
             "name": "Consetetur sadipscing",
             "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
         }
@@ -152,14 +165,15 @@ Als Datenbank wird MongoDB verwendet, das ein Dokument-basiertes Datenmodell hat
             "url": "http://pacidemo.planet-d.net/archives/POV003.ZIP"
         }
     ],
-    "artifactIDs": [],
-    "personIDs": [
-        "0",
-        "1",
-        "2"
+    "artifacts": [],
+    "persons": [
+        "p0",
+        "p1",
+        "p2"
     ],
-    "eventIDs": [
-        "0"
+    "events": [
+        "e1",
+        "e2"
     ],
     "published": "true",
     "createdOn": "2020-07-10",
