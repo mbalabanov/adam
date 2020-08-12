@@ -6,12 +6,18 @@
             {
                 "id": "a0",
                 "category": "artifacts",
-                "name": "Lorem Ipsum ",
+                "name": "Varoph Lorem Ipsum",
                 "aliases": [],
                 "shortdescription": "Varoph Lorem ipsum dolor sit amet, test consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
                 "longdescription": "Varoph Lorem ipsum dolor sit amet, test consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
                 "dates": ["1987-03-01"],
-                "tags": ["Pharetra Tortor","Commodo"],
+                "tags": [
+                    "Pharetra Tortor",
+                    "Commodo",
+                    "generative",
+                    "gustatory",
+                    "hypermediacy"
+                ],
                 "images": [
                     {
                         "id": "0",
@@ -70,7 +76,12 @@
                 "shortdescription": "Fernca Lorem ipsum dolor sit amet, test1 consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.",
                 "longdescription": "Fernca Lorem ipsum dolor sit amet, test1 consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
                 "dates": ["1991-30-04"],
-                "tags": ["Etiam","Porta Aeneans"],
+                "tags": [
+                    "Etiam","Porta Aeneans",
+                    "duplicated",
+                    "dynamic system",
+                    "ephemeral"
+                ],
                 "images": [
                     {
                         "id": "0",
@@ -128,7 +139,11 @@
                 "shortdescription": "Zeyev Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.",
                 "longdescription": "Zeyev Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
                 "dates": ["1992-03-01"],
-                "tags": ["512 colors","Raster Effects"],
+                "tags": [
+                    "multi-user",
+                    "multiple",
+                    "narrative",
+                    "navigable"],
                 "images": [
                     {
                         "id": "0",
@@ -196,7 +211,11 @@
                 "shortdescription": "Bustdraugh Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper.",
                 "longdescription": "Bustdraugh Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
                 "dates": ["1987-03-01"],
-                "tags": ["512 colors","Raster Effects"],
+                "tags": [
+                    "projected",
+                    "real-time",
+                    "remediated",
+                    "remixed"],
                 "images": [
                     {
                         "id": "0",
@@ -256,7 +275,11 @@
                 "shortdescription": "Livequin Nam liber tempor test cum soluta nobis eleifend option congue nihil imperdiet doming id.",
                 "longdescription": "Livequin Nam liber tempor test cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
                 "dates": ["1987-03-01"],
-                "tags": ["512 colors","Raster Effects"],
+                "tags": [
+                    "sculptural",
+                    "site-specific",
+                    "sonification",
+                    "sublime"],
                 "images": [
                     {
                         "id": "0",
@@ -318,7 +341,11 @@
                 "shortdescription": "Cossrism At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.",
                 "longdescription": "Cossrism At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.",
                 "dates": ["1987-03-01"],
-                "tags": ["512 colors","Raster Effects"],
+                "tags": [
+                    "tactile",
+                    "telematic",
+                    "three-dimensional",
+                    "time-based"],
                 "images": [
                     {
                         "id": "0",
@@ -379,9 +406,9 @@
                 "longdescription": "Alex Dandruffdout Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
                 "dates": ["1987", "1995"],
                 "tags": [
-                    "Pixel Art",
-                    "Cyberformance",
-                    "Bio Art"
+                    "illusionary",
+                    "immaterial",
+                    "immersive"
                 ],
                 "images": [
                     {
@@ -434,7 +461,9 @@
                 "longdescription": "Peter Elechoir Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
                 "dates": ["1987", "1995"],
                 "tags": [
-                    "Pixel Art",
+                    "collaborative",
+                    "contextual",
+                    "cybernetic",
                     "Cyberformance",
                     "Bio Art"
                 ],
@@ -488,9 +517,9 @@
                 "longdescription": "Alex Phytehoe At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
                 "dates": ["1987", "1995"],
                 "tags":[
-                    "Pixel Art",
-                    "Cyberformance",
-                    "Bio Art"
+                    "uncanny",
+                    "virtual",
+                    "visual"
                 ],
                 "images":[
                     {
@@ -543,9 +572,10 @@
                 "longdescription": "Stairsquism Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
                 "dates": ["1987", "1995"],
                 "tags":[
-                    "Pixel Art",
-                    "Cyberformance",
-                    "Bio Art"
+                    "documenting",
+                    "duplicated",
+                    "dynamic system",
+                    "ephemeral"
                 ],
                 "images":[
                     {
@@ -653,9 +683,10 @@
                 "longdescription": "Finchfol Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
                 "dates": ["1987", "1995"],
                 "tags":[
-                    "Pixel Art",
-                    "Cyberformance",
-                    "Bio Art"
+                    "acoustic",
+                    "affective",
+                    "anamorphic",
+                    "animated"
                 ],
                 "images":[
                     {
@@ -760,10 +791,10 @@
                 "longdescription": "Lodgemo Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.",
                 "dates": ["1990-12-23", "1990-12-31"],
                 "tags": [
-                    "Chiptunes",
-                    "musician",
-                    "SID",
-                    "Digisound"
+                    "autopoietic",
+                    "collaborative",
+                    "contextual",
+                    "cybernetic"
                 ],
                 "images": [
                     {
@@ -809,10 +840,11 @@
                 "longdescription": "Nemmas Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
                 "dates": ["1990-12-23", "1990-12-31"],
                 "tags": [
-                    "Chiptunes",
-                    "musician",
-                    "SID",
-                    "Digisound"
+                    "generative",
+                    "gustatory",
+                    "hypermediacy",
+                    "illusionary",
+                    "immaterial"
                 ],
                 "images": [
                     {
@@ -859,10 +891,9 @@
                 "longdescription": "Wornbrake Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus.",
                 "dates": ["1990-12-23", "1990-12-31"],
                 "tags": [
-                    "Chiptunes",
-                    "musician",
-                    "SID",
-                    "Digisound"
+                    "installation-based",
+                    "interactive",
+                    "intermedial"
                 ],
                 "images": [
                     {
@@ -909,10 +940,10 @@
                 "longdescription": "Bipdroh Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
                 "dates": ["1990-12-23", "1990-12-31"],
                 "tags": [
-                    "Chiptunes",
-                    "musician",
-                    "SID",
-                    "Digisound"
+                    "intervention",
+                    "mobile",
+                    "modular",
+                    "multi-user"
                 ],
                 "images": [
                     {
@@ -960,9 +991,12 @@
                 "longdescription": "Pluride Quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
                 "dates": ["1990-12-23", "1990-12-31"],
                 "tags": [
-                    "Chiptunes",
-                    "musician",
-                    "Digisound"
+                    "autopoietic",
+                    "collaborative",
+                    "contextual",
+                    "cybernetic",
+                    "documenting",
+                    "duplicated"
                 ],
                 "images": [
                     {
