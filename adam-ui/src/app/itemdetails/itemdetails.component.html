@@ -95,11 +95,9 @@
       </div>
       <div class="row">
         <div class="col-12 text-center" >
-          <ul>
-            <li *ngFor="let item of archiveItem.videos">
-              <a href="{{ item.url }}" target="_blank">{{ item.name }}</a>
-            </li>
-          </ul>
+            <p *ngFor="let item of archiveItem.videos">
+              <a class="btn btn-primary" href="{{ item.url }}" target="_blank"><img src="../assets/img/yt-icon.png" height="15px" alt="Youtube" class="mr-2">{{ item.name }}</a>
+            </p>
         </div>
       </div>
 
