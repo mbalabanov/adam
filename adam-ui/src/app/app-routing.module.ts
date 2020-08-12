@@ -10,6 +10,8 @@ import { ContactComponent } from './contact/contact.component';
 import { ItemdetailsComponent } from './itemdetails/itemdetails.component';
 import { SearchresultsComponent } from './searchresults/searchresults.component';
 import { EdititemComponent } from './edititem/edititem.component';
+import { ProfileComponent } from './profile/profile.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {
@@ -44,6 +46,9 @@ const routes: Routes = [
   },
   {
     path:"search", component: SearchresultsComponent
+  },
+  {
+    path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]
   },
   {
     path:"**", component: HomeComponent

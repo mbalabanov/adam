@@ -1,0 +1,11 @@
+<app-navbar></app-navbar>
+<app-ornament></app-ornament>
+
+<h1>Profile Page</h1>
+
+<pre *ngIf="auth.userProfile$ | async as profile">
+    <code>{{ profile | json }}</code>
+</pre>
+
+<app-ornament></app-ornament>
+<app-footer></app-footer>

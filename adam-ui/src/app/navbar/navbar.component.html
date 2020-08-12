@@ -16,11 +16,11 @@
                     Archive
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" routerLink="/compliance/archive" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">All Archive Categories</a>
+                    <a class="dropdown-item" routerLink="/archive" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">All Archive Categories</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" routerLink="/compliance/category/artifacts" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Artifacts</a>
-                    <a class="dropdown-item" routerLink="/compliance/category/persons" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Persons</a>
-                    <a class="dropdown-item" routerLink="/compliance/category/events" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Events</a>
+                    <a class="dropdown-item" routerLink="/category/artifacts" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Artifacts</a>
+                    <a class="dropdown-item" routerLink="/category/persons" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Persons</a>
+                    <a class="dropdown-item" routerLink="/category/events" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Events</a>
                   </div>
             </li>
 
@@ -49,6 +49,8 @@
                 </form>
             </li>
         </ul>
-        <a href="https://dev-w18o8h59.eu.auth0.com/u/login" class="btn btn-outline-light ml-auto mb-1">Sign in</a>
+        <button (click)="auth.login()" *ngIf="!auth.loggedIn" class="btn btn-outline-light ml-auto mb-1">Log In</button>
+        <a routerLink="profile" *ngIf="auth.loggedIn" class="btn btn-outline-light ml-auto mb-1">Profile</a>
+        <button (click)="auth.logout()" *ngIf="auth.loggedIn" class="btn btn-outline-light ml-auto mb-1">Log Out</button>
     </div>
 </nav>

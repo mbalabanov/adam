@@ -25,6 +25,7 @@ import { SearchresultsComponent } from './searchresults/searchresults.component'
 import { NgxPaginationModule } from 'ngx-pagination';
 import { OrnamentComponent } from './ornament/ornament.component';
 import { EdititemComponent } from './edititem/edititem.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { EdititemComponent } from './edititem/edititem.component';
     SearchresultsComponent,
     OrnamentComponent,
     EdititemComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
