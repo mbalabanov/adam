@@ -26,6 +26,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { OrnamentComponent } from './ornament/ornament.component';
 import { EdititemComponent } from './edititem/edititem.component';
 import { ProfileComponent } from './profile/profile.component';
+import { CookieconsentComponent } from './cookieconsent/cookieconsent.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { ProfileComponent } from './profile/profile.component';
     OrnamentComponent,
     EdititemComponent,
     ProfileComponent,
+    CookieconsentComponent,
   ],
   imports: [
     BrowserModule,
