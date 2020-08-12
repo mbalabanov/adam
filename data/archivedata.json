@@ -8,7 +8,7 @@
                 "category": "artifacts",
                 "name": "Varoph Lorem Ipsum",
                 "aliases": [],
-                "shortdescription": "<p>Varoph Lorem ipsum dolor sit amet, test consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>",
+                "shortdescription": "Varoph Lorem ipsum dolor sit amet, test consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
                 "longdescription": "<p>Varoph Lorem ipsum dolor sit amet, test consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum.</p><p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum.</p><p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>",
                 "dates": ["1987-03-01"],
                 "tags": [
@@ -73,7 +73,7 @@
                 "category": "artifacts",
                 "name": "Fernca Sanctus Est",
                 "aliases": [],
-                "shortdescription": "<p>Fernca Lorem ipsum dolor sit amet, test1 consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>",
+                "shortdescription": "Fernca Lorem ipsum dolor sit amet, test1 consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.",
                 "longdescription": "<p>Fernca Lorem ipsum dolor sit amet, test1 consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum.</p><p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Sed posuere consectetur est at lobortis. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis. Curabitur blandit tempus porttitor. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas faucibus mollis interdum.</p>",
                 "dates": ["1991-30-04"],
                 "tags": [
@@ -136,7 +136,7 @@
                 "category": "artifacts",
                 "name": "Iriure Dolor",
                 "aliases": [],
-                "shortdescription": "<p>Zeyev Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.</p>",
+                "shortdescription": "Zeyev Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.",
                 "longdescription": "<p>Zeyev Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>",
                 "dates": ["1992-03-01"],
                 "tags": [
@@ -208,7 +208,7 @@
                 "category": "artifacts",
                 "name": "Praesent Luptatum Bustdraugh",
                 "aliases": [],
-                "shortdescription": "<p>Bustdraugh Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper.</p>",
+                "shortdescription": "Bustdraugh Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper.",
                 "longdescription": "<p>Bustdraugh Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>",
                 "dates": ["1987-03-01"],
                 "tags": [
@@ -272,7 +272,7 @@
                 "category": "artifacts",
                 "name": "Tempor Soluta",
                 "aliases": [],
-                "shortdescription": "<p>Livequin Nam liber tempor test cum soluta nobis eleifend option congue nihil imperdiet doming id.</p>",
+                "shortdescription": "Livequin Nam liber tempor test cum soluta nobis eleifend option congue nihil imperdiet doming id.",
                 "longdescription": "<p>Livequin Nam liber tempor test cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>",
                 "dates": ["1987-03-01"],
                 "tags": [
@@ -338,7 +338,7 @@
                 "category": "artifacts",
                 "name": "Stet Clita Kasd",
                 "aliases": [],
-                "shortdescription": "<p>Cossrism At vero eos et accusam et justo duo dolores et ea rebum.</p><p>Stet clita kasd gubergren.</p>",
+                "shortdescription": "Cossrism At vero eos et accusam et justo duo dolores et ea rebum.</p><p>Stet clita kasd gubergren.",
                 "longdescription": "<p>Cossrism At vero eos et accusam et justo duo dolores et ea rebum.</p><p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum.</p>",
                 "dates": ["1987-03-01"],
                 "tags": [
@@ -402,7 +402,7 @@
                 "category": "persons",
                 "name": "Quis Nostrud",
                 "aliases": [],
-                "shortdescription": "<p>Alex Dandruffdout Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.</p>",
+                "shortdescription": "Alex Dandruffdout Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.",
                 "longdescription": "<p>Alex Dandruffdout Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>",
                 "dates": ["1987", "1995"],
                 "tags": [
@@ -462,7 +462,7 @@
                 "category": "persons",
                 "name": "Congue Nihil",
                 "aliases": [],
-                "shortdescription": "<p>Peter Elechoir Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>",
+                "shortdescription": "Peter Elechoir Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
                 "longdescription": "<p>Peter Elechoir Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>",
                 "dates": ["1987", "1995"],
                 "tags": [
@@ -518,7 +518,7 @@
                 "category": "persons",
                 "name": "Takimata Sanctus",
                 "aliases": [],
-                "shortdescription": "<p>Alex Phytehoe At vero eos et accusam et justo duo dolores et ea rebum.</p><p>Stet clita kasd gubergren.</p>",
+                "shortdescription": "Alex Phytehoe At vero eos et accusam et justo duo dolores et ea rebum.</p><p>Stet clita kasd gubergren.",
                 "longdescription": "<p>Alex Phytehoe At vero eos et accusam et justo duo dolores et ea rebum.</p><p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum.</p><p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>",
                 "dates": ["1987", "1995"],
                 "tags":[
@@ -578,7 +578,7 @@
                 "category": "persons",
                 "name": "Kasd Gubergren",
                 "aliases": [],
-                "shortdescription": "<p>Stairsquism Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum.</p>",
+                "shortdescription": "Stairsquism Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum.",
                 "longdescription": "<p>Stairsquism Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum.</p><p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>",
                 "dates": ["1987", "1995"],
                 "tags":[
@@ -639,7 +639,7 @@
                 "category": "persons",
                 "name": "Feugait Nulla Facilisi",
                 "aliases": [],
-                "shortdescription": "<p>Chauntsph Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore.</p>",
+                "shortdescription": "Chauntsph Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore.",
                 "longdescription": "<p>Chauntsph Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>",
                 "dates": ["1987", "1995"],
                 "tags":[
@@ -699,7 +699,7 @@
                 "category": "persons",
                 "name": "Name Liber",
                 "aliases": [],
-                "shortdescription": "<p>Finchfol Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>",
+                "shortdescription": "Finchfol Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.",
                 "longdescription": "<p>Finchfol Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>",
                 "dates": ["1987", "1995"],
                 "tags":[
@@ -760,7 +760,7 @@
                 "category": "events",
                 "name": "Accusam et Justo",
                 "aliases": ["AEJ"],
-                "shortdescription": "<p>Deiljohn At vero eos et accusam et justo duo dolores et ea rebum.</p><p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>",
+                "shortdescription": "Deiljohn At vero eos et accusam et justo duo dolores et ea rebum.</p><p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
                 "longdescription": "<p>Deiljohn At vero eos et accusam et justo duo dolores et ea rebum.</p><p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum.</p>",
                 "dates": ["1990-12-23", "1990-12-31"],
                 "tags": [
@@ -817,7 +817,7 @@
                 "category": "events",
                 "name": "Nonumy Eirmod",
                 "aliases": ["NE"],
-                "shortdescription": "<p>Lodgemo Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet.</p>",
+                "shortdescription": "Lodgemo Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet.",
                 "longdescription": "<p>Lodgemo Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>",
                 "dates": ["1990-12-23", "1990-12-31"],
                 "tags": [
@@ -871,7 +871,7 @@
                 "category": "events",
                 "name": "Diam Voluptua",
                 "aliases": ["DV"],
-                "shortdescription": "<p>Nemmas Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.</p>",
+                "shortdescription": "Nemmas Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.",
                 "longdescription": "<p>Nemmas Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum.</p><p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>",
                 "dates": ["1990-12-23", "1990-12-31"],
                 "tags": [
@@ -927,7 +927,7 @@
                 "category": "events",
                 "name": "Vero Eos Wornbrake",
                 "aliases": ["VE"],
-                "shortdescription": "<p>Wornbrake Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum.</p><p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos.</p>",
+                "shortdescription": "Wornbrake Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum.</p><p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos.",
                 "longdescription": "<p>Wornbrake Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum.</p><p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum.</p><p>Stet clita kasd gubergren, no sea takimata sanctus.</p>",
                 "dates": ["1990-12-23", "1990-12-31"],
                 "tags": [
@@ -981,7 +981,7 @@
                 "category": "events",
                 "name": "Augue Duis",
                 "aliases": ["AD"],
-                "shortdescription": "<p>Bipdroh Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto.</p>",
+                "shortdescription": "Bipdroh Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto.",
                 "longdescription": "<p>Bipdroh Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>",
                 "dates": ["1990-12-23", "1990-12-31"],
                 "tags": [
@@ -1037,7 +1037,7 @@
                 "category": "events",
                 "name": "Quod Mazim Placerat",
                 "aliases": ["QMP"],
-                "shortdescription": "<p>Pluride Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>",
+                "shortdescription": "Pluride Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.",
                 "longdescription": "<p>Pluride Quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>",
                 "dates": ["1990-12-23", "1990-12-31"],
                 "tags": [
