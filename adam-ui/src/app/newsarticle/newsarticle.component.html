@@ -16,6 +16,9 @@
         <div class="col-lg-7 col-sm-12 offset-md-1">
             <div *ngIf="newsitem" class="mt-2 mb-5">
                 <h2 class="mr-4 my-4">{{ newsitem.title }}</h2>
+                <div class="alert alert-danger text-center" role="alert">
+                    At present, all news articles only contain placeholder text.
+                </div>
                 <h3 class="mr-4 mb-4">{{ newsitem.shortdescription }}</h3>
                 <div class="mr-4 mb-5">
                     <img src="{{ newsitem.image}}" alt="{{ newsitem.title }}" align="right" class="ml-4 mt-2 mb-4 rounded img-fluid">

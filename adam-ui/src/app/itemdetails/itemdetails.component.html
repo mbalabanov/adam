@@ -22,6 +22,9 @@
     <div class="col-lg-8 border-bottom">
       <span class="badge badge-secondary">{{ archiveCategory | titlecase }}</span>
       <h2>{{ archiveItem.name }}</h2>
+      <div class="alert alert-danger text-center" role="alert">
+        At present, all items only contain placeholder text.
+    </div>
       <div [innerHTML]="archiveItem.longdescription"></div>
 
 			<div class="row">

@@ -5,11 +5,12 @@
 ## Beschreibung
 ADAM ist ein JavaScript/NodeJS/Angular/MongoDB/Heroku-Projekt von Marin Balabanov. In diesem Archive of Digital Art & Media auf [demoarchive.art](http://demoarchive.art/), können Benutzer nach digitalen Kunstwerken suchen. Auf den Detailseiten finden sie eine Beschreibung des jeweiligen Kunstwerks, sowie Fotos/Screenshots und eingebettete Videos, und falls vorhanden ZIP-Dateien oder Diskimages mit den Originaldateien des Kunstwerks. Zudem finden sich Informationen über die Künstler, und bei welchen Events ihre Werke ausgestellt wurden.
 
-Dieses Projekt dient nur zu Übungszwecken und wurde vom "Archive of Digital Art" (ADA) der Donau Universität Krems inspiriert. Im Gegensatz zu ADA der Donau Uni verwendet ADAM zeitgemäße Technologien wie NodeJS, Angular und Heroku.
+Dieses Projekt dient nur zu Übungszwecken und wurde vom "Archive of Digital Art" (ADA) der Donau Universität Krems inspiriert. Es dient als Übungsprojekt für die Anwendung zeitgemäßer Webtechnologien wie NodeJS, Angular, Ionic. MongoDB, Heroku und AWS S3.
 
 ADAM besteht aus vier Teilen: Einem _API-Server_ auf [adam-interface.herokuapp.com](https://adam-interface.herokuapp.com) mit einer Datenbank und Schnittstellen, um die Daten abzurufen, sowie einer Website mit einem _öffentlichen Bereich_ auf [demoarchive.art](http://demoarchive.art/), in dem Besucher die Informationen über die digitalen Kunstwerke finden, und einem _Redaktionsbereich,_ in dem Redakteure neue Inhalte einpflegen und bearbeiten können, und Administratoren die Rechte verwalten können. Zu guter Letzt gibt es eine _Mobile-App,_ mit der man Einträge erstellen kann, Fotos und Videos hochladen kann.
 
 ## Aktualisierungen
+-*12. August 2020:* Öffentliches Web-Frontend ist soweit fertig und alle Consolen-Fehler sind beseitigt. Die gesamte Suchfunktion läuft über Angular Search-Filter und nicht über LunrJS. Die ersten Schritte für das Redaktions-Backend sind mit der vorläufig unvollständigen Integration von auth0.com gemacht.
 - *7. August 2020:* Öffentliches Web-Frontend bezieht nun sämtliche Daten von der API (allerdings treten noch Fehler in der Console auf und einige Routes funktionieren noch nicht richtig).
 - *6. August 2020:* Erweitertes Angular-Frontend, konsolodiertes Datenmodell und angepasste API.
 - *31. Juli 2020:* Erste Fassung des Web-Frontends auf [demoarchive.art](http://demoarchive.art/) fertiggestellt (allerdings noch ohne API-Anbindung).
@@ -19,6 +20,8 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ auf [adam-interface.herokuapp.c
 - *13. Juli 2020:* Datenmodelldiagramm, Sitemap und Wireframes aktualisiert
 - *12. Juli 2020:* Testdaten als JSON-Datei
 - *8. Juli 2020:* Erstfassung der Dokumentation 
+
+---
 
 ## Die Struktur von ADAM
 
@@ -192,6 +195,8 @@ Als Datenbank wird MongoDB verwendet, das ein Dokument-basiertes Datenmodell hat
 - Cordova
 - Onsen UI
 
+---
+
 ## API-Dokumentation
 
 Die API ist verfügbar unter https://adam-interface.herokuapp.com
@@ -238,6 +243,8 @@ _Bitte beachten Sie, dass auf der Startseite ausgewiesenen Beiträge (featured i
 - _/news/new_ Einen einzelnen News-Artikel erstellen.
 
 _Bitte beachten Sie, dass kein neuer auf der Startseite ausgewiesenen Beitrag (featured item) erstellt werden sollte. Auf der Startseite sollten möglichst nur vier Beiträge ausgewiesen sein._
+
+---
 
 ## Project Timeline
 
