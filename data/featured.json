@@ -4,29 +4,29 @@
         {
             "id": "0",
             "image": "assets/img/featured1.jpg",
-            "title": "Ultricies Tortor Consectetur",
-            "description": "Nulla vitae elit libero, a pharetra augue mollis interdum.",
+            "title": "Fernca Sanctus Est",
+            "description": "This is an example for an artifact entry.",
             "link": "artifacts/a1"
         },
         {
             "id": "1",
             "image": "assets/img/featured2.jpg",
             "title": "Mollis Vulputate",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "description": "This is an example entry for a person. This could be an artist or a curator.",
             "link": "persons/p4"
         },
         {
             "id": "2",
             "image": "assets/img/featured3.jpg",
-            "title": "Tellus Amet Malesuada",
-            "description": "Praesent commodo cursus magna, vel scelerisque nisl consectetur.",
+            "title": "Vero Eos Wornbrake",
+            "description": "This is an example entry for an event. It could be am exhibition, a performance or a presentation.",
             "link": "events/e3"
         },
         {
             "id": "3",
             "image": "assets/img/featured4.jpg",
-            "title": "Sem Porta",
-            "description": "Praesent commodo cursus magna, vel scelerisque nisl consectetur.",
+            "title": "Praesent Luptatum Bustdraugh",
+            "description": "This is another example entry for the category \"artifacts\"",
             "link": "artifacts/a4"
         }
     ]
