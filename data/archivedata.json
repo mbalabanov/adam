@@ -35,7 +35,7 @@
                 "videos": [
                     {
                         "id": "0",
-                        "url": "<iframe width=\"426\" height=\"240\" src=\"https://www.youtube.com/embed/9lNZ_Rnr7Jc\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+                        "url": "https://www.youtube.com/embed/9lNZ_Rnr7Jc",
                         "name": "Consetetur sadipscing",
                         "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
                     }
@@ -99,7 +99,7 @@
                 "videos": [
                     {
                         "id": "0",
-                        "url": "<iframe width=\"426\" height=\"240\" src=\"https://www.youtube.com/embed/9lNZ_Rnr7Jc\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+                        "url": "https://www.youtube.com/embed/9lNZ_Rnr7Jc",
                         "name": "Consetetur sadipscing",
                         "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore."
                     }
@@ -167,7 +167,7 @@
                 "videos": [
                     {
                         "id": "0",
-                        "url": "<iframe width=\"426\" height=\"240\" src=\"https://www.youtube.com/embed/9lNZ_Rnr7Jc\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+                        "url": "https://www.youtube.com/embed/9lNZ_Rnr7Jc",
                         "name": "Consetetur sadipscing",
                         "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore."
                     }
@@ -233,7 +233,7 @@
                 "videos": [
                     {
                         "id": "0",
-                        "url": "<iframe width=\"426\" height=\"240\" src=\"https://www.youtube.com/embed/9lNZ_Rnr7Jc\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+                        "url": "https://www.youtube.com/embed/9lNZ_Rnr7Jc",
                         "name": "Consetetur sadipscing",
                         "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam."
                     }
@@ -297,7 +297,7 @@
                 "videos": [
                     {
                         "id": "0",
-                        "url": "<iframe width=\"426\" height=\"240\" src=\"https://www.youtube.com/embed/9lNZ_Rnr7Jc\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+                        "url": "https://www.youtube.com/embed/9lNZ_Rnr7Jc",
                         "name": "Consetetur sadipscing",
                         "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam."
                     }
@@ -357,7 +357,7 @@
                 "videos": [
                     {
                         "id": "0",
-                        "url": "<iframe width=\"426\" height=\"240\" src=\"https://www.youtube.com/embed/9lNZ_Rnr7Jc\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+                        "url": "https://www.youtube.com/embed/9lNZ_Rnr7Jc",
                         "name": "Consetetur sadipscing",
                         "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam."
                     }
@@ -426,7 +426,7 @@
                 ],
                 "videos": [{
                     "id": "0",
-                    "url": "<iframe width=\"426\" height=\"240\" src=\"https://www.youtube.com/embed/m6VBC5nmwY4\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+                    "url": "https://www.youtube.com/embed/m6VBC5nmwY4",
                     "name": "Consetetur sadipscing",
                     "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
                 }],
@@ -542,7 +542,7 @@
                 ],
                 "videos":[{
                     "id": "0",
-                    "url": "<iframe width=\"426\" height=\"240\" src=\"https://www.youtube.com/embed/m6VBC5nmwY4\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+                    "url": "https://www.youtube.com/embed/m6VBC5nmwY4",
                     "name": "Consetetur sadipscing",
                     "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
                 }],
@@ -603,7 +603,7 @@
                 ],
                 "videos":[{
                     "id": "0",
-                    "url": "<iframe width=\"426\" height=\"240\" src=\"https://www.youtube.com/embed/m6VBC5nmwY4\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+                    "url": "https://www.youtube.com/embed/m6VBC5nmwY4",
                     "name": "Consetetur sadipscing",
                     "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
                 }],
@@ -663,7 +663,7 @@
                 ],
                 "videos":[{
                     "id": "0",
-                    "url": "<iframe width=\"426\" height=\"240\" src=\"https://www.youtube.com/embed/m6VBC5nmwY4\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+                    "url": "https://www.youtube.com/embed/m6VBC5nmwY4",
                     "name": "Consetetur sadipscing",
                     "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
                 }],
@@ -718,7 +718,7 @@
                 ],
                 "videos":[{
                     "id": "0",
-                    "url": "<iframe width=\"426\" height=\"240\" src=\"https://www.youtube.com/embed/m6VBC5nmwY4\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+                    "url": "https://www.youtube.com/embed/m6VBC5nmwY4",
                     "name": "Consetetur sadipscing",
                     "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
                 }],
@@ -779,7 +779,7 @@
                 ],
                 "videos": [{
                     "id": "0",
-                    "url": "<iframe width=\"426\" height=\"240\" src=\"https://www.youtube.com/embed/m6VBC5nmwY4\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+                    "url": "https://www.youtube.com/embed/m6VBC5nmwY4",
                     "name": "Consetetur sadipscing",
                     "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
                 }],
@@ -836,7 +836,7 @@
                 ],
                 "videos": [{
                     "id": "0",
-                    "url": "<iframe width=\"426\" height=\"240\" src=\"https://www.youtube.com/embed/m6VBC5nmwY4\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+                    "url": "https://www.youtube.com/embed/m6VBC5nmwY4",
                     "name": "Consetetur sadipscing",
                     "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
                 }],
@@ -891,7 +891,7 @@
                 ],
                 "videos": [{
                     "id": "0",
-                    "url": "<iframe width=\"426\" height=\"240\" src=\"https://www.youtube.com/embed/m6VBC5nmwY4\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+                    "url": "https://www.youtube.com/embed/m6VBC5nmwY4",
                     "name": "Consetetur sadipscing",
                     "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
                 }],
@@ -945,7 +945,7 @@
                 ],
                 "videos": [{
                     "id": "0",
-                    "url": "<iframe width=\"426\" height=\"240\" src=\"https://www.youtube.com/embed/m6VBC5nmwY4\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+                    "url": "https://www.youtube.com/embed/m6VBC5nmwY4",
                     "name": "Consetetur sadipscing",
                     "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
                 }],
@@ -1000,7 +1000,7 @@
                 ],
                 "videos": [{
                     "id": "0",
-                    "url": "<iframe width=\"426\" height=\"240\" src=\"https://www.youtube.com/embed/m6VBC5nmwY4\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+                    "url": "https://www.youtube.com/embed/m6VBC5nmwY4",
                     "name": "Consetetur sadipscing",
                     "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
                 }],
@@ -1058,7 +1058,7 @@
                 ],
                 "videos": [{
                     "id": "0",
-                    "url": "<iframe width=\"426\" height=\"240\" src=\"https://www.youtube.com/embed/m6VBC5nmwY4\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+                    "url": "https://www.youtube.com/embed/m6VBC5nmwY4",
                     "name": "Consetetur sadipscing",
                     "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
                 }],
