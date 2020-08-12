@@ -11,13 +11,23 @@
             <li class="nav-item ml-2">
                 <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
             </li>
-            <li class="nav-item ml-2">
-                <a class="nav-link" routerLink="/archive" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Archive</a>
+            <li class="nav-item dropdown ml-2">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Archive
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" routerLink="/compliance/archive" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">All Archive Categories</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" routerLink="/compliance/category/artifacts" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Artifacts</a>
+                    <a class="dropdown-item" routerLink="/compliance/category/persons" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Persons</a>
+                    <a class="dropdown-item" routerLink="/compliance/category/events" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Events</a>
+                  </div>
             </li>
+
             <li class="nav-item ml-2">
                 <a class="nav-link" routerLink="/news" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">News</a>
             </li>
-            <li class="nav-item dropdown ml-2">
+            <li class="nav-item dropdown ml-2 mr-3">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   About
                 </a>
@@ -30,20 +40,15 @@
                   <a class="dropdown-item" routerLink="/compliance/imprint" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Legal Imprint</a>
                 </div>
             </li>
-
-            <li class="nav-item dropdown ml-2">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Account
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Sign in</a>
-                  <a class="dropdown-item" href="#">Register</a>
-                </div>
+            <li>
+                <form (ngSubmit)="search(navSearchForm.value)" #navSearchForm="ngForm" class="form-inline input-group mb-1" >
+                    <input class="form-control" type="search" placeholder="Search archive" aria-label="Search archive" id="searchInput" name="searchInput" ngModel>
+                    <div class="input-group-append">
+                        <input type="submit" value="Search" class="btn btn-outline-light">
+                    </div>
+                </form>
             </li>
         </ul>
-        <form (ngSubmit)="search(navSearchForm.value)" #navSearchForm="ngForm" class="form-inline ml-auto my-lg-0" >
-            <input class="form-control mr-sm-1" type="search" placeholder="Search archive" aria-label="Search archive" id="searchInput" name="searchInput" ngModel>
-            <input type="submit" value="Search" class="btn btn-outline-light my-2 mr-sm-4">
-        </form>
+        <a href="https://dev-w18o8h59.eu.auth0.com/u/login" class="btn btn-outline-light ml-auto mb-1">Sign in</a>
     </div>
 </nav>

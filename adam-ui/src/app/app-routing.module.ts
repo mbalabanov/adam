@@ -9,6 +9,7 @@ import { ComplianceComponent } from './compliance/compliance.component';
 import { ContactComponent } from './contact/contact.component';
 import { ItemdetailsComponent } from './itemdetails/itemdetails.component';
 import { SearchresultsComponent } from './searchresults/searchresults.component';
+import { EdititemComponent } from './edititem/edititem.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,9 @@ const routes: Routes = [
   },
   {
     path:"item/:categoryId/:itemId", component: ItemdetailsComponent
+  },
+  {
+    path:"edititem", component: EdititemComponent // /:categoryId/:itemId when auth is ready
   },
   {
     path:"compliance/:categoryId", component: ComplianceComponent
