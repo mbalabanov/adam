@@ -22,7 +22,7 @@
     <div class="col-lg-8 border-bottom">
       <span class="badge badge-secondary">{{ archiveCategory | titlecase }}</span>
       <h2>{{ archiveItem.name }}</h2>
-      <p>{{ archiveItem.longdescription }}</p>
+      <div [innerHTML]="archiveItem.longdescription"></div>
 
 			<div class="row">
 				<div class="col-12">
