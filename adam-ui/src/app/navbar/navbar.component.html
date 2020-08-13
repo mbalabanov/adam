@@ -51,7 +51,16 @@
             </li>
         </ul>
         <button (click)="auth.login()" *ngIf="!auth.loggedIn" class="btn btn-outline-light ml-auto mb-1">Log In</button>
-        <a routerLink="profile" *ngIf="auth.loggedIn" class="btn btn-outline-light ml-auto mb-1">Profile</a>
-        <button (click)="auth.logout()" *ngIf="auth.loggedIn" class="btn btn-outline-light ml-auto mb-1">Log Out</button>
+
+        <div *ngIf="auth.loggedIn" class="dropdown ml-auto mb-1">
+            <button class="btn btn-outline-light dropdown-toggle" type="button" id="userMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                User Account
+            </button>
+            <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="dropdownMenuButton" >
+                <a class="dropdown-item" routerLink="/profile" *ngIf="auth.loggedIn" >Profile Page</a>
+                <a class="dropdown-item" (click)="auth.logout()" *ngIf="auth.loggedIn">Log Out</a>
+            </div>
+        </div>
+
     </div>
 </nav>

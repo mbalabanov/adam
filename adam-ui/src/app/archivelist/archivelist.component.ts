@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApirequestsService } from '../apirequests.service';
 import { Router } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-list',
@@ -20,7 +20,7 @@ export class ArchivelistComponent implements OnInit {
   personImage: any = {};
   eventImage: any = {};
 
-  constructor(private _apirequestsService: ApirequestsService, private router: Router,) { }
+  constructor(private _apirequestsService: ApirequestsService, private router: Router, public auth: AuthService) { }
   
   onpageSearch(value) {
     this.router.navigateByUrl('/search/' + value.onpageSearchInput);

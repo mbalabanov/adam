@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PaginationInstance } from 'ngx-pagination';
 import { ApirequestsService } from '../apirequests.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-archivedetail',
@@ -32,7 +33,7 @@ export class ArchivedetailComponent implements OnInit {
         this.popped.push(this.archiveCategory.pop());
     }
 
-	constructor(private _apirequestsService: ApirequestsService, private route: ActivatedRoute) { }
+	constructor(private _apirequestsService: ApirequestsService, private route: ActivatedRoute,  public auth: AuthService) { }
 
 	ngOnInit(): void {
 

@@ -3,6 +3,8 @@
     <div class="row p-3">
       <div class="col-12 text-center">
         <h2>Archive Categories</h2>
+        <p *ngIf="auth.loggedIn" >You are logged in as an <strong>editor.</strong><br>You can edit the existing items and create new ones. <span class="badge badge-success">Coming soon!</span> </p>
+        <button *ngIf="auth.loggedIn" class="btn btn-outline-secondary mb-3">Create new item</button>
       </div>
     </div>
 
@@ -10,7 +12,7 @@
       <div class="col-6 offset-3 text-center mb-4">
         <form (ngSubmit)="onpageSearch(onpageSearchForm.value)" #onpageSearchForm="ngForm" >
           <label class="control" for="onpageSearchInput"><h3>Search the new media art archive...</h3></label>
-            <input class="form-control text-center" type="search" placeholder="Search the whole archive" aria-label="Search archive" id="onpageSearchInput" name="onpageSearchInput" ngModel>
+          <input class="form-control text-center" type="search" placeholder="Search the whole archive" aria-label="Search archive" id="onpageSearchInput" name="onpageSearchInput" ngModel>
           <input type="submit" value="Search Archive" class="btn btn-outline-secondary mt-2">
         </form>
       </div>

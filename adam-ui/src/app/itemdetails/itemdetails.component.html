@@ -12,18 +12,63 @@
               <li class="breadcrumb-item active" aria-current="page">{{ archiveItem.name }}</li>
           </ol>
       </nav>
-			<div class="dropdown ml-2 mb-2">
+			<div class="btn-group ml-2 mb-2">
 				<button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					Share this page
 				</button>
 				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+          <a class="dropdown-item" data-toggle="modal" data-target="#shareLink">Get Sharable Link</a>
+          <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php?u=http://demoarchive.art/#/item/{{ pageUrl }}" target="_blank">Share on Facebook</a>
           <a class="dropdown-item" href="https://twitter.com/intent/tweet?url=http://demoarchive.art/#/item/{{ pageUrl }}" target="_blank">Share on Twitter</a>
         </div>
-			</div>
+      </div>
+      <button *ngIf="auth.loggedIn" class="btn btn-outline-danger btn-sm ml-2 mb-2" data-toggle="modal" data-target="#editItem">Edit item</button>
     </div>
   </div>
 
+</div>
+
+<!-- Modal for shareable link -->
+<div class="modal fade" id="shareLink" tabindex="-1" aria-labelledby="shareLink" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="shareLinkLabel">Share Link</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Share this direct link to this item with others:</p>
+        <p class="alert alert-success text-center"><a href="https://demoarchive.art/#/item/{{ pageUrl }}">https://demoarchive.art/#/item/{{ pageUrl }}</a></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for editing items -->
+<div *ngIf="auth.loggedIn" class="modal fade" id="editItem" tabindex="-1" aria-labelledby="editItem" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editItemLabel">Edit "{{ archiveItem.name }}"</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="alert alert-danger text-center">Editing is coming soon!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="container">
@@ -66,7 +111,7 @@
         <div class="modal-dialog modal-xl">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="carouselModalLabel">Images for {{ archiveItem.name }}</h5>
+              <h5 class="modal-title" id="carouselModalLabel">Images for "{{ archiveItem.name }}"</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -108,7 +153,7 @@
       <div class="row">
         <div class="col-12 text-center" >
             <p *ngFor="let item of archiveItem.videos">
-              <a class="btn btn-primary" href="{{ item.url }}" target="_blank"><img src="../assets/img/yt-icon.png" height="15px" alt="Youtube" class="mr-2">{{ item.name }}</a>
+              <a class="btn btn-primary btn-lg" href="{{ item.url }}" target="_blank"><img src="../assets/img/yt-icon.png" height="25px" alt="Youtube Video Link" class="m-2"><br>{{ item.name }}</a>
             </p>
         </div>
       </div>

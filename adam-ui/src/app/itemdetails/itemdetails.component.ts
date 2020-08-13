@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApirequestsService } from '../apirequests.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-itemdetails',
@@ -25,7 +26,7 @@ export class ItemdetailsComponent implements OnInit {
         activeElem.classList.add('active');
     };
 
-	constructor(private _apirequestsService: ApirequestsService, private route: ActivatedRoute ) { }
+	constructor(private _apirequestsService: ApirequestsService, private route: ActivatedRoute, public auth: AuthService ) { }
 
 	ngOnInit(): void {
 
