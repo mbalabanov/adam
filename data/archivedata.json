@@ -245,7 +245,7 @@
                         "id": "0",
                         "url": "assets/img/artifacts/artifacts4.jpg",
                         "name": "Sed diam nonumy eirmod tempor",
-                        "description": "Labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum."
+                        "description": "Labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."
                     },
                     {
                         "id": "1",
@@ -315,7 +315,7 @@
                         "id": "0",
                         "url": "assets/img/artifacts/artifacts5.jpg",
                         "name": "Sed diam nonumy eirmod tempor",
-                        "description": "Labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum."
+                        "description": "Labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."
                     },
                     {
                         "id": "1",
@@ -374,7 +374,7 @@
                 "category": "artifacts",
                 "name": "Stet Clita Kasd",
                 "aliases": [],
-                "shortdescription": "Cossrism At vero eos et accusam et justo duo dolores et ea rebum.</p><p>Stet clita kasd gubergren.",
+                "shortdescription": "Cossrism At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.",
                 "longdescription": "<p>Cossrism At vero eos et accusam et justo duo dolores et ea rebum.</p><p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum.</p>",
                 "dates": ["1987-03-01"],
                 "tags": [
@@ -387,7 +387,7 @@
                         "id": "0",
                         "url": "assets/img/artifacts/artifacts6.jpg",
                         "name": "Sed diam nonumy eirmod tempor",
-                        "description": "labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum."
+                        "description": "labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."
                     },
                     {
                         "id": "1",
@@ -572,7 +572,7 @@
                 "category": "persons",
                 "name": "Takimata Sanctus",
                 "aliases": [],
-                "shortdescription": "Alex Phytehoe At vero eos et accusam et justo duo dolores et ea rebum.</p><p>Stet clita kasd gubergren.",
+                "shortdescription": "Alex Phytehoe At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.",
                 "longdescription": "<p>Alex Phytehoe At vero eos et accusam et justo duo dolores et ea rebum.</p><p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum.</p><p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>",
                 "dates": ["1987", "1995"],
                 "tags":[
@@ -638,7 +638,7 @@
                 "category": "persons",
                 "name": "Kasd Gubergren",
                 "aliases": [],
-                "shortdescription": "Stairsquism Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum.",
+                "shortdescription": "Stairsquism Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.",
                 "longdescription": "<p>Stairsquism Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum.</p><p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>",
                 "dates": ["1987", "1995"],
                 "tags":[
@@ -838,7 +838,7 @@
                 "category": "events",
                 "name": "Accusam et Justo",
                 "aliases": ["AEJ"],
-                "shortdescription": "Deiljohn At vero eos et accusam et justo duo dolores et ea rebum.</p><p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
+                "shortdescription": "Deiljohn At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
                 "longdescription": "<p>Deiljohn At vero eos et accusam et justo duo dolores et ea rebum.</p><p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum.</p>",
                 "dates": ["1990-12-23", "1990-12-31"],
                 "tags": [
@@ -1011,7 +1011,7 @@
                 "category": "events",
                 "name": "Vero Eos Wornbrake",
                 "aliases": ["VE"],
-                "shortdescription": "Wornbrake Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum.</p><p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos.",
+                "shortdescription": "Wornbrake Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos.",
                 "longdescription": "<p>Wornbrake Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum.</p><p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum.</p><p>Stet clita kasd gubergren, no sea takimata sanctus.</p>",
                 "dates": ["1990-12-23", "1990-12-31"],
                 "tags": [
