@@ -12,6 +12,15 @@
               <li class="breadcrumb-item active" aria-current="page">{{ archiveItem.name }}</li>
           </ol>
       </nav>
+			<div class="dropdown ml-2 mb-2">
+				<button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Share this page
+				</button>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php?u=http://demoarchive.art/#/item/{{ pageUrl }}" target="_blank">Share on Facebook</a>
+          <a class="dropdown-item" href="https://twitter.com/intent/tweet?url=http://demoarchive.art/#/item/{{ pageUrl }}" target="_blank">Share on Twitter</a>
+        </div>
+			</div>
     </div>
   </div>
 
@@ -104,12 +113,7 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-12 text-center mt">
-          <a class="btn btn-sm btn-primary mt-3 mr-1" href="https://www.facebook.com/sharer/sharer.php?u=http://demoarchive.art/#/item/{{ pageUrl }}" target="_blank"><img src="../assets/img/fb-icon.png" height="16px" alt="Facebook" class="mr-1">Share on Facebook</a>
-          <a class="btn btn-sm btn-primary mt-3 mr-1" href="https://twitter.com/intent/tweet?url=http://demoarchive.art/#/item/{{ pageUrl }}" target="_blank"><img src="../assets/img/tw-icon.png" height="16px" alt="Twitter" class="mr-1">Share on Twitter</a>
-        </div>
-      </div>
+
     </div>
   </div>
 
