@@ -12,6 +12,7 @@
                 <div class="col-md-6 mt-2">
                     <div class="card p-3">
                         <h3>Create a New Archive Items</h3>
+                        <img src="assets/img/edititems-create-archive-item.jpg" data-toggle="modal" data-target="#newArchiveItem" alt="Create a New Archive Items" class="img-fluid border border-primary">
                         <p>Create a new item in the archive (artifact, person, or event).</p>
                         <p><button class="btn btn-outline-secondary" data-toggle="modal" data-target="#newArchiveItem">Create New Archive Item</button></p>
                     </div>
@@ -19,6 +20,7 @@
                 <div class="col-md-6 mt-2">
                     <div class="card p-3">
                         <h3>Edit the Featured Items</h3>
+                        <img src="assets/img/edititems-edit-featured.jpg" data-toggle="modal" data-target="#editFeatured" alt="Edit the Featured Items" class="img-fluid border border-primary">
                         <p>Edit any of the four items featured in the carousel on the frontpage.</p>
                         <p><button class="btn btn-outline-secondary" data-toggle="modal" data-target="#editFeatured">Edit Featured Items</button></p>
                     </div>
@@ -29,6 +31,7 @@
                 <div class="col-md-6 mt-2">
                     <div class="card p-3">
                         <h3>Edit the News Articles</h3>
+                        <img src="assets/img/edititems-edit-news.jpg"data-toggle="modal" data-target="#editNews" alt="Edit the News Articles" class="img-fluid border border-primary">
                         <p>Edit any of the three news articles and upload images.</p>
                         <p><button class="btn btn-outline-secondary" data-toggle="modal" data-target="#editNews">Edit News</button></p>
                     </div>
@@ -36,6 +39,7 @@
                 <div class="col-md-6 mt-2">
                     <div class="card p-3">
                         <h3>Edit the Compliance Pages</h3>
+                        <img src="assets/img/edititems-edit-compliance.jpg" data-toggle="modal" data-target="#editCompliance" alt="Edit the Compliance Pages" class="img-fluid border border-primary">
                         <p>Edit the Compliance Pages (except for the contracts page).</p>
                         <p><button class="btn btn-outline-secondary" data-toggle="modal" data-target="#editCompliance">Edit Compliance Pages</button></p>
                     </div>
@@ -222,10 +226,6 @@
                                     <input type="text" value="{{ item.title }}" id="title{{item.id}}" class="form-control">
                                     <label for="articletext{{item.id}}" class="mt-2">Article Text</label>
                                     <textarea type="text" value="{{ item.articletext }}" id="articletext{{item.id}}" rows="12" class="form-control"></textarea>
-                                    <div *ngFor="let item of compliancePages.images" class="alert alert-secondary p-3">
-                                        <label for="image{{item}}"class="mt-2">Image Path (URL)</label>
-                                        <input type="text" value="{{ item }}" id="image{{item}}" class="form-control">
-                                    </div>
                                     <button class="btn btn-outline-danger btn-sm mt-1">Clear</button>
                                 </div>
                                 </div>

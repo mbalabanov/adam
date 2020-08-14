@@ -26,7 +26,6 @@ export class EdititemComponent implements OnInit {
     this._apirequestsService.getNews()
         .subscribe(newsdata => {
         this.news = newsdata.content;
-        console.log(this.news);
     });
 
     this._apirequestsService.getCompliance()
