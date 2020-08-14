@@ -36,14 +36,20 @@
                         "url": "assets/img/portraits/portrait07.jpg",
                         "name": "Cras Ligula Consectetur Tortor",
                         "description": "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor."
+                    },
+                    {
+                        "id": "3",
+                        "url": "assets/img/additional/additional-01.jpg",
+                        "name": "Sollicitudin Inceptos Parturient",
+                        "description": "Nulla vitae elit libero, a pharetra augue."
                     }
                 ],
                 "videos": [
                     {
                         "id": "0",
-                        "url": "https://www.youtube.com/watch?v=9lNZ_Rnr7Jc",
-                        "name": "Fusce Tristique Ligula",
-                        "description": "Maecenas sed diam eget risus varius blandit sit amet non magna."
+                        "url": "https://youtu.be/sUx-f686Wg4",
+                        "name": "Consetetur sadipscing",
+                        "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
                     },
                     {
                         "id": "1",
@@ -118,6 +124,12 @@
                         "url": "assets/img/portraits/portrait08.jpg",
                         "name": "Cras Ligula Consectetur Tortor",
                         "description": "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor."
+                    },
+                    {
+                        "id": "3",
+                        "url": "assets/img/additional/additional-02.jpg",
+                        "name": "Sem Ridiculus",
+                        "description": "Donec id elit non mi porta gravida at eget metus. Donec sed odio dui."
                     }
                 ],
                 "videos": [
@@ -204,14 +216,20 @@
                         "url": "assets/img/portraits/portrait09.jpg",
                         "name": "Cras Ligula Consectetur Tortor",
                         "description": "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor."
+                    },
+                    {
+                        "id": "4",
+                        "url": "assets/img/additional/additional-03.jpg",
+                        "name": "Elit Aenean",
+                        "description": "Cras mattis consectetur purus sit amet fermentum."
                     }
                 ],
                 "videos": [
                     {
                         "id": "0",
-                        "url": "https://www.youtube.com/watch?v=9lNZ_Rnr7Jc",
+                        "url": "https://youtu.be/sUx-f686Wg4",
                         "name": "Consetetur sadipscing",
-                        "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore."
+                        "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
                     },
                     {
                         "id": "1",
@@ -288,6 +306,12 @@
                         "url": "assets/img/portraits/portrait10.jpg",
                         "name": "Cras Ligula Consectetur Tortor",
                         "description": "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor."
+                    },
+                    {
+                        "id": "3",
+                        "url": "assets/img/additional/additional-04.jpg",
+                        "name": "Pharetra Tristique Porta",
+                        "description": "Nullam quis risus eget urna mollis ornare vel eu leo. Aenean eu leo quam."
                     }
                 ],
                 "videos": [
@@ -302,6 +326,12 @@
                         "url": "https://youtu.be/82NPKzIjo8Y",
                         "name": "Fermentum Lorem",
                         "description": "Vestibulum id ligula porta felis euismod semper."
+                    },
+                    {
+                        "id": "2",
+                        "url": "https://youtu.be/sUx-f686Wg4",
+                        "name": "Consetetur sadipscing",
+                        "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
                     }
                 ],
                 "websiteURLs": [
@@ -364,14 +394,20 @@
                         "url": "assets/img/portraits/portrait11.jpg",
                         "name": "Cras Ligula Consectetur Tortor",
                         "description": "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor."
+                    },
+                    {
+                        "id": "3",
+                        "url": "assets/img/additional/additional-05.jpg",
+                        "name": "Pellentesque Nullam Malesuada",
+                        "description": "Maecenas faucibus mollis interdum. Praesent commodo cursus magna, vel scelerisque nisl."
                     }
                 ],
                 "videos": [
                     {
                         "id": "0",
-                        "url": "https://www.youtube.com/watch?v=9lNZ_Rnr7Jc",
+                        "url": "https://youtu.be/wkk0bW-opUA",
                         "name": "Consetetur sadipscing",
-                        "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam."
+                        "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
                     },
                     {
                         "id": "1",
@@ -436,14 +472,20 @@
                         "url": "assets/img/portraits/portrait12.jpg",
                         "name": "Cras Ligula Consectetur Tortor",
                         "description": "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor."
+                    },
+                    {
+                        "id": "2",
+                        "url": "assets/img/additional/additional-06.jpg",
+                        "name": "Vehicula Consectetur Fringilla",
+                        "description": "Donec ullamcorper nulla non metus auctor fringilla. Donec sed odio dui."
                     }
                 ],
                 "videos": [
                     {
                         "id": "0",
-                        "url": "https://www.youtube.com/watch?v=9lNZ_Rnr7Jc",
+                        "url": "https://youtu.be/QTvnYkmtleI",
                         "name": "Consetetur sadipscing",
-                        "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam."
+                        "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
                     },
                     {
                         "id": "1",
@@ -518,11 +560,17 @@
                         "url": "assets/img/portraits/portrait13.jpg",
                         "name": "Cras Ligula Consectetur Tortor",
                         "description": "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor."
+                    },
+                    {
+                        "id": "3",
+                        "url": "assets/img/additional/additional-07.jpg",
+                        "name": "Vestibulum Lorem",
+                        "description": "Nullam id dolor id nibh ultricies vehicula ut id elit."
                     }
                 ],
                 "videos": [{
                     "id": "0",
-                    "url": "https://www.youtube.com/watch?v=w54uNAuqE1Y",
+                    "url": "https://youtu.be/QTvnYkmtleI",
                     "name": "Consetetur sadipscing",
                     "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
                 },
@@ -592,6 +640,12 @@
                         "url": "assets/img/portraits/portrait14.jpg",
                         "name": "Cras Ligula Consectetur Tortor",
                         "description": "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor."
+                    },
+                    {
+                        "id": "3",
+                        "url": "assets/img/additional/additional-08.jpg",
+                        "name": "Cras Inceptos Quam Malesuada",
+                        "description": "Maecenas sed diam eget risus varius blandit sit amet non magna."
                     }
                 ],
                 "videos": [{
@@ -605,6 +659,12 @@
                     "url": "https://youtu.be/oarR61SeY8E",
                     "name": "Elit Justo Pellentesque",
                     "description": "Cras mattis consectetur purus sit amet fermentum."
+                },
+                {
+                    "id": "2",
+                    "url": "https://youtu.be/1mA-eRZJ8Yk",
+                    "name": "Consetetur sadipscing",
+                    "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
                 }],
                 "websiteURLs": [
                     {
@@ -664,11 +724,17 @@
                         "url": "assets/img/portraits/portrait15.jpg",
                         "name": "Cras Ligula Consectetur Tortor",
                         "description": "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor."
+                    },
+                    {
+                        "id": "3",
+                        "url": "assets/img/additional/additional-09.jpg",
+                        "name": "Cras Inceptos Quam Malesuada",
+                        "description": "Fusce dapibus, tellus ac commodo, tortor condimentum nibh, ut fermentum massa."
                     }
                 ],
                 "videos":[{
                     "id": "0",
-                    "url": "https://www.youtube.com/watch?v=w54uNAuqE1Y",
+                    "url": "https://youtu.be/1mA-eRZJ8Yk",
                     "name": "Consetetur sadipscing",
                     "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
                 },
@@ -737,6 +803,12 @@
                         "url": "assets/img/portraits/portrait16.jpg",
                         "name": "Cras Ligula Consectetur Tortor",
                         "description": "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor."
+                    },
+                    {
+                        "id": "3",
+                        "url": "assets/img/additional/additional-10.jpg",
+                        "name": "Tristique Fusce Cursus",
+                        "description": "Maecenas sed diam eget risus varius blandit sit amet non magna."
                     }
                 ],
                 "videos":[
@@ -745,13 +817,12 @@
                         "url": "https://youtu.be/82NPKzIjo8Y",
                         "name": "Fermentum Lorem",
                         "description": "Vestibulum id ligula porta felis euismod semper."
-                    },
-                    {
-                    "id": "1",
-                    "url": "https://www.youtube.com/watch?v=w54uNAuqE1Y",
-                    "name": "Consetetur sadipscing",
-                    "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
-                }],
+                    },{
+                        "id": "1",
+                        "url": "https://youtu.be/1mA-eRZJ8Yk",
+                        "name": "Consetetur sadipscing",
+                        "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
+                    }],
                 "websiteURLs":[
                     {
                         "id": "0",
@@ -810,6 +881,12 @@
                         "url": "assets/img/portraits/portrait17.jpg",
                         "name": "Cras Ligula Consectetur Tortor",
                         "description": "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor."
+                    },
+                    {
+                        "id": "3",
+                        "url": "assets/img/additional/additional-11.jpg",
+                        "name": "Cras Ornare Pellentesque",
+                        "description": "Duis mollis, est non commodo luctus, nisi erat ligula, eget lacinia nec elit."
                     }
                 ],
                 "videos":[{
@@ -823,6 +900,11 @@
                     "url": "https://youtu.be/oarR61SeY8E",
                     "name": "Elit Justo Pellentesque",
                     "description": "Cras mattis consectetur purus sit amet fermentum."
+                },{
+                    "id": "2",
+                    "url": "https://youtu.be/1mA-eRZJ8Yk",
+                    "name": "Consetetur sadipscing",
+                    "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
                 }],
                 "websiteURLs":[
                     {
@@ -877,6 +959,12 @@
                         "url": "assets/img/portraits/portrait18.jpg",
                         "name": "Cras Ligula Consectetur Tortor",
                         "description": "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor."
+                    },
+                    {
+                        "id": "2",
+                        "url": "assets/img/additional/additional-12.jpg",
+                        "name": "Dapibus Fermentum",
+                        "description": "Nullam id dolor id nibh ultricies vehicula ut id elit."
                     }
                 ],
                 "videos":[
@@ -958,6 +1046,12 @@
                         "url": "assets/img/portraits/portrait19.jpg",
                         "name": "Cras Ligula Consectetur Tortor",
                         "description": "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor."
+                    },
+                    {
+                        "id": "2",
+                        "url": "assets/img/additional/additional-13.jpg",
+                        "name": "Mattis Egestas Nullam",
+                        "description": "Donec id elit non mi porta gravida at eget metus."
                     }
                 ],
                 "videos": [{
@@ -1021,6 +1115,18 @@
                         "url": "assets/img/exhibitions/exhibitions2.jpg",
                         "name":"Dapibus Euismod",
                         "description": "Donec ullamcorper nulla non metus auctor fringilla."
+                    },
+                    {
+                        "id": "1",
+                        "url": "assets/img/additional/additional-14.jpg",
+                        "name": "Ornare Lorem Sollicitudin",
+                        "description": "Fusce dapibus, tellus ac commodo, tortor mauris nibh, ut fermentum massa justo risus."
+                    },
+                    {
+                        "id": "2",
+                        "url": "assets/img/additional/additional-15.jpg",
+                        "name": "Sollicitudin Etiam",
+                        "description": "Praesent commodo cursus magna, vel scelerisque nisl consectetur et."
                     }
                 ],
                 "videos": [{
@@ -1082,6 +1188,30 @@
                         "url": "assets/img/exhibitions/exhibitions3.jpg",
                         "name":"Dapibus Euismod",
                         "description": "Donec ullamcorper nulla non metus auctor fringilla."
+                    },
+                    {
+                        "id": "1",
+                        "url": "assets/img/additional/additional-16.jpg",
+                        "name": "Commodo Vulputate Cras",
+                        "description": "Donec sed odio dui. Donec id elit non mi porta gravida at eget metus."
+                    },
+                    {
+                        "id": "2",
+                        "url": "assets/img/additional/additional-17.jpg",
+                        "name": "Amet Sit",
+                        "description": "Maecenas faucibus mollis interdum. Quam Fringilla Adipiscing Mattis."
+                    },
+                    {
+                        "id": "3",
+                        "url": "assets/img/additional/additional-18.jpg",
+                        "name": "Malesuada Nibh Commodo",
+                        "description": "Integer posuere erat a ante venenatis dapibus posuere velit aliquet."
+                    },
+                    {
+                        "id": "4",
+                        "url": "assets/img/additional/additional-19.jpg",
+                        "name": "Sem Vestibulum Parturient",
+                        "description": "Vestibulum id ligula porta felis euismod semper."
                     }
                 ],
                 "videos": [{
@@ -1142,7 +1272,20 @@
                         "url": "assets/img/exhibitions/exhibitions4.jpg",
                         "name":"Dapibus Euismod",
                         "description": "Donec ullamcorper nulla non metus auctor fringilla."
+                    },
+                    {
+                        "id": "1",
+                        "url": "assets/img/additional/additional-20.jpg",
+                        "name": "Bibendum Tristique",
+                        "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+                    },
+                    {
+                        "id": "2",
+                        "url": "assets/img/additional/additional-23.jpg",
+                        "name": "Ornare Lorem",
+                        "description": "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."
                     }
+
                 ],
                 "videos": [{
                     "id": "0",
@@ -1203,11 +1346,29 @@
                         "url": "assets/img/exhibitions/exhibitions5.jpg",
                         "name":"Dapibus Euismod",
                         "description": "Donec ullamcorper nulla non metus auctor fringilla."
+                    },
+                    {
+                        "id": "1",
+                        "url": "assets/img/additional/additional-20.jpg",
+                        "name": "Bibendum Tristique",
+                        "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+                    },
+                    {
+                        "id": "2",
+                        "url": "assets/img/additional/additional-21.jpg",
+                        "name": "Condimentum Tellus",
+                        "description": "Integer posuere erat a ante venenatis dapibus posuere velit aliquet."
+                    },
+                    {
+                        "id": "3",
+                        "url": "assets/img/additional/additional-23.jpg",
+                        "name": "Ornare Lorem",
+                        "description": "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."
                     }
                 ],
                 "videos": [{
                     "id": "0",
-                    "url": "https://www.youtube.com/watch?v=w54uNAuqE1Y",
+                    "url": "https://youtu.be/gWVmPtr9O0g",
                     "name": "Consetetur sadipscing",
                     "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
                 },
@@ -1273,11 +1434,23 @@
                         "url": "assets/img/exhibitions/exhibitions6.jpg",
                         "name":"Dapibus Euismod",
                         "description": "Donec ullamcorper nulla non metus auctor fringilla."
+                    },
+                    {
+                        "id": "2",
+                        "url": "assets/img/additional/additional-22.jpg",
+                        "name": "Ultricies Vestibulum Adipiscing",
+                        "description": "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."
+                    },
+                    {
+                        "id": "3",
+                        "url": "assets/img/additional/additional-22.jpg",
+                        "name": "Ultricies Vestibulum Adipiscing",
+                        "description": "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."
                     }
                 ],
                 "videos": [{
                     "id": "0",
-                    "url": "https://www.youtube.com/watch?v=w54uNAuqE1Y",
+                    "url": "https://youtu.be/B58WUO_wOi0",
                     "name": "Consetetur sadipscing",
                     "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
                 },
