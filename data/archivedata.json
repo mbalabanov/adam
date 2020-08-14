@@ -540,6 +540,12 @@
                         "description": "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor."
                     }
                 ],
+                "videos": [{
+                    "id": "0",
+                    "url": "https://www.youtube.com/watch?v=w54uNAuqE1Y",
+                    "name": "Consetetur sadipscing",
+                    "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
+                }],
                 "websiteURLs": [
                     {
                         "id": "0",
