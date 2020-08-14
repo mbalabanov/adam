@@ -54,11 +54,25 @@
 
         <div *ngIf="auth.loggedIn" class="dropdown ml-auto mb-1">
             <button class="btn btn-outline-light dropdown-toggle" type="button" id="userMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Edit Items
+            </button>
+            <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="dropdownMenuButton" >
+                <a class="dropdown-item" routerLink="/edititem" >Instructions</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" routerLink="/edititem" >Create New Item</a>
+                <a class="dropdown-item" routerLink="/edititem" >Edit Featured Items</a>
+                <a class="dropdown-item" routerLink="/edititem" >Edit News Items</a>
+                <a class="dropdown-item" routerLink="/edititem" >Edit Compliance Pages</a>
+            </div>
+        </div>
+
+        <div *ngIf="auth.loggedIn" class="dropdown ml-auto mb-1">
+            <button class="btn btn-outline-light dropdown-toggle" type="button" id="userMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 User Account
             </button>
             <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="dropdownMenuButton" >
-                <a class="dropdown-item" routerLink="/profile" *ngIf="auth.loggedIn" >Profile Page</a>
-                <a class="dropdown-item" (click)="auth.logout()" *ngIf="auth.loggedIn">Log Out</a>
+                <a class="dropdown-item" routerLink="/profile" >Profile Page</a>
+                <a class="dropdown-item" (click)="auth.logout()">Log Out</a>
             </div>
         </div>
 
