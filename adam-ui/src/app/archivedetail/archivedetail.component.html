@@ -28,7 +28,7 @@
 			<h2>Archive Category: {{ archiveCategory.name }}</h2>
 			<h3>At present, all items in this category only contain placeholder text.</h3>
 			<p *ngIf="auth.loggedIn" >You are logged in as an <strong>editor.</strong><br>You can edit the existing items and create new ones. <span class="badge badge-success">Coming soon!</span> </p>
-			<button *ngIf="auth.loggedIn" class="btn btn-outline-secondary mb-3">Create new item</button>
+			<a *ngIf="auth.loggedIn" routerLink="/edititem" class="btn btn-outline-secondary mb-3">Create new item</a>
 			<h4 class="mt-3">Search {{ archiveCategory.name }}</h4>
 		</div>
 	</div>

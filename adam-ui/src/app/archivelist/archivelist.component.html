@@ -4,7 +4,7 @@
       <div class="col-12 text-center">
         <h2>Archive Categories</h2>
         <p *ngIf="auth.loggedIn" >You are logged in as an <strong>editor.</strong><br>You can edit the existing items and create new ones. <span class="badge badge-success">Coming soon!</span> </p>
-        <button *ngIf="auth.loggedIn" class="btn btn-outline-secondary mb-3">Create new item</button>
+        <a *ngIf="auth.loggedIn" routerLink="/edititem" class="btn btn-outline-secondary mb-3">Create new item</a>
       </div>
     </div>
 
