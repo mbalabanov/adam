@@ -8,9 +8,8 @@
             <div [innerHTML]="complianceCategory.articletext"></div>
         </div>
 		<div class="col-lg-6 text-center">
-            <div *ngFor="let image of complianceCategory.images">
-                <img class="img-fluid" src="{{ image }}" alt="{{ complianceCategory.title }}">
-            </div>
+            <img class="img-fluid" src="{{ complianceCategory.firstimage }}" alt="{{ complianceCategory.title }}">
+            <img class="img-fluid" src="{{ complianceCategory.secondimage }}" alt="{{ complianceCategory.title }}">
         </div>
 
 	</div>

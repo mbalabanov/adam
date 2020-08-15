@@ -33,7 +33,7 @@ const routes: Routes = [
     path:"item/:categoryId/:itemId", component: ItemdetailsComponent
   },
   {
-    path:"edititem", component: EdititemComponent // /:categoryId/:itemId when auth is ready
+    path:"edititem", component: EdititemComponent, canActivate: [AuthGuard]
   },
   {
     path:"compliance/:categoryId", component: ComplianceComponent
