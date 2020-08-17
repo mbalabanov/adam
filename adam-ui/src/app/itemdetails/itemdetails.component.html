@@ -151,13 +151,37 @@
       <h2>{{ archiveItem.name }}</h2>
       <div class="alert alert-danger text-center" role="alert">
         At present, all items only contain placeholder text.
-    </div>
+      </div>
+
+      <h3>Characteristics</h3>
+      <table class="table table-sm table-hover">
+        <tbody>
+          <tr>
+            <th scope="row">Name</th>
+            <td>{{ archiveItem.name }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Category</th>
+            <td>{{ archiveCategory | titlecase }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Alias</th>
+            <td>{{ (archiveItem.alias) || "None" }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Dates</th>
+            <td><span *ngFor="let date of archiveItem.dates" class="mr-2">{{ date }}</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Description</h3>
       <div [innerHTML]="archiveItem.longdescription"></div>
 
-			<div class="row">
+			<div class="row mt-4">
 				<div class="col-12">
+          <h3>Keywords</h3>
 					<p class="mt-4">
-            <strong>Keywords:</strong>
             <span class="btn btn-warning m-1" *ngFor="let tag of archiveItem.tags">{{ tag }}</span>
           </p>
 
