@@ -170,7 +170,7 @@
           </tr>
           <tr>
             <th scope="row">Dates</th>
-            <td><span *ngFor="let date of archiveItem.dates" class="mr-2">{{ date | date }}</span></td>
+            <td><span *ngFor="let date of archiveItem.dates" class="mr-3 border p-1">{{ date | date }}</span></td>
           </tr>
         </tbody>
       </table>
@@ -247,9 +247,13 @@
           <h3>Videos</h3>
         </div>
       </div>
-      <div class="row pt-3 border">
-        <div *ngFor="let item of archiveItem.videos" class="col-6 p-3">
-          <div class="text-center alert alert-primary"><a href="{{ item.url }}" target="_blank"><img src="../assets/img/yt-icon.png" height="35px" alt="Youtube Video Link" class="m-2"><br>{{ item.name }}</a></div>
+      <div class="row border">
+        <div class="col-12">
+        <p *ngFor="let item of archiveItem.videos" class="m-4">
+          <span class="text-center alert alert-primary">
+            <a href="{{ item.url }}" target="_blank">{{ item.name }}</a>
+          </span>
+        </p>
         </div>
       </div>
 
@@ -258,9 +262,13 @@
           <h3>Websites</h3>
         </div>
       </div>
-      <div class="row pt-3 border">
-        <div *ngFor="let item of archiveItem.websiteURLs" class="col-6 p-3">
-          <div class="text-center alert alert-success"><a href="{{ item.url }}" target="_blank"><img src="../assets/img/ws-icon.png" height="35px" alt="Link to Website" class="m-2"><br>{{ item.name }}</a></div>
+      <div class="row border">
+        <div class="col-12">
+          <p *ngFor="let item of archiveItem.websiteURLs" class="m-4">
+            <span class="text-center alert alert-success">
+              <a href="{{ item.url }}" target="_blank">{{ item.name }}</a>
+            </span>
+          </p>
         </div>
       </div>
 
@@ -269,9 +277,13 @@
           <h3>Assets</h3>
         </div>
       </div>
-      <div class="row pt-3 border">
-        <div *ngFor="let item of archiveItem.assets" class="col-6 p-3">
-          <div class="text-center alert alert-secondary"><a href="{{ item.url }}" target="_blank"><img src="../assets/img/as-icon.png" height="35px" alt="Link to assets" class="m-2"><br>{{ item.name }}</a></div>
+      <div class="row border">
+        <div class="col-12">
+          <p *ngFor="let item of archiveItem.assets" class="m-4">
+            <span class="text-center alert alert-secondary">
+              <a href="{{ item.url }}" target="_blank">{{ item.name }}</a>
+            </span>
+          </p>
         </div>
       </div>
 
