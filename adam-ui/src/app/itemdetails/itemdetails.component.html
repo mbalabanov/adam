@@ -8,21 +8,10 @@
           <ol class="breadcrumb">
               <li class="breadcrumb-item"><a  routerLink="/">Home</a></li>
               <li class="breadcrumb-item"><a  routerLink="/archive">Archive</a></li>
-              <li class="breadcrumb-item"><a  routerLink="/category/{{ archiveCategory }}">Archive category: {{ archiveCategory }}</a></li>
+              <li class="breadcrumb-item"><a  routerLink="/category/{{ archiveCategory }}">Archive category: {{ archiveCategory | titlecase }}</a></li>
               <li class="breadcrumb-item active" aria-current="page">{{ archiveItem.name }}</li>
           </ol>
       </nav>
-			<div class="btn-group ml-2 mb-2">
-				<button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					Share this page
-				</button>
-				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
-          <a class="dropdown-item" data-toggle="modal" data-target="#shareLink">Get Sharable Link</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php?u=http://demoarchive.art/#/item/{{ pageUrl }}" target="_blank">Share on Facebook</a>
-          <a class="dropdown-item" href="https://twitter.com/intent/tweet?url=http://demoarchive.art/#/item/{{ pageUrl }}" target="_blank">Share on Twitter</a>
-        </div>
-      </div>
       <button *ngIf="auth.loggedIn" class="btn btn-outline-danger btn-sm ml-2 mb-2" data-toggle="modal" data-target="#editItem">Edit item</button>
     </div>
   </div>
@@ -147,7 +136,6 @@
 <div class="container">
   <div class="row my-4">
     <div class="col-lg-8 border-bottom">
-      <span class="badge badge-secondary">{{ archiveCategory | titlecase }}</span>
       <h2>{{ archiveItem.name }}</h2>
       <div class="alert alert-danger text-center" role="alert">
         At present, all items only contain placeholder text.
@@ -157,20 +145,31 @@
       <table class="table table-sm table-hover">
         <tbody>
           <tr>
-            <th scope="row">Name</th>
+            <th scope="row">Name:</th>
             <td>{{ archiveItem.name }}</td>
           </tr>
           <tr>
-            <th scope="row">Category</th>
+            <th scope="row">Category:</th>
             <td>{{ archiveCategory | titlecase }}</td>
           </tr>
           <tr>
-            <th scope="row">Alias</th>
+            <th scope="row">Alias:</th>
             <td>{{ (archiveItem.alias) || "None" }}</td>
           </tr>
           <tr>
-            <th scope="row">Dates</th>
+            <th scope="row">Dates:</th>
             <td><span *ngFor="let date of archiveItem.dates" class="mr-3 border p-1">{{ date | date }}</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Summary:</th>
+            <td>{{ archiveItem.shortdescription }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Share:</th>
+            <td>
+              <a class="btn btn-outline-primary btn-sm mr-1" data-toggle="modal" data-target="#shareLink" href="#">Page Link</a>
+              <a class="btn btn-outline-primary btn-sm mr-1" href="https://www.facebook.com/sharer/sharer.php?u=http://demoarchive.art/#/item/{{ pageUrl }}" target="_blank">Share on Facebook</a> 
+              <a class="btn btn-outline-primary btn-sm mr-1" href="https://twitter.com/intent/tweet?url=http://demoarchive.art/#/item/{{ pageUrl }}" target="_blank">Share on Twitter</a></td>
           </tr>
         </tbody>
       </table>
@@ -248,12 +247,10 @@
         </div>
       </div>
       <div class="row border">
-        <div class="col-12">
-        <p *ngFor="let item of archiveItem.videos" class="m-4">
-          <span class="text-center alert alert-primary">
+        <div class="col-12 p-3">
+          <p *ngFor="let item of archiveItem.videos" class="text-center alert alert-primary">
             <a href="{{ item.url }}" target="_blank">{{ item.name }}</a>
-          </span>
-        </p>
+          </p>
         </div>
       </div>
 
@@ -263,11 +260,9 @@
         </div>
       </div>
       <div class="row border">
-        <div class="col-12">
-          <p *ngFor="let item of archiveItem.websiteURLs" class="m-4">
-            <span class="text-center alert alert-success">
-              <a href="{{ item.url }}" target="_blank">{{ item.name }}</a>
-            </span>
+        <div class="col-12 p-3">
+          <p *ngFor="let item of archiveItem.websiteURLs" class="text-center alert alert-success">
+            <a href="{{ item.url }}" target="_blank">{{ item.name }}</a>
           </p>
         </div>
       </div>
@@ -278,11 +273,9 @@
         </div>
       </div>
       <div class="row border">
-        <div class="col-12">
-          <p *ngFor="let item of archiveItem.assets" class="m-4">
-            <span class="text-center alert alert-secondary">
-              <a href="{{ item.url }}" target="_blank">{{ item.name }}</a>
-            </span>
+        <div class="col-12 p-3">
+          <p *ngFor="let item of archiveItem.assets" class="text-center alert alert-secondary">
+            <a href="{{ item.url }}" target="_blank">{{ item.name }}</a>
           </p>
         </div>
       </div>
