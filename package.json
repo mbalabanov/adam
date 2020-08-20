@@ -11,7 +11,8 @@
     "dev:ssr": "ng run adam-frontend:serve-ssr",
     "serve:ssr": "node dist/adam-frontend/server/main.js",
     "build:ssr": "ng build --prod && ng run adam-frontend:server:production",
-    "start:heroku": "node dist/adam-frontend/server/main.js"
+    "start:heroku":"node dist/adam-frontend/server",
+    "postinstall":"npm run build:ssr"
   },
   "private": true,
   "dependencies": {
