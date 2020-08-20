@@ -41,6 +41,7 @@ import { CompliancearticleComponent } from './components/compliancearticle/compl
 import { ContactformComponent } from './components/contactform/contactform.component';
 import { NewsarticleComponent } from './components/newsarticle/newsarticle.component';
 import { AuthprofileComponent } from './components/authprofile/authprofile.component';
+import { TrackingComponent } from './components/tracking/tracking.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import { AuthprofileComponent } from './components/authprofile/authprofile.compo
     CompliancearticleComponent,
     ContactformComponent,
     NewsarticleComponent,
-    AuthprofileComponent
+    AuthprofileComponent,
+    TrackingComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
