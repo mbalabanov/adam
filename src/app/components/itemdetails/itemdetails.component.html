@@ -12,7 +12,7 @@
                 </ol>
             </nav>
 
-            <div  *ngIf="auth.loggedIn" >
+            <div *ngIf="auth.loggedIn" >
                 <button class="btn btn-outline-danger btn-sm ml-2 mb-2" data-toggle="modal" data-target="#editItem">Edit item</button>
                 <!-- Modal for editing items -->
                 <div class="modal fade" id="editItem" tabindex="-1" aria-labelledby="editItem" aria-hidden="true">
@@ -176,7 +176,7 @@
         </div>
         <div class="modal-body">
             <p>Share this direct link to this item with others:</p>
-            <p class="alert alert-success text-center"><a href="https://demoarchive.art/item/{{ pageUrl }}">https://demoarchive.art/item/{{ pageUrl }}</a></p>
+            <p class="alert alert-success text-center"><a href="http://demoarchive.art/item/{{ pageUrl }}">http://demoarchive.art/item/{{ pageUrl }}</a></p>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
