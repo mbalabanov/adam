@@ -1,59 +1,85 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
-import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { IntroComponent } from './intro/intro.component';
-import { ArchivelistComponent } from './archivelist/archivelist.component';
-import { FeaturesComponent } from './features/features.component';
-import { NewsComponent } from './news/news.component';
-import { FooterComponent } from './footer/footer.component';
-import { HomeComponent } from './home/home.component';
-import { NewslistComponent } from './newslist/newslist.component';
-import { ArchiveComponent } from './archive/archive.component';
-import { NewsarticleComponent } from './newsarticle/newsarticle.component';
-import { ArchivedetailComponent } from './archivedetail/archivedetail.component';
-import { ContactComponent } from './contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { ItemdetailsComponent } from './itemdetails/itemdetails.component';
-import { CarouselComponent } from './carousel/carousel.component';
-import { ApirequestsService } from './apirequests.service';
-import { ComplianceComponent } from './compliance/compliance.component';
-import { SearchresultsComponent } from './searchresults/searchresults.component';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { OrnamentComponent } from './ornament/ornament.component';
-import { EdititemComponent } from './edititem/edititem.component';
-import { ProfileComponent } from './profile/profile.component';
-import { CookieconsentComponent } from './cookieconsent/cookieconsent.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
+import { ApirequestsService } from './services/apirequests.service';
+
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { CategorylistComponent } from './components/categorylist/categorylist.component';
+import { NewslistComponent } from './components/newslist/newslist.component';
+import { CookiewarningComponent } from './components/cookiewarning/cookiewarning.component';
+import { SearchresultslistComponent } from './components/searchresultslist/searchresultslist.component';
+import { ItemdetailsComponent } from './components/itemdetails/itemdetails.component';
+import { CreatearchiveitemComponent } from './components/createarchiveitem/createarchiveitem.component';
+import { EditarchiveitemComponent } from './components/editarchiveitem/editarchiveitem.component';
+import { EditcarouselfeaturesComponent } from './components/editcarouselfeatures/editcarouselfeatures.component';
+import { EditcompliancepagesComponent } from './components/editcompliancepages/editcompliancepages.component';
+import { EditnewspagesComponent } from './components/editnewspages/editnewspages.component';
+import { ArchivecategoriesComponent } from './components/archivecategories/archivecategories.component';
+import { HomeComponent } from './pages/home/home.component';
+import { CategorylistpageComponent } from './pages/categorylistpage/categorylistpage.component';
+import { ItemlistpageComponent } from './pages/itemlistpage/itemlistpage.component';
+import { ItemdetailspageComponent } from './pages/itemdetailspage/itemdetailspage.component';
+import { NewslistpageComponent } from './pages/newslistpage/newslistpage.component';
+import { NewsarticlepageComponent } from './pages/newsarticlepage/newsarticlepage.component';
+import { UserprofilepageComponent } from './pages/userprofilepage/userprofilepage.component';
+import { EdititemspageComponent } from './pages/edititemspage/edititemspage.component';
+import { CompliancepageComponent } from './pages/compliancepage/compliancepage.component';
+import { ContactpageComponent } from './pages/contactpage/contactpage.component';
+import { SearchresultspageComponent } from './pages/searchresultspage/searchresultspage.component';
+import { SearchallComponent } from './components/searchall/searchall.component';
+import { SearchitemsComponent } from './components/searchitems/searchitems.component';
+import { ArchiveComponent } from './pages/archive/archive.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { CompliancearticleComponent } from './components/compliancearticle/compliancearticle.component';
+import { ContactformComponent } from './components/contactform/contactform.component';
+import { NewsarticleComponent } from './components/newsarticle/newsarticle.component';
+import { AuthprofileComponent } from './components/authprofile/authprofile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    IntroComponent,
-    ArchivelistComponent,
-    FeaturesComponent,
-    NewsComponent,
-    FooterComponent,
-    HomeComponent,
-    NewslistComponent,
-    ArchiveComponent,
-    NewsarticleComponent,
-    ArchivedetailComponent,
-    ContactComponent,
-    ItemdetailsComponent,
     CarouselComponent,
-    ComplianceComponent,
-    SearchresultsComponent,
-    OrnamentComponent,
-    EdititemComponent,
-    ProfileComponent,
-    CookieconsentComponent,
+    CategorylistComponent,
+    NewslistComponent,
+    CookiewarningComponent,
+    SearchresultslistComponent,
+    ItemdetailsComponent,
+    CreatearchiveitemComponent,
+    EditarchiveitemComponent,
+    EditcarouselfeaturesComponent,
+    EditcompliancepagesComponent,
+    EditnewspagesComponent,
+    ArchivecategoriesComponent,
+    HomeComponent,
+    CategorylistpageComponent,
+    ItemlistpageComponent,
+    ItemdetailspageComponent,
+    NewslistpageComponent,
+    NewsarticlepageComponent,
+    UserprofilepageComponent,
+    EdititemspageComponent,
+    CompliancepageComponent,
+    ContactpageComponent,
+    SearchresultspageComponent,
+    SearchallComponent,
+    SearchitemsComponent,
+    ArchiveComponent,
+    FooterComponent,
+    CompliancearticleComponent,
+    ContactformComponent,
+    NewsarticleComponent,
+    AuthprofileComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,

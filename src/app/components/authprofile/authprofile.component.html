@@ -1,0 +1,30 @@
+<div class="row mt-4">
+    <div class="col-lg-12 text-center">
+
+    <h2>Profile Page</h2>
+
+    </div>
+</div>
+
+
+<div *ngIf="auth.userProfile$ | async as profile">
+
+    <div class="row my-5">
+        <div class="col-lg-4 text-center alert alert-primary p-4">
+
+            <p><strong>Name:</strong><br>{{ profile.name }}</p>
+            <p><strong>Email address:</strong><br>{{ profile.email }}</p>
+            <p><button class="btn btn-danger" (click)="auth.logout()" *ngIf="auth.loggedIn">Log Out</button></p>
+
+        </div>
+
+        <div class="col-lg-8 text-center p-4">
+
+            <h3>Hello {{ profile.name }}</h3>
+            <p>Welcome to the editor's area. You are now logged into the digital archive.</p>
+            <p>Now that you have logged in, every item in the <a routerLink="/archive" >archive</a> will provide an <strong>edit</strong> button to make changes to it. You will also be able to edit featured <strong>items,</strong> <strong>news</strong> and <strong>compliance pages</strong>.</p>
+            <p><a class="btn btn-outline-secondary" routerLink="/archive" >Go to archive</a></p>
+        </div>
+    </div>
+
+</div>

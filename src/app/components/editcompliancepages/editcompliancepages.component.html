@@ -1,0 +1,47 @@
+<h3>Edit the Compliance Pages</h3>
+<img src="assets/img/edititems-edit-compliance.jpg" data-toggle="modal" data-target="#editCompliance" alt="Edit the Compliance Pages" class="img-fluid border border-primary">
+<p>Edit the Compliance Pages (except for the contracts page).</p>
+<p><button class="btn btn-outline-secondary" data-toggle="modal" data-target="#editCompliance">Edit Compliance Pages</button></p>
+
+<!-- Modal for editing Compliance Pages -->
+<div class="modal fade" id="editCompliance" tabindex="-1" aria-labelledby="editCompliance" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editComplianceLabel">Edit Compliance Pages</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="alert alert-danger text-center">Editing is coming soon!</p>
+                <form>
+                    <h4>Compliance Pages</h4>
+                    <div class="form-group">
+                        <div *ngFor="let item of compliancePages" class="alert alert-secondary p-3">
+                            <p><strong>Compliance Page: {{ item.category | titlecase }}</strong></p>
+                            <label for="title{{item.id}}" class="mt-2">Page Title</label>
+                            <input type="text" value="{{ item.title }}" id="title{{item.id}}" class="form-control">
+                            <label for="articletext{{item.id}}" class="mt-2">Article Text</label>
+                            <textarea type="text" value="{{ item.articletext }}" id="articletext{{item.id}}" rows="12" class="form-control"></textarea>
+                            <label for="firstimage{{item.id}}" class="mt-2">First Image</label>
+                            <input type="text" value="{{ item.firstimage }}" id="firstimage{{item.id}}" class="form-control">
+                            <button class="btn btn-outline-danger btn-sm mt-1">Clear</button><br>
+                            <label for="secondimage{{item.id}}" class="mt-2">Second Image</label>
+                            <input type="text" value="{{ item.secondimage }}" id="secondimage{{item.id}}" class="form-control">
+                            <button class="btn btn-outline-danger btn-sm mt-1">Clear</button>
+                        </div>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="newimageUpload" class="mt-2"><strong>Upload New Image</strong><br>Small image: 370 x 270 pixels<br>Large image: 1400 x 900 pixels</label> 
+                        <input type="file" class="form-control-file" id="newimageUpload">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

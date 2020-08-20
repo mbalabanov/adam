@@ -1,0 +1,49 @@
+<h3>Edit the Featured Items</h3>
+<img src="assets/img/edititems-edit-featured.jpg" data-toggle="modal" data-target="#editFeatured" alt="Edit the Featured Items" class="img-fluid border border-primary">
+<p>Edit any of the four items featured in the carousel on the frontpage.</p>
+<p><button class="btn btn-outline-secondary" data-toggle="modal" data-target="#editFeatured">Edit Featured Items</button></p>
+
+<!--Modal for editing Featured Items -->
+<div class="modal fade" id="editFeatured" tabindex="-1" aria-labelledby="editFeatured" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="editFeaturedLabel">Edit Featured Items</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <p class="alert alert-danger text-center">Editing is coming soon!</p>
+                <form>
+                    <h4>Featured Items</h4>
+                    <p>Four Items are featured in the carousel on the frontpage. They can be any of the existing archive item in the categories <strong>Artifacts,</strong> <strong>Persons</strong>, and <strong>Events</strong>. The carousel is limited to four items to stay concise.</p>
+                    <p>Featured items have their own <strong>title</strong> and <strong>description</strong> that are independent of the name and desription in the actual archive item's page. The idea is that you can write a promotional text for the featured item. If you want the same text, then simply copy the text from the archive item's page. Please note that the description should not exceed two sentences.</p>
+                    <p>The carousel provides a large canvas to create a great impression. Therefore the <strong>images</strong> in the carousel are much larger. Please provide the image in a resolution of 1200 x 600 pixels.</p>                    
+                    <div class="form-group">
+                    <div *ngFor="let item of featured" class="alert alert-secondary p-3">
+                        <p><strong>Item ID: {{item.id}}</strong></p>
+                        <label for="title{{item.id}}" class="mt-2">Item Title</label>
+                        <input type="text" value="{{ item.title }}" id="title{{item.id}}" class="form-control">
+                        <label for="url{{item.id}}" class="mt-2">Image Path (URL)</label>
+                        <input type="text" value="{{ item.image }}" id="url{{item.id}}" class="form-control">
+                        <label for="description{{item.id}}" class="mt-2">Item Description</label>
+                        <input type="text" value="{{ item.description }}" id="description{{item.id}}" class="form-control">
+                        <label for="link{{item.id}}"class="mt-2">Item Detail Page Path</label>
+                        <input type="text" value="{{ item.link }}" id="link{{item.id}}" class="form-control" placeholder="e.g. item/artifacts/a4">
+                        <button class="btn btn-outline-danger btn-sm mt-1">Clear</button>
+                    </div>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="newimageUpload" class="mt-2"><strong>Upload New Image</strong><br>(1200 x 600 pixels)</label> 
+                        <input type="file" class="form-control-file" id="newimageUpload">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

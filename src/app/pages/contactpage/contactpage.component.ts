@@ -1,0 +1,16 @@
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+@Component({
+  selector: 'app-contactpage',
+  templateUrl: './contactpage.component.html',
+  styleUrls: ['./contactpage.component.css']
+})
+export class ContactpageComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}

@@ -1,54 +1,56 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { ArchiveComponent } from './archive/archive.component';
-import { NewslistComponent } from './newslist/newslist.component';
-import { NewsarticleComponent } from './newsarticle/newsarticle.component';
-import { ArchivedetailComponent } from './archivedetail/archivedetail.component';
-import { ComplianceComponent } from './compliance/compliance.component';
-import { ContactComponent } from './contact/contact.component';
-import { ItemdetailsComponent } from './itemdetails/itemdetails.component';
-import { SearchresultsComponent } from './searchresults/searchresults.component';
-import { EdititemComponent } from './edititem/edititem.component';
-import { ProfileComponent } from './profile/profile.component';
-import { AuthGuard } from './auth.guard';
+
+import { AuthGuard } from './guards/auth.guard';
+
+import { HomeComponent } from './pages/home/home.component';
+import { ArchiveComponent } from './pages/archive/archive.component' 
+import { CategorylistpageComponent } from './pages/categorylistpage/categorylistpage.component';
+import { ItemdetailspageComponent } from './pages/itemdetailspage/itemdetailspage.component'
+import { NewslistpageComponent } from './pages/newslistpage/newslistpage.component';
+import { NewsarticlepageComponent } from './pages/newsarticlepage/newsarticlepage.component';
+import { CompliancepageComponent } from './pages/compliancepage/compliancepage.component';
+import { ContactpageComponent } from './pages/contactpage/contactpage.component'
+import { EdititemspageComponent } from './pages/edititemspage/edititemspage.component';
+import { SearchresultspageComponent } from './pages/searchresultspage/searchresultspage.component';
+import { UserprofilepageComponent } from './pages/userprofilepage/userprofilepage.component';
 
 const routes: Routes = [
   {
     path:"", component: HomeComponent
   },
   {
-    path:"news", component: NewslistComponent
-  },
-  {
     path:"archive", component: ArchiveComponent
   },
   {
-    path:"newsarticle/:postId", component: NewsarticleComponent
+    path:"category/:categoryId", component: CategorylistpageComponent
   },
   {
-    path:"category/:categoryId", component: ArchivedetailComponent
+    path:"item/:categoryId/:itemId", component: ItemdetailspageComponent
   },
   {
-    path:"item/:categoryId/:itemId", component: ItemdetailsComponent
+    path:"news", component: NewslistpageComponent
   },
   {
-    path:"edititem", component: EdititemComponent, canActivate: [AuthGuard]
+    path:"newsarticle/:postId", component: NewsarticlepageComponent
   },
   {
-    path:"compliance/:categoryId", component: ComplianceComponent
+    path:"compliance/:categoryId", component: CompliancepageComponent
   },
   {
-    path:"contact", component: ContactComponent
+    path:"contact", component: ContactpageComponent
   },
   {
-    path:"search/:params", component: SearchresultsComponent
+    path:"search/:params", component: SearchresultspageComponent
   },
   {
-    path:"search", component: SearchresultsComponent
+    path:"search", component: SearchresultspageComponent
   },
   {
-    path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]
+    path:"profile", component: UserprofilepageComponent, canActivate: [AuthGuard]
+  },
+  {
+    path:"edititems", component: EdititemspageComponent, canActivate: [AuthGuard]
   },
   {
     path:"**", component: HomeComponent
@@ -56,7 +58,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    initialNavigation: 'enabled'
+})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

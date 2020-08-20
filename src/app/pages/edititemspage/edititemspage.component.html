@@ -1,0 +1,54 @@
+<app-navbar></app-navbar>
+<div *ngIf="auth.loggedIn" class="container toppadding my-5">
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Welcome to the Editor's Area of ADAM</h2>
+            <p>Here you will be able to add new and edit existing artifacts, persons and events, as well as edit featured <strong>items,</strong> <strong>news</strong> and <strong>compliance pages</strong>.</p>
+            <p>Please check back for this functionality at a later time.</p>
+            <p class="text-center"><span class="badge badge-success">Coming soon!</span> </p>
+
+            <div class="row">
+                <div class="col-md-6 mt-2">
+                    <div class="card p-3">
+
+                        <app-createarchiveitem></app-createarchiveitem>
+
+                    </div>
+                </div>
+                <div class="col-md-6 mt-2">
+                    <div class="card p-3">
+
+                        <app-editcarouselfeatures></app-editcarouselfeatures>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mt-2">
+                    <div class="card p-3">
+
+                        <app-editnewspages></app-editnewspages>
+
+                    </div>
+                </div>
+                <div class="col-md-6 mt-2">
+                    <div class="card p-3">
+
+                        <app-editcompliancepages></app-editcompliancepages>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4 text-center">
+            <h3>How to Edit and Create Content on ADAM</h3>
+            <img src="assets/img/instructional-video.png" alt="The instructional video is coming soon." class="img-fluid">
+            <p>Learn how to add new and edit existing artifacts, persons and events, as well as edit featured <strong>items,</strong> <strong>news</strong> and <strong>compliance pages</strong>.</p>
+        </div>
+    </div>
+</div>
+
+<app-cookiewarning></app-cookiewarning>
+<app-footer></app-footer>

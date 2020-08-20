@@ -1,0 +1,62 @@
+<div class="row pt-3 mb-2 pb-4">
+    <div class="col-12 text-center">
+      <div class="row p-3">
+        <div class="col-12 text-center">
+          <h2>Archive Categories</h2>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-6 offset-3 text-center mb-4">
+          <form (ngSubmit)="onpageSearch(onpageSearchForm.value)" #onpageSearchForm="ngForm" >
+            <label class="control" for="onpageSearchInput"><h3>Search the new media art archive...</h3></label>
+            <input class="form-control text-center" type="search" placeholder="Search the whole archive" aria-label="Search archive" id="onpageSearchInput" name="onpageSearchInput" ngModel>
+            <input type="submit" value="Search Archive" class="btn btn-outline-secondary mt-2">
+          </form>
+        </div>
+      </div>
+  
+      <div class="row mt-2">
+        <div class="col-12 text-center">
+          <h3>or choose a category...</h3>
+        </div>
+      </div>
+  
+      <div class="row px-3">
+              <div class="col-lg-4 col-sm-6 text-center my-3">
+          <div class="relative text-center">
+            <a [routerLink]="['/category/artifacts']">
+              <img src="{{ artifactImage.url }}" alt="{{ artifactCategory.name }}" class="img-fluid rounded">
+            </a>
+            <div class="absolute text-white">
+              <h3 class="pt-1 px-2"><a [routerLink]="['/category/artifacts']">Artifacts</a></h3>
+            </div>
+          </div>
+        </div>
+        
+              <div class="col-lg-4 col-sm-6 text-center my-3">
+          <div class="relative text-center">
+            <a [routerLink]="['/category/persons']">
+              <img src="{{ personImage.url }}" alt="{{ personCategory.name }}" class="img-fluid rounded">
+            </a>
+            <div class="absolute text-white">
+              <h3 class="pt-1 px-2"><a [routerLink]="['/category/persons']">Persons</a></h3>
+            </div>
+          </div>
+        </div>
+  
+              <div class="col-lg-4 col-sm-6 text-center my-3">
+          <div class="relative text-center">
+            <a [routerLink]="['/category/events']">
+              <img src="{{ eventImage.url }}" alt="{{ eventCategory.name }}" class="img-fluid rounded">
+            </a>
+            <div class="absolute text-white">
+              <h3 class="pt-1 px-2"><a [routerLink]="['/category/events']">Events</a></h3>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  

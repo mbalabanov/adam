@@ -1,0 +1,14 @@
+<div class="container">
+	<div class="row my-5 px-3">
+
+        <div class="col-lg-6">
+            <h2>{{ complianceCategory.title }}</h2>
+            <div [innerHTML]="complianceCategory.articletext"></div>
+        </div>
+		<div class="col-lg-6 text-center">
+            <img class="img-fluid" src="{{ complianceCategory.firstimage }}" alt="{{ complianceCategory.title }}">
+            <img class="img-fluid" src="{{ complianceCategory.secondimage }}" alt="{{ complianceCategory.title }}">
+        </div>
+
+	</div>
+</div>

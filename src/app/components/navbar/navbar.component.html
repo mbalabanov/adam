@@ -1,0 +1,79 @@
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow" id="mainnav">
+
+    <a class="navbar-brand mx-2" routerLink="/"><img src="assets/img/adam-logo.png" alt="Archive of Digital Art & Media" height="60px"></a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse ml-2" id="navbarToggler">
+        <ul class="navbar-nav mt-2 mt-lg-0">
+            <li class="nav-item ml-2">
+                <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+            </li>
+            <li class="nav-item dropdown ml-2">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Archive
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" routerLink="/archive" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">All Archive Categories</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" routerLink="/category/artifacts" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Artifacts</a>
+                    <a class="dropdown-item" routerLink="/category/persons" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Persons</a>
+                    <a class="dropdown-item" routerLink="/category/events" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Events</a>
+                  </div>
+            </li>
+
+            <li class="nav-item ml-2">
+                <a class="nav-link" routerLink="/news" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">News</a>
+            </li>
+            <li class="nav-item dropdown ml-2 mr-3">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  About
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" routerLink="/compliance/about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">About ADAM</a>
+                  <a class="dropdown-item" routerLink="/contact" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Contact</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" routerLink="/compliance/imprint" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Legal Imprint</a>
+                  <a class="dropdown-item" routerLink="/compliance/terms" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Terms of Use</a>
+                  <a class="dropdown-item" routerLink="/compliance/privacy" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Privacy Policy</a>
+                  <a class="dropdown-item" routerLink="/compliance/cookies" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Cookie Policy</a>
+                </div>
+            </li>
+            <li>
+                <form (ngSubmit)="search(navSearchForm.value)" #navSearchForm="ngForm" class="form-inline input-group mb-1" >
+                    <input class="form-control" type="search" placeholder="Search archive" aria-label="Search archive" id="searchInput" name="searchInput" ngModel>
+                    <div class="input-group-append">
+                        <input type="submit" value="Search" class="btn btn-outline-light">
+                    </div>
+                </form>
+            </li>
+        </ul>
+        <button (click)="auth.login()" *ngIf="!auth.loggedIn" class="btn btn-outline-light ml-auto mb-1">Log In</button>
+
+        <div *ngIf="auth.loggedIn" class="dropdown ml-auto mb-1">
+            <button class="btn btn-outline-light dropdown-toggle" type="button" id="userMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Edit Items
+            </button>
+            <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="dropdownMenuButton" >
+                <a class="dropdown-item" routerLink="/edititems" >Instructions</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" routerLink="/edititems" >Create New Item</a>
+                <a class="dropdown-item" routerLink="/edititems" >Edit Featured Items</a>
+                <a class="dropdown-item" routerLink="/edititems" >Edit News Items</a>
+                <a class="dropdown-item" routerLink="/edititems" >Edit Compliance Pages</a>
+            </div>
+        </div>
+
+        <div *ngIf="auth.loggedIn" class="dropdown ml-auto mb-1">
+            <button class="btn btn-outline-light dropdown-toggle" type="button" id="userMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                User Account
+            </button>
+            <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="dropdownMenuButton" >
+                <a class="dropdown-item" routerLink="/profile" >Profile Page</a>
+                <a class="dropdown-item" (click)="auth.logout()">Log Out</a>
+            </div>
+        </div>
+    </div>
+</nav>

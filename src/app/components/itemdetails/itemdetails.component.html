@@ -1,0 +1,365 @@
+<div class="toppadding container-fluid">
+
+    <!-- Breadcrumbs -->
+    <div class="row">
+        <div class="col-lg-12">
+            <nav aria-label="breadcrumb" class="mt-2">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a  routerLink="/">Home</a></li>
+                    <li class="breadcrumb-item"><a  routerLink="/archive">Archive</a></li>
+                    <li class="breadcrumb-item"><a  routerLink="/category/{{ archiveCategory }}">Archive category: {{ archiveCategory | titlecase }}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ archiveItem.name }}</li>
+                </ol>
+            </nav>
+
+            <div  *ngIf="auth.loggedIn" >
+                <button class="btn btn-outline-danger btn-sm ml-2 mb-2" data-toggle="modal" data-target="#editItem">Edit item</button>
+                <!-- Modal for editing items -->
+                <div class="modal fade" id="editItem" tabindex="-1" aria-labelledby="editItem" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="editItemLabel">Edit "{{ archiveItem.name }}"</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p class="alert alert-danger text-center">Editing is coming soon!</p>
+                            <form>
+                                <div class="form-group">
+                                    <label for="categorySelect">Category</label>
+                                    <select class="form-control" id="categorySelect">
+                                    <option>Artifact</option>
+                                    <option>Person</option>
+                                    <option>Event</option>
+                                    </select>
+                                </div>
+                                <h4>Description</h4>
+                                <div class="form-group">
+                                    <label for="itemName">Name</label>
+                                    <input type="text" value="{{ archiveItem.name }}" class="form-control" id="itemName">
+                                </div>
+                                <h4 class="mt-3">Aliases</h4>
+                                <div class="form-group mt-2">
+                                    <label for="itemAlias">Aliases</label>
+                                    <input type="text" class="form-control" id="itemAlias" value="{{ archiveItem.aliases }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="shortDescription">Short Description</label>
+                                    <input type="text" class="form-control" id="shortDescription" value="{{ archiveItem.shortdescription }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="longDescription">Long Description</label>
+                                    <textarea class="form-control" id="longDescription" rows="6" value="{{ archiveItem.longdescription }}"></textarea>
+                                </div>
+                                <h4>Dates</h4>
+                                <div class="form-group">
+                                    <div *ngFor="let dateitem of archiveItem.dates; let i = index" class="alert alert-secondary p-3">
+                                        <label for="datelabel{{i}}" class="mt-2">Label</label>
+                                        <input type="text" value="{{ dateitem.label }}" id="datelabel{{i}}" class="form-control">
+                                        <label for="date{{i}}"class="mt-2">Date</label>
+                                        <input type="text" value="{{ dateitem.date }}" id="date{{i}}" class="form-control">
+                                        <button class="btn btn-outline-danger btn-sm mt-1">Remove</button>
+                                    </div>
+                                </div>
+                                <h4>Images</h4>
+                                <div class="form-group">
+                                    <div *ngFor="let item of archiveItem.images" class="alert alert-secondary p-3">
+                                        <p><strong>Image ID: {{item.id}}</strong></p>
+                                        <label for="imagename{{item.id}}" class="mt-2">Image Name</label>
+                                        <input type="text" value="{{ item.name }}" id="imagename{{item.id}}" class="form-control">
+                                        <label for="imageurl{{item.id}}"class="mt-2">Image Path (URL)</label>
+                                        <input type="text" value="{{ item.url }}" id="imageurl{{item.id}}" class="form-control">
+                                        <label for="imagedescription{{item.id}}" class="mt-2">Image Description</label>
+                                        <textarea value="{{ item.description }}" id="imagedescription{{item.id}}" rows="2" class="form-control"></textarea>
+                                        <button class="btn btn-outline-danger btn-sm mt-1">Remove</button>
+                                    </div>
+                                </div>
+                                <div class="form-group mt-2">
+                                    <label for="newimageUpload" class="mt-2"><strong>Upload New Image</strong></label> 
+                                    <input type="file" class="form-control-file" id="newimageUpload">
+                                    <label for="newimagename" class="mt-2">New Image Name</label> 
+                                    <input type="text" class="form-control" id="newimagename">
+                                    <label for="newimagedescription" class="mt-2">New Image Name</label> 
+                                    <input type="text" class="form-control" id="newimagedescription">
+                                </div>
+                                <button class="btn btn-outline-primary btn-sm">Add another image</button>
+                                <h4 class="mt-3">Videos</h4>
+                                <div class="form-group">
+                                    <div *ngFor="let item of archiveItem.videos" class="alert alert-secondary p-3">
+                                    <p><strong>Video ID: {{item.id}}</strong></p>
+                                    <label for="videoname{{item.id}}" class="mt-2">Video Name</label>
+                                    <input type="text" value="{{ item.name }}" id="videoname{{item.id}}" class="form-control">
+                                    <label for="videourl{{item.id}}"class="mt-2">Video Path (URL)</label>
+                                    <input type="text" value="{{ item.url }}" id="videourl{{item.id}}" class="form-control">
+                                    <label for="videodescription{{item.id}}" class="mt-2">Video Description</label>
+                                    <textarea value="{{ item.description }}" id="videodescription{{item.id}}" rows="2" class="form-control"></textarea>
+                                    <button class="btn btn-outline-danger btn-sm mt-1">Remove</button>
+                                    </div>
+                                </div>
+                                <div class="form-group mt-4">
+                                    <p><strong>Add New Video</strong></p>
+                                    <label for="newvideoname" class="mt-2">New Video Name</label>
+                                    <input type="text" class="form-control" id="newvideoname" >
+                                    <label for="newvideourl" class="mt-2">New Video URL</label>
+                                    <input type="text" class="form-control" id="newvideourl" placeholder="https://...">
+                                </div>
+                                <h4 class="mt-3">Websites</h4>
+                                <div class="form-group">
+                                    <div *ngFor="let item of archiveItem.websiteURLs" class="alert alert-secondary p-3">
+                                        <p><strong>Website ID: {{item.id}}</strong></p>
+                                        <label for="websitename{{item.id}}" class="mt-2">Website Name</label>
+                                        <input type="text" value="{{ item.name }}" id="websitename{{item.id}}" class="form-control">
+                                        <label for="websiteurl{{item.id}}"class="mt-2">Website URL</label>
+                                        <input type="text" value="{{ item.url }}" id="websiteurl{{item.id}}" class="form-control">
+                                        <button class="btn btn-outline-danger btn-sm mt-1">Remove</button>
+                                    </div>
+                                </div>
+                                <div class="form-group mt-4">
+                                    <p><strong>Add New Website</strong></p>
+                                    <label for="newwebsitename" class="mt-2">New Website Name</label>
+                                    <input type="text" class="form-control" id="newwebsitename" >
+                                    <label for="newwebsiteurl" class="mt-2">New Website URL</label>
+                                    <input type="text" class="form-control" id="newwebsiteurl" placeholder="https://...">
+                                </div>
+                                <button class="btn btn-outline-primary btn-sm mt-1">Add another website</button>
+                                <h4 class="mt-3">Assets</h4>
+                                <div class="form-group">
+                                    <div *ngFor="let item of archiveItem.assets" class="alert alert-secondary p-3">
+                                        <p><strong>Asset ID: {{item.id}}</strong></p>
+                                        <label for="assetname{{item.id}}" class="mt-2">Asset Name</label>
+                                        <input type="text" value="{{ item.name }}" id="assetname{{item.id}}" class="form-control">
+                                        <label for="asseturl{{item.id}}"class="mt-2">Asset URL</label>
+                                        <input type="text" value="{{ item.url }}" id="asseturl{{item.id}}" class="form-control">
+                                        <button class="btn btn-outline-danger btn-sm mt-1">Remove</button>
+                                    </div>
+                                </div>
+                                <div class="form-group mt-4">
+                                    <p><strong>Add New Asset</strong></p>
+                                    <label for="newassetname" class="mt-2">New Asset Name</label>
+                                    <input type="text" class="form-control" id="newassetname" >
+                                    <label for="newasseturl" class="mt-2">New Asset URL</label>
+                                    <input type="text" class="form-control" id="newasseturl" placeholder="https://...">
+                                </div>
+                                <button class="btn btn-outline-primary btn-sm mt-1">Add another asset</button>
+                                <h4 class="mt-3">Keywords</h4>
+                                <div class="form-group mt-2">
+                                    <label for="itemTag">Keywords</label>
+                                    <input type="text" class="form-control" id="itemTag" value="{{ archiveItem.tags }}">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- Modal for shareable link -->
+<div class="modal fade" id="shareLink" tabindex="-1" aria-labelledby="shareLink" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="shareLinkLabel">Share Link</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <p>Share this direct link to this item with others:</p>
+            <p class="alert alert-success text-center"><a href="https://demoarchive.art/item/{{ pageUrl }}">https://demoarchive.art/item/{{ pageUrl }}</a></p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row my-4">
+        <div class="col-lg-8 border-bottom">
+        <h2>{{ archiveItem.name }}</h2>
+        <div class="alert alert-danger text-center" role="alert">
+            At present, all items only contain placeholder text.
+        </div>
+
+        <h3>Characteristics</h3>
+        <table class="table table-sm table-hover">
+            <tbody>
+            <tr>
+                <th scope="row">Name:</th>
+                <td>{{ archiveItem.name }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Category:</th>
+                <td>{{ archiveCategory | titlecase }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Aliases:</th>
+                <td>{{ (archiveItem.aliases) || "None" }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Dates:</th>
+                <td><span *ngFor="let dateitem of archiveItem.dates">{{ dateitem.label }}{{ dateitem.date | date }}</span></td>
+            </tr>
+            <tr>
+                <th scope="row">Summary:</th>
+                <td>{{ archiveItem.shortdescription }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Share:</th>
+                <td>
+                <a class="btn btn-outline-primary btn-sm mr-1" data-toggle="modal" data-target="#shareLink" href="#">Page Link</a>
+                <a class="btn btn-outline-primary btn-sm mr-1" href="https://www.facebook.com/sharer/sharer.php?u=http://demoarchive.art/item/{{ pageUrl }}" target="_blank">Share on Facebook</a> 
+                <a class="btn btn-outline-primary btn-sm mr-1" href="https://twitter.com/intent/tweet?url=http://demoarchive.art/item/{{ pageUrl }}" target="_blank">Share on Twitter</a></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h3>Description</h3>
+        <div [innerHTML]="archiveItem.longdescription"></div>
+
+                <div class="row mt-4">
+                    <div class="col-12">
+            <h3>Keywords</h3>
+                        <p class="mt-4">
+                <span class="btn btn-warning m-1" *ngFor="let tag of archiveItem.tags">{{ tag }}</span>
+            </p>
+
+                    </div>
+                </div>
+
+        </div>
+        <div class="col-lg-4 ">
+        <div class="row">
+            <div class="col-12 text-center">
+            <h3>Images</h3>
+            </div>
+        </div>
+        <div class="row pt-3 border">
+            <div class="col-6 text-center" *ngFor="let item of archiveItem.images" (click)="setCarouselActiveID(item.id)">
+            <a href="#" data-toggle="modal" data-target="#carouselModal" >
+                <img src="{{ item.url }}" class="img-fluid rounded-lg" alt="{{ item.name }}">
+                <p>{{ item.name }}</p>
+            </a>
+            </div>
+        </div>
+
+        <div class="modal fade" id="carouselModal" tabindex="-1" aria-labelledby="carouselModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="carouselModalLabel">Images for "{{ archiveItem.name }}"</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+
+                <div id="carouselCaptions" class="carousel slide" data-ride="carousel" data-interval="false" touch="true">
+                    <ol class="carousel-indicators">
+                    <li data-target="#carouselCaptions" *ngFor="let item of archiveItem.images; let isFirst = first" [class.active]="isFirst"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                    <div class="carousel-item" *ngFor="let item of archiveItem.images; let isFirst = first" [class.active]="isFirst" id="{{ item.id }}">
+                        <img src="{{ item.url }}" class="d-block w-100" alt="{{ item.name }}" >
+                    </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselCaptions" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselCaptions" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 text-center mt-3">
+            <h3>Videos</h3>
+            </div>
+        </div>
+        <div class="row border">
+            <div class="col-12 p-3">
+            <p *ngFor="let item of archiveItem.videos" class="text-center alert alert-primary">
+                <a href="{{ item.url }}" target="_blank">{{ item.name }}</a>
+            </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 text-center mt-3">
+            <h3>Websites</h3>
+            </div>
+        </div>
+        <div class="row border">
+            <div class="col-12 p-3">
+            <p *ngFor="let item of archiveItem.websiteURLs" class="text-center alert alert-success">
+                <a href="{{ item.url }}" target="_blank">{{ item.name }}</a>
+            </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 text-center mt-3">
+            <h3>Assets</h3>
+            </div>
+        </div>
+        <div class="row border">
+            <div class="col-12 p-3">
+            <p *ngFor="let item of archiveItem.assets" class="text-center alert alert-secondary">
+                <a href="{{ item.url }}" target="_blank">{{ item.name }}</a>
+            </p>
+            </div>
+        </div>
+
+        </div>
+    </div>
+
+<div class="row">
+    <div class="col-12">
+    <h3>Related Archive Entries</h3>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Related persons -->
+    <div class="col-lg-2 col-md-3 text-center my-1" *ngFor="let item of relatedPersons">
+    <a routerLink="/item/persons/{{ item.id }}"><img src="{{ item.images[0].url }}" alt="{{ item.name }}" class="img-fluid rounded"></a>
+    <span class="badge badge-secondary">Person</span>
+    <p><a routerLink="/item/persons/{{ item.id }}">{{ item.name }}</a></p>
+    </div>
+
+    <!-- Related artifacts -->
+    <div class="col-lg-2 col-md-3 text-center my-1" *ngFor="let item of relatedArtifacts">
+    <a routerLink="/item/artifacts/{{ item.id }}"><img src="{{ item.images[0].url }}" alt="{{ item.name }}" class="img-fluid rounded"></a>
+    <span class="badge badge-secondary">Artifact</span>
+    <p><a routerLink="/item/artifacts/{{ item.id }}">{{ item.name }}</a></p>
+    </div>
+
+    <!-- Related events -->
+    <div class="col-lg-2 col-md-3 text-center my-1" *ngFor="let item of relatedEvents">
+    <a routerLink="/item/events/{{ item.id }}"><img src="{{ item.images[0].url }}" alt="{{ item.name }}" class="img-fluid rounded"></a>
+    <span class="badge badge-secondary">Event</span>
+    <p><a routerLink="/item/events/{{ item.id }}">{{ item.name }}</a></p>
+    </div>
+</div>

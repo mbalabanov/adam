@@ -9,8 +9,4 @@ export class AppComponent {
 
   title = 'Archive of Digital Art & Media';
 
-  onActivate(event) {
-    window.scroll(0,0);
-  }
-
 }
