@@ -11,7 +11,6 @@
     "dev:ssr": "ng run adam-frontend:serve-ssr",
     "serve:ssr": "node dist/adam-frontend/server/main.js",
     "build:ssr": "ng build --prod && ng run adam-frontend:server:production",
-    "prerender": "ng run adam-frontend:prerender",
     "start:heroku": "node dist/adam-frontend/server/main.js",
     "postinstall":"npm run build:ssr"
   },
