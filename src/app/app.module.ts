@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { CookieService } from 'ngx-cookie-service';
 
 import { ApirequestsService } from './services/apirequests.service';
 
@@ -89,7 +90,7 @@ import { TrackingComponent } from './components/tracking/tracking.component';
     HttpClientModule,
     NgxPaginationModule
   ],
-  providers: [ApirequestsService],
+  providers: [ApirequestsService, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
