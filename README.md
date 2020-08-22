@@ -11,7 +11,8 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ auf [adam-interface.herokuapp.c
 
 ## Aktualisierungen
 - *22. August 2020:* App komplett aufgeräumt und auf Angular Unversal konvertiert ( [https://demoarchive.art](https://demoarchive.art) leitet jetzt auf [https://adam-frontend.herokuapp.com](https://adam-frontend.herokuapp.com) )
-- *13. August 2020:* Auth0-Integration abgeschlossen.
+- *20. August 2020:* API vom Frontend getrennt. Hat nun ein eigenes Repository auf [https://github.com/mbalabanov/adam-api](https://github.com/mbalabanov/adam-api)
+- *13. August 2020:* Auth0-Integration abgeschlossen (vorläufig mit Anmeldung über Email und Google-Account).
 - *12. August 2020:* Öffentliches Web-Frontend ist soweit fertig und alle Consolen-Fehler sind beseitigt. Die gesamte Suchfunktion läuft über Angular Search-Filter (und nicht über LunrJS). Die ersten Schritte für das Redaktions-Backend sind mit der vorläufig unvollständigen Integration von auth0.com gemacht.
 - *7. August 2020:* Öffentliches Web-Frontend bezieht nun sämtliche Daten von der API (allerdings treten noch Fehler in der Console auf und einige Routes funktionieren noch nicht richtig).
 - *6. August 2020:* Erweitertes Angular-Frontend, konsolodiertes Datenmodell und angepasste API.
