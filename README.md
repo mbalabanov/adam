@@ -10,7 +10,7 @@ Dieses Projekt dient nur zu Übungszwecken und wurde vom "Archive of Digital Art
 ADAM besteht aus vier Teilen: Einem _API-Server_ auf [adam-interface.herokuapp.com](https://adam-interface.herokuapp.com) mit einer Datenbank und Schnittstellen, um die Daten abzurufen, sowie einer Website mit einem _öffentlichen Bereich_ auf [demoarchive.art](http://demoarchive.art/), in dem Besucher die Informationen über die digitalen Kunstwerke finden, und einem _Redaktionsbereich,_ in dem Redakteure neue Inhalte einpflegen und bearbeiten können, und Administratoren die Rechte verwalten können. Zu guter Letzt gibt es eine _Mobile-App,_ mit der man Einträge erstellen kann, Fotos und Videos hochladen kann.
 
 ## Aktualisierungen
-- *22. August 2020:* App komplett aufgeräumt und auf Angular Unversal konvertiert ( https://demoarchive.art leitet jetzt auf https://adam-frontend.herokuapp.com )
+- *22. August 2020:* App komplett aufgeräumt und auf Angular Unversal konvertiert ( [https://demoarchive.art](https://demoarchive.art) leitet jetzt auf [https://adam-frontend.herokuapp.com](https://adam-frontend.herokuapp.com) )
 - *13. August 2020:* Auth0-Integration abgeschlossen.
 - *12. August 2020:* Öffentliches Web-Frontend ist soweit fertig und alle Consolen-Fehler sind beseitigt. Die gesamte Suchfunktion läuft über Angular Search-Filter (und nicht über LunrJS). Die ersten Schritte für das Redaktions-Backend sind mit der vorläufig unvollständigen Integration von auth0.com gemacht.
 - *7. August 2020:* Öffentliches Web-Frontend bezieht nun sämtliche Daten von der API (allerdings treten noch Fehler in der Console auf und einige Routes funktionieren noch nicht richtig).
