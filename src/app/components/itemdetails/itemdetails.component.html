@@ -206,7 +206,8 @@
             </tr>
             <tr>
                 <th scope="row">Aliases:</th>
-                <td>{{ (archiveItem.aliases) || "None" }}</td>
+                <td *ngIf="archiveItem.aliases?.length">{{ archiveItem.aliases }}</td>
+                <td *ngIf="!archiveItem.aliases?.length">None</td>
             </tr>
             <tr>
                 <th scope="row">Dates:</th>
@@ -231,11 +232,13 @@
 
                 <div class="row mt-4">
                     <div class="col-12">
-            <h3>Keywords</h3>
-                        <p class="mt-4">
-                <span class="btn btn-warning m-1" *ngFor="let tag of archiveItem.tags">{{ tag }}</span>
-            </p>
-
+                        <h3>Keywords</h3>
+                        <p *ngIf="archiveItem.tags?.length" class="mt-4">
+                            <span class="btn btn-warning m-1" *ngFor="let tag of archiveItem.tags">{{ tag }}</span>
+                        </p>
+                        <p *ngIf="!archiveItem.tags?.length" class="mt-4">
+                            No keywords or tags available.
+                        </p>
                     </div>
                 </div>
 
@@ -246,7 +249,12 @@
             <h3>Images</h3>
             </div>
         </div>
-        <div class="row pt-3 border">
+        <div *ngIf="!archiveItem.images?.length" class="row pt-3 border">
+            <div class="col-6 text-center">
+                No related images available.
+            </div>
+        </div>
+        <div *ngIf="archiveItem.images?.length" class="row pt-3 border">
             <div class="col-6 text-center" *ngFor="let item of archiveItem.images" (click)="setCarouselActiveID(item.id)">
             <a href="#" data-toggle="modal" data-target="#carouselModal" >
                 <img src="{{ item.url }}" class="img-fluid rounded-lg" alt="{{ item.name }}">
@@ -299,10 +307,13 @@
             </div>
         </div>
         <div class="row border">
-            <div class="col-12 p-3">
-            <p *ngFor="let item of archiveItem.videos" class="text-center alert alert-primary">
-                <a href="{{ item.url }}" target="_blank">{{ item.name }}</a>
-            </p>
+            <div *ngIf="!archiveItem.videos?.length" class="col-12 p-3">
+                <p>No related videos available.</p>
+            </div>
+            <div *ngIf="archiveItem.videos?.length" class="col-12 p-3">
+                <p *ngFor="let item of archiveItem.videos" class="text-center alert alert-primary">
+                    <a href="{{ item.url }}" target="_blank">{{ item.name }}</a>
+                </p>
             </div>
         </div>
 
@@ -312,10 +323,13 @@
             </div>
         </div>
         <div class="row border">
-            <div class="col-12 p-3">
-            <p *ngFor="let item of archiveItem.websiteURLs" class="text-center alert alert-success">
-                <a href="{{ item.url }}" target="_blank">{{ item.name }}</a>
-            </p>
+            <div *ngIf="!archiveItem.websiteURLs?.length" class="col-12 p-3">
+                <p>No related websites available.</p>
+            </div>
+            <div  *ngIf="archiveItem.videos?.length" class="col-12 p-3">
+                <p *ngFor="let item of archiveItem.websiteURLs" class="text-center alert alert-success">
+                    <a href="{{ item.url }}" target="_blank">{{ item.name }}</a>
+                </p>
             </div>
         </div>
 
@@ -325,10 +339,13 @@
             </div>
         </div>
         <div class="row border">
-            <div class="col-12 p-3">
-            <p *ngFor="let item of archiveItem.assets" class="text-center alert alert-secondary">
-                <a href="{{ item.url }}" target="_blank">{{ item.name }}</a>
-            </p>
+            <div *ngIf="!archiveItem.assets?.length" class="col-12 p-3">
+                <p>No related assets available.</p>
+            </div>
+            <div *ngIf="archiveItem.assets?.length" class="col-12 p-3">
+                <p *ngFor="let item of archiveItem.assets" class="text-center alert alert-secondary">
+                    <a href="{{ item.url }}" target="_blank">{{ item.name }}</a>
+                </p>
             </div>
         </div>
 
