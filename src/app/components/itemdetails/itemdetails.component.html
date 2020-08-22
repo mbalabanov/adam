@@ -14,6 +14,7 @@
 
             <div *ngIf="auth.loggedIn" >
                 <button class="btn btn-outline-danger btn-sm ml-2 mb-2" data-toggle="modal" data-target="#editItem">Edit item</button>
+                <button class="btn btn-danger btn-sm ml-2 mb-2" (click)="deleteThis(archiveItem.category, archiveItem.id)">Delete item</button>
                 <!-- Modal for editing items -->
                 <div class="modal fade" id="editItem" tabindex="-1" aria-labelledby="editItem" aria-hidden="true">
                     <div class="modal-dialog modal-lg modal-dialog-scrollable">

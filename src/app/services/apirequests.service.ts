@@ -16,6 +16,7 @@ export class ApirequestsService {
   private newsItemUrl: string = 'https://adam-interface.herokuapp.com/newsitem';
   private featuredUrl: string = 'https://adam-interface.herokuapp.com/featured';
   private complianceUrl: string = 'https://adam-interface.herokuapp.com/compliance';
+  private generalApiUrl: string = 'https://adam-interface.herokuapp.com/';
 
   constructor(private http: HttpClient) { }
 
@@ -68,6 +69,14 @@ export class ApirequestsService {
   
   getCompliancePage(id): Observable<any> {
     return this.http.get<any>(this.complianceUrl + '/' + id);
+  }
+ 
+  deleteItem(dataType, id): Observable<any> {
+    console.log('From API Request Service');
+    console.log(dataType, id);
+    var tempUrl = this.generalApiUrl + dataType + '/' + id;
+    console.log(tempUrl);
+    return this.http.delete<any>(tempUrl);
   }
 
 }

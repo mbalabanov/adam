@@ -17,6 +17,11 @@ relatedArtifacts: Array<object> = [];
 relatedPersons: Array<object> = [];
 relatedEvents: Array<object> = [];
 
+deleteThis(dataType, id) {
+    console.log('Test: /' + dataType + '/' + id);
+    this._apirequestsService.deleteItem(dataType, id);
+}
+
 setCarouselActiveID(id){
     var elems = document.querySelectorAll('.active');
     [].forEach.call(elems, function(el) {
