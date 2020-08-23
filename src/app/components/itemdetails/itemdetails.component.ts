@@ -18,8 +18,9 @@ relatedPersons: Array<object> = [];
 relatedEvents: Array<object> = [];
 
 deleteThis(dataType, id) {
-    console.log('Test: /' + dataType + '/' + id);
-    this._apirequestsService.deleteItem(dataType, id);
+    this._apirequestsService.deleteItem(dataType, id).subscribe((data)=>{
+        console.log('Request successful');
+   });
 }
 
 setCarouselActiveID(id){

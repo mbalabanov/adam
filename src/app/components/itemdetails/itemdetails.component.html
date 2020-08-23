@@ -186,7 +186,19 @@
     </div>
 </div>
 
-<div class="container">
+<div *ngIf="!archiveItem.name" class="container">
+    <div class="row my-4">
+        <div class="col-lg-12 alert alert-danger text-center p-5" role="alert">
+            <h1>This archive item does not exist.</h1>
+            <p>Please return to the <strong>archive category</strong> or the <strong>main archive page.</strong></p>
+            <p>
+                <a class="btn btn-light" routerLink="/category/{{ archiveCategory }}">Archive category: {{ archiveCategory | titlecase }}</a>&nbsp;<a class="btn btn-light" routerLink="/archive">Main Archive</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="archiveItem.name" class="container">
     <div class="row my-4">
         <div class="col-lg-8 border-bottom">
         <h2>{{ archiveItem.name }}</h2>

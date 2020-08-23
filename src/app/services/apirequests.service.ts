@@ -8,15 +8,16 @@ import { HttpClient } from '@angular/common/http';
 
 export class ApirequestsService {
 
-  private archiveUrl: string = 'https://adam-interface.herokuapp.com/all';
-  private artifactsUrl: string = 'https://adam-interface.herokuapp.com/artifacts';
-  private personsUrl: string = 'https://adam-interface.herokuapp.com/persons';
-  private eventsUrl: string = 'https://adam-interface.herokuapp.com/events';
-  private newsUrl: string = 'https://adam-interface.herokuapp.com/news';
-  private newsItemUrl: string = 'https://adam-interface.herokuapp.com/newsitem';
-  private featuredUrl: string = 'https://adam-interface.herokuapp.com/featured';
-  private complianceUrl: string = 'https://adam-interface.herokuapp.com/compliance';
-  private generalApiUrl: string = 'https://adam-interface.herokuapp.com/';
+  private baseURL = 'https://adam-interface.herokuapp.com/';
+  private archiveUrl: string = this.baseURL + 'all';
+  private artifactsUrl: string = this.baseURL + 'artifacts';
+  private personsUrl: string = this.baseURL + 'persons';
+  private eventsUrl: string = this.baseURL + 'events';
+  private newsUrl: string = this.baseURL + 'news';
+  private newsItemUrl: string = this.baseURL + 'newsitem';
+  private featuredUrl: string = this.baseURL + 'featured';
+  private complianceUrl: string = this.baseURL + 'compliance';
+  private generalApiUrl: string = this.baseURL;
 
   constructor(private http: HttpClient) { }
 
@@ -71,12 +72,9 @@ export class ApirequestsService {
     return this.http.get<any>(this.complianceUrl + '/' + id);
   }
  
-  deleteItem(dataType, id): Observable<any> {
-    console.log('From API Request Service');
-    console.log(dataType, id);
-    var tempUrl = this.generalApiUrl + dataType + '/' + id;
-    console.log(tempUrl);
-    return this.http.delete<any>(tempUrl);
+  deleteItem(dataType, id) {
+    var tempURL = this.baseURL + dataType + '/' + id;
+    return this.http.delete(tempURL);
   }
 
 }
