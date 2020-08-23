@@ -17,7 +17,7 @@ export class ApirequestsService {
   private newsItemUrl: string = this.baseURL + 'newsitem';
   private featuredUrl: string = this.baseURL + 'featured';
   private complianceUrl: string = this.baseURL + 'compliance';
-  private generalApiUrl: string = this.baseURL;
+
 
   constructor(private http: HttpClient) { }
 

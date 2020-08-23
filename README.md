@@ -40,12 +40,13 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ auf [adam-interface.herokuapp.c
     - /news
     - /news/:id
     - /featured
+    - /compliance
 
 - Erstellen neuer Einträge (POST)
 
 - Bearbeiten bestehender Einträge (PUT)
 
-- Einträge auf unveröffentlicht/gelöscht setzen (DELETE)
+- Einträge auf ugelöscht setzen (DELETE)
 
 Für mehr Details zur API siehe Dokumentation weiter unten.
 
@@ -66,7 +67,11 @@ Für mehr Details zur API siehe Dokumentation weiter unten.
 
 5. Seite für den *Login bzw. die Registrierung* über den auth0.com Service
 
-6. Diverse statische Seiten über die allgemeine Bedienung des Kunstarchivs (z.B. "About", "Contact", sowie die Complaince-Seiten).
+6. News-Seiten mit dynamischem Inhalt. Diese beziehen ihren Inhalt über die API (/news und /news:id).
+
+7. Diverse dynamische Seiten über die allgemeine Bedienung des Kunstarchivs (z.B. "About", "Privacy Policy" und andere Complaince-Seiten). Diese beziehen ihren Inhalt ebenfalls über die API (/compliance).
+
+8. Die Kontaktseite ist statisch sein und hat ein Kontaktformular.
 
 ### Wireframes Besucheransicht
 
@@ -74,8 +79,9 @@ Für mehr Details zur API siehe Dokumentation weiter unten.
 
 ### 3. *Nicht-öffentlicher Bereich* im selben Web-Frontend mit...
 
-1. _Admin-Bereich,_ um Benutzer zu verwalten (deaktivieren und reaktivieren), und um Einträge zu publizieren, auf "interessant" zu stellen (für das Karussel auf der Startseite), sowie um sie auf nicht-veröffentlicht zu setzen.
-2. _Redaktionsansicht_ in der Benutzer mit Editor-Rechten bestehende Einträge bearbeiten können (Edit-Funktion wird nur nach dem Einloggen sichtbar) sowie neue Einträge erstellen können (Funktion für einen neuen Eintrag ist auch erst nach dem Einloggen sichtbar).
+1. _Redaktionsansicht_ in der Benutzer mit Editor-Rechten bestehende Einträge bearbeiten können (Edit-Funktion wird nur nach dem Einloggen sichtbar) sowie neue Einträge erstellen können (Funktion für einen neuen Eintrag ist auch erst nach dem Einloggen sichtbar). Dieser Bereich befindet sich im Angular Webfrontend.
+2. _Admin-Bereich,_ um Benutzer zu verwalten (deaktivieren und reaktivieren). Dieser Bereich befindet sich in Auth0.com
+
 
 ### Wireframes Redaktionsansicht
 
@@ -115,16 +121,16 @@ Als Datenbank wird MongoDB verwendet, das ein Dokument-basiertes Datenmodell hat
     "id": "a0",
     "category": "artifacts",
     "name": "Varoph Lorem Ipsum",
-    "aliases": [],
+    "aliases": ["Lemon Dance", "Folklore Elephant"],
     "shortdescription": "Varoph Lorem ipsum dolor sit amet, test consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
-    "longdescription": "<p>Varoph Lorem ipsum dolor sit amet, test consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum.</p><p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum.</p><p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>",
-    "dates": ["1987-03-01"],
+    "longdescription": "<p>Varoph Lorem ipsum dolor sit amet, test consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et ea rebum.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Sed posuere consectetur est at lobortis. Vestibulum id ligula porta felis euismod semper.</p>",
+    "dates": [{"label": "First released on ", "date": "1987-03-01"}],
     "tags": [
         "Pharetra Tortor",
         "Commodo",
-        "generative",
-        "gustatory",
-        "hypermediacy"
+        "Generative",
+        "Gustatory",
+        "Hypermediacy"
     ],
     "images": [
         {
@@ -138,20 +144,38 @@ Als Datenbank wird MongoDB verwendet, das ein Dokument-basiertes Datenmodell hat
             "url": "assets/img/collections/collections1.jpg",
             "name": "Sed diam nonumy eirmod tempor",
             "description": "Labore et dolore magna aliquyam erat, sed diam voluptua."
+        },
+        {
+            "id": "2",
+            "url": "assets/img/portraits/portrait07.jpg",
+            "name": "Cras Ligula Consectetur Tortor",
+            "description": "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor."
+        },
+        {
+            "id": "3",
+            "url": "assets/img/additional/additional-01.jpg",
+            "name": "Sollicitudin Inceptos Parturient",
+            "description": "Nulla vitae elit libero, a pharetra augue."
         }
     ],
     "videos": [
         {
             "id": "0",
-            "url": "https://www.youtube.com/watch?v=9lNZ_Rnr7Jc",
-            "name": "Fusce Tristique Ligula",
-            "description": "Maecenas sed diam eget risus varius blandit sit amet non magna."
+            "url": "https://youtu.be/sUx-f686Wg4",
+            "name": "Consetetur sadipscing Sit Lorem",
+            "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
         },
         {
             "id": "1",
             "url": "https://www.youtube.com/watch?v=w54uNAuqE1Y",
             "name": "Consetetur sadipscing",
             "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
+        },
+        {
+            "id": "2",
+            "url": "https://youtu.be/oarR61SeY8E",
+            "name": "Elit Justo Pellentesque",
+            "description": "Cras mattis consectetur purus sit amet fermentum."
         }
     ],
     "websiteURLs": [
@@ -177,10 +201,7 @@ Als Datenbank wird MongoDB verwendet, das ein Dokument-basiertes Datenmodell hat
     "events": [
         "e1",
         "e2"
-    ],
-    "published": "true",
-    "createdOn": "2020-07-10",
-    "lastChangeOn": "2020-07-12"
+    ]
 }
 ```
 
@@ -192,11 +213,9 @@ Als Datenbank wird MongoDB verwendet, das ein Dokument-basiertes Datenmodell hat
 ## Technologien
 
 *Webfrontend:*
-- Angular (Funktionalität)
+- Angular Universal (Funktionalität)
 - Bootstrap (Design)
 - jQuery (Allgemein)
-- Datatables JS (Benutzertabellen und Artikellisten)
-- Lunr JS (Suche)
 
 *Registrierung und Usermanagement:*
 - auth0.com (Login, Registrierung, Benutzerprofil)
@@ -206,11 +225,12 @@ Als Datenbank wird MongoDB verwendet, das ein Dokument-basiertes Datenmodell hat
 - Express
 - MongoDB
 - Heroku (Hosting)
+- Amazon S3 (Bilder Hosting)
 
 *Mobile App:*
 - Node JS
-- Cordova
-- Onsen UI
+- Angular
+- Cordova oder NativeScript
 
 ---
 
@@ -239,12 +259,10 @@ Die API ist verfügbar unter https://adam-interface.herokuapp.com
 - _/featured/id_ Einen der drei auf der Startseite ausgewiesenen Beiträge.
 
 #### DELETE (MIT einer ID):
-- _/artifacts/id_ Ein einzelnes Artifact (Kunstwerk) auf unveröffentlicht setzen.
-- _/persons/id_ Eine einzelne Person (Künstler, Kuratoren) auf unveröffentlicht setzen.
-- _/events/id_ Einen einzelnen Event (Ausstellung, Vernisage, Performance) auf unveröffentlicht setzen.
-- _/news/id_ Einen einzelnen News-Artikel auf unveröffentlicht setzen.
-
-_Bitte beachten Sie, dass auf der Startseite ausgewiesenen Beiträge (featured items) nicht auf unveröffentlicht gesetzt werden können._
+- _/artifacts/id_ Ein einzelnes Artifact (Kunstwerk) löschen.
+- _/persons/id_ Eine einzelne Person (Künstler, Kuratoren) löschen.
+- _/events/id_ Einen einzelnen Event (Ausstellung, Vernisage, Performance) löschen.
+- _/news/id_ Einen einzelnen News-Artikel löschen.
 
 #### PUT (MIT einer ID):
 - _/artifacts/id_ Ein einzelnes Artifact (Kunstwerk) bearbeiten.
