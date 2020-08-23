@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, Inject } from '@angular/core';
+import { PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-contactpage',
@@ -8,7 +9,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class ContactpageComponent implements OnInit {
 
-  constructor() { }
+  isBrowser: boolean;
+
+  constructor( @Inject(PLATFORM_ID) platformId) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
 
   ngOnInit(): void {
   }

@@ -6,6 +6,17 @@
     </div>
 </div>
 
+<div *ngIf="!auth.loggedIn" class="container">
+    <div class="row my-4">
+        <div class="col-lg-12 alert alert-danger text-center p-5" role="alert">
+            <h1>You are not logged in!</h1>
+            <p>Please return to the <strong>main archive page</strong> to conduct a search in the archive.</p>
+            <p>
+                <a class="btn btn-light" routerLink="/archive">Main Archive</a>
+            </p>
+        </div>
+    </div>
+</div>
 
 <div *ngIf="auth.userProfile$ | async as profile">
 

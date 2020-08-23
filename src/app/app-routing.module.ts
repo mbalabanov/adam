@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AuthGuard } from './guards/auth.guard';
-
 import { HomeComponent } from './pages/home/home.component';
 import { ArchiveComponent } from './pages/archive/archive.component' 
 import { CategorylistpageComponent } from './pages/categorylistpage/categorylistpage.component';
@@ -47,10 +45,10 @@ const routes: Routes = [
     path:"search", component: SearchresultspageComponent
   },
   {
-    path:"profile", component: UserprofilepageComponent, canActivate: [AuthGuard]
+    path:"profile", component: UserprofilepageComponent
   },
   {
-    path:"edititems", component: EdititemspageComponent, canActivate: [AuthGuard]
+    path:"edititems", component: EdititemspageComponent
   },
   {
     path:"**", component: HomeComponent

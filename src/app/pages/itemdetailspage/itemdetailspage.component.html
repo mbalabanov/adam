@@ -1,5 +1,5 @@
-<app-navbar></app-navbar>
+<app-navbar *ngIf="isBrowser"></app-navbar>
 
-<app-itemdetails></app-itemdetails>
+<app-itemdetails *ngIf="isBrowser"></app-itemdetails>
 
 <app-footer></app-footer>

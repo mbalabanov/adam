@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
 import { ApirequestsService } from '../../services/apirequests.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class EditcompliancepagesComponent implements OnInit {
 
   compliancePages: Array<object> = [];
 
-  constructor(private _apirequestsService: ApirequestsService) { }
+  constructor(private _apirequestsService: ApirequestsService, public auth: AuthService ) { }
 
   ngOnInit(): void {
 

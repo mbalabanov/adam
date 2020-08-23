@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-itemlistpage',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemlistpageComponent implements OnInit {
 
-  constructor() { }
+  isBrowser: boolean;
+
+  constructor( @Inject(PLATFORM_ID) platformId) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
 
   ngOnInit(): void {
   }

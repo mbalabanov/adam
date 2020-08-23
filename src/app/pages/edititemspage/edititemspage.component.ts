@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AuthService } from '../../services/auth.service';
 
 
 @Component({
@@ -10,7 +11,11 @@ import { AuthService } from '../../services/auth.service';
 })
 export class EdititemspageComponent implements OnInit {
 
-  constructor( private route: ActivatedRoute, private router: Router, public auth: AuthService) { }
+  isBrowser: boolean;
+
+  constructor(  private route: ActivatedRoute, private router: Router, @Inject(PLATFORM_ID) platformId) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
 
   ngOnInit(): void {
 
