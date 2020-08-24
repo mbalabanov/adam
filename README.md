@@ -50,13 +50,13 @@ Bitte zu beachten: Wenn Sie für das Web Frontend den lokal laufenden API Server
 
 ## 3. Detailansicht
 
-### Main Pages (Home, Search and Details)
+### 3.1 Main Pages (Home, Search and Details)
 ![ADAM - Details 1](documentation/assets/website-description1.png)
 
-### Editor's Area (Edit and Create)
+### 3.2 Redaktionsbereich (Edit and Create)
 ![ADAM - Details 2](documentation/assets/website-description2.png)
 
-### Information Pages (News and Compliance)
+### 3.3. Information Pages (News and Compliance)
 ![ADAM - Details 3](documentation/assets/website-description3.png)
 
 [Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
