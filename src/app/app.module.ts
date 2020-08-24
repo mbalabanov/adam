@@ -25,7 +25,6 @@ import { EditnewspagesComponent } from './components/editnewspages/editnewspages
 import { ArchivecategoriesComponent } from './components/archivecategories/archivecategories.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CategorylistpageComponent } from './pages/categorylistpage/categorylistpage.component';
-import { ItemlistpageComponent } from './pages/itemlistpage/itemlistpage.component';
 import { ItemdetailspageComponent } from './pages/itemdetailspage/itemdetailspage.component';
 import { NewslistpageComponent } from './pages/newslistpage/newslistpage.component';
 import { NewsarticlepageComponent } from './pages/newsarticlepage/newsarticlepage.component';
@@ -62,7 +61,6 @@ import { TrackingComponent } from './components/tracking/tracking.component';
     ArchivecategoriesComponent,
     HomeComponent,
     CategorylistpageComponent,
-    ItemlistpageComponent,
     ItemdetailspageComponent,
     NewslistpageComponent,
     NewsarticlepageComponent,
