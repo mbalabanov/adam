@@ -3,16 +3,16 @@
 ![ADAM - Archive of Digital Art & Media](documentation/assets/adam-logo.png)
 
 ## Inhalt
-1. [Beschreibung](#beschreibung)
-2. [Bestandteile und Installation](#bestandteile-und-installation)
-3. [Detailansicht](#3.-detailansicht)
-4. [Die Struktur von ADAM](#4.-die-struktur-von-adam)
-5. [Konzept der Mobile App](#5.-konzept-mobile-app)
-6. [DB und API](#6.-db-und-api)
-7. [Benutzerrollen](#7.-benutzerrollen)
-8. [Technologien](#8.-technologien)
-9. [Aktualisierungen](#9.-aktualisierungen)
-10. [Projekt-Timeline](#10.-projektplan)
+1. [Beschreibung](#1-beschreibung)
+2. [Bestandteile und Installation](#2-bestandteile-und-installation)
+3. [Detailansicht](#3-detailansicht)
+4. [Die Struktur von ADAM](#4-die-struktur-von-adam)
+5. [Konzept der Mobile App](#5-konzept-mobile-app)
+6. [DB und API](#6-db-und-api)
+7. [Benutzerrollen](#7-benutzerrollen)
+8. [Technologien](#8-technologien)
+9. [Aktualisierungen](#9-aktualisierungen)
+10. [Projekt-Timeline](#10-projektplan)
 
 ## 1. Beschreibung
 ADAM ist ein JavaScript/NodeJS/Angular/MongoDB/Heroku-Projekt von Marin Balabanov. In diesem Archive of Digital Art & Media auf [demoarchive.art](http://demoarchive.art/), können Benutzer nach digitalen Kunstwerken suchen. Auf den Detailseiten finden sie eine Beschreibung des jeweiligen Kunstwerks, sowie Fotos/Screenshots und eingebettete Videos, und falls vorhanden ZIP-Dateien oder Diskimages mit den Originaldateien des Kunstwerks. Zudem finden sich Informationen über die Künstler, und bei welchen Events ihre Werke ausgestellt wurden.
@@ -28,7 +28,7 @@ Dieses Projekt besteht aus den folgenden Repositories:
 - **ADAM API Server** [github.com/mbalabanov/adam-api](https://github.com/mbalabanov/adam-api) (läuft Heroku auf auf [adam-interface.herokuapp.com](http://adam-interface.herokuapp.com))
 - **ADAM Web Frontend** [github.com/mbalabanov/adam](https://github.com/mbalabanov/adam) (läuft auf Heroku auf [adam-frontend.herokuapp.com](http://adam-frontend.herokuapp.com))
 
-### Installation
+### 2.1 Installation
 Der ADAM API Server auf [github.com/mbalabanov/adam-api](https://github.com/mbalabanov/adam-api) läuft unter NodeJS/Express. So starten Sie den Server lokal (läuft auf Port 5003):
 ```
 cd adam-api
