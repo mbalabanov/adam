@@ -28,6 +28,7 @@ cd adam
 npm install
 npm run dev:ssr
 ```
+Bitte zu beachten: Wenn man für das Web Frontend den lokal laufenden API Server verwenden möchte, dann findet man die URL der API in der Datei `src/app/apirequestservice.service.ts`. Diese einfach auf `http://localhost:4200` ändern.
 
 ## Detailansicht
 
