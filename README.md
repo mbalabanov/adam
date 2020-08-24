@@ -40,7 +40,9 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ auf [adam-interface.herokuapp.c
     - /news
     - /news/:id
     - /featured
+    - /featured/:id
     - /compliance
+    - /compliance/:id
 
 - Erstellen neuer Einträge (POST)
 
@@ -104,11 +106,12 @@ Für mehr Details zur API siehe Dokumentation weiter unten.
 
 ## Daten in der DB
 
-Als Datenbank wird MongoDB verwendet, das ein Dokument-basiertes Datenmodell hat.
+Als Datenbank wird MongoDB verwendet, das ein Dokument-basiertes Datenmodell hat mit der Möglichkeit Schema-los zu arbeiten.
 
-- *Artifacts, Persons, Events:* id (integer), name (string), aliases (array of strings), shortdescription (string), longdescription (string), dates (array of dates), tags (array), images (array with id, url, name and description for each object), videos (array with id, url, name and description for each object), websiteURLs (array with id, name and url for each object), assets (array mit id, name and url for each object), artifactIDs (array), personIDs (array), eventIDs (array), published (boolean), createdOn (date), lastChangeOn (date)
-- *News:* id (integer), title (string), urlAddress (string), image (string), largeimage (string), shortdescription (string), articletext (string), published (boolean)
-- *Featured:* id (integer), image (string), title (string), description (string), link (string)
+- *Artifacts, Persons, Events:* id (String), category (String), name (String), aliases (Array), shortdescription (String), longdescription (String), dates (Array aus label, date), tags (Array), images (Array aus id, url, name, description), videos (Array aus id, url, name, description), websiteURLs (Array aus id, url, name), assets (Array aus id, url, name), artifacts (Array), persons (Array), events (Array)
+- *News:* id (String), title (String), image (String), largeimage (String), shortdescription (String), articletext (String)
+- *Featured:* id (String), image (String), title (String), description (String), link (String)
+- *Compliance:* id (String), category (String), title (String), firstimage (String), secondimage (String), articletext (String)
 
 ### Datenmodell
 
@@ -207,8 +210,8 @@ Als Datenbank wird MongoDB verwendet, das ein Dokument-basiertes Datenmodell hat
 
 ## Benutzerrollen
 
-1. *Admin:* Kann Einträge erstellen, bearbeiten und auf nicht-öffentlich stellen, sowie andere Benutzer deaktivieren, reaktivieren und ihre Rolle ändern
-2. *Editor:* Kann Einträge erstellen und bearbeiten
+1. *Editor:* Kann Einträge erstellen und bearbeiten
+2. *Admin:* Kann Benutzer deaktivieren, reaktivieren und ihre Rolle ändern
 
 ## Technologien
 
@@ -249,35 +252,43 @@ Die API ist verfügbar unter https://adam-interface.herokuapp.com
 - _/persons_ Alle persons (Künstler, Kuratoren).
 - _/events_ Alle Events (Ausstellungen, Vernisagen, Performances).
 - _/news_ Die News-Artikel und ihre Inhalte.
+- _/compliance_ Die Texte der Compliance Seiten.
 - _/featured_ Die vier auf der Startseite ausgewiesenen Einträge.
 
 #### GET (MIT einer ID):
 - _/artifacts/id_ Ein einzelnes Artifact (Kunstwerk).
 - _/persons/id_ Eine einzelne Person (Künstler, Kuratoren).
 - _/events/id_ Ein einzelner Event (Ausstellung, Vernisage, Performance).
-- _/news_ Ein einzelner News-Artikel und seine Inhalte.
-- _/featured/id_ Einen der drei auf der Startseite ausgewiesenen Beiträge.
+- _/news/id_ Ein einzelner News-Artikel und seine Inhalte.
+- _/compliance/id_ Der Inhalt einer einzelnen Compliance-Seite.
+- _/featured/id_ Einen der vier auf der Startseite ausgewiesenen Beiträge.
 
 #### DELETE (MIT einer ID):
 - _/artifacts/id_ Ein einzelnes Artifact (Kunstwerk) löschen.
 - _/persons/id_ Eine einzelne Person (Künstler, Kuratoren) löschen.
 - _/events/id_ Einen einzelnen Event (Ausstellung, Vernisage, Performance) löschen.
+- _/compliance/id_ Eine einzelne Compliance-Seite löschen.
 - _/news/id_ Einen einzelnen News-Artikel löschen.
+- _/featured/id_ Einen der vier auf der Startseite ausgewiesenen Beiträge löschen.
+
+Bitte zu beachten, dass Compliance-Seiten und Featured-Beiträge nur mit äußerster Vorsicht gelöscht werden sollten. Im Idealfall würde man nur die bestehenden Beiträge ändern und weder neue hinzufügen, noch bestehende löschen.
 
 #### PUT (MIT einer ID):
 - _/artifacts/id_ Ein einzelnes Artifact (Kunstwerk) bearbeiten.
 - _/persons/id_ Eine einzelne Person (Künstler, Kuratoren) bearbeiten.
 - _/events/id_ Einen einzelnen Event (Ausstellung, Vernisage, Performance) bearbeiten.
 - _/news/id_ Einen einzelnen News-Artikel bearbeiten.
+- _/compliance/id_ Eine einzelne Compliance-Seite bearbeiten.
 - _/featured/id_ Einen einzelnen Featured-Item bearbeiten.
 
 #### POST (MIT der Parameter new):
-- _/artifacts/new_ Ein einzelnes Artifact (Kunstwerk) erstellen.
-- _/persons/new_ Eine einzelne Person (Künstler, Kuratoren) erstellen.
-- _/events/new_ Einen einzelnen Event (Ausstellung, Vernisage, Performance) erstellen.
-- _/news/new_ Einen einzelnen News-Artikel erstellen.
+- _/artifacts/new_ Ein neues Artifact (Kunstwerk) erstellen.
+- _/persons/new_ Eine neue Person (Künstler, Kuratoren) erstellen.
+- _/events/new_ Einen neuen Event (Ausstellung, Vernisage, Performance) erstellen.
+- _/compliance/new_ Eine neue Compliance-Seite erstellen.
+- _/news/new_ Einen neuen News-Artikel erstellen.
 
-_Bitte beachten Sie, dass kein neuer auf der Startseite ausgewiesenen Beitrag (featured item) erstellt werden sollte. Auf der Startseite sollten möglichst nur vier Beiträge ausgewiesen sein._
+_Bitte beachten Sie, dass kein neuer auf der Startseite ausgewiesenen Beitrag (featured item) erstellt werden sollte. Auf der Startseite sollten möglichst nur vier Beiträge ausgewiesen sein. Außerdem sollte man nur in äußersten Ausnahmen eine neue Compliance-Seite hinzufügen. Danach müsste auch die Navigation ergänzt werden, die Menüpunkte in der NavBar sind statisch.
 
 ---
 
