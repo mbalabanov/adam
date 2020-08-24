@@ -18,7 +18,6 @@ export class ApirequestsService {
   private featuredUrl: string = this.baseURL + 'featured';
   private complianceUrl: string = this.baseURL + 'compliance';
 
-
   constructor(private http: HttpClient) { }
 
   getData(): Observable<any> {
