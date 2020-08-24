@@ -9,6 +9,10 @@ Dieses Projekt dient nur zu Übungszwecken und wurde vom "Archive of Digital Art
 
 ADAM besteht aus vier Teilen: Einem _API-Server_ auf [adam-interface.herokuapp.com](https://adam-interface.herokuapp.com) mit einer Datenbank und Schnittstellen, um die Daten abzurufen, sowie einer Website mit einem _öffentlichen Bereich_ auf [demoarchive.art](http://demoarchive.art/), in dem Besucher die Informationen über die digitalen Kunstwerke finden, und einem _Redaktionsbereich,_ in dem Redakteure neue Inhalte einpflegen und bearbeiten können, und Administratoren die Rechte verwalten können. Zu guter Letzt gibt es eine _Mobile-App,_ mit der man Einträge erstellen kann, Fotos und Videos hochladen kann.
 
+Dieses Projekt besteht aus den folgenden Repositories:
+- ADAM API Server [https://github.com/mbalabanov/adam-api](https://github.com/mbalabanov/adam-api) (läuft Heroku auf auf [http://adam-interface.herokuapp.com](http://adam-interface.herokuapp.com))
+- ADAM Web Frontend [https://github.com/mbalabanov/adam](https://github.com/mbalabanov/adam) (läuft auf Heroku auf [http://adam-frontend.herokuapp.com](http://adam-frontend.herokuapp.com))
+
 ## Detailansicht
 
 ### Main Pages (Home, Search and Details)
