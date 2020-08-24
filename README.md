@@ -11,8 +11,8 @@ ADAM besteht aus vier Teilen: Einem _API-Server_ auf [adam-interface.herokuapp.c
 
 ## Bestandteile
 Dieses Projekt besteht aus den folgenden Repositories:
-- _ADAM API Server_ [https://github.com/mbalabanov/adam-api](https://github.com/mbalabanov/adam-api) (läuft Heroku auf auf [http://adam-interface.herokuapp.com](http://adam-interface.herokuapp.com))
-- _ADAM Web Frontend_ [https://github.com/mbalabanov/adam](https://github.com/mbalabanov/adam) (läuft auf Heroku auf [http://adam-frontend.herokuapp.com](http://adam-frontend.herokuapp.com))
+- **ADAM API Server** [https://github.com/mbalabanov/adam-api](https://github.com/mbalabanov/adam-api) (läuft Heroku auf auf [http://adam-interface.herokuapp.com](http://adam-interface.herokuapp.com))
+- **ADAM Web Frontend** [https://github.com/mbalabanov/adam](https://github.com/mbalabanov/adam) (läuft auf Heroku auf [http://adam-frontend.herokuapp.com](http://adam-frontend.herokuapp.com))
 
 ## Installation
 Der ADAM API Server auf [https://github.com/mbalabanov/adam-api](https://github.com/mbalabanov/adam-api) läuft unter NodeJS/Express. So startet man den Server lokal (läuft auf Port 5003):
@@ -42,19 +42,19 @@ Bitte zu beachten: Wenn man für das Web Frontend den lokal laufenden API Server
 ![ADAM - Details 3](documentation/assets/website-description3.png)
 
 ## Aktualisierungen
-- *22. August 2020:* App komplett aufgeräumt und auf Angular Unversal konvertiert ( [https://demoarchive.art](https://demoarchive.art) leitet jetzt auf [https://adam-frontend.herokuapp.com](https://adam-frontend.herokuapp.com) )
-- *20. August 2020:* API vom Frontend getrennt. Hat nun ein eigenes Repository auf [https://github.com/mbalabanov/adam-api](https://github.com/mbalabanov/adam-api)
-- *13. August 2020:* Auth0-Integration abgeschlossen (vorläufig mit Anmeldung über Email und Google-Account).
-- *12. August 2020:* Öffentliches Web-Frontend ist soweit fertig und alle Consolen-Fehler sind beseitigt. Die gesamte Suchfunktion läuft über Angular Search-Filter (und nicht über LunrJS). Die ersten Schritte für das Redaktions-Backend sind mit der vorläufig unvollständigen Integration von auth0.com gemacht.
-- *7. August 2020:* Öffentliches Web-Frontend bezieht nun sämtliche Daten von der API (allerdings treten noch Fehler in der Console auf und einige Routes funktionieren noch nicht richtig).
-- *6. August 2020:* Erweitertes Angular-Frontend, konsolodiertes Datenmodell und angepasste API.
-- *31. Juli 2020:* Erste Fassung des Web-Frontends auf [demoarchive.art](http://demoarchive.art/) fertiggestellt (allerdings noch ohne API-Anbindung).
-- *30. Juli 2020:* Erste Fassung der API auf [adam-interface.herokuapp.com](https://adam-interface.herokuapp.com) fertiggestellt.
-- *24. Juli 2020:* Erster unvollständiger Versuch, mit der API und dem Webfrontend (noch ohne Angular) zu Versuchszwecken.
-- *15. Juli 2020:* Mobile App Wireframes hinzugefügt, API aktualisiert, GET-API-Aufrufe bereit, Domain demoarchive.art registriert.
-- *13. Juli 2020:* Datenmodelldiagramm, Sitemap und Wireframes aktualisiert
-- *12. Juli 2020:* Testdaten als JSON-Datei
-- *8. Juli 2020:* Erstfassung der Dokumentation 
+- **22. August 2020:** App komplett aufgeräumt und auf Angular Unversal konvertiert ( [https://demoarchive.art](https://demoarchive.art) leitet jetzt auf [https://adam-frontend.herokuapp.com](https://adam-frontend.herokuapp.com) )
+- **20. August 2020:** API vom Frontend getrennt. Hat nun ein eigenes Repository auf [https://github.com/mbalabanov/adam-api](https://github.com/mbalabanov/adam-api)
+- **13. August 2020:** Auth0-Integration abgeschlossen (vorläufig mit Anmeldung über Email und Google-Account).
+- **12. August 2020:** Öffentliches Web-Frontend ist soweit fertig und alle Consolen-Fehler sind beseitigt. Die gesamte Suchfunktion läuft über Angular Search-Filter (und nicht über LunrJS). Die ersten Schritte für das Redaktions-Backend sind mit der vorläufig unvollständigen Integration von auth0.com gemacht.
+- **7. August 2020:** Öffentliches Web-Frontend bezieht nun sämtliche Daten von der API (allerdings treten noch Fehler in der Console auf und einige Routes funktionieren noch nicht richtig).
+- **6. August 2020:** Erweitertes Angular-Frontend, konsolodiertes Datenmodell und angepasste API.
+- **31. Juli 2020:** Erste Fassung des Web-Frontends auf [demoarchive.art](http://demoarchive.art/) fertiggestellt (allerdings noch ohne API-Anbindung).
+- **30. Juli 2020:** Erste Fassung der API auf [adam-interface.herokuapp.com](https://adam-interface.herokuapp.com) fertiggestellt.
+- **24. Juli 2020:** Erster unvollständiger Versuch, mit der API und dem Webfrontend (noch ohne Angular) zu Versuchszwecken.
+- **15. Juli 2020:** Mobile App Wireframes hinzugefügt, API aktualisiert, GET-API-Aufrufe bereit, Domain demoarchive.art registriert.
+- **13. Juli 2020:** Datenmodelldiagramm, Sitemap und Wireframes aktualisiert
+- **12. Juli 2020:** Testdaten als JSON-Datei
+- **8. Juli 2020:** Erstfassung der Dokumentation 
 
 ---
 
