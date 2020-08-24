@@ -50,10 +50,11 @@ Durch diesen Befehl wird das Frontend als lokale SSR-App gestartet:
 ```
 npm run dev:ssr
 ```
-Leider gibt die Angular CLI derzeit noch Fehlermeldungen aus, wenn die Auth0-Integration com Angular Universal Server angesprochen wird. Das liegt daran, dass Auth0 die DOM im Browser anspricht, aber der Server die DOM nicht kennt. Ich verwende derzeit die Domino-Bibliothek, um dem Server eine DOM vorzugaukeln, doch Auth0 erwartet eine echte DOM und gibt sporadisch eine Fehlermeldung aus. Dies geschieht relativ selten im Vergleich zu den unzähligen SSR-Fehlermeldungen, die ohne Domino ausgegeben werden. Ich entschuldige mich für die Unannehmlichkeiten.
+Leider gibt die Angular CLI derzeit noch Fehlermeldungen aus, wenn die Auth0-Integration com Angular Universal Server angesprochen wird. Das liegt daran, dass Auth0 die DOM im Browser anspricht, aber der Server die DOM nicht kennt. Ich verwende derzeit die Domino-Bibliothek, um dem Server eine DOM vorzugaukeln, doch Auth0 erwartet eine echte DOM und gibt sporadisch eine Fehlermeldung aus. Dies geschieht relativ selten im Vergleich zu den unzähligen SSR-Fehlermeldungen, die ohne Domino ausgegeben werden. Ich hoffe, dass ich das bald bereinigen kann und entschuldige mich nis dahin für die Unannehmlichkeiten.
 
-### 2.2 Frontend mit der APO lokal ausführen
-Bitte zu beachten: Wenn Sie für das Web Frontend den lokal laufenden API Server verwenden möchten, dann findet Sie die URL der API in der Datei `src/app/apirequestservice.service.ts`. Diese einfach auf `http://localhost:5003` ändern, dann läuft alles nur lokal. So kann man das Frontend auf `http://localhost:4200` ausführen und sämtliche Daten von der API auf `http://localhost:5003` beziehen.
+### 2.2 Frontend mit der API lokal ausführen
+Bitte zu beachten: Wenn Sie für das Web Frontend den lokal laufenden API Server verwenden möchten, dann findet Sie die URL der API in der Datei `src/app/apirequestservice.service.ts`.
+Diese einfach auf `http://localhost:5003` ändern, dann läuft alles nur lokal. So kann man das Frontend auf `http://localhost:4200` ausführen und sämtliche Daten von der API auf `http://localhost:5003` beziehen.
 
 [« Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
 
