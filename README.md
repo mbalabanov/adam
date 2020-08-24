@@ -111,7 +111,7 @@ Für mehr Details zur API siehe Dokumentation weiter unten.
 4.2.8. Die **Kontaktseite** ist statisch sein und hat ein Kontaktformular.
 
 ### 4.3. Umgesetzte Struktur
-Die folgende Struktur wurde auch tatächlich umgesetzt (hier mit einer Auflistung sämtlicher Components, die auf den Einzelseiten verwendet werden).
+Die folgende Struktur wurde auch tatächlich umgesetzt (hier mit einer Auflistung sämtlicher Components, die auf den Einzelseiten verwendet werden). Für dieses Diagram habe ich [MonoDraw](https://monodraw.helftone.com) verwendet.
 
 ````
     +-+-+-+-+ +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
