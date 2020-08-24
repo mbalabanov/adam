@@ -35,6 +35,9 @@ Der ADAM API Server auf [github.com/mbalabanov/adam-api](https://github.com/mbal
 ```
 cd adam-api
 npm install
+```
+Und dann wird die API gestartet mit:
+```
 npm start
 ```
 
@@ -42,9 +45,15 @@ Das ADAM Web Frontend auf [github.com/mbalabanov/adam](https://github.com/mbalab
 ```
 cd adam
 npm install
+```
+Durch diesen Befehl wird das Frontend als lokale SSR-App gestartet:
+```
 npm run dev:ssr
 ```
-Bitte zu beachten: Wenn Sie für das Web Frontend den lokal laufenden API Server verwenden möchten, dann findet Sie die URL der API in der Datei `src/app/apirequestservice.service.ts`. Diese einfach auf `http://localhost:4200` ändern, dann läuft alles nur lokal.
+Leider gibt die Angular CLI derzeit noch Fehlermeldungen aus, wenn die Auth0-Integration com Angular Universal Server angesprochen wird. Das liegt daran, dass Auth0 die DOM im Browser anspricht, aber der Server die DOM nicht kennt. Ich verwende derzeit die Domino-Bibliothek, um dem Server eine DOM vorzugaukeln, doch Auth0 erwartet eine echte DOM und gibt sporadisch eine Fehlermeldung aus. Dies geschieht relativ selten im Vergleich zu den unzähligen SSR-Fehlermeldungen, die ohne Domino ausgegeben werden. Ich entschuldige mich für die Unannehmlichkeiten.
+
+### 2.2 Frontend mit der APO lokal ausführen
+Bitte zu beachten: Wenn Sie für das Web Frontend den lokal laufenden API Server verwenden möchten, dann findet Sie die URL der API in der Datei `src/app/apirequestservice.service.ts`. Diese einfach auf `http://localhost:5003` ändern, dann läuft alles nur lokal. So kann man das Frontend auf `http://localhost:4200` ausführen und sämtliche Daten von der API auf `http://localhost:5003` beziehen.
 
 [« Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
 
@@ -56,14 +65,14 @@ Bitte zu beachten: Wenn Sie für das Web Frontend den lokal laufenden API Server
 ### 3.2 Redaktionsbereich (Edit and Create)
 ![ADAM - Details 2](documentation/assets/website-description2.png)
 
-### 3.3. Information Pages (News and Compliance)
+### 3.3 Information Pages (News and Compliance)
 ![ADAM - Details 3](documentation/assets/website-description3.png)
 
 [« Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
 
 ## 4. Die Struktur von ADAM
 
-### 4.1. _API-Server_ auf Heroku unter Verwendung von MongoDB mit Schnittstellen für...
+### 4.1 _API-Server_ auf Heroku unter Verwendung von MongoDB mit Schnittstellen für...
 
 - Ansehen/holen bestehender Einträge (GET)
     - `/artifacts`
@@ -87,31 +96,31 @@ Bitte zu beachten: Wenn Sie für das Web Frontend den lokal laufenden API Server
 
 Für mehr Details zur API siehe Dokumentation weiter unten.
 
-### 4.2. _Öffentlicher Bereich im Web-Frontend_ und fünf Arten von Ansichten:
+### 4.2 _Öffentlicher Bereich im Web-Frontend_ und fünf Arten von Ansichten:
 
 ![ADAM - Data Model](documentation/assets/sitemap-public.png)
 
-4.2.1. **Startseite** mit Karussell für Einträge, die von Admins als "besonders interessant" markierte wurden, sowie ein Grid mit acht der chronologisch zuletzt publizierten Einträge, allgemeine Informationen über die Plattform, Suchfunktion und eine Kategorienauswahl, die beide auf die Suchergebnisseite mit Filtermöglichkeiten führt.
+4.2.1 **Startseite** mit Karussell für Einträge, die von Admins als "besonders interessant" markierte wurden, sowie ein Grid mit acht der chronologisch zuletzt publizierten Einträge, allgemeine Informationen über die Plattform, Suchfunktion und eine Kategorienauswahl, die beide auf die Suchergebnisseite mit Filtermöglichkeiten führt.
 
-4.2.2. **Suchergebnisseite** auf der die Suchergebnisse gefiltert werden können.
+4.2.2 **Suchergebnisseite** auf der die Suchergebnisse gefiltert werden können.
 
-4.2.3. **Detailseite,** die für die Detailansicht eines Artefakts, eines Künstlers und eines Events verwendet wird. Das Layout besteht aus einer Beschreibung, eines Fotobereichs, eines Bereichs für ein eingebettetes Video und darunter einer Liste an verwandten Einträgen:
+4.2.3 **Detailseite,** die für die Detailansicht eines Artefakts, eines Künstlers und eines Events verwendet wird. Das Layout besteht aus einer Beschreibung, eines Fotobereichs, eines Bereichs für ein eingebettetes Video und darunter einer Liste an verwandten Einträgen:
     a. Bei einer _Künstler-Detailseite_ eine Liste der Arbeiten des Künstlers.
     b. Bei einer _Artefakt-Detailseite_ eine Liste der Künstler, die das Kunstwerk erschaffen haben
-    e. Bei einer _Detailseite über ein Event_ eine Liste der ausgestellten Werke.
+    C. Bei einer _Detailseite über ein Event_ eine Liste der ausgestellten Werke.
 
-4.2.4. **Informationsseite,** in der allgemeine Informationen zu einem Thema stehen mit Text und Bildern, z.B. Artikel über Neuigkeiten, aber auch Nutzungsbedingungen und Datenschutzerklärung
+4.2.4 **Informationsseite,** in der allgemeine Informationen zu einem Thema stehen mit Text und Bildern, z.B. Artikel über Neuigkeiten, aber auch Nutzungsbedingungen und Datenschutzerklärung
 
-4.2.5. Seite für den **Login bzw. die Registrierung** über den auth0.com Service
+4.2.5 Seite für den **Login bzw. die Registrierung** über den auth0.com Service
 
-4.2.6. **News-Seiten** mit dynamischem Inhalt. Diese beziehen ihren Inhalt über die API (/news und /news:id).
+4.2.6 **News-Seiten** mit dynamischem Inhalt. Diese beziehen ihren Inhalt über die API (/news und /news:id).
 
-4.2.7. Diverse **Info-Seiten** über die allgemeine Bedienung des Kunstarchivs (z.B. "About", "Privacy Policy" und andere Complaince-Seiten). Diese beziehen ihren Inhalt ebenfalls über die API (/compliance).
+4.2.7 Diverse **Info-Seiten** über die allgemeine Bedienung des Kunstarchivs (z.B. "About", "Privacy Policy" und andere Complaince-Seiten). Diese beziehen ihren Inhalt ebenfalls über die API (/compliance).
 
-4.2.8. Die **Kontaktseite** ist statisch sein und hat ein Kontaktformular.
+4.2.8 Die **Kontaktseite** ist statisch sein und hat ein Kontaktformular.
 
-### 4.3. Umgesetzte Struktur
-Die folgende Struktur wurde auch tatächlich umgesetzt (hier mit einer Auflistung sämtlicher Components, die auf den Einzelseiten verwendet werden). Für dieses Diagram habe ich [MonoDraw](https://monodraw.helftone.com) verwendet.
+### 4.3 Umgesetzte Struktur
+Die folgende Struktur wurde auch tatächlich umgesetzt (hier mit einer Auflistung sämtlicher Components, die auf den Einzelseiten verwendet werden). Dieses Diagram entstand mit [MonoDraw](https://monodraw.helftone.com).
 
 ````
     +-+-+-+-+ +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
@@ -228,7 +237,7 @@ Untenstehend finden Sie die ursprünglichen Wireframes des öffentlichen Bereich
 
 ![ADAM - Wireframes](documentation/assets/adam-wireframes-v0_5.png)
 
-### 4.5. *Nicht-öffentlicher Bereich* im selben Web-Frontend mit...
+### 4.5 *Nicht-öffentlicher Bereich* im selben Web-Frontend mit...
 
 4.5.1. **Redaktionsansicht** in der Benutzer mit Editor-Rechten bestehende Einträge bearbeiten können (Edit-Funktion wird nur nach dem Einloggen sichtbar) sowie neue Einträge erstellen können (Funktion für einen neuen Eintrag ist auch erst nach dem Einloggen sichtbar). Dieser Bereich befindet sich im Angular Webfrontend.
 4.5.2. **Admin-Bereich,** um Benutzer zu verwalten (deaktivieren und reaktivieren). Dieser Bereich befindet sich in Auth0.com
@@ -243,15 +252,15 @@ Untenstehend finden Sie die ursprünglichen Wireframes des Redaktionsbereichs, d
 
 ## 5. Konzept der Mobile App
 
-i. Ansicht aller in der Mobile App vorbereiteter Einträge
+a. Ansicht aller in der Mobile App vorbereiteter Einträge
     
-ii. Neuen Eintrag auf dem mobilen Gerät erstellen für Artefakt, Künstler, Künstlerkollektiv, Sammlung, Ausstellung.
+b. Neuen Eintrag auf dem mobilen Gerät erstellen für Artefakt, Künstler, Künstlerkollektiv, Sammlung, Ausstellung.
     
-iii. Fotos und Videos auswählen
+c. Fotos und Videos auswählen
     
-iv. Einloggen
+d. Einloggen
     
-v. Eintrag mit Fotos und Video URLs hochladen
+e. Eintrag mit Fotos und Video URLs hochladen
 
 
 ### 5.1 Mobile App Wireframes
