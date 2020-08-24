@@ -22,6 +22,7 @@ Dieses Projekt dient nur zu Übungszwecken und wurde vom "Archive of Digital Art
 **Die Bilder in diesem Projekt sind nur Platzhalter von [adobestock.com](http://adobestock.com). Sie sind zwar Teil dieses Repositories, sind aber nicht zur allgemeinen Verwendung freigegeben.**
 
 ADAM besteht aus vier Teilen: Einem **API-Server** auf [adam-interface.herokuapp.com](https://adam-interface.herokuapp.com) mit Schnittstellen, um die Daten abzurufen, sowie einer Website mit einem **öffentlichen Bereich** auf [demoarchive.art](http://demoarchive.art/), in dem Besucher die Informationen über die digitalen Kunstwerke finden, und einem **Redaktionsbereich,** in dem Redakteure neue Inhalte einpflegen und bearbeiten können, und Administratoren die Rechte verwalten können. Zu guter Letzt gibt es eine **Mobile-App,** mit der man Einträge erstellen kann, Fotos und Videos hochladen kann.
+
 ---
 [Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
 
@@ -45,6 +46,7 @@ npm install
 npm run dev:ssr
 ```
 Bitte zu beachten: Wenn Sie für das Web Frontend den lokal laufenden API Server verwenden möchten, dann findet Sie die URL der API in der Datei `src/app/apirequestservice.service.ts`. Diese einfach auf `http://localhost:4200` ändern, dann läuft alles nur lokal.
+
 ---
 [Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
 
@@ -239,6 +241,7 @@ Untenstehend finden Sie die ursprünglichen Wireframes des öffentlichen Bereich
 Untenstehend finden Sie die ursprünglichen Wireframes des Redaktionsbereichs, der nur für Benutzer zugänglich ist, die sich vorher eingeloggt haben.
 
 ![ADAM - Data Model](documentation/assets/create-object.png)
+
 ---
 [Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
 
@@ -257,6 +260,7 @@ v. Eintrag mit Fotos und Video URLs hochladen
 
 ### 5.1 Mobile App Wireframes
 ![Mobile App](documentation/assets/mobile-app-wireframes.png)
+
 ---
 [Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
 
@@ -422,6 +426,7 @@ _Bitte beachten Sie, dass kein neuer auf der Startseite ausgewiesenen Beitrag (f
 
 1. **Editor:** Kann Einträge erstellen und bearbeiten
 2. **Admin:** Kann Benutzer deaktivieren, reaktivieren und ihre Rolle ändern
+
 ---
 [Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
 
@@ -446,6 +451,7 @@ _Bitte beachten Sie, dass kein neuer auf der Startseite ausgewiesenen Beitrag (f
 - Node JS
 - Angular
 - Cordova oder NativeScript
+
 ---
 [Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
 
@@ -463,6 +469,7 @@ _Bitte beachten Sie, dass kein neuer auf der Startseite ausgewiesenen Beitrag (f
 - **13. Juli 2020:** Datenmodelldiagramm, Sitemap und Wireframes aktualisiert
 - **12. Juli 2020:** Testdaten als JSON-Datei
 - **8. Juli 2020:** Erstfassung der Dokumentation 
+
 ---
 [Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
 
