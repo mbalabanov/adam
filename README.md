@@ -7,9 +7,9 @@ ADAM ist ein JavaScript/NodeJS/Angular/MongoDB/Heroku-Projekt von Marin Balabano
 
 Dieses Projekt dient nur zu Übungszwecken und wurde vom "Archive of Digital Art" (ADA) der Donau Universität Krems inspiriert. Es dient als Übungsprojekt für die Anwendung zeitgemäßer Webtechnologien wie NodeJS, Angular, Ionic. MongoDB, Heroku und AWS S3.
 
-**Die Bilder in diesem Projekt sind nur Platzhalter von [adobestock.com](http://adobestock.com). Sie sind zwar Teil dieses Repositories, sind aber nicht zur allgemeinen Verwendung freigegeben.
+**Die Bilder in diesem Projekt sind nur Platzhalter von [adobestock.com](http://adobestock.com). Sie sind zwar Teil dieses Repositories, sind aber nicht zur allgemeinen Verwendung freigegeben.**
 
-ADAM besteht aus vier Teilen: Einem _API-Server_ auf [adam-interface.herokuapp.com](https://adam-interface.herokuapp.com) mit einer Datenbank und Schnittstellen, um die Daten abzurufen, sowie einer Website mit einem _öffentlichen Bereich_ auf [demoarchive.art](http://demoarchive.art/), in dem Besucher die Informationen über die digitalen Kunstwerke finden, und einem _Redaktionsbereich,_ in dem Redakteure neue Inhalte einpflegen und bearbeiten können, und Administratoren die Rechte verwalten können. Zu guter Letzt gibt es eine _Mobile-App,_ mit der man Einträge erstellen kann, Fotos und Videos hochladen kann.
+ADAM besteht aus vier Teilen: Einem **API-Server** auf [adam-interface.herokuapp.com](https://adam-interface.herokuapp.com) mit Schnittstellen, um die Daten abzurufen, sowie einer Website mit einem **öffentlichen Bereich** auf [demoarchive.art](http://demoarchive.art/), in dem Besucher die Informationen über die digitalen Kunstwerke finden, und einem **Redaktionsbereich,** in dem Redakteure neue Inhalte einpflegen und bearbeiten können, und Administratoren die Rechte verwalten können. Zu guter Letzt gibt es eine **Mobile-App,** mit der man Einträge erstellen kann, Fotos und Videos hochladen kann.
 
 ## Bestandteile
 Dieses Projekt besteht aus den folgenden Repositories:
@@ -344,3 +344,115 @@ _Bitte beachten Sie, dass kein neuer auf der Startseite ausgewiesenen Beitrag (f
 - **Bis 18. September 2020:** Mobile App mit Login und Upload.
 
 - **Bis 25. September 2020:** Mobile App mit Login und Upload.
+
+---
+
+````
+    +-+-+-+-+ +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
+    |A|D|A|M| |F|R|O|N|T|E|N|D| |S|T|R|U|C|T|U|R|E|
+    +-+-+-+-+ +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
+
+
+   ┌──────────┐ PAGE STRUCTURE
+   │   Home   │ 1. navbar.component with search and login (uses auth.service for
+ ┌─┤   Page   │ login, sends search queries to search page).
+ │ │          │ 2. carousel.component showing featured items (uses
+ │ └──────────┘ apirequests.service to GET featured items).
+ │              3. Static information on purpose of archive.
+ │              4. archivecategories.component with search and links to the three
+ │              categories (uses apirequests.service to GET category infos).
+ │              5. Static information on how to contribute.
+ │              6. newslist.component showing current news stories (uses
+ │              apirequests.service to GET news items).
+ │              7. footer.component.
+ │              8. cookiewarning.component.
+ │
+ ├───────┬────────────────────────────────────────────────┐
+ │       │                                                │
+ │       ▼                                                ▼
+ │ ┌──────────┐ PAGE STRUCTURE                       ┌──────────┐
+ │ │ Archive  │ 1. navbar.component with search      │  Search  │
+ │ │   Page   │ and login (uses auth.service         │ Results  │
+ │ │          │ for login, sends search queries      │   Page   │
+ │ └─────┬────┘ to search page).                     └────┬─────┘
+ │       │      2. archivecategories.component            │
+ │       │      (uses apirequests.service to              │ PAGE STRUCTURE
+ │       │      GET category infos)                       │ 1. navbar.component with
+ │       │      3. footer.component.                      │ search and login (uses
+ │       │      4. cookiewarning.component.               │ auth.service for login,
+ │       ▼                                                │ sends search queries to
+ │      ┌──────────┐ PAGE STRUCTURE                       │ search page).
+ │      │ Category │ 1. navbar.component with search      │ 2. searchall.component with
+ │      │   List   │ and login (uses auth.service for     │ a searchfilter and
+ │      │   page   │ login, sends search queries to       │ pagination for the results
+ │      └─────┬────┘ search page).                        │ (uses apirequests.component
+ │            │      2. categorylist.component (uses      │ to GET category items).
+ │            │      apirequests.service to GET this      │ 3. footer.component.
+ │            │      category's infos).                   │ 4. cookiewarning.component.
+ │            │      3. footer.component.                 │
+ │            │      4. cookiewarning.component.          │
+ │            │    ┌──────────────────────────────────────┘
+ │            │    │
+ │            ▼    ▼
+ │           ┌──────────┐ PAGE STRUCTURE
+ │           │   Item   │ 1. navbar.component with search and login
+ │           │ Details  │ (uses auth.service for login, sends
+ │           │   Page   │ search queries to search page).
+ │           └──────────┘ 2. itemdetails.component (uses
+ │                        apirequests.service to GET item details
+ │                        and auth.service to allow
+ │                        editing/deleting the item).
+ │                        3. footer.component.
+ │                        4. cookiewarning.component.
+ │
+ ├───────┬────────────────────────────────────────────────┐
+ │       │                                                │
+ │       ▼                                                ▼
+ │ ┌──────────┐ PAGE STRUCTURE                       ┌──────────┐ PAGE STRUCTURE
+ │ │   Edit   │ 1. navbar.component with search and  │   User   │ 1. navbar.component with search
+ │ │  Items   │ login (uses auth.service for login,  │ Profile  │ and login (uses auth.service
+ │ │   Page   │ sends search queries to search page).│   Page   │ for login, sends search queries
+ │ └──────────┘ 2. createarchiveitem.component (uses └──────────┘ to search page).
+ │              apirequests.service to PUT new                    2. authprofile.component (uses
+ │              items).                                           auth.service for user profile
+ │              3. editcarouselfeatures.component                 data).
+ │              (uses apirequests.service to GET and              3. footer.component.
+ │              PUT featured items).                              4. cookiewarning.component.
+ │              4. editnewspages.component (uses
+ │              apirequests.service to GET and PUT
+ │              news).
+ │              5. editcompliancepages.component
+ │              (uses apirequests.service to GET and
+ │              PUT compliance pages).
+ │              6. footer.component.
+ │              7. cookiewarning.component.
+ │
+ └───────┬────────────────────────────────────────────────┐
+         │                                                │
+         ▼                                                ▼
+   ┌──────────┐ PAGE STRUCTURE                       ┌──────────┐ PAGE STRUCTURE
+   │News List │ 1. navbar.component with search      │Compliance│ 1. navbar.component with search and
+   │   Page   │ and login (uses auth.service         │   Page   │ login (uses auth.service for login,
+   │          │ for login, sends search queries      │          │ sends search queries to search page).
+   └─────┬────┘ to search page).                     └────┬─────┘ 2. compliancearticle.component to
+         │      2. newslist.component (uses               │       show the text of the current
+         │      apirequests.service to GET news           │       compliance page based on URL slug
+         │      items).                                   │       (uses apirequests.service to GET the
+         │      3. footer.component.                      │       compliance text).
+         │                                                │       3. footer.component.
+         │                                                │       4. cookiewarning.component.
+         ▼                                                ▼
+        ┌──────────┐ PAGE STRUCTURE                      ┌──────────┐ PAGE STRUCTURE
+        │   News   │ 1. navbar.component with search     │ Contact  │ 1. navbar.component with search
+        │ Article  │ and login (uses auth.service        │   Page   │ and login (uses auth.service
+        │   Page   │ for login, sends search queries     │          │ for login, sends search queries
+        └──────────┘ to search page).                    └──────────┘ to search page).
+                     2. newsarticle.component to                      2. Static information with
+                     show the text of the current                     infos and contact form.
+                     news item based on URL slug                      3. footer.component.
+                     (uses apirequests.service to                     4. cookiewarning.component.
+                     GET the news item).
+                     3. footer.component.
+                     4. cookiewarning.component.
+
+````

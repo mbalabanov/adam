@@ -1,8 +1,8 @@
 <div class="toppadding container-fluid">
 
-    <!-- Breadcrumbs -->
     <div class="row">
         <div class="col-lg-12">
+            <!-- Breadcrumbs -->
             <nav aria-label="breadcrumb" class="mt-2">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a  routerLink="/">Home</a></li>
@@ -186,6 +186,7 @@
     </div>
 </div>
 
+<!-- Error message for non-existent IDs -->
 <div *ngIf="!archiveItem.name" class="container">
     <div class="row my-4">
         <div class="col-lg-12 alert alert-danger text-center p-5" role="alert">
@@ -198,6 +199,7 @@
     </div>
 </div>
 
+<!-- Main Item Details -->
 <div *ngIf="archiveItem.name" class="container">
     <div class="row my-4">
         <div class="col-lg-8 border-bottom">
@@ -243,17 +245,17 @@
         <h3>Description</h3>
         <div [innerHTML]="archiveItem.longdescription"></div>
 
-                <div class="row mt-4">
-                    <div class="col-12">
-                        <h3>Keywords</h3>
-                        <p *ngIf="archiveItem.tags?.length" class="mt-4">
-                            <span class="btn btn-warning m-1" *ngFor="let tag of archiveItem.tags">{{ tag }}</span>
-                        </p>
-                        <p *ngIf="!archiveItem.tags?.length" class="mt-4">
-                            No keywords or tags available.
-                        </p>
-                    </div>
+            <div class="row mt-4">
+                <div class="col-12">
+                    <h3>Keywords</h3>
+                    <p *ngIf="archiveItem.tags?.length" class="mt-4">
+                        <span class="btn btn-warning m-1" *ngFor="let tag of archiveItem.tags">{{ tag }}</span>
+                    </p>
+                    <p *ngIf="!archiveItem.tags?.length" class="mt-4">
+                        No keywords or tags available.
+                    </p>
                 </div>
+            </div>
 
         </div>
         <div class="col-lg-4 ">

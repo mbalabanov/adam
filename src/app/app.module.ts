@@ -15,10 +15,8 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { CategorylistComponent } from './components/categorylist/categorylist.component';
 import { NewslistComponent } from './components/newslist/newslist.component';
 import { CookiewarningComponent } from './components/cookiewarning/cookiewarning.component';
-import { SearchresultslistComponent } from './components/searchresultslist/searchresultslist.component';
 import { ItemdetailsComponent } from './components/itemdetails/itemdetails.component';
 import { CreatearchiveitemComponent } from './components/createarchiveitem/createarchiveitem.component';
-import { EditarchiveitemComponent } from './components/editarchiveitem/editarchiveitem.component';
 import { EditcarouselfeaturesComponent } from './components/editcarouselfeatures/editcarouselfeatures.component';
 import { EditcompliancepagesComponent } from './components/editcompliancepages/editcompliancepages.component';
 import { EditnewspagesComponent } from './components/editnewspages/editnewspages.component';
@@ -34,7 +32,6 @@ import { CompliancepageComponent } from './pages/compliancepage/compliancepage.c
 import { ContactpageComponent } from './pages/contactpage/contactpage.component';
 import { SearchresultspageComponent } from './pages/searchresultspage/searchresultspage.component';
 import { SearchallComponent } from './components/searchall/searchall.component';
-import { SearchitemsComponent } from './components/searchitems/searchitems.component';
 import { ArchiveComponent } from './pages/archive/archive.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CompliancearticleComponent } from './components/compliancearticle/compliancearticle.component';
@@ -51,10 +48,8 @@ import { TrackingComponent } from './components/tracking/tracking.component';
     CategorylistComponent,
     NewslistComponent,
     CookiewarningComponent,
-    SearchresultslistComponent,
     ItemdetailsComponent,
     CreatearchiveitemComponent,
-    EditarchiveitemComponent,
     EditcarouselfeaturesComponent,
     EditcompliancepagesComponent,
     EditnewspagesComponent,
@@ -70,7 +65,6 @@ import { TrackingComponent } from './components/tracking/tracking.component';
     ContactpageComponent,
     SearchresultspageComponent,
     SearchallComponent,
-    SearchitemsComponent,
     ArchiveComponent,
     FooterComponent,
     CompliancearticleComponent,
