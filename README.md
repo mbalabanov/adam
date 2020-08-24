@@ -3,8 +3,8 @@
 ![ADAM - Archive of Digital Art & Media](documentation/assets/adam-logo.png)
 
 ## Inhalt
-1. [Beschreibung](#1.-beschreibung)
-2. [Bestandteile und Installation](#2.-bestandteile-und-installation)
+1. [Beschreibung](#beschreibung)
+2. [Bestandteile und Installation](#bestandteile-und-installation)
 3. [Detailansicht](#3.-detailansicht)
 4. [Die Struktur von ADAM](#4.-die-struktur-von-adam)
 5. [Konzept der Mobile App](#5.-konzept-mobile-app)
