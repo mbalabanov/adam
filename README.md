@@ -23,7 +23,6 @@ Dieses Projekt dient nur zu Übungszwecken und wurde vom "Archive of Digital Art
 
 ADAM besteht aus vier Teilen: Einem **API-Server** auf [adam-interface.herokuapp.com](https://adam-interface.herokuapp.com) mit Schnittstellen, um die Daten abzurufen, sowie einer Website mit einem **öffentlichen Bereich** auf [demoarchive.art](http://demoarchive.art/), in dem Besucher die Informationen über die digitalen Kunstwerke finden, und einem **Redaktionsbereich,** in dem Redakteure neue Inhalte einpflegen und bearbeiten können, und Administratoren die Rechte verwalten können. Zu guter Letzt gibt es eine **Mobile-App,** mit der man Einträge erstellen kann, Fotos und Videos hochladen kann.
 
----
 [Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
 
 ## 2. Bestandteile und Installation
@@ -47,7 +46,6 @@ npm run dev:ssr
 ```
 Bitte zu beachten: Wenn Sie für das Web Frontend den lokal laufenden API Server verwenden möchten, dann findet Sie die URL der API in der Datei `src/app/apirequestservice.service.ts`. Diese einfach auf `http://localhost:4200` ändern, dann läuft alles nur lokal.
 
----
 [Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
 
 ## 3. Detailansicht
@@ -61,7 +59,6 @@ Bitte zu beachten: Wenn Sie für das Web Frontend den lokal laufenden API Server
 ### Information Pages (News and Compliance)
 ![ADAM - Details 3](documentation/assets/website-description3.png)
 
----
 [Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
 
 ## 4. Die Struktur von ADAM
@@ -242,7 +239,6 @@ Untenstehend finden Sie die ursprünglichen Wireframes des Redaktionsbereichs, d
 
 ![ADAM - Data Model](documentation/assets/create-object.png)
 
----
 [Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
 
 ### 5. Konzept der Mobile App
@@ -261,7 +257,6 @@ v. Eintrag mit Fotos und Video URLs hochladen
 ### 5.1 Mobile App Wireframes
 ![Mobile App](documentation/assets/mobile-app-wireframes.png)
 
----
 [Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
 
 ## 6. DB und API
@@ -427,7 +422,6 @@ _Bitte beachten Sie, dass kein neuer auf der Startseite ausgewiesenen Beitrag (f
 1. **Editor:** Kann Einträge erstellen und bearbeiten
 2. **Admin:** Kann Benutzer deaktivieren, reaktivieren und ihre Rolle ändern
 
----
 [Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
 
 ## 8. Technologien
@@ -452,7 +446,6 @@ _Bitte beachten Sie, dass kein neuer auf der Startseite ausgewiesenen Beitrag (f
 - Angular
 - Cordova oder NativeScript
 
----
 [Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
 
 ## 9. Aktualisierungen
@@ -470,7 +463,6 @@ _Bitte beachten Sie, dass kein neuer auf der Startseite ausgewiesenen Beitrag (f
 - **12. Juli 2020:** Testdaten als JSON-Datei
 - **8. Juli 2020:** Erstfassung der Dokumentation 
 
----
 [Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
 
 ## 10. Projektplan
@@ -491,5 +483,4 @@ _Bitte beachten Sie, dass kein neuer auf der Startseite ausgewiesenen Beitrag (f
 
 - **Bis 25. September 2020:** Mobile App mit Login und Upload.
 
----
 [Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
