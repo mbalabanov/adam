@@ -50,23 +50,28 @@ Durch diesen Befehl wird das Frontend als lokale SSR-App gestartet:
 ```
 npm run dev:ssr
 ```
-Leider gibt die Angular CLI derzeit noch Fehlermeldungen aus, wenn die Auth0-Integration com Angular Universal Server angesprochen wird. Das liegt daran, dass Auth0 die DOM im Browser anspricht, aber der Server die DOM nicht kennt. Ich verwende derzeit die Domino-Bibliothek, um dem Server eine DOM vorzugaukeln, doch Auth0 erwartet eine echte DOM und gibt sporadisch eine Fehlermeldung aus. Dies geschieht relativ selten im Vergleich zu den unzähligen SSR-Fehlermeldungen, die ohne Domino ausgegeben werden. Ich hoffe, dass ich das bald bereinigen kann und entschuldige mich nis dahin für die Unannehmlichkeiten.
+Leider gibt die Angular CLI derzeit noch Fehlermeldungen aus, wenn die Auth0-Integration com Angular Universal Server angesprochen wird.
+
+Der Grund dafür ist, dass Auth0 die DOM im Browser anspricht, aber die serverseitige App die DOM nicht kennt. Ich verwende derzeit die Domino-Bibliothek, um dem Server eine DOM vorzugaukeln, doch Auth0 erwartet eine echte DOM und gibt sporadisch Fehlermeldungen in der Angular CLI aus (funktioniert Client/Browser-seitig aber weiterhin hervorragend). Dies geschieht relativ selten im Vergleich zu den unzähligen SSR-Fehlermeldungen, die ohne Domino ausgegeben werden.
+
+Ich hoffe, dass ich das bald bereinigen kann und entschuldige mich nis dahin für die Unannehmlichkeiten.
 
 ### 2.2 Frontend mit der API lokal ausführen
 Bitte zu beachten: Wenn Sie für das Web Frontend den lokal laufenden API Server verwenden möchten, dann findet Sie die URL der API in der Datei `src/app/apirequestservice.service.ts`.
+
 Diese einfach auf `http://localhost:5003` ändern, dann läuft alles nur lokal. So kann man das Frontend auf `http://localhost:4200` ausführen und sämtliche Daten von der API auf `http://localhost:5003` beziehen.
 
 [« Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
 
 ## 3. Detailansicht
 
-### 3.1 Main Pages (Home, Search and Details)
+### 3.1 Hauptseiten (Home, Search und Details)
 ![ADAM - Details 1](documentation/assets/website-description1.png)
 
-### 3.2 Redaktionsbereich (Edit and Create)
+### 3.2 Redaktionsbereich (Edit und Create)
 ![ADAM - Details 2](documentation/assets/website-description2.png)
 
-### 3.3 Information Pages (News and Compliance)
+### 3.3 Information Pages (News und Compliance)
 ![ADAM - Details 3](documentation/assets/website-description3.png)
 
 [« Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
@@ -240,8 +245,9 @@ Untenstehend finden Sie die ursprünglichen Wireframes des öffentlichen Bereich
 
 ### 4.5 *Nicht-öffentlicher Bereich* im selben Web-Frontend mit...
 
-4.5.1. **Redaktionsansicht** in der Benutzer mit Editor-Rechten bestehende Einträge bearbeiten können (Edit-Funktion wird nur nach dem Einloggen sichtbar) sowie neue Einträge erstellen können (Funktion für einen neuen Eintrag ist auch erst nach dem Einloggen sichtbar). Dieser Bereich befindet sich im Angular Webfrontend.
-4.5.2. **Admin-Bereich,** um Benutzer zu verwalten (deaktivieren und reaktivieren). Dieser Bereich befindet sich in Auth0.com
+4.5.1 **Redaktionsansicht** in der Benutzer mit Editor-Rechten bestehende Einträge bearbeiten können (Edit-Funktion wird nur nach dem Einloggen sichtbar) sowie neue Einträge erstellen können (Funktion für einen neuen Eintrag ist auch erst nach dem Einloggen sichtbar). Dieser Bereich befindet sich im Angular Webfrontend.
+
+4.5.2 **Admin-Bereich,** um Benutzer zu verwalten (deaktivieren und reaktivieren). Dieser Bereich befindet sich in Auth0.com
 
 
 ### 4.6 Wireframes Redaktionsansicht
