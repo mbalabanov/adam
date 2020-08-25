@@ -10,9 +10,7 @@ import { Router } from '@angular/router';
 export class ArchivecategoriesComponent implements OnInit {
   searchString: Object = {};
 
-  artifactCategory: any = {};
-  eventCategory: any = {};
-  personCategory: any = {};
+  rawData: any = {};
 
   artifactImage: any = {};
   personImage: any = {};
@@ -26,26 +24,11 @@ export class ArchivecategoriesComponent implements OnInit {
 
   ngOnInit(): void {
 
-    var randomCategoryID1 = 'a' + Math.floor(Math.random() * 5);
-    var randomCategoryID2 = 'e' +  Math.floor(Math.random() * 5);
-    var randomCategoryID3 = 'p' +  Math.floor(Math.random() * 5);
-
-    this._apirequestsService.getArtifact(randomCategoryID1)
-        .subscribe(data => {
-        this.artifactCategory = data;
-        this.artifactImage = this.artifactCategory.images[0];
-    });
-
-    this._apirequestsService.getEvent(randomCategoryID2)
-        .subscribe(data => {
-        this.eventCategory = data;
-        this.eventImage = this.eventCategory.images[0];
-      });
-
-    this._apirequestsService.getPerson(randomCategoryID3)
-        .subscribe(data => {
-        this.personCategory = data;
-        this.personImage = this.personCategory.images[0];
+    this._apirequestsService.getData().subscribe(data => {
+      this.rawData = data;
+      this.artifactImage = this.rawData.artifacts.coverimage;
+      this.personImage = this.rawData.persons.coverimage;
+      this.eventImage = this.rawData.events.coverimage;
     });
 
   }

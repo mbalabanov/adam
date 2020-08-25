@@ -19,3 +19,6 @@ dist/adam-frontend/server/main.js
 dist/adam-frontend/server/main.js.map
 dist/adam-frontend/server/main.js
 dist/adam-frontend/server/main.js.map
+dist/adam-frontend/browser/index.html
+dist/adam-frontend/server/main.js
+dist/adam-frontend/server/main.js.map
