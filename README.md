@@ -56,7 +56,7 @@ Der Grund dafür ist, dass Auth0 die DOM im Browser anspricht, aber die serverse
 
 Ich hoffe, dass ich das bald bereinigen kann und entschuldige mich nis dahin für die Unannehmlichkeiten.
 
-Um die Fehlermeldungen im lokalen Betrieb komplett zu vermeiden, kann man die App statt mit `npm run sev:ssr` zu starten einfach `ng serve` verwenden (und weiterhin auf port 4200 darauf zugreifen).
+Um die Fehlermeldungen im lokalen Betrieb komplett zu vermeiden, kann man die App statt mit ``npm run sev:ssr`` zu starten einfach ``ng serve`` verwenden (und weiterhin auf port 4200 darauf zugreifen).
 
 ### 2.2 Frontend mit der API lokal ausführen
 Bitte zu beachten: Wenn Sie für das Web Frontend den lokal laufenden API Server verwenden möchten, dann findet Sie die URL der API in der Datei `src/app/apirequestservice.service.ts`.
