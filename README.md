@@ -48,11 +48,15 @@ npm install
 ```
 Durch diesen Befehl wird das Frontend als lokale SSR-App gestartet:
 ```
-ng serve
+npm run dev:ssr
 ```
-Eigentlich kann man eine Angular Universal app auch mit `npm run dev:ssr` lokal starten, doch leider gibt die Angular CLI derzeit noch Fehlermeldungen aus, wenn die Auth0-Integration vom Angular Universal Server angesprochen wird.
+Leider gibt die Angular CLI derzeit noch Fehlermeldungen aus, wenn die Auth0-Integration vom Angular Universal Server angesprochen wird.
 
 Der Grund dafür ist, dass Auth0 die DOM im Browser anspricht, aber die serverseitige App die DOM nicht kennt. Ich verwende derzeit die Domino-Bibliothek, um dem Server eine DOM vorzugaukeln, doch Auth0 erwartet eine echte DOM und gibt sporadisch Fehlermeldungen in der Angular CLI aus (funktioniert Client/Browser-seitig aber weiterhin hervorragend). Dies geschieht relativ selten im Vergleich zu den unzähligen SSR-Fehlermeldungen, die ohne Domino ausgegeben werden.
+
+Ich hoffe, dass ich das bald bereinigen kann und entschuldige mich nis dahin für die Unannehmlichkeiten.
+
+Um die Fehlermeldungen im lokalen Betrieb komplett zu vermeiden, kann man die App statt mit ``npm run sev:ssr`` zu starten einfach ``ng serve`` verwenden (und weiterhin auf port 4200 darauf zugreifen).
 
 ### 2.2 Frontend mit der API lokal ausführen
 Bitte zu beachten: Wenn Sie für das Web Frontend den lokal laufenden API Server verwenden möchten, dann findet Sie die URL der API in der Datei `src/app/apirequestservice.service.ts`.
