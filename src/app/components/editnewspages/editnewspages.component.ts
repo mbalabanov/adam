@@ -11,11 +11,11 @@ export class EditnewspagesComponent implements OnInit {
 
   news: any = {};
 
-  constructor( private _apirequestsService: ApirequestsService, public auth: AuthService ) { }
+  constructor( private apirequestsService: ApirequestsService, public auth: AuthService ) { }
 
   ngOnInit(): void {
 
-    this._apirequestsService.getNews()
+    this.apirequestsService.getNews()
         .subscribe(newsdata => {
         this.news = newsdata.content;
     });

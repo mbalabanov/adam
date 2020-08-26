@@ -12,7 +12,7 @@ export class CompliancearticleComponent implements OnInit {
   complianceCategories: Array<object> = [];
   complianceCategory: any = {};
 
-	constructor(private _apirequestsService: ApirequestsService, private route: ActivatedRoute) { }
+	constructor(private apirequestsService: ApirequestsService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
 
@@ -21,7 +21,7 @@ export class CompliancearticleComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
         catSlug = params.get('categoryId');
 
-        this._apirequestsService.getCompliancePage(catSlug)
+        this.apirequestsService.getCompliancePage(catSlug)
         .subscribe(data => {
           this.complianceCategory = data;
         });

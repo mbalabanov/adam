@@ -18,7 +18,7 @@ relatedPersons: Array<object> = [];
 relatedEvents: Array<object> = [];
 
 deleteThis(dataType, id) {
-    this._apirequestsService.deleteItem(dataType, id).subscribe((data)=>{
+    this.apirequestsService.deleteItem(dataType, id).subscribe((data)=>{
         console.log('Request successful');
    });
 }
@@ -32,7 +32,7 @@ setCarouselActiveID(id){
     activeElem.classList.add('active');
 };
 
-constructor(private _apirequestsService: ApirequestsService, private route: ActivatedRoute, public auth: AuthService ) { }
+constructor(private apirequestsService: ApirequestsService, private route: ActivatedRoute, public auth: AuthService ) { }
 
 ngOnInit(): void {
 
@@ -49,23 +49,23 @@ ngOnInit(): void {
 
         switch (this.archiveCategory) {
             case 'events': {
-                this._apirequestsService.getEvent(itemSlug)
+                this.apirequestsService.getEvent(itemSlug)
                 .subscribe(data => {
                     this.archiveItem = data;
                     for (let individualPerson of this.archiveItem.persons) {
-                        this._apirequestsService.getPerson(individualPerson).subscribe(data => {
+                        this.apirequestsService.getPerson(individualPerson).subscribe(data => {
                             this.relatedPersons.push(data);
                         });
                     };
             
                     for (let individualArtifact of this.archiveItem.artifacts) {
-                        this._apirequestsService.getArtifact(individualArtifact).subscribe(data => {
+                        this.apirequestsService.getArtifact(individualArtifact).subscribe(data => {
                             this.relatedArtifacts.push(data);
                         });
                     };
             
                     for (let individualEvent of this.archiveItem.events) {
-                        this._apirequestsService.getEvent(individualEvent).subscribe(data => {
+                        this.apirequestsService.getEvent(individualEvent).subscribe(data => {
                             this.relatedEvents.push(data);
                         });
                     };
@@ -74,23 +74,23 @@ ngOnInit(): void {
             }
 
             case 'persons': {
-                this._apirequestsService.getPerson(itemSlug)
+                this.apirequestsService.getPerson(itemSlug)
                 .subscribe(data => {
                     this.archiveItem = data;
                     for (let individualPerson of this.archiveItem.persons) {
-                        this._apirequestsService.getPerson(individualPerson).subscribe(data => {
+                        this.apirequestsService.getPerson(individualPerson).subscribe(data => {
                             this.relatedPersons.push(data);
                         });
                     };
             
                     for (let individualArtifact of this.archiveItem.artifacts) {
-                        this._apirequestsService.getArtifact(individualArtifact).subscribe(data => {
+                        this.apirequestsService.getArtifact(individualArtifact).subscribe(data => {
                             this.relatedArtifacts.push(data);
                         });
                     };
             
                     for (let individualEvent of this.archiveItem.events) {
-                        this._apirequestsService.getEvent(individualEvent).subscribe(data => {
+                        this.apirequestsService.getEvent(individualEvent).subscribe(data => {
                             this.relatedEvents.push(data);
                         });
                     };
@@ -99,23 +99,23 @@ ngOnInit(): void {
             }
 
             case 'artifacts': {
-                this._apirequestsService.getArtifact(itemSlug)
+                this.apirequestsService.getArtifact(itemSlug)
                 .subscribe(data => {
                     this.archiveItem = data;
                     for (let individualPerson of this.archiveItem.persons) {
-                        this._apirequestsService.getPerson(individualPerson).subscribe(data => {
+                        this.apirequestsService.getPerson(individualPerson).subscribe(data => {
                             this.relatedPersons.push(data);
                         });
                     };
             
                     for (let individualArtifact of this.archiveItem.artifacts) {
-                        this._apirequestsService.getArtifact(individualArtifact).subscribe(data => {
+                        this.apirequestsService.getArtifact(individualArtifact).subscribe(data => {
                             this.relatedArtifacts.push(data);
                         });
                     };
             
                     for (let individualEvent of this.archiveItem.events) {
-                        this._apirequestsService.getEvent(individualEvent).subscribe(data => {
+                        this.apirequestsService.getEvent(individualEvent).subscribe(data => {
                             this.relatedEvents.push(data);
                         });
                     };  

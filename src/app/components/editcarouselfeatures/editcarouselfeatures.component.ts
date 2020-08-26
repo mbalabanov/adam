@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { ApirequestsService } from '../../services/apirequests.service';
 
@@ -9,15 +10,67 @@ import { ApirequestsService } from '../../services/apirequests.service';
 })
 export class EditcarouselfeaturesComponent implements OnInit {
 
-  featured: any = {};
+  featuredOriginal: any;
+  featuredEdited = new FormGroup({ });
+  featuredItemsArray: Array<any> = [];
 
-  constructor(private _apirequestsService: ApirequestsService, public auth: AuthService) { }
+  constructor(private apirequestsService: ApirequestsService, public auth: AuthService) { }
   
-  ngOnInit(): void {
+  ngOnInit() {
 
-    this._apirequestsService.getFeatured()
+    this.apirequestsService.getFeatured()
       .subscribe(featuredData => {
-      this.featured = featuredData.content;
+      this.featuredOriginal = featuredData;
+      this.featuredItemsArray = this.featuredOriginal.content;
+
+      this.featuredEdited = new FormGroup({
+        featured0: new FormGroup({
+          id: new FormControl({value: this.featuredOriginal.content[0].id, disabled: true}, Validators.required), 
+          image: new FormControl(this.featuredOriginal.content[0].image, Validators.required),
+          title: new FormControl(this.featuredOriginal.content[0].title, Validators.required),
+          description: new FormControl(this.featuredOriginal.content[0].description, Validators.required),
+          link: new FormControl(this.featuredOriginal.content[0].link, Validators.required)
+        }),
+        featured1: new FormGroup({
+          id: new FormControl({value: this.featuredOriginal.content[1].id, disabled: true}, Validators.required), 
+          image: new FormControl(this.featuredOriginal.content[1].image, Validators.required),
+          title: new FormControl(this.featuredOriginal.content[1].title, Validators.required),
+          description: new FormControl(this.featuredOriginal.content[1].description, Validators.required),
+          link: new FormControl(this.featuredOriginal.content[1].link, Validators.required)
+        }),
+        featured2: new FormGroup({
+          id: new FormControl({value: this.featuredOriginal.content[2].id, disabled: true}, Validators.required), 
+          image: new FormControl(this.featuredOriginal.content[2].image, Validators.required),
+          title: new FormControl(this.featuredOriginal.content[2].title, Validators.required),
+          description: new FormControl(this.featuredOriginal.content[2].description, Validators.required),
+          link: new FormControl(this.featuredOriginal.content[2].link, Validators.required)
+        }),
+        featured3: new FormGroup({
+          id: new FormControl({value: this.featuredOriginal.content[3].id, disabled: true}, Validators.required),
+          image: new FormControl(this.featuredOriginal.content[3].image, Validators.required),
+          title: new FormControl(this.featuredOriginal.content[3].title, Validators.required),
+          description: new FormControl(this.featuredOriginal.content[3].description, Validators.required),
+          link: new FormControl(this.featuredOriginal.content[3].link, Validators.required)
+        })
+      });
+    });
+  }
+
+
+
+
+
+  saveFeaturedItems() {
+
+    this.featuredOriginal.content = [];
+
+    this.featuredOriginal.content.push(this.featuredEdited.value.firstFeatured);
+    this.featuredOriginal.content.push(this.featuredEdited.value.secondFeatured);
+    this.featuredOriginal.content.push(this.featuredEdited.value.thirdFeatured);
+    this.featuredOriginal.content.push(this.featuredEdited.value.fourthFeatured);
+
+    this.apirequestsService.putFeaturedItem(this.featuredOriginal.content).subscribe((data)=>{
+      console.log('Request successful');
     });
 
   }

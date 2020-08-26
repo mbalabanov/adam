@@ -10,11 +10,11 @@ export class NewslistComponent implements OnInit {
 
   newsitems: any = {};
 
-  constructor(private _apirequestsService: ApirequestsService) { }
+  constructor(private apirequestsService: ApirequestsService) { }
 
   ngOnInit(): void {
 
-    this._apirequestsService.getNews()
+    this.apirequestsService.getNews()
         .subscribe(news => {
         this.newsitems = news;
     });

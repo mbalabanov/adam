@@ -4,13 +4,6 @@ import { Observable } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 import { tap } from 'rxjs/operators';
 
-/*
-This is authguard is currently not in use to minimize error messages.
-These occur because the auth0 integration tries to access the DOM.
-Unfortunately, the app server used for SSR has no DOM.
-The use of the Domino module reduced the error messages.
-*/
-
 @Injectable({
   providedIn: 'root'
 })

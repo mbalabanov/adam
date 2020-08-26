@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from './guards/auth.guard';
 
 import { HomeComponent } from './pages/home/home.component';
 import { ArchiveComponent } from './pages/archive/archive.component' 
@@ -45,10 +46,10 @@ const routes: Routes = [
     path:"search", component: SearchresultspageComponent
   },
   {
-    path:"profile", component: UserprofilepageComponent
+    path:"profile", component: UserprofilepageComponent, canActivate: [AuthGuard]
   },
   {
-    path:"edititems", component: EdititemspageComponent
+    path:"edititems", component: EdititemspageComponent, canActivate: [AuthGuard]
   },
   {
     path:"**", component: HomeComponent

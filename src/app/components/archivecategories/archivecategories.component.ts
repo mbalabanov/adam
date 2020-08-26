@@ -16,7 +16,7 @@ export class ArchivecategoriesComponent implements OnInit {
   personImage: any = {};
   eventImage: any = {};
 
-  constructor(private _apirequestsService: ApirequestsService, private router: Router) { }
+  constructor(private apirequestsService: ApirequestsService, private router: Router) { }
   
   onpageSearch(value) {
     this.router.navigateByUrl('/search/' + value.onpageSearchInput);
@@ -24,7 +24,7 @@ export class ArchivecategoriesComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this._apirequestsService.getData().subscribe(data => {
+    this.apirequestsService.getData().subscribe(data => {
       this.rawData = data;
       this.artifactImage = this.rawData.artifacts.coverimage;
       this.personImage = this.rawData.persons.coverimage;

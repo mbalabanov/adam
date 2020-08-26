@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +17,10 @@ export class ApirequestsService {
   private newsItemUrl: string = this.baseURL + 'newsitem';
   private featuredUrl: string = this.baseURL + 'featured';
   private complianceUrl: string = this.baseURL + 'compliance';
+
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' })
+  };
 
   constructor(private http: HttpClient) { }
 
@@ -71,9 +75,20 @@ export class ApirequestsService {
     return this.http.get<any>(this.complianceUrl + '/' + id);
   }
  
-  deleteItem(dataType, id) {
+  deleteItem(dataType, id): Observable<any> {
     var tempURL = this.baseURL + dataType + '/' + id;
-    return this.http.delete(tempURL);
+    return this.http.delete<any>(tempURL);
   }
+
+/*
+  Der gesamte Request muss aus den Daten manuell zusammengesetzt werden.
+*/
+
+  putFeaturedItem(featuredData): Observable<any> {
+    console.log(this.featuredUrl);
+    console.log(featuredData);
+
+    return this.http.put<any>(this.featuredUrl, featuredData, this.httpOptions);
+  };
 
 }

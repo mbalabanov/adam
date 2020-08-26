@@ -33,7 +33,7 @@ export class CategorylistComponent implements OnInit {
       this.popped.push(this.archiveCategory.pop());
   }
 
-constructor(private _apirequestsService: ApirequestsService, private route: ActivatedRoute, public auth: AuthService ) { }
+constructor(private apirequestsService: ApirequestsService, private route: ActivatedRoute, public auth: AuthService ) { }
 
 ngOnInit(): void {
 
@@ -44,21 +44,21 @@ ngOnInit(): void {
 
           switch (catSlug) {
               case 'events': {
-                  this._apirequestsService.getEvents()
+                  this.apirequestsService.getEvents()
                   .subscribe(data => {
                       this.archiveCategory = data;
                       });
                       break;
                   }
               case 'persons': {
-                  this._apirequestsService.getPersons()
+                  this.apirequestsService.getPersons()
                   .subscribe(data => {
                       this.archiveCategory = data;
                       });
                       break;
                   }
               case 'artifacts': {
-                  this._apirequestsService.getArtifacts()
+                  this.apirequestsService.getArtifacts()
                   .subscribe(data => {
                       this.archiveCategory = data;
                       });

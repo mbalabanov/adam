@@ -1,117 +1,104 @@
-<span  *ngIf="auth.loggedIn" >
-    <h3>Create an Archive Item</h3>
-    <img src="assets/img/edititems-create-archive-item.jpg" data-toggle="modal" data-target="#newArchiveItem" alt="Create a New Archive Items" class="img-fluid border border-primary">
-    <p>Create a new item in the archive (artifact, person, or event).</p>
-    <p><button class="btn btn-outline-secondary" data-toggle="modal" data-target="#newArchiveItem">Create New Archive Item</button></p>
+<h3>Create an Archive Item</h3>
+<img src="assets/img/edititems-create-archive-item.jpg" data-toggle="modal" data-target="#newArchiveItem" alt="Create a New Archive Items" class="img-fluid border border-primary">
+<p>Create a new item in the archive (artifact, person, or event).</p>
+<p><button class="btn btn-outline-secondary" data-toggle="modal" data-target="#newArchiveItem">Create New Archive Item</button></p>
 
-    <!-- Modal for Creating New Archive Items -->
-    <div class="modal fade" id="newArchiveItem" tabindex="-1" aria-labelledby="newArchiveItem" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="newArchiveItemLabel">Create new Archive Item</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p class="alert alert-danger text-center">Creating new items is coming soon!</p>
-                    <form>
-                        <div class="form-group">
-                            <label for="categorySelect">Category</label>
-                            <select class="form-control" id="categorySelect">
-                            <option>Artifact</option>
-                            <option>Person</option>
-                            <option>Event</option>
-                            </select>
-                        </div>
-                        <h4>Description</h4>
-                        <div class="form-group">
-                            <label for="itemName">Name</label>
-                            <input type="text" class="form-control" id="itemName">
-                        </div>
-                        <h4 class="mt-3">Aliases</h4>
-                        <div class="form-group mt-2">
-                            <label for="itemAlias">Aliases</label>
-                            <input type="text" class="form-control" id="itemAlias" placeholder="Comma separated">
-                        </div>
-                        <div class="form-group">
-                            <label for="shortDescription">Short Description</label>
-                            <input type="text" class="form-control" id="shortDescription" >
-                        </div>
-                        <div class="form-group">
-                            <label for="longDescription">Long Description</label>
-                            <textarea class="form-control" id="longDescription" rows="6"></textarea>
-                        </div>
-                        <h4>Dates</h4>
-                        <div class="form-group">
-                            <div class="alert alert-secondary p-3">
-                                <label for="datelabel" class="mt-2">Label</label>
-                                <input type="text" id="datelabel" class="form-control">
-                                <label for="date"class="mt-2">Date</label>
-                                <input type="text" id="date" class="form-control">
-                                <button class="btn btn-outline-danger btn-sm mt-1">Remove</button>
-                            </div>
-                        </div>
-                        <h4>Images</h4>
-                        <div class="form-group mt-2">
-                            <label for="newimageUpload" class="mt-2"><strong>Upload New Image</strong></label> 
-                            <input type="file" class="form-control-file" id="newimageUpload">
-                            <label for="newimagename" class="mt-2">New Image Name</label> 
-                            <input type="text" class="form-control" id="newimagename">
-                            <label for="newimagedescription" class="mt-2">New Image Name</label> 
-                            <input type="text" class="form-control" id="newimagedescription">
-                        </div>
-                        <button class="btn btn-outline-primary btn-sm">Add another image</button>
-                        <h4 class="mt-3">Videos</h4>
-                        <div class="form-group mt-4">
-                            <p><strong>Add New Video</strong></p>
-                            <label for="newvideoname" class="mt-2">New Video Name</label>
-                            <input type="text" class="form-control" id="newvideoname" >
-                            <label for="newvideourl" class="mt-2">New Video URL</label>
-                            <input type="text" class="form-control" id="newvideourl" placeholder="https://...">
-                        </div>
-                        <h4 class="mt-3">Websites</h4>
-                        <div class="form-group mt-4">
-                            <p><strong>Add New Website</strong></p>
-                            <label for="newwebsitename" class="mt-2">New Website Name</label>
-                            <input type="text" class="form-control" id="newwebsitename" >
-                            <label for="newwebsiteurl" class="mt-2">New Website URL</label>
-                            <input type="text" class="form-control" id="newwebsiteurl" placeholder="https://...">
-                        </div>
-                        <button class="btn btn-outline-primary btn-sm mt-1">Add another website</button>
-                        <h4 class="mt-3">Assets</h4>
-                        <div class="form-group mt-4">
-                            <p><strong>Add New Asset</strong></p>
-                            <label for="newassetname" class="mt-2">New Asset Name</label>
-                            <input type="text" class="form-control" id="newassetname" >
-                            <label for="newasseturl" class="mt-2">New Asset URL</label>
-                            <input type="text" class="form-control" id="newasseturl" placeholder="https://...">
-                        </div>
-                        <button class="btn btn-outline-primary btn-sm mt-1">Add another asset</button>
-                        <h4 class="mt-3">Keywords</h4>
-                        <div class="form-group mt-2">
-                            <label for="itemTag">Keywords</label>
-                            <input type="text" class="form-control" id="itemTag" placeholder="Comma separated">
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+<!-- Modal for Creating New Archive Items -->
+<div class="modal fade" id="newArchiveItem" tabindex="-1" aria-labelledby="newArchiveItem" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="newArchiveItemLabel">Create new Archive Item</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-        </div>
-    </div>
-</span>
-<div *ngIf="!auth.loggedIn">
-    <div class="row p-3">
-        <div class="col-lg-12 alert alert-danger text-center p-5" role="alert">
-            <h3>You are not logged in!</h3>
-            <p>Please return to the <strong>main archive page</strong> to conduct a search in the archive.</p>
-            <p>
-                <a class="btn btn-light" routerLink="/archive">Main Archive</a>
-            </p>
+            <div class="modal-body">
+                <p class="alert alert-danger text-center">Creating new items is coming soon!</p>
+                <form>
+                    <div class="form-group">
+                        <label for="categorySelect">Category</label>
+                        <select class="form-control" id="categorySelect">
+                        <option>Artifact</option>
+                        <option>Person</option>
+                        <option>Event</option>
+                        </select>
+                    </div>
+                    <h4>Description</h4>
+                    <div class="form-group">
+                        <label for="itemName">Name</label>
+                        <input type="text" class="form-control" id="itemName">
+                    </div>
+                    <h4 class="mt-3">Aliases</h4>
+                    <div class="form-group mt-2">
+                        <label for="itemAlias">Aliases</label>
+                        <input type="text" class="form-control" id="itemAlias" placeholder="Comma separated">
+                    </div>
+                    <div class="form-group">
+                        <label for="shortDescription">Short Description</label>
+                        <input type="text" class="form-control" id="shortDescription" >
+                    </div>
+                    <div class="form-group">
+                        <label for="longDescription">Long Description</label>
+                        <textarea class="form-control" id="longDescription" rows="6"></textarea>
+                    </div>
+                    <h4>Dates</h4>
+                    <div class="form-group">
+                        <div class="alert alert-secondary p-3">
+                            <label for="datelabel" class="mt-2">Label</label>
+                            <input type="text" id="datelabel" class="form-control">
+                            <label for="date"class="mt-2">Date</label>
+                            <input type="text" id="date" class="form-control">
+                            <button class="btn btn-outline-danger btn-sm mt-1">Remove</button>
+                        </div>
+                    </div>
+                    <h4>Images</h4>
+                    <div class="form-group mt-2">
+                        <label for="newimageUpload" class="mt-2"><strong>Upload New Image</strong></label> 
+                        <input type="file" class="form-control-file" id="newimageUpload">
+                        <label for="newimagename" class="mt-2">New Image Name</label> 
+                        <input type="text" class="form-control" id="newimagename">
+                        <label for="newimagedescription" class="mt-2">New Image Name</label> 
+                        <input type="text" class="form-control" id="newimagedescription">
+                    </div>
+                    <button class="btn btn-outline-primary btn-sm">Add another image</button>
+                    <h4 class="mt-3">Videos</h4>
+                    <div class="form-group mt-4">
+                        <p><strong>Add New Video</strong></p>
+                        <label for="newvideoname" class="mt-2">New Video Name</label>
+                        <input type="text" class="form-control" id="newvideoname" >
+                        <label for="newvideourl" class="mt-2">New Video URL</label>
+                        <input type="text" class="form-control" id="newvideourl" placeholder="https://...">
+                    </div>
+                    <h4 class="mt-3">Websites</h4>
+                    <div class="form-group mt-4">
+                        <p><strong>Add New Website</strong></p>
+                        <label for="newwebsitename" class="mt-2">New Website Name</label>
+                        <input type="text" class="form-control" id="newwebsitename" >
+                        <label for="newwebsiteurl" class="mt-2">New Website URL</label>
+                        <input type="text" class="form-control" id="newwebsiteurl" placeholder="https://...">
+                    </div>
+                    <button class="btn btn-outline-primary btn-sm mt-1">Add another website</button>
+                    <h4 class="mt-3">Assets</h4>
+                    <div class="form-group mt-4">
+                        <p><strong>Add New Asset</strong></p>
+                        <label for="newassetname" class="mt-2">New Asset Name</label>
+                        <input type="text" class="form-control" id="newassetname" >
+                        <label for="newasseturl" class="mt-2">New Asset URL</label>
+                        <input type="text" class="form-control" id="newasseturl" placeholder="https://...">
+                    </div>
+                    <button class="btn btn-outline-primary btn-sm mt-1">Add another asset</button>
+                    <h4 class="mt-3">Keywords</h4>
+                    <div class="form-group mt-2">
+                        <label for="itemTag">Keywords</label>
+                        <input type="text" class="form-control" id="itemTag" placeholder="Comma separated">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
         </div>
     </div>
 </div>

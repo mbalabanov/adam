@@ -10,11 +10,11 @@ export class CarouselComponent implements OnInit {
 
   featured: any = {};
 
-  constructor(private _apirequestsService: ApirequestsService) { }
+  constructor(private apirequestsService: ApirequestsService) { }
 
   ngOnInit(): void {
 
-    this._apirequestsService.getFeatured()
+    this.apirequestsService.getFeatured()
         .subscribe(featuredData => {
         this.featured = featuredData;
     });

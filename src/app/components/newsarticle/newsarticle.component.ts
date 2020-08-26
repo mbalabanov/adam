@@ -11,7 +11,7 @@ export class NewsarticleComponent implements OnInit {
   newsitems: any = {};
   newsitem: any = {};
 
-  constructor(private _apirequestsService: ApirequestsService, private route: ActivatedRoute) { }
+  constructor(private apirequestsService: ApirequestsService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
 
@@ -19,11 +19,11 @@ export class NewsarticleComponent implements OnInit {
 
     this.route.paramMap.subscribe(params => {
       articleSlug = params.get('postId');
-      this._apirequestsService.getNewsItem(articleSlug)
+      this.apirequestsService.getNewsItem(articleSlug)
       .subscribe(news => {
           this.newsitem = news;
       });
-      this._apirequestsService.getNews()
+      this.apirequestsService.getNews()
       .subscribe(news => {
           this.newsitems = news;
       });

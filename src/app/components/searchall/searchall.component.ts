@@ -36,7 +36,7 @@ export class SearchallComponent implements OnInit {
       this.popped.push(this.allData.pop());
   }
   
-	constructor(private _apirequestsService: ApirequestsService, private route: ActivatedRoute) { }
+	constructor(private apirequestsService: ApirequestsService, private route: ActivatedRoute) { }
 
 	ngOnInit(): void {
 
@@ -45,7 +45,7 @@ export class SearchallComponent implements OnInit {
       this.searchSlug = params.get('params');
       this.searchText = this.searchSlug;
 
-      this._apirequestsService.getData().subscribe(data => {
+      this.apirequestsService.getData().subscribe(data => {
         this.rawData = data;
         this.allArtifacts = this.rawData.artifacts.content;
         this.allPersons = this.rawData.persons.content;

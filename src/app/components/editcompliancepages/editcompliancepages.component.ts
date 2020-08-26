@@ -11,11 +11,11 @@ export class EditcompliancepagesComponent implements OnInit {
 
   compliancePages: Array<object> = [];
 
-  constructor(private _apirequestsService: ApirequestsService, public auth: AuthService ) { }
+  constructor(private apirequestsService: ApirequestsService, public auth: AuthService ) { }
 
   ngOnInit(): void {
 
-    this._apirequestsService.getCompliance()
+    this.apirequestsService.getCompliance()
       .subscribe(data => {
       this.compliancePages = data.content;
     });
