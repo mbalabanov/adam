@@ -89,17 +89,28 @@ Diese Seiten dienen zur Information.
     - `/events`
     - `/events/:id`
     - `/news`
-    - `/news/:id`
     - `/featured`
     - `/featured/:id`
     - `/compliance`
     - `/compliance/:id`
 
 - Erstellen neuer Einträge (POST)
+    - `/artifacts/:id`
+    - `/persons/:id`
+    - `/events/:id`
 
 - Bearbeiten bestehender Einträge (PUT)
+    - `/artifacts/:id`
+    - `/persons/:id`
+    - `/events/:id`
+    - `/news` (Es können nur alle News gleichzeitig geändert werden)
+    - `/compliance` (Es können nur alle Compliance-Seiten gleichzeitig geändert werden)
+    - `/featured` (Es können nur alle featured Beiträge gleichzeitig geändert werden)
 
-- Einträge auf ugelöscht setzen (DELETE)
+- Einträge löschen (DELETE)
+    - `/artifacts/:id`
+    - `/persons/:id`
+    - `/events/:id`
 
 Für mehr Details zur API siehe Dokumentation weiter unten.
 
@@ -320,28 +331,19 @@ Die API ist verfügbar unter [adam-interface.herokuapp.com](https://adam-interfa
 - `/artifacts/id` Ein einzelnes Artifact (Kunstwerk) löschen.
 - `/persons/id` Eine einzelne Person (Künstler, Kuratoren) löschen.
 - `/events/id` Einen einzelnen Event (Ausstellung, Vernisage, Performance) löschen.
-- `/compliance/id` Eine einzelne Compliance-Seite löschen.
-- `/news/id` Einen einzelnen News-Artikel löschen.
-- `/featured/id` Einen der vier auf der Startseite ausgewiesenen Beiträge löschen.
-
-Bitte zu beachten, dass Compliance-Seiten und Featured-Beiträge nur mit äußerster Vorsicht gelöscht werden sollten. Im Idealfall würde man nur die bestehenden Beiträge ändern und weder neue hinzufügen, noch bestehende löschen.
 
 #### PUT (MIT einer ID):
 - `/artifacts/id` Ein einzelnes Artifact (Kunstwerk) bearbeiten.
 - `/persons/id` Eine einzelne Person (Künstler, Kuratoren) bearbeiten.
 - `/events/id` Einen einzelnen Event (Ausstellung, Vernisage, Performance) bearbeiten.
-- `/news/id` Einen einzelnen News-Artikel bearbeiten.
-- `/compliance/id` Eine einzelne Compliance-Seite bearbeiten.
-- `/featured/id` Einen einzelnen Featured-Item bearbeiten.
+- `/news` Den Inhalt sämtlicher News-Artikel ändern.
+- `/compliance` Den Inhalt aller Compliance-Seiten ändern.
+- `/featured` Alle Featured-Items ändern.
 
 #### POST (MIT der Parameter new):
 - `/artifacts/new` Ein neues Artifact (Kunstwerk) erstellen.
 - `/persons/new` Eine neue Person (Künstler, Kuratoren) erstellen.
 - `/events/new` Einen neuen Event (Ausstellung, Vernisage, Performance) erstellen.
-- `/compliance/new` Eine neue Compliance-Seite erstellen.
-- `/news/new` Einen neuen News-Artikel erstellen.
-
-_Bitte beachten Sie, dass kein neuer auf der Startseite ausgewiesenen Beitrag (featured item) erstellt werden sollte. Auf der Startseite sollten möglichst nur vier Beiträge ausgewiesen sein. Außerdem sollte man nur in äußersten Ausnahmen eine neue Compliance-Seite hinzufügen. Danach müsste auch die Navigation ergänzt werden, die Menüpunkte in der NavBar sind statisch._
 
 ### 6.3 JSON-Beispiel (Artifact)
 
