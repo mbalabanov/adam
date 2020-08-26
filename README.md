@@ -15,9 +15,9 @@
 10. [Projektplan](#10-projektplan)
 
 ## 1. Beschreibung
-ADAM ist ein JavaScript/NodeJS/Angular/MongoDB/Heroku-Projekt von Marin Balabanov. In diesem Archive of Digital Art & Media auf [demoarchive.art](http://demoarchive.art/), können Benutzer nach digitalen Kunstwerken suchen. Auf den Detailseiten finden sie eine Beschreibung des jeweiligen Kunstwerks, sowie Fotos/Screenshots und eingebettete Videos, und falls vorhanden ZIP-Dateien oder Diskimages mit den Originaldateien des Kunstwerks. Zudem finden sich Informationen über die Künstler, und bei welchen Events ihre Werke ausgestellt wurden.
+ADAM ist ein Projekt von Marin Balabanov in der Webentwicklung. In diesem Archive of Digital Art & Media auf [demoarchive.art](http://demoarchive.art/), können Benutzer nach digitalen Kunstwerken suchen. Auf den Detailseiten finden sie eine Beschreibung des jeweiligen Kunstwerks, sowie Fotos/Screenshots und eingebettete Videos, und falls vorhanden ZIP-Dateien oder Diskimages mit den Originaldateien des Kunstwerks. Zudem finden sich Informationen über die Künstler, und bei welchen Events ihre Werke ausgestellt wurden.
 
-Dieses Projekt dient nur zu Übungszwecken und wurde vom "Archive of Digital Art" (ADA) der Donau Universität Krems inspiriert. Es dient als Übungsprojekt für die Anwendung zeitgemäßer Webtechnologien wie NodeJS, Angular, Ionic. MongoDB, Heroku und AWS S3.
+Dieses Projekt dient nur zu Übungszwecken und wurde vom "Archive of Digital Art" (ADA) der Donau Universität Krems inspiriert. Es dient als Übungsprojekt für die Anwendung zeitgemäßer Webtechnologien wie NodeJS, Angular und Heroku (in weitere Folge kommen noch Cordova, MongoDB und AWS S3 dazu).
 
 **Die Bilder in diesem Projekt sind nur Platzhalter von [adobestock.com](http://adobestock.com). Sie sind zwar Teil dieses Repositories, sind aber nicht zur allgemeinen Verwendung freigegeben.**
 
@@ -64,12 +64,15 @@ Diese einfach auf `http://localhost:5003` ändern, dann läuft alles nur lokal. 
 ## 3. Detailansicht
 
 ### 3.1 Hauptseiten (Home, Search und Details)
+Hier können Benutzer nach Werken, Künstlern und Events suchen und die Details ansehen.
 ![ADAM - Details 1](documentation/assets/website-description1.png)
 
 ### 3.2 Redaktionsbereich (Edit und Create)
+Nach Anmeldung können Redakteure, Inhalte ändern und neue Einträge erstellen.
 ![ADAM - Details 2](documentation/assets/website-description2.png)
 
 ### 3.3 Information Pages (News und Compliance)
+Diese Seiten dienen zur Information.
 ![ADAM - Details 3](documentation/assets/website-description3.png)
 
 [« Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
