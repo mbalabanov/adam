@@ -46,7 +46,7 @@ Das ADAM Web Frontend auf [github.com/mbalabanov/adam](https://github.com/mbalab
 cd adam
 npm install
 ```
-Durch diesen Befehl wird das Frontend als lokale SSR-App gestartet:
+Durch diesen Befehl wird das Frontend gestartet:
 ```
 ng serve
 ```
