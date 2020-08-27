@@ -27,7 +27,7 @@ ADAM besteht aus vier Teilen: Einem **API-Server** auf [adam-interface.herokuapp
 
 ## 2. Bestandteile und Installation
 Dieses Projekt besteht aus den folgenden Repositories:
-- **ADAM API Server** [github.com/mbalabanov/adam-api](https://github.com/mbalabanov/adam-api) (läuft Heroku auf auf [adam-interface.herokuapp.com](http://adam-interface.herokuapp.com))
+- **ADAM API Server** [github.com/mbalabanov/adam-api](https://github.com/mbalabanov/adam-api) (läuft Heroku auf auf [adam-interface.herokuapp.com](https://adam-interface.herokuapp.com) mit CNAME-Eintrag auf [app.demoarchive.art](https://app.demoarchive.art))
 - **ADAM Web Frontend** [github.com/mbalabanov/adam](https://github.com/mbalabanov/adam) (läuft auf Heroku auf [adam-frontend.herokuapp.com](http://adam-frontend.herokuapp.com))
 
 ### 2.1 Installation
