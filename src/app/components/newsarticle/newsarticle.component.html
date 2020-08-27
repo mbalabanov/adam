@@ -15,9 +15,9 @@
             <div class="alert alert-danger text-center mr-4 mb-4" role="alert">
                 At present, all news articles only contain placeholder text.
             </div>
-            <div class="mr-4 mb-4"><img src="{{ newsitem.largeimage }}" class="img-fluid"></div>
             <h2 class="mr-4 my-4">{{ newsitem.title }}</h2>
             <h3 class="mr-4 mb-4">{{ newsitem.shortdescription }}</h3>
+            <div class="mr-4 mb-4"><img src="{{ newsitem.largeimage }}" class="img-fluid"></div>
             <div class="mr-4 mb-5">
                 <div [innerHTML]="newsitem.articletext"></div>
             </div>
