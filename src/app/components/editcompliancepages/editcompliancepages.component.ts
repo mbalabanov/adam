@@ -89,6 +89,7 @@ export class EditcompliancepagesComponent implements OnInit {
     this.compliancePagesEdited.value.compliancecookies.articletext = this.replaceUnreadables(this.compliancePagesEdited.value.compliancecookies.articletext, '=', '<EQUALS>');
     this.compliancePagesEdited.value.compliancecookies.articletext = this.replaceUnreadables(this.compliancePagesEdited.value.compliancecookies.articletext, '&', '<AMPERSAND>');
 
+    // Push edited news into emptied compliance array
     this.compliancePagesOriginal.content.push(this.compliancePagesEdited.value.complianceabout);
     this.compliancePagesOriginal.content.push(this.compliancePagesEdited.value.complianceprivacy);
     this.compliancePagesOriginal.content.push(this.compliancePagesEdited.value.complianceterms);

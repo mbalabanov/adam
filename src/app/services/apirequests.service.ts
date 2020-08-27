@@ -85,8 +85,12 @@ export class ApirequestsService {
   };
 
   putCompliancePages(complianceData): Observable<any> {
-    console.log(this.complianceUrl);
     return this.http.put<any>(this.complianceUrl, complianceData, this.httpOptions);
+  };
+
+  putNewsArticles(newsData): Observable<any> {
+    console.log(this.newsUrl);
+    return this.http.put<any>(this.newsUrl, newsData, this.httpOptions);
   };
 
 }
