@@ -21,7 +21,7 @@
                 <p>The carousel provides a large canvas to create a great impression. Therefore the <strong>images</strong> in the carousel are much larger. Please provide the image in a resolution of 1200 x 600 pixels.</p>
 
                 <div [formGroup]="featuredEdited" class="form-group" *ngFor="let item of featuredItemsArray">
-                    <h3>Featured Item {{ item.id }} </h3>
+                    <h4>Featured Item {{ item.id }} </h4>
                     <div formGroupName="featured{{ item.id }}" class="form-group alert alert-secondary">
                         <label class="mt-2"><strong>ID:</strong></label>
                         <input type="number" formControlName="id" class="form-control">

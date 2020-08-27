@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 export class ApirequestsService {
 
-  private baseURL = 'https://adam-interface.herokuapp.com/'; // Change to http://localhost:5003/ for locally running API server
+  private baseURL = 'http://localhost:5003/'; // Change to https://adam-interface.herokuapp.com/ for locally running API server
   private archiveUrl: string = this.baseURL + 'all';
   private artifactsUrl: string = this.baseURL + 'artifacts';
   private personsUrl: string = this.baseURL + 'persons';
@@ -80,15 +80,13 @@ export class ApirequestsService {
     return this.http.delete<any>(tempURL);
   }
 
-/*
-  Der gesamte Request muss aus den Daten manuell zusammengesetzt werden.
-*/
-
   putFeaturedItem(featuredData): Observable<any> {
-    console.log(this.featuredUrl);
-    console.log(featuredData);
-
     return this.http.put<any>(this.featuredUrl, featuredData, this.httpOptions);
+  };
+
+  putCompliancePages(complianceData): Observable<any> {
+    console.log(this.complianceUrl);
+    return this.http.put<any>(this.complianceUrl, complianceData, this.httpOptions);
   };
 
 }
