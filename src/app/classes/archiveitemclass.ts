@@ -1,3 +1,5 @@
+// Classes for new Archive Items and their smaller parts
+
 export interface ArchiveItemClass {
     id: string;
     category: string;
