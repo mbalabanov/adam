@@ -50,10 +50,10 @@
                 </form>
             </li>
         </ul>
-        <button (click)="auth.login()" *ngIf="!auth.loggedIn" class="btn btn-outline-light ml-auto mb-1">Log In</button>
+        <button (click)="auth.login()" *ngIf="!auth.loggedIn" class="btn btn-outline-light ml-auto mb-1">Login/Register</button>
 
         <div *ngIf="auth.loggedIn" class="dropdown ml-auto mb-1">
-            <button class="btn btn-outline-light ml-auto" routerLink="/edititems">Edit</button>
+            <button class="btn btn-outline-light ml-auto" routerLink="/edititems">Create/Edit</button>
         </div>
 
         <div *ngIf="auth.loggedIn" class="dropdown ml-auto mb-1">

@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 export class ApirequestsService {
 
-  private baseURL = 'https://adam-interface.herokuapp.com/'; // Change to http://localhost:5003/ for locally running API server
+  private baseURL = 'http://localhost:5003/'; // Change to https://adam-interface.herokuapp.com/ for locally running API server
   private archiveUrl: string = this.baseURL + 'all';
   private artifactsUrl: string = this.baseURL + 'artifacts';
   private personsUrl: string = this.baseURL + 'persons';
@@ -91,6 +91,11 @@ export class ApirequestsService {
   putNewsArticles(newsData): Observable<any> {
     console.log(this.newsUrl);
     return this.http.put<any>(this.newsUrl, newsData, this.httpOptions);
+  };
+
+  postArchiveItem(itemData, category): Observable<any> {
+    let tempAchiveUrl = this.baseURL + category + '/new';
+    return this.http.post<any>(tempAchiveUrl, itemData, this.httpOptions);
   };
 
 }

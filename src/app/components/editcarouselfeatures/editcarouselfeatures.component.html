@@ -24,7 +24,7 @@
                     <h4>Featured Item {{ item.id }} </h4>
                     <div formGroupName="featured{{ item.id }}" class="form-group alert alert-secondary">
                         <label class="mt-2"><strong>ID:</strong></label>
-                        <input type="number" formControlName="id" class="form-control">
+                        <input type="number" formControlName="id" class="form-control" readonly>
                         <label class="mt-2"><strong>Image:</strong></label>
                         <input type="text" formControlName="image" class="form-control" required>
                         <label class="mt-2"><strong>Title:</strong></label>

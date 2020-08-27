@@ -269,9 +269,9 @@
 
             <div class="row mt-4">
                 <div class="col-12">
-                    <h3>Keywords</h3>
+                    <h4>Keywords</h4>
                     <p *ngIf="archiveItem.tags?.length" class="mt-4">
-                        <span class="btn btn-warning m-1" *ngFor="let tag of archiveItem.tags">{{ tag }}</span>
+                        <a class="btn btn-warning m-1" *ngFor="let tag of archiveItem.tags" routerLink="/search/{{tag}}">{{ tag }}</a>
                     </p>
                     <p *ngIf="!archiveItem.tags?.length" class="mt-4">
                         No keywords or tags available.
