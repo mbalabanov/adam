@@ -54,7 +54,7 @@ Eigentlich kann man eine Angular Universal app auch mit `npm run dev:ssr` lokal 
 
 Der Grund dafür ist, dass Auth0 die DOM im Browser anspricht, aber die serverseitige App die DOM nicht kennt. Ich verwende derzeit die Domino-Bibliothek, um dem Server eine DOM vorzugaukeln, doch Auth0 erwartet eine echte DOM und gibt sporadisch Fehlermeldungen in der Angular CLI aus (funktioniert Client/Browser-seitig aber weiterhin hervorragend). Dies geschieht relativ selten im Vergleich zu den unzähligen SSR-Fehlermeldungen, die ohne Domino ausgegeben werden.
 
-### 2.2 Frontend mit der API lokal ausführen
+### 2.2 Frontend und API lokal ausführen
 Bitte zu beachten: Wenn Sie für das Web Frontend den lokal laufenden API Server verwenden möchten, dann findet Sie die URL der API in der Datei `src/app/apirequestservice.service.ts`.
 
 Diese einfach auf `http://localhost:5003` ändern, dann läuft alles nur lokal. So kann man das Frontend auf `http://localhost:4200` ausführen und sämtliche Daten von der API auf `http://localhost:5003` beziehen.
