@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 export class ApirequestsService {
 
-  private baseURL = 'http://localhost:5003/'; // Change to https://adam-interface.herokuapp.com/ for locally running API server
+  private baseURL = 'https://adam-interface.herokuapp.com/'; // Change to http://localhost:5003/ for locally running API server
   private archiveUrl: string = this.baseURL + 'all';
   private artifactsUrl: string = this.baseURL + 'artifacts';
   private personsUrl: string = this.baseURL + 'persons';
@@ -19,7 +19,7 @@ export class ApirequestsService {
   private complianceUrl: string = this.baseURL + 'compliance';
 
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' })
+    headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8' })
   };
 
   constructor(private http: HttpClient) { }
@@ -84,9 +84,9 @@ export class ApirequestsService {
     return this.http.put<any>(this.featuredUrl, featuredData, this.httpOptions);
   };
 
-  putCompliancePages(complianceData): Observable<any> {
+  postCompliancePages(complianceData): Observable<any> {
     console.log(this.complianceUrl);
-    return this.http.put<any>(this.complianceUrl, complianceData, this.httpOptions);
+    return this.http.post<any>(this.complianceUrl, complianceData, this.httpOptions);
   };
 
 }

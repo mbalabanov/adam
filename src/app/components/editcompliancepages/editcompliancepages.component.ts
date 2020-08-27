@@ -1,8 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { ApirequestsService } from '../../services/apirequests.service';
-import { DomSanitizer, SafeHtml, SafeStyle, SafeUrl, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-editcompliancepages',
@@ -15,10 +14,10 @@ export class EditcompliancepagesComponent implements OnInit {
   compliancePagesEdited = new FormGroup({ });
   compliancePagesItemsArray: Array<any> = [];  
 
-  constructor(private apirequestsService: ApirequestsService, public auth: AuthService, protected sanitizer: DomSanitizer ) { }
+  constructor(private apirequestsService: ApirequestsService, public auth: AuthService) { }
 
   ngOnInit() {
-
+    
     this.apirequestsService.getCompliance()
       .subscribe(data => {
       this.compliancePagesOriginal = data;
@@ -70,10 +69,25 @@ export class EditcompliancepagesComponent implements OnInit {
 
   }
 
+  replaceUnreadables(str, find, replace) {
+    return str.replace(new RegExp(find, 'g'), replace);
+  }
 
   saveCompliancePages() {
 
     this.compliancePagesOriginal.content = [];
+
+    // articletext contains HTML. For some reason '=' and '&' cannot be read by the API. This replaces them in the articletext.
+    this.compliancePagesEdited.value.complianceabout.articletext = this.replaceUnreadables(this.compliancePagesEdited.value.complianceabout.articletext, '=', '<EQUALS>');
+    this.compliancePagesEdited.value.complianceabout.articletext = this.replaceUnreadables(this.compliancePagesEdited.value.complianceabout.articletext, '&', '<AMPERSAND>');
+    this.compliancePagesEdited.value.complianceprivacy.articletext = this.replaceUnreadables(this.compliancePagesEdited.value.complianceabout.articletext, '=', '<EQUALS>');
+    this.compliancePagesEdited.value.complianceprivacy.articletext = this.replaceUnreadables(this.compliancePagesEdited.value.complianceabout.articletext, '&', '<AMPERSAND>');
+    this.compliancePagesEdited.value.complianceterms.articletext = this.replaceUnreadables(this.compliancePagesEdited.value.complianceabout.articletext, '=', '<EQUALS>');
+    this.compliancePagesEdited.value.complianceterms.articletext = this.replaceUnreadables(this.compliancePagesEdited.value.complianceabout.articletext, '&', '<AMPERSAND>');
+    this.compliancePagesEdited.value.complianceimprint.articletext = this.replaceUnreadables(this.compliancePagesEdited.value.complianceabout.articletext, '=', '<EQUALS>');
+    this.compliancePagesEdited.value.complianceimprint.articletext = this.replaceUnreadables(this.compliancePagesEdited.value.complianceabout.articletext, '&', '<AMPERSAND>');
+    this.compliancePagesEdited.value.compliancecookies.articletext = this.replaceUnreadables(this.compliancePagesEdited.value.complianceabout.articletext, '=', '<EQUALS>');
+    this.compliancePagesEdited.value.compliancecookies.articletext = this.replaceUnreadables(this.compliancePagesEdited.value.complianceabout.articletext, '&', '<AMPERSAND>');
 
     this.compliancePagesOriginal.content.push(this.compliancePagesEdited.value.complianceabout);
     this.compliancePagesOriginal.content.push(this.compliancePagesEdited.value.complianceprivacy);
@@ -81,7 +95,9 @@ export class EditcompliancepagesComponent implements OnInit {
     this.compliancePagesOriginal.content.push(this.compliancePagesEdited.value.complianceimprint);
     this.compliancePagesOriginal.content.push(this.compliancePagesEdited.value.compliancecookies);
 
-    this.apirequestsService.putCompliancePages(JSON.stringify(this.compliancePagesOriginal.content)).subscribe((data)=>{
+    console.log(this.compliancePagesOriginal);
+
+    this.apirequestsService.postCompliancePages(JSON.stringify(this.compliancePagesOriginal)).subscribe((data)=>{
       console.log('Request successful');
     });
 
