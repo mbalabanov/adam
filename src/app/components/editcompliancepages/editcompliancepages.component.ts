@@ -80,14 +80,14 @@ export class EditcompliancepagesComponent implements OnInit {
     // articletext contains HTML. For some reason '=' and '&' cannot be read by the API. This replaces them in the articletext.
     this.compliancePagesEdited.value.complianceabout.articletext = this.replaceUnreadables(this.compliancePagesEdited.value.complianceabout.articletext, '=', '<EQUALS>');
     this.compliancePagesEdited.value.complianceabout.articletext = this.replaceUnreadables(this.compliancePagesEdited.value.complianceabout.articletext, '&', '<AMPERSAND>');
-    this.compliancePagesEdited.value.complianceprivacy.articletext = this.replaceUnreadables(this.compliancePagesEdited.value.complianceabout.articletext, '=', '<EQUALS>');
-    this.compliancePagesEdited.value.complianceprivacy.articletext = this.replaceUnreadables(this.compliancePagesEdited.value.complianceabout.articletext, '&', '<AMPERSAND>');
-    this.compliancePagesEdited.value.complianceterms.articletext = this.replaceUnreadables(this.compliancePagesEdited.value.complianceabout.articletext, '=', '<EQUALS>');
-    this.compliancePagesEdited.value.complianceterms.articletext = this.replaceUnreadables(this.compliancePagesEdited.value.complianceabout.articletext, '&', '<AMPERSAND>');
-    this.compliancePagesEdited.value.complianceimprint.articletext = this.replaceUnreadables(this.compliancePagesEdited.value.complianceabout.articletext, '=', '<EQUALS>');
-    this.compliancePagesEdited.value.complianceimprint.articletext = this.replaceUnreadables(this.compliancePagesEdited.value.complianceabout.articletext, '&', '<AMPERSAND>');
-    this.compliancePagesEdited.value.compliancecookies.articletext = this.replaceUnreadables(this.compliancePagesEdited.value.complianceabout.articletext, '=', '<EQUALS>');
-    this.compliancePagesEdited.value.compliancecookies.articletext = this.replaceUnreadables(this.compliancePagesEdited.value.complianceabout.articletext, '&', '<AMPERSAND>');
+    this.compliancePagesEdited.value.complianceprivacy.articletext = this.replaceUnreadables(this.compliancePagesEdited.value.complianceprivacy.articletext, '=', '<EQUALS>');
+    this.compliancePagesEdited.value.complianceprivacy.articletext = this.replaceUnreadables(this.compliancePagesEdited.value.complianceprivacy.articletext, '&', '<AMPERSAND>');
+    this.compliancePagesEdited.value.complianceterms.articletext = this.replaceUnreadables(this.compliancePagesEdited.value.complianceterms.articletext, '=', '<EQUALS>');
+    this.compliancePagesEdited.value.complianceterms.articletext = this.replaceUnreadables(this.compliancePagesEdited.value.complianceterms.articletext, '&', '<AMPERSAND>');
+    this.compliancePagesEdited.value.complianceimprint.articletext = this.replaceUnreadables(this.compliancePagesEdited.value.complianceimprint.articletext, '=', '<EQUALS>');
+    this.compliancePagesEdited.value.complianceimprint.articletext = this.replaceUnreadables(this.compliancePagesEdited.value.complianceimprint.articletext, '&', '<AMPERSAND>');
+    this.compliancePagesEdited.value.compliancecookies.articletext = this.replaceUnreadables(this.compliancePagesEdited.value.compliancecookies.articletext, '=', '<EQUALS>');
+    this.compliancePagesEdited.value.compliancecookies.articletext = this.replaceUnreadables(this.compliancePagesEdited.value.compliancecookies.articletext, '&', '<AMPERSAND>');
 
     this.compliancePagesOriginal.content.push(this.compliancePagesEdited.value.complianceabout);
     this.compliancePagesOriginal.content.push(this.compliancePagesEdited.value.complianceprivacy);
