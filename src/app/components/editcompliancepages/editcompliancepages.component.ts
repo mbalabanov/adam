@@ -97,7 +97,7 @@ export class EditcompliancepagesComponent implements OnInit {
 
     console.log(this.compliancePagesOriginal);
 
-    this.apirequestsService.postCompliancePages(JSON.stringify(this.compliancePagesOriginal)).subscribe((data)=>{
+    this.apirequestsService.putCompliancePages(JSON.stringify(this.compliancePagesOriginal)).subscribe((data)=>{
       console.log('Request successful');
     });
 

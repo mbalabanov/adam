@@ -84,9 +84,9 @@ export class ApirequestsService {
     return this.http.put<any>(this.featuredUrl, featuredData, this.httpOptions);
   };
 
-  postCompliancePages(complianceData): Observable<any> {
+  putCompliancePages(complianceData): Observable<any> {
     console.log(this.complianceUrl);
-    return this.http.post<any>(this.complianceUrl, complianceData, this.httpOptions);
+    return this.http.put<any>(this.complianceUrl, complianceData, this.httpOptions);
   };
 
 }

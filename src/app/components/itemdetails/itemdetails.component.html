@@ -198,10 +198,11 @@
         </div>
         <div class="modal-body">
             <p>Share this direct link to this item with others:</p>
-            <p class="alert alert-success text-center"><a href="https://app.demoarchive.art/item/{{ pageUrl }}">https://app.demoarchive.art/item/{{ pageUrl }}</a></p>
+            <input class="form-control text-center" #itemurl value="https://app.demoarchive.art/item/{{ pageUrl }}">
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" (click)="clipboardItemURL(itemurl)" data-dismiss="modal">Copy to Clipboard</button>
         </div>
         </div>
     </div>

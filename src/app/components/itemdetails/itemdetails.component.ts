@@ -32,6 +32,13 @@ setCarouselActiveID(id){
     activeElem.classList.add('active');
 };
 
+clipboardItemURL(itemurl) {
+    console.log(itemurl);
+    itemurl.select();  
+    document.execCommand('copy');  
+    itemurl.setSelectionRange(0, 0);  
+}
+
 constructor(private apirequestsService: ApirequestsService, private route: ActivatedRoute, public auth: AuthService ) { }
 
 ngOnInit(): void {
