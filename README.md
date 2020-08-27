@@ -470,6 +470,7 @@ Die API ist verfügbar unter [adam-interface.herokuapp.com](https://adam-interfa
 [« Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
 
 ## 9. Aktualisierungen
+- **27. August 2020:** Im Redaktionsbereich kann man jetzt neue Items anlegen, sowie News-Artikel, Compliance-Seiten und featured Items ändern. 
 - **22. August 2020:** App komplett aufgeräumt und auf Angular Unversal konvertiert ( [demoarchive.art](https://demoarchive.art) leitet jetzt auf [adam-frontend.herokuapp.com](https://adam-frontend.herokuapp.com) )
 - **20. August 2020:** API vom Frontend getrennt. Hat nun ein eigenes Repository auf [github.com/mbalabanov/adam-api](https://github.com/mbalabanov/adam-api)
 - **13. August 2020:** Auth0-Integration abgeschlossen (vorläufig mit Anmeldung über Email und Google-Account).
