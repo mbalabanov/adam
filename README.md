@@ -135,7 +135,7 @@ Für mehr Details zur API siehe Dokumentation weiter unten.
 
 4.2.7 Diverse **Info-Seiten** über die allgemeine Bedienung des Kunstarchivs (z.B. "About", "Privacy Policy" und andere Complaince-Seiten). Diese beziehen ihren Inhalt ebenfalls über die API (/compliance).
 
-4.2.8 Die **Kontaktseite** ist statisch sein und hat ein Kontaktformular.
+4.2.8 Die **Kontaktseite** ist statisch und hat ein Kontaktformular.
 
 ### 4.3 Umgesetzte Struktur
 Die folgende Struktur wurde auch tatächlich umgesetzt (hier mit einer Auflistung sämtlicher Components, die auf den Einzelseiten verwendet werden). Dieses Diagram entstand mit [MonoDraw](https://monodraw.helftone.com).
