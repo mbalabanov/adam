@@ -15,7 +15,7 @@
 10. [Projektplan](#10-projektplan)
 
 ## 1. Beschreibung
-ADAM ist ein Projekt von Marin Balabanov in der Webentwicklung. In diesem Archive of Digital Art & Media auf [demoarchive.art](http://demoarchive.art/), können Benutzer nach digitalen Kunstwerken suchen. Auf den Detailseiten finden sie eine Beschreibung des jeweiligen Kunstwerks, sowie Fotos/Screenshots und eingebettete Videos, und falls vorhanden ZIP-Dateien oder Diskimages mit den Originaldateien des Kunstwerks. Zudem finden sich Informationen über die Künstler, und bei welchen Events ihre Werke ausgestellt wurden.
+ADAM ist ein Projekt von Marin Balabanov für den Kurs ["Ausbildung zum geprüften Software Developer - JavaScript"](https://www.wifiwien.at/kurs/18185x-ausbildung-zum-geprueften-software-developer-javascript) am [WIFI Wien](https://www.wifiwien.at). In diesem Archive of Digital Art & Media auf [demoarchive.art](http://demoarchive.art/) können Benutzer nach digitalen Kunstwerken suchen. Auf den Detailseiten finden sie eine Beschreibung des jeweiligen Kunstwerks, sowie Fotos/Screenshots und Links zu Videos, und falls vorhanden ZIP-Dateien oder Diskimages mit den Originaldateien des Kunstwerks. Zudem finden sich Informationen über die Künstler, und bei welchen Events ihre Werke ausgestellt wurden.
 
 Dieses Projekt dient nur zu Übungszwecken und wurde vom "Archive of Digital Art" (ADA) der Donau Universität Krems inspiriert. Es dient als Übungsprojekt für die Anwendung zeitgemäßer Webtechnologien wie NodeJS, Angular und Heroku (in weitere Folge kommen noch Cordova, MongoDB und AWS S3 dazu).
 
