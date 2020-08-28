@@ -31,7 +31,7 @@ Dieses Projekt besteht aus den folgenden Repositories:
 - **ADAM Web Frontend** [github.com/mbalabanov/adam-api](https://github.com/mbalabanov/adam-api) (läuft auf Heroku  auf [adam-interface.herokuapp.com](https://adam-interface.herokuapp.com) mit CNAME-Eintrag auf [app.demoarchive.art](https://app.demoarchive.art))
 
 ### 2.1 Installation
-Der ADAM API Server auf [github.com/mbalabanov/adam-api](https://github.com/mbalabanov/adam-api) läuft unter NodeJS/Express. So starten Sie den Server lokal (läuft auf Port 5003):
+Der ADAM API Server (Repository auf [github.com/mbalabanov/adam-api](https://github.com/mbalabanov/adam-api)) läuft unter NodeJS/Express. So starten Sie den Server lokal auf Port 5003:
 ```
 cd adam-api
 npm install
@@ -41,7 +41,7 @@ Und dann wird die API gestartet mit:
 npm start
 ```
 
-Das ADAM Web Frontend auf [github.com/mbalabanov/adam](https://github.com/mbalabanov/adam) ist eine Angular Universal SSR App (Server Side Rendering). So starten Sie die App lokal  (läuft auf Port 4200):
+Das ADAM Web Frontend auf [github.com/mbalabanov/adam](https://github.com/mbalabanov/adam) ist eine Angular Universal SSR App (Server Side Rendering). So starten Sie die App lokal auf Port 4200:
 ```
 cd adam
 npm install
