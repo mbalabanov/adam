@@ -17,7 +17,12 @@ export class CookiewarningComponent implements OnInit {
     this.cookieValue = this.cookieService.get('cookie-policy');
   }
 
+  reloadPage(): void {
+    window.location.reload();
+  }
+
   ngOnInit(): void {
+    this.cookieValue = this.cookieService.get('cookie-policy');
   }
 
 }

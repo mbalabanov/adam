@@ -12,7 +12,6 @@ import { ArchiveItemClass, ArchiveItemDates, ArchiveItemImages, ArchiveItemVideo
 })
 export class ItemdetailsComponent implements OnInit {
 
-
     // Variables for displaying archive item details
     archiveCategory: string = '';
     archiveItem: any = {};
@@ -125,7 +124,6 @@ ngOnInit(): void {
                 this.apirequestsService.getEvent(itemSlug)
                 .subscribe(data => {
                     this.archiveItem = data;
-                    console.log(this.archiveItem);
                     // Replace unreadable characters in longdescription.
                     this.archiveItem.longdescription = this.replaceUnreadables(this.archiveItem.longdescription, '<EQUALS>', '=');
                     this.archiveItem.longdescription = this.replaceUnreadables(this.archiveItem.longdescription, '<AMPERSAND>', '&');
@@ -155,10 +153,9 @@ ngOnInit(): void {
                 this.apirequestsService.getPerson(itemSlug)
                 .subscribe(data => {
                     this.archiveItem = data;
-                    console.log(this.archiveItem);
                     // Replace unreadable characters in longdescription.
                     this.archiveItem.longdescription = this.replaceUnreadables(this.archiveItem.longdescription, '=', '<EQUALS>');
-                    this.archiveItem.value.longdescription = this.replaceUnreadables(this.archiveItem.longdescription, '&', '<AMPERSAND>');
+                    this.archiveItem.longdescription = this.replaceUnreadables(this.archiveItem.longdescription, '&', '<AMPERSAND>');
 
                     for (let individualPerson of this.archiveItem.persons) {
                         this.apirequestsService.getPerson(individualPerson).subscribe(data => {
@@ -185,10 +182,9 @@ ngOnInit(): void {
                 this.apirequestsService.getArtifact(itemSlug)
                 .subscribe(data => {
                     this.archiveItem = data;
-                    console.log(this.archiveItem);
                     // Replace unreadable characters in longdescription.
                     this.archiveItem.longdescription = this.replaceUnreadables(this.archiveItem.longdescription, '=', '<EQUALS>');
-                    this.archiveItem.value.longdescription = this.replaceUnreadables(this.archiveItem.longdescription, '&', '<AMPERSAND>');
+                    this.archiveItem.longdescription = this.replaceUnreadables(this.archiveItem.longdescription, '&', '<AMPERSAND>');
 
                     for (let individualPerson of this.archiveItem.persons) {
                         this.apirequestsService.getPerson(individualPerson).subscribe(data => {
