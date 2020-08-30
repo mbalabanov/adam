@@ -101,10 +101,6 @@ export class ItemdetailsComponent implements OnInit {
         itemurl.setSelectionRange(0, 0);  
     }
 
-    replaceUnreadables(str, find, replace) {
-        return str.replace(new RegExp(find, 'g'), replace);
-    }
-
     assignValuesToFormItem() {
 
         this.editingFormArchiveItem = new FormGroup({
@@ -179,8 +175,6 @@ export class ItemdetailsComponent implements OnInit {
             url: this.editingFormArchiveItem.value.assets.url,
             name: this.editingFormArchiveItem.value.assets.name,
           };
-          console.log('this.editingFormArchiveItem.value.aliases');
-          console.log(this.editingFormArchiveItem.value.aliases);
           if(this.editingFormArchiveItem.value.aliases.length)
           this.editedAliases = this.editingFormArchiveItem.value.aliases.split(',');
           this.editedTags = this.editingFormArchiveItem.value.tags.split(',');
@@ -205,8 +199,6 @@ export class ItemdetailsComponent implements OnInit {
             persons: this.editedRelatedPersons,
             events: this.editedRelatedEvents
         };
-
-        console.log(this.editedArchiveItem);
     }
 
 constructor(private apirequestsService: ApirequestsService, private route: ActivatedRoute, public auth: AuthService ) { }
@@ -229,9 +221,6 @@ ngOnInit(): void {
                 this.apirequestsService.getEvent(itemSlug)
                 .subscribe(data => {
                     this.archiveItem = data;
-                    // Replace unreadable characters in longdescription.
-                    this.archiveItem.longdescription = this.replaceUnreadables(this.archiveItem.longdescription, '<EQUALS>', '=');
-                    this.archiveItem.longdescription = this.replaceUnreadables(this.archiveItem.longdescription, '<AMPERSAND>', '&');
 
                     for (let individualPerson of this.archiveItem.persons) {
                         this.apirequestsService.getPerson(individualPerson).subscribe(data => {
@@ -259,9 +248,6 @@ ngOnInit(): void {
                 this.apirequestsService.getPerson(itemSlug)
                 .subscribe(data => {
                     this.archiveItem = data;
-                    // Replace unreadable characters in longdescription.
-                    this.archiveItem.longdescription = this.replaceUnreadables(this.archiveItem.longdescription, '=', '<EQUALS>');
-                    this.archiveItem.longdescription = this.replaceUnreadables(this.archiveItem.longdescription, '&', '<AMPERSAND>');
 
                     for (let individualPerson of this.archiveItem.persons) {
                         this.apirequestsService.getPerson(individualPerson).subscribe(data => {
@@ -289,9 +275,6 @@ ngOnInit(): void {
                 this.apirequestsService.getArtifact(itemSlug)
                 .subscribe(data => {
                     this.archiveItem = data;
-                    // Replace unreadable characters in longdescription.
-                    this.archiveItem.longdescription = this.replaceUnreadables(this.archiveItem.longdescription, '=', '<EQUALS>');
-                    this.archiveItem.longdescription = this.replaceUnreadables(this.archiveItem.longdescription, '&', '<AMPERSAND>');
 
                     for (let individualPerson of this.archiveItem.persons) {
                         this.apirequestsService.getPerson(individualPerson).subscribe(data => {

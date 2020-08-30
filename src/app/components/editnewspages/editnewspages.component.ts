@@ -53,10 +53,6 @@ export class EditnewspagesComponent implements OnInit {
 
   }
 
-  replaceUnreadables(str, find, replace) {
-    return str.replace(new RegExp(find, 'g'), replace);
-  }
-
   saveNews() {
 
     this.newsOriginal.content = [];

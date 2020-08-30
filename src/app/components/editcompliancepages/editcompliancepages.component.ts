@@ -26,7 +26,6 @@ export class EditcompliancepagesComponent implements OnInit {
       this.compliancePagesEdited = new FormGroup({
         complianceabout: new FormGroup({
           id: new FormControl(this.compliancePagesItemsArray[0].id, Validators.required), 
-          category: new FormControl(this.compliancePagesItemsArray[0].category, Validators.required),
           title: new FormControl(this.compliancePagesItemsArray[0].title, Validators.required),
           firstimage: new FormControl(this.compliancePagesItemsArray[0].firstimage, Validators.required),
           secondimage: new FormControl(this.compliancePagesItemsArray[0].secondimage, Validators.required),
@@ -34,7 +33,6 @@ export class EditcompliancepagesComponent implements OnInit {
         }),
         complianceprivacy: new FormGroup({
           id: new FormControl(this.compliancePagesItemsArray[1].id, Validators.required), 
-          category: new FormControl(this.compliancePagesItemsArray[1].category, Validators.required),
           title: new FormControl(this.compliancePagesItemsArray[1].title, Validators.required),
           firstimage: new FormControl(this.compliancePagesItemsArray[1].firstimage, Validators.required),
           secondimage: new FormControl(this.compliancePagesItemsArray[1].secondimage, Validators.required),
@@ -42,7 +40,6 @@ export class EditcompliancepagesComponent implements OnInit {
         }),
         complianceterms: new FormGroup({
           id: new FormControl(this.compliancePagesItemsArray[2].id, Validators.required), 
-          category: new FormControl(this.compliancePagesItemsArray[2].category, Validators.required),
           title: new FormControl(this.compliancePagesItemsArray[2].title, Validators.required),
           firstimage: new FormControl(this.compliancePagesItemsArray[2].firstimage, Validators.required),
           secondimage: new FormControl(this.compliancePagesItemsArray[2].secondimage, Validators.required),
@@ -50,7 +47,6 @@ export class EditcompliancepagesComponent implements OnInit {
         }),
         complianceimprint: new FormGroup({
           id: new FormControl(this.compliancePagesItemsArray[3].id, Validators.required), 
-          category: new FormControl(this.compliancePagesItemsArray[3].category, Validators.required),
           title: new FormControl(this.compliancePagesItemsArray[3].title, Validators.required),
           firstimage: new FormControl(this.compliancePagesItemsArray[3].firstimage, Validators.required),
           secondimage: new FormControl(this.compliancePagesItemsArray[3].secondimage, Validators.required),
@@ -58,7 +54,6 @@ export class EditcompliancepagesComponent implements OnInit {
         }),
         compliancecookies: new FormGroup({
           id: new FormControl(this.compliancePagesItemsArray[4].id, Validators.required), 
-          category: new FormControl(this.compliancePagesItemsArray[4].category, Validators.required),
           title: new FormControl(this.compliancePagesItemsArray[4].title, Validators.required),
           firstimage: new FormControl(this.compliancePagesItemsArray[4].firstimage, Validators.required),
           secondimage: new FormControl(this.compliancePagesItemsArray[4].secondimage, Validators.required),
@@ -67,10 +62,6 @@ export class EditcompliancepagesComponent implements OnInit {
       });
     });
 
-  }
-
-  replaceUnreadables(str, find, replace) {
-    return str.replace(new RegExp(find, 'g'), replace);
   }
 
   saveCompliancePages() {

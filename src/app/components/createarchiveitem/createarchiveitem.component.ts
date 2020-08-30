@@ -117,12 +117,8 @@ export class CreatearchiveitemComponent implements OnInit {
 
   }
 
-  replaceUnreadables(str, find, replace) {
-    return str.replace(new RegExp(find, 'g'), replace);
-  }
-
   saveNewArchiveItem() {
-    
+
     this.newArchiveItemDates = {
       label: this.createdArchiveItem.value.dates.label,
       date: this.createdArchiveItem.value.dates.date

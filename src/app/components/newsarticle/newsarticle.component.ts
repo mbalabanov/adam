@@ -13,10 +13,6 @@ export class NewsarticleComponent implements OnInit {
 
   constructor(private apirequestsService: ApirequestsService, private route: ActivatedRoute) { }
 
-  replaceUnreadables(str, find, replace) {
-    return str.replace(new RegExp(find, 'g'), replace);
-  }
-
   ngOnInit(): void {
 
     let articleSlug;
@@ -26,10 +22,6 @@ export class NewsarticleComponent implements OnInit {
       this.apirequestsService.getNewsItem(articleSlug)
       .subscribe(news => {
           this.newsitem = news;
-
-          // articletext contains HTML. For some reason '=' and '&' cannot be read by the API. So they are replaced with placeholders. This replaces the placeholders back into their original state.
-          this.newsitem.articletext = this.replaceUnreadables(this.newsitem.articletext, '<EQUALS>', '=');
-          this.newsitem.articletext = this.replaceUnreadables(this.newsitem.articletext, '<AMPERSAND>', '&');
       });
       this.apirequestsService.getNews()
       .subscribe(news => {
