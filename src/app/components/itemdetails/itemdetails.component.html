@@ -13,151 +13,9 @@
             </nav>
 
             <div *ngIf="auth.loggedIn" >
-                <button class="btn btn-outline-danger btn-sm ml-2 mb-2" data-toggle="modal" data-target="#editItem">Edit item</button>
+                <button class="btn btn-outline-danger btn-sm ml-2 mb-2" data-toggle="modal" (click)="generateEditItemsModal()" data-target="#editItem">Edit item</button>
                 <button class="btn btn-danger btn-sm ml-2 mb-2" data-toggle="modal" data-target="#deleteItemModal">Delete item</button>
-                <!-- Modal for editing items -->
-                <div class="modal fade" id="editItem" tabindex="-1" aria-labelledby="editItem" aria-hidden="true">
-                    <div class="modal-dialog modal-lg modal-dialog-scrollable">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="editItemLabel">Edit "{{ archiveItem.name }}"</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <p class="alert alert-danger text-center">Editing is coming soon!</p>
-                            <form>
-                                <div class="form-group">
-                                    <label for="categorySelect">Category</label>
-                                    <select class="form-control" id="categorySelect">
-                                    <option>Artifact</option>
-                                    <option>Person</option>
-                                    <option>Event</option>
-                                    </select>
-                                </div>
-                                <h4>Description</h4>
-                                <div class="form-group">
-                                    <label for="itemName">Name</label>
-                                    <input type="text" value="{{ archiveItem.name }}" class="form-control" id="itemName">
-                                </div>
-                                <h4 class="mt-3">Aliases</h4>
-                                <div class="form-group mt-2">
-                                    <label for="itemAlias">Aliases</label>
-                                    <input type="text" class="form-control" id="itemAlias" value="{{ archiveItem.aliases }}">
-                                </div>
-                                <div class="form-group">
-                                    <label for="shortDescription">Short Description</label>
-                                    <input type="text" class="form-control" id="shortDescription" value="{{ archiveItem.shortdescription }}">
-                                </div>
-                                <div class="form-group">
-                                    <label for="longDescription">Long Description</label>
-                                    <textarea class="form-control" id="longDescription" rows="6" value="{{ archiveItem.longdescription }}"></textarea>
-                                </div>
-                                <h4>Dates</h4>
-                                <div class="form-group">
-                                    <div *ngFor="let dateitem of archiveItem.dates; let i = index" class="alert alert-secondary p-3">
-                                        <label for="datelabel{{i}}" class="mt-2">Label</label>
-                                        <input type="text" value="{{ dateitem.label }}" id="datelabel{{i}}" class="form-control">
-                                        <label for="date{{i}}"class="mt-2">Date</label>
-                                        <input type="text" value="{{ dateitem.date }}" id="date{{i}}" class="form-control">
-                                        <button class="btn btn-outline-danger btn-sm mt-1">Remove</button>
-                                    </div>
-                                </div>
-                                <h4>Images</h4>
-                                <div class="form-group">
-                                    <div *ngFor="let item of archiveItem.images" class="alert alert-secondary p-3">
-                                        <p><strong>Image ID: {{item.id}}</strong></p>
-                                        <label for="imagename{{item.id}}" class="mt-2">Image Name</label>
-                                        <input type="text" value="{{ item.name }}" id="imagename{{item.id}}" class="form-control">
-                                        <label for="imageurl{{item.id}}"class="mt-2">Image Path (URL)</label>
-                                        <input type="text" value="{{ item.url }}" id="imageurl{{item.id}}" class="form-control">
-                                        <label for="imagedescription{{item.id}}" class="mt-2">Image Description</label>
-                                        <textarea value="{{ item.description }}" id="imagedescription{{item.id}}" rows="2" class="form-control"></textarea>
-                                        <button class="btn btn-outline-danger btn-sm mt-1">Remove</button>
-                                    </div>
-                                </div>
-                                <div class="form-group mt-2">
-                                    <label for="newimageUpload" class="mt-2"><strong>Upload New Image</strong></label> 
-                                    <input type="file" class="form-control-file" id="newimageUpload">
-                                    <label for="newimagename" class="mt-2">New Image Name</label> 
-                                    <input type="text" class="form-control" id="newimagename">
-                                    <label for="newimagedescription" class="mt-2">New Image Name</label> 
-                                    <input type="text" class="form-control" id="newimagedescription">
-                                </div>
-                                <button class="btn btn-outline-primary btn-sm">Add another image</button>
-                                <h4 class="mt-3">Videos</h4>
-                                <div class="form-group">
-                                    <div *ngFor="let item of archiveItem.videos" class="alert alert-secondary p-3">
-                                    <p><strong>Video ID: {{item.id}}</strong></p>
-                                    <label for="videoname{{item.id}}" class="mt-2">Video Name</label>
-                                    <input type="text" value="{{ item.name }}" id="videoname{{item.id}}" class="form-control">
-                                    <label for="videourl{{item.id}}"class="mt-2">Video Path (URL)</label>
-                                    <input type="text" value="{{ item.url }}" id="videourl{{item.id}}" class="form-control">
-                                    <label for="videodescription{{item.id}}" class="mt-2">Video Description</label>
-                                    <textarea value="{{ item.description }}" id="videodescription{{item.id}}" rows="2" class="form-control"></textarea>
-                                    <button class="btn btn-outline-danger btn-sm mt-1">Remove</button>
-                                    </div>
-                                </div>
-                                <div class="form-group mt-4">
-                                    <p><strong>Add New Video</strong></p>
-                                    <label for="newvideoname" class="mt-2">New Video Name</label>
-                                    <input type="text" class="form-control" id="newvideoname" >
-                                    <label for="newvideourl" class="mt-2">New Video URL</label>
-                                    <input type="text" class="form-control" id="newvideourl" placeholder="https://...">
-                                </div>
-                                <h4 class="mt-3">Websites</h4>
-                                <div class="form-group">
-                                    <div *ngFor="let item of archiveItem.websiteURLs" class="alert alert-secondary p-3">
-                                        <p><strong>Website ID: {{item.id}}</strong></p>
-                                        <label for="websitename{{item.id}}" class="mt-2">Website Name</label>
-                                        <input type="text" value="{{ item.name }}" id="websitename{{item.id}}" class="form-control">
-                                        <label for="websiteurl{{item.id}}"class="mt-2">Website URL</label>
-                                        <input type="text" value="{{ item.url }}" id="websiteurl{{item.id}}" class="form-control">
-                                        <button class="btn btn-outline-danger btn-sm mt-1">Remove</button>
-                                    </div>
-                                </div>
-                                <div class="form-group mt-4">
-                                    <p><strong>Add New Website</strong></p>
-                                    <label for="newwebsitename" class="mt-2">New Website Name</label>
-                                    <input type="text" class="form-control" id="newwebsitename" >
-                                    <label for="newwebsiteurl" class="mt-2">New Website URL</label>
-                                    <input type="text" class="form-control" id="newwebsiteurl" placeholder="https://...">
-                                </div>
-                                <button class="btn btn-outline-primary btn-sm mt-1">Add another website</button>
-                                <h4 class="mt-3">Assets</h4>
-                                <div class="form-group">
-                                    <div *ngFor="let item of archiveItem.assets" class="alert alert-secondary p-3">
-                                        <p><strong>Asset ID: {{item.id}}</strong></p>
-                                        <label for="assetname{{item.id}}" class="mt-2">Asset Name</label>
-                                        <input type="text" value="{{ item.name }}" id="assetname{{item.id}}" class="form-control">
-                                        <label for="asseturl{{item.id}}"class="mt-2">Asset URL</label>
-                                        <input type="text" value="{{ item.url }}" id="asseturl{{item.id}}" class="form-control">
-                                        <button class="btn btn-outline-danger btn-sm mt-1">Remove</button>
-                                    </div>
-                                </div>
-                                <div class="form-group mt-4">
-                                    <p><strong>Add New Asset</strong></p>
-                                    <label for="newassetname" class="mt-2">New Asset Name</label>
-                                    <input type="text" class="form-control" id="newassetname" >
-                                    <label for="newasseturl" class="mt-2">New Asset URL</label>
-                                    <input type="text" class="form-control" id="newasseturl" placeholder="https://...">
-                                </div>
-                                <button class="btn btn-outline-primary btn-sm mt-1">Add another asset</button>
-                                <h4 class="mt-3">Keywords</h4>
-                                <div class="form-group mt-2">
-                                    <label for="itemTag">Keywords</label>
-                                    <input type="text" class="form-control" id="itemTag" value="{{ archiveItem.tags }}">
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                        </div>
-                    </div>
-                </div>
+
                 <!-- Modal to confirm deleting the item -->
                 <div class="modal fade" id="deleteItemModal" tabindex="-1" aria-labelledby="deleteItemModal" aria-hidden="true">
                     <div class="modal-dialog">
@@ -417,3 +275,97 @@
     <p><a routerLink="/item/events/{{ item.id }}">{{ item.name }}</a></p>
     </div>
 </div>
+
+                <!-- Modal for editing items -->
+                <div class="modal fade" id="editItem" tabindex="-1" aria-labelledby="editItem" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="editItemLabel">Edit "{{ archiveItem.name }}"</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div [formGroup]="editingFormArchiveItem" class="form-group">
+                                <label class="mt-2"><strong>ID:</strong></label>
+                                <input type="text" formControlName="id" class="form-control" readonly>
+                                <label class="mt-2"><strong>Category:</strong></label>
+                                <select formControlName="category" class="form-control">
+                                    <option>artifacts</option>
+                                    <option>persons</option>
+                                    <option>events</option>
+                                </select>
+                                <label class="mt-2"><strong>Name:</strong></label>
+                                <input type="text" formControlName="name" class="form-control">
+                                <label class="mt-2"><strong>Aliases:</strong></label>
+                                <input type="text" formControlName="aliases" class="form-control">
+                                <label class="mt-2"><strong>Short Description:</strong></label>
+                                <input type="text" formControlName="shortdescription" class="form-control">
+                                <label class="mt-2"><strong>Long Description:</strong></label>
+                                <textarea formControlName="longdescription" class="form-control" rows="8"></textarea>
+                                <label class="mt-2"><strong>Dates:</strong></label>
+                                <div formGroupName="dates" class="alert alert-secondary">
+                                    <label for="datelabel" class="mt-2"><strong>Date Label:</strong></label>
+                                    <input type="text" formControlName="label" id="datelabel" class="form-control">
+                                    <label class="mt-2"><strong>Date:</strong></label>
+                                    <input type="text" formControlName="date" class="form-control">
+                                </div>
+                                <label class="mt-2"><strong>Tags/Keywords:</strong></label>
+                                <input type="text" formControlName="tags" class="form-control">
+                                <label class="mt-2"><strong>Images:</strong></label>
+                                <div formGroupName="images" class="alert alert-secondary">
+                                    <label class="mt-2"><strong>id:</strong></label>
+                                    <input type="text" formControlName="id" class="form-control">
+                                    <label class="mt-2"><strong>URL:</strong></label>
+                                    <input type="text" formControlName="url" class="form-control">
+                                    <label class="mt-2"><strong>Name:</strong></label>
+                                    <input type="text" formControlName="name" class="form-control">
+                                    <label class="mt-2"><strong>Description:</strong></label>
+                                    <input type="text" formControlName="description" class="form-control">
+                                </div>
+                                <label class="mt-2"><strong>Videos:</strong></label>
+                                <div formGroupName="videos" class="alert alert-secondary">
+                                    <label class="mt-2"><strong>id:</strong></label>
+                                    <input type="text" formControlName="id" class="form-control">
+                                    <label class="mt-2"><strong>URL:</strong></label>
+                                    <input type="text" formControlName="url" class="form-control">
+                                    <label class="mt-2"><strong>Name:</strong></label>
+                                    <input type="text" formControlName="name" class="form-control">
+                                    <label class="mt-2"><strong>Description:</strong></label>
+                                    <input type="text" formControlName="description" class="form-control">
+                                </div>
+                                <label class="mt-2"><strong>Websites:</strong></label>
+                                <div formGroupName="videos" class="alert alert-secondary">
+                                    <label class="mt-2"><strong>id:</strong></label>
+                                    <input type="text" formControlName="id" class="form-control">
+                                    <label class="mt-2"><strong>URL:</strong></label>
+                                    <input type="text" formControlName="url" class="form-control">
+                                    <label class="mt-2"><strong>Name:</strong></label>
+                                    <input type="text" formControlName="name" class="form-control">
+                                </div>
+                                <label class="mt-2"><strong>Assets:</strong></label>
+                                <div formGroupName="assets" class="alert alert-secondary">
+                                    <label class="mt-2"><strong>id:</strong></label>
+                                    <input type="text" formControlName="id" class="form-control">
+                                    <label class="mt-2"><strong>Name:</strong></label>
+                                    <input type="text" formControlName="name" class="form-control">
+                                    <label class="mt-2"><strong>URL:</strong></label>
+                                    <input type="text" formControlName="url" class="form-control">
+                                </div>
+                                <label class="mt-2"><strong>Related Artifacts:</strong></label>
+                                <input type="text" formControlName="artifacts" class="form-control">
+                                <label class="mt-2"><strong>Related Persons:</strong></label>
+                                <input type="text" formControlName="persons" class="form-control">
+                                <label class="mt-2"><strong>Related Events:</strong></label>
+                                <input type="text" formControlName="events" class="form-control">
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" (click)="saveNewArchiveItem()">Save changes</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>

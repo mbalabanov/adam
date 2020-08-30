@@ -22,7 +22,9 @@ export class ItemdetailsComponent implements OnInit {
     relatedEvents: Array<object> = [];
 
     // Variables for editing archive item details
-    newArchiveItem: ArchiveItemClass = { 
+    editingFormArchiveItem = new FormGroup({});
+
+    editedArchiveItem: ArchiveItemClass = { 
         id: '',
         category: '',
         name: '',
@@ -40,42 +42,42 @@ export class ItemdetailsComponent implements OnInit {
         events: []
     };
 
-    newArchiveItemDates: ArchiveItemDates = {
+    editedArchiveItemDates: ArchiveItemDates = {
         label: '',
         date: ''
     };
 
-    newArchiveItemImages: ArchiveItemImages = {
+    editedArchiveItemImages: ArchiveItemImages = {
         id: '',
         url: '',
         name: '',
         description: ''
     };
 
-    newArchiveItemVideos: ArchiveItemVideos = {
+    editedArchiveItemVideos: ArchiveItemVideos = {
         id: '',
         url: '',
         name: '',
         description: ''
     };
 
-    newArchiveItemWebsiteURLs: ArchiveItemWebsiteURLs = {
+    editedArchiveItemWebsiteURLs: ArchiveItemWebsiteURLs = {
         id: '',
         url: '',
         name: '',
     };
 
-    newArchiveItemAssets: ArchiveItemAssets = {
+    editedArchiveItemAssets: ArchiveItemAssets = {
         id: '',
         url: '',
         name: '',
     };
 
-    newAliases: Array<string> = [];
-    newTags: Array<string> = [];
-    newRelatedArtifacts: Array<string> = [];
-    newRelatedPersons: Array<string> = [];
-    newRelatedEvents: Array<string> = [];
+    editedAliases: Array<string> = [];
+    editedTags: Array<string> = [];
+    editedRelatedArtifacts: Array<string> = [];
+    editedRelatedPersons: Array<string> = [];
+    editedRelatedEvents: Array<string> = [];
 
     deleteThis(dataType, id) {
         this.apirequestsService.deleteItem(dataType, id).subscribe((data)=>{
@@ -94,7 +96,6 @@ export class ItemdetailsComponent implements OnInit {
     };
 
     clipboardItemURL(itemurl) {
-        console.log(itemurl);
         itemurl.select();  
         document.execCommand('copy');  
         itemurl.setSelectionRange(0, 0);  
@@ -102,6 +103,110 @@ export class ItemdetailsComponent implements OnInit {
 
     replaceUnreadables(str, find, replace) {
         return str.replace(new RegExp(find, 'g'), replace);
+    }
+
+    assignValuesToFormItem() {
+
+        this.editingFormArchiveItem = new FormGroup({
+            id: new FormControl(this.archiveItem.id, Validators.required),
+            category:  new FormControl(this.archiveItem.category, Validators.required),
+            name: new FormControl(this.archiveItem.name, Validators.required),
+            aliases: new FormControl(this.archiveItem.aliases, Validators.required), 
+            shortdescription: new FormControl(this.archiveItem.shortdescription, Validators.required),
+            longdescription: new FormControl(this.archiveItem.longdescription, Validators.required),
+            dates: new FormGroup({
+                label: new FormControl(this.archiveItem.dates[0].label,Validators.required),
+                date: new FormControl(this.archiveItem.dates[0].date,Validators.required),
+            }),
+            tags: new FormControl(this.archiveItem.tags, Validators.required),
+            images: new FormGroup({
+                id: new FormControl(this.archiveItem.images[0].id,Validators.required),
+                url: new FormControl(this.archiveItem.images[0].url,Validators.required),
+                name: new FormControl(this.archiveItem.images[0].name,Validators.required),
+                description: new FormControl(this.archiveItem.images[0].description,Validators.required)
+            }),
+            videos: new FormGroup({
+                id: new FormControl(this.archiveItem.videos[0].id,Validators.required),
+                url: new FormControl(this.archiveItem.videos[0].url,Validators.required),
+                name: new FormControl(this.archiveItem.videos[0].name,Validators.required),
+                description: new FormControl(this.archiveItem.videos[0].description,Validators.required)
+            }),
+            websiteURLs: new FormGroup({
+                id: new FormControl(this.archiveItem.websiteURLs[0].id,Validators.required),
+                url: new FormControl(this.archiveItem.websiteURLs[0].url,Validators.required),
+                name: new FormControl(this.archiveItem.websiteURLs[0],Validators.required)
+            }),
+            assets: new FormGroup({
+                id: new FormControl(this.archiveItem.assets[0].id,Validators.required),
+                name: new FormControl(this.archiveItem.assets[0].name,Validators.required),
+                url: new FormControl(this.archiveItem.assets[0].url,Validators.required)
+              }),
+            artifacts: new FormControl(this.archiveItem.artifacts, Validators.required),
+            persons: new FormControl(this.archiveItem.persons, Validators.required),
+            events: new FormControl(this.archiveItem.events, Validators.required)
+        });
+    }
+
+    saveNewArchiveItem() {
+
+        this.editedArchiveItemDates = {
+            label: this.editingFormArchiveItem.value.dates.label,
+            date: this.editingFormArchiveItem.value.dates.date
+        };
+        
+        this.editedArchiveItemImages = {
+            id: this.editingFormArchiveItem.value.images.id,
+            url: this.editingFormArchiveItem.value.images.url,
+            name: this.editingFormArchiveItem.value.images.name,
+            description: this.editingFormArchiveItem.value.images.description
+          };
+        
+          this.editedArchiveItemVideos = {
+            id: this.editingFormArchiveItem.value.videos.id,
+            url: this.editingFormArchiveItem.value.videos.url,
+            name: this.editingFormArchiveItem.value.videos.name,
+            description: this.editingFormArchiveItem.value.videos.description
+          };
+        
+          this.editedArchiveItemWebsiteURLs = {
+            id: this.editingFormArchiveItem.value.websiteURLs.id,
+            url: this.editingFormArchiveItem.value.websiteURLs.url,
+            name: this.editingFormArchiveItem.value.websiteURLs.name,
+          };
+        
+          this.editedArchiveItemAssets = {
+            id: this.editingFormArchiveItem.value.assets.id,
+            url: this.editingFormArchiveItem.value.assets.url,
+            name: this.editingFormArchiveItem.value.assets.name,
+          };
+          console.log('this.editingFormArchiveItem.value.aliases');
+          console.log(this.editingFormArchiveItem.value.aliases);
+          if(this.editingFormArchiveItem.value.aliases.length)
+          this.editedAliases = this.editingFormArchiveItem.value.aliases.split(',');
+          this.editedTags = this.editingFormArchiveItem.value.tags.split(',');
+          this.editedRelatedArtifacts = this.editingFormArchiveItem.value.artifacts.split(',');
+          this.editedRelatedPersons = this.editingFormArchiveItem.value.persons.split(',');
+          this.editedRelatedEvents = this.editingFormArchiveItem.value.events.split(',');
+
+          this.editedArchiveItem = { 
+            id: this.archiveItem.id,
+            category: this.archiveItem.category,
+            name: this.archiveItem.name,
+            aliases: this.editedAliases,
+            shortdescription: this.archiveItem.shortdescription,
+            longdescription: this.archiveItem.longdescription,
+            dates: [this.editedArchiveItemDates],
+            tags: this.editedTags,
+            images: [this.editedArchiveItemImages],
+            videos: [this.editedArchiveItemVideos],
+            websiteURLs: [this.editedArchiveItemWebsiteURLs],
+            assets: [this.editedArchiveItemAssets],
+            artifacts: this.editedRelatedArtifacts,
+            persons: this.editedRelatedPersons,
+            events: this.editedRelatedEvents
+        };
+
+        console.log(this.editedArchiveItem);
     }
 
 constructor(private apirequestsService: ApirequestsService, private route: ActivatedRoute, public auth: AuthService ) { }
@@ -145,6 +250,7 @@ ngOnInit(): void {
                             this.relatedEvents.push(data);
                         });
                     };
+                    this.assignValuesToFormItem();
                 });
                 break;
             }
@@ -174,6 +280,7 @@ ngOnInit(): void {
                             this.relatedEvents.push(data);
                         });
                     };
+                    this.assignValuesToFormItem();
                 });
                 break;
             }
@@ -202,7 +309,8 @@ ngOnInit(): void {
                         this.apirequestsService.getEvent(individualEvent).subscribe(data => {
                             this.relatedEvents.push(data);
                         });
-                    };  
+                    };
+                    this.assignValuesToFormItem();
                 });
                 break;
             }

@@ -122,11 +122,7 @@ export class CreatearchiveitemComponent implements OnInit {
   }
 
   saveNewArchiveItem() {
-
-    // articletext contains HTML. For some reason '=' and '&' cannot be read by the API. This replaces them in the articletext.
-    this.createdArchiveItem.value.longdescription = this.replaceUnreadables(this.createdArchiveItem.value.longdescription, '=', '<EQUALS>');
-    this.createdArchiveItem.value.longdescription = this.replaceUnreadables(this.createdArchiveItem.value.longdescription, '&', '<AMPERSAND>');
-
+    
     this.newArchiveItemDates = {
       label: this.createdArchiveItem.value.dates.label,
       date: this.createdArchiveItem.value.dates.date
