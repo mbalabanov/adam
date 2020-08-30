@@ -24,13 +24,13 @@
                         <option>persons</option>
                         <option>events</option>
                     </select>
-                    <label class="mt-2"><strong>Name:</strong></label>
+                    <label class="mt-2"><strong>Name:&nbsp;</strong></label><span *ngIf="name.invalid" class="badge badge-pill badge-secondary">Required</span>
                     <input type="text" formControlName="name" class="form-control">
                     <label class="mt-2"><strong>Aliases:</strong></label>
                     <input type="text" formControlName="aliases" class="form-control">
-                    <label class="mt-2"><strong>Short Description:</strong></label>
+                    <label class="mt-2"><strong>Short Description:&nbsp;</strong></label><span *ngIf="shortdescription.invalid" class="badge badge-pill badge-secondary">Required</span>
                     <input type="text" formControlName="shortdescription" class="form-control">
-                    <label class="mt-2"><strong>Long Description:</strong></label>
+                    <label class="mt-2"><strong>Long Description:&nbsp;</strong></label><span *ngIf="longdescription.invalid" class="badge badge-pill badge-secondary">Required</span>
                     <textarea formControlName="longdescription" class="form-control" rows="8"></textarea>
                     <label class="mt-2"><strong>Dates:</strong></label>
                     <div formGroupName="dates" class="alert alert-secondary">
@@ -39,15 +39,15 @@
                         <label class="mt-2"><strong>Date:</strong></label>
                         <input type="text" formControlName="date" class="form-control">
                     </div>
-                    <label class="mt-2"><strong>Tags/Keywords:</strong></label>
+                    <label class="mt-2"><strong>Tags/Keywords:&nbsp;</strong></label>
                     <input type="text" formControlName="tags" class="form-control">
-                    <label class="mt-2"><strong>Images:</strong></label>
+                    <label class="mt-2"><strong>Images:&nbsp;</strong></label>
                     <div formGroupName="images" class="alert alert-secondary">
-                        <label class="mt-2"><strong>id:</strong></label>
+                        <label class="mt-2"><strong>id:&nbsp;</strong></label><span *ngIf="imagesid.invalid" class="badge badge-pill badge-secondary">Required</span>
                         <input type="text" formControlName="id" class="form-control">
-                        <label class="mt-2"><strong>URL:</strong></label>
+                        <label class="mt-2"><strong>URL:&nbsp;</strong></label><span *ngIf="imagesurl.invalid" class="badge badge-pill badge-secondary">Required</span>
                         <input type="text" formControlName="url" class="form-control">
-                        <label class="mt-2"><strong>Name:</strong></label>
+                        <label class="mt-2"><strong>Name:&nbsp;</strong></label><span *ngIf="imagesname.invalid" class="badge badge-pill badge-secondary">Required</span>
                         <input type="text" formControlName="name" class="form-control">
                         <label class="mt-2"><strong>Description:</strong></label>
                         <input type="text" formControlName="description" class="form-control">
@@ -92,7 +92,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" (click)="saveNewArchiveItem()" data-dismiss="modal">Save changes</button>
+                <button type="button" class="btn btn-primary" [disabled]="createdArchiveItem.invalid" (click)="saveNewArchiveItem()" data-dismiss="modal" >Save changes</button>
+                <span *ngIf="createdArchiveItem.invalid" class="badge badge-pill badge-danger">Data incomplete</span>
             </div>
         </div>
     </div>

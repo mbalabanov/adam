@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder, FormArray } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { ApirequestsService } from '../../services/apirequests.service';
 import { ArchiveItemClass, ArchiveItemDates, ArchiveItemImages, ArchiveItemVideos, ArchiveItemWebsiteURLs, ArchiveItemAssets } from '../../classes/archiveitemclass';
@@ -78,43 +78,67 @@ export class CreatearchiveitemComponent implements OnInit {
 
     this.createdArchiveItem = new FormGroup({ 
       id: new FormControl(this.generatedRndId), 
-      category: new FormControl('artifacts',Validators.required),
+      category: new FormControl('artifacts'),
       name: new FormControl('',Validators.required),
-      aliases: new FormControl('',Validators.required),
+      aliases: new FormControl(''),
       shortdescription: new FormControl('',Validators.required),
       longdescription: new FormControl('',Validators.required),
       dates: new FormGroup({
-        label: new FormControl('',Validators.required),
-        date: new FormControl('',Validators.required),
+        label: new FormControl(''),
+        date: new FormControl(''),
       }),
-      tags: new FormControl('',Validators.required),
+      tags: new FormControl(''),
       images: new FormGroup({
         id: new FormControl('',Validators.required),
         url: new FormControl('',Validators.required),
         name: new FormControl('',Validators.required),
-        description: new FormControl('',Validators.required)
+        description: new FormControl('')
       }),
       videos: new FormGroup({
-        id: new FormControl('',Validators.required),
-        url: new FormControl('',Validators.required),
-        name: new FormControl('',Validators.required),
-        description: new FormControl('',Validators.required)
+        id: new FormControl(''),
+        url: new FormControl(''),
+        name: new FormControl(''),
+        description: new FormControl('')
       }),
       websiteURLs: new FormGroup({
-        id: new FormControl('',Validators.required),
-        url: new FormControl('',Validators.required),
-        name: new FormControl('',Validators.required)
+        id: new FormControl(''),
+        url: new FormControl(''),
+        name: new FormControl('')
       }),
       assets: new FormGroup({
-        id: new FormControl('',Validators.required),
-        name: new FormControl('',Validators.required),
-        url: new FormControl('',Validators.required)
+        id: new FormControl(''),
+        name: new FormControl(''),
+        url: new FormControl('')
       }),
-      artifacts: new FormControl('',Validators.required),
-      persons: new FormControl('',Validators.required),
-      events: new FormControl('',Validators.required)
+      artifacts: new FormControl(''),
+      persons: new FormControl(''),
+      events: new FormControl('')
     });
 
+  }
+
+  get name() {
+    return this.createdArchiveItem.get('name');
+  }
+
+  get shortdescription() {
+    return this.createdArchiveItem.get('shortdescription');
+  }
+
+  get longdescription() {
+    return this.createdArchiveItem.get('longdescription');
+  }
+
+  get imagesid() {
+    return this.createdArchiveItem.get('images.id');
+  }
+
+  get imagesurl() {
+    return this.createdArchiveItem.get('images.url');
+  }
+
+  get imagesname() {
+    return this.createdArchiveItem.get('images.name');
   }
 
   saveNewArchiveItem() {
