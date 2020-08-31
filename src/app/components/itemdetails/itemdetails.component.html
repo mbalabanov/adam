@@ -106,7 +106,7 @@
             </tr>
             <tr>
                 <th scope="row">Dates:</th>
-                <td *ngIf="archiveItem.dates[0].label?.length"><span *ngFor="let dateitem of archiveItem.dates">{{ dateitem.label }}{{ dateitem.date | date }}</span></td>
+                <td *ngIf="archiveItem.dates[0].label?.length"><span class="mr-2" *ngFor="let dateitem of archiveItem.dates"><span class="mr-1">{{ dateitem.label }}</span>{{ dateitem.date | date }}.</span></td>
                 <td *ngIf="!archiveItem.dates[0].label?.length">None</td>
             </tr>
             <tr>

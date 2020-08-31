@@ -3,6 +3,8 @@ import { FormGroup, FormControl, Validators, FormBuilder, FormArray } from '@ang
 import { AuthService } from '../../services/auth.service';
 import { ApirequestsService } from '../../services/apirequests.service';
 import { ArchiveItemClass, ArchiveItemDates, ArchiveItemImages, ArchiveItemVideos, ArchiveItemWebsiteURLs, ArchiveItemAssets } from '../../classes/archiveitemclass';
+import {DpDatePickerModule} from 'ng2-date-picker';
+
 
 @Component({
   selector: 'app-createarchiveitem',
@@ -99,6 +101,31 @@ export class CreatearchiveitemComponent implements OnInit {
   newRelatedEvents: Array<string> = [];
 
   constructor( public auth: AuthService, private apirequestsService: ApirequestsService) { }
+
+  // Date Picker Settings
+  config = {
+    firstDayOfWeek: 'su',
+    monthFormat: 'MMM, YYYY',
+    disableKeypress: false,
+    allowMultiSelect: false,
+    closeOnSelect: undefined,
+    closeOnSelectDelay: 100,
+    onOpenDelay: 0,
+    weekDayFormat: 'ddd',
+    appendTo: document.body,
+    drops: 'down',
+    opens: 'right',
+    showNearMonthDays: true,
+    showWeekNumbers: false,
+    enableMonthSelector: true,
+    format: "YYYY-MM-DD",
+    yearFormat: 'YYYY',
+    showGoToCurrent: true,
+    dayBtnFormat: 'DD',
+    monthBtnFormat: 'MMM',
+    multipleYearsNavigateBy: 10,
+    showMultipleYearsNavigation: false
+  };
 
   ngOnInit(): void {
 

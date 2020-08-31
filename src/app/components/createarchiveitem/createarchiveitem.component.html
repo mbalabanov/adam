@@ -36,17 +36,17 @@
                     <label class="mt-2"><strong>Long Description:&nbsp;</strong></label><span *ngIf="longdescription.invalid" class="badge badge-pill badge-secondary">Required</span>
                     <textarea formControlName="longdescription" class="form-control" rows="8"></textarea>
                     <label class="mt-2"><strong>Dates:</strong></label>
-                    <div formGroupName="date0" class="alert alert-secondary">
-                        <label for="datelabel" class="mt-2"><strong>First Date Label:</strong></label>
-                        <input type="text" formControlName="label" id="datelabel" class="form-control">
-                        <label class="mt-2"><strong>First Date:</strong></label>
-                        <input type="text" formControlName="date" class="form-control">
+                    <div formGroupName="date0" class="form-inline alert alert-secondary">
+                        <label for="datelabel" class="mr-2"><strong>First Date Label:</strong></label>
+                        <input type="text" formControlName="label" id="datelabel" class="mr-2">
+                        <label class="mr-2"><strong>First Date:</strong></label>
+                        <dp-date-picker theme="dp-material" formControlName="date" mode='day' [config]='config' #firstdp></dp-date-picker>
                     </div>
-                    <div formGroupName="date1" class="alert alert-secondary">
-                        <label for="datelabel" class="mt-2"><strong>Second Date Label:</strong></label>
-                        <input type="text" formControlName="label" id="datelabel" class="form-control">
-                        <label class="mt-2"><strong>Second Date:</strong></label>
-                        <input type="text" formControlName="date" class="form-control">
+                    <div formGroupName="date1" class="form-inline alert alert-secondary">
+                        <label for="datelabel" class="mr-2"><strong>Second Date Label:</strong></label>
+                        <input type="text" formControlName="label" id="datelabel" class="mr-2">
+                        <label class="mr-2"><strong>Second Date:</strong></label>
+                        <dp-date-picker theme="dp-material" formControlName="date" mode='day' [config]='config' #seconddp></dp-date-picker>
                     </div>
                     <label class="mt-2"><strong>Tags/Keywords:&nbsp;</strong></label>
                     <input type="text" formControlName="tags" class="form-control">

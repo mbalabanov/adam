@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { CookieService } from 'ngx-cookie-service';
+import {DpDatePickerModule} from 'ng2-date-picker';
 
 import { ApirequestsService } from './services/apirequests.service';
 
@@ -80,7 +81,8 @@ import { TrackingComponent } from './components/tracking/tracking.component';
     ReactiveFormsModule,
     Ng2SearchPipeModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    DpDatePickerModule
   ],
   providers: [ApirequestsService, CookieService],
   bootstrap: [AppComponent]
