@@ -471,7 +471,7 @@ Die API ist verfügbar unter [adam-interface.herokuapp.com](https://adam-interfa
 
 ## 9. Aktualisierungen
 - **27. August 2020:** Im Redaktionsbereich kann man jetzt neue Archiveinträge anlegen, sowie News-Artikel, Compliance-Seiten und featured Items ändern. Allerdings kann man noch nicht die bestehenden Archiveinträge ändern und die Eingabeformulare werden auch noch nicht validiert.
-- **22. August 2020:** App komplett aufgeräumt und auf Angular Unversal konvertiert ( [demoarchive.art](https://demoarchive.art) leitet jetzt auf [adam-frontend.herokuapp.com](https://adam-frontend.herokuapp.com) )
+- **22. August 2020:** App komplett aufgeräumt und auf Angular Unversal konvertiert ( läuft auf  [adam-frontend.herokuapp.com](https://adam-frontend.herokuapp.com) mit CNAME-Eintrag auf [app.demoarchive.art](https://app.demoarchive.art) )
 - **20. August 2020:** API vom Frontend getrennt. Hat nun ein eigenes Repository auf [github.com/mbalabanov/adam-api](https://github.com/mbalabanov/adam-api)
 - **13. August 2020:** Auth0-Integration abgeschlossen (vorläufig mit Anmeldung über Email und Google-Account).
 - **12. August 2020:** Öffentliches Web-Frontend ist soweit fertig und alle Consolen-Fehler sind beseitigt. Die gesamte Suchfunktion läuft über Angular Search-Filter (und nicht über LunrJS). Die ersten Schritte für das Redaktions-Backend sind mit der vorläufig unvollständigen Integration von auth0.com gemacht.
@@ -497,12 +497,12 @@ Die API ist verfügbar unter [adam-interface.herokuapp.com](https://adam-interfa
 
 - **Bis 28. August 2020:** Redaktionsbereich und Admin-Bereich (nicht-öffentlicher Bereich des Webfrontends) mit Login, Registrierung, neue Einträge erstellen, Einträge bearbeiten, Einträge deaktivieren und reaktivieren, Benutzer deaktivieren und reaktivieren.
 
-- **Bis 4. September 2020:** Redaktionsbereich und Admin-Bereich.
+- **Bis 4. September 2020:** Redaktionsbereich und Admin-Bereich. Erste Daten auf MongoDB.
 
-- **Bis 11. September 2020:** Mobile App mit (vorläufig) Einträge erstellen, Fotos aufnehmen und mit einem Eintrag assoziieren.
+- **Bis 11. September 2020:** Umstellung der API, MongoDB anzusprechen.
 
-- **Bis 18. September 2020:** Mobile App mit Login und Upload.
+- **Bis 18. September 2020:** Bugfixes und Erweiterungen. Möglicherweise Konvertierung der Webapp auf eine mobile App.
 
-- **Bis 25. September 2020:** Mobile App mit Login und Upload.
+- **Bis 25. September 2020:** Bugfixes und Erweiterungen. Möglicherweise Konvertierung der Webapp auf eine mobile App.
 
 [« Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
