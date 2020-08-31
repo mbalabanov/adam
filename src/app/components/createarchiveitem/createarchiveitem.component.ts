@@ -33,17 +33,45 @@ export class CreatearchiveitemComponent implements OnInit {
     events: []
   };
 
-  newArchiveItemDates: ArchiveItemDates = {
+  newArchiveItemDate0: ArchiveItemDates = {
     label: '',
     date: ''
   };
 
-  newArchiveItemImages: ArchiveItemImages = {
+  newArchiveItemDate1: ArchiveItemDates = {
+    label: '',
+    date: ''
+  };
+
+
+  newArchiveItemImage0: ArchiveItemImages = {
     id: '',
     url: '',
     name: '',
     description: ''
   };
+
+  newArchiveItemImage1: ArchiveItemImages = {
+    id: '',
+    url: '',
+    name: '',
+    description: ''
+  };
+
+  newArchiveItemImage2: ArchiveItemImages = {
+    id: '',
+    url: '',
+    name: '',
+    description: ''
+  };
+
+  newArchiveItemImage3: ArchiveItemImages = {
+    id: '',
+    url: '',
+    name: '',
+    description: ''
+  };
+
 
   newArchiveItemVideos: ArchiveItemVideos = {
     id: '',
@@ -83,30 +111,52 @@ export class CreatearchiveitemComponent implements OnInit {
       aliases: new FormControl(''),
       shortdescription: new FormControl('',Validators.required),
       longdescription: new FormControl('',Validators.required),
-      dates: new FormGroup({
+      date0: new FormGroup({
+        label: new FormControl(''),
+        date: new FormControl(''),
+      }),
+      date1: new FormGroup({
         label: new FormControl(''),
         date: new FormControl(''),
       }),
       tags: new FormControl(''),
-      images: new FormGroup({
-        id: new FormControl('',Validators.required),
+      images0: new FormGroup({
+        id: new FormControl('0'),
         url: new FormControl('',Validators.required),
         name: new FormControl('',Validators.required),
         description: new FormControl('')
       }),
+      images1: new FormGroup({
+        id: new FormControl('1'),
+        url: new FormControl(''),
+        name: new FormControl(''),
+        description: new FormControl('')
+      }),
+      images2: new FormGroup({
+        id: new FormControl('2'),
+        url: new FormControl(''),
+        name: new FormControl(''),
+        description: new FormControl('')
+      }),
+      images3: new FormGroup({
+        id: new FormControl('3'),
+        url: new FormControl(''),
+        name: new FormControl(''),
+        description: new FormControl('')
+      }),
       videos: new FormGroup({
-        id: new FormControl(''),
+        id: new FormControl('0'),
         url: new FormControl(''),
         name: new FormControl(''),
         description: new FormControl('')
       }),
       websiteURLs: new FormGroup({
-        id: new FormControl(''),
+        id: new FormControl('0'),
         url: new FormControl(''),
         name: new FormControl('')
       }),
       assets: new FormGroup({
-        id: new FormControl(''),
+        id: new FormControl('0'),
         name: new FormControl(''),
         url: new FormControl('')
       }),
@@ -117,6 +167,7 @@ export class CreatearchiveitemComponent implements OnInit {
 
   }
 
+  // Get the form data for validation
   get name() {
     return this.createdArchiveItem.get('name');
   }
@@ -129,30 +180,53 @@ export class CreatearchiveitemComponent implements OnInit {
     return this.createdArchiveItem.get('longdescription');
   }
 
-  get imagesid() {
-    return this.createdArchiveItem.get('images.id');
-  }
-
   get imagesurl() {
-    return this.createdArchiveItem.get('images.url');
+    return this.createdArchiveItem.get('images0.url');
   }
 
   get imagesname() {
-    return this.createdArchiveItem.get('images.name');
+    return this.createdArchiveItem.get('images0.name');
   }
 
   saveNewArchiveItem() {
 
-    this.newArchiveItemDates = {
-      label: this.createdArchiveItem.value.dates.label,
-      date: this.createdArchiveItem.value.dates.date
+    let tempImage = {
+
+    };
+
+    this.newArchiveItemDate0 = {
+      label: this.createdArchiveItem.value.date0.label,
+      date: this.createdArchiveItem.value.date0.date
+    };
+
+    this.newArchiveItemDate1 = {
+      label: this.createdArchiveItem.value.date1.label,
+      date: this.createdArchiveItem.value.date1.date
     };
   
-    this.newArchiveItemImages = {
-      id: this.createdArchiveItem.value.images.id,
-      url: this.createdArchiveItem.value.images.url,
-      name: this.createdArchiveItem.value.images.name,
-      description: this.createdArchiveItem.value.images.description
+    this.newArchiveItemImage0 = {
+      id: this.createdArchiveItem.value.images0.id,
+      url: this.createdArchiveItem.value.images0.url,
+      name: this.createdArchiveItem.value.images0.name,
+      description: this.createdArchiveItem.value.images0.description
+    };
+    this.newArchiveItemImage1 = {
+      id: this.createdArchiveItem.value.images1.id,
+      url: this.createdArchiveItem.value.images1.url,
+      name: this.createdArchiveItem.value.images1.name,
+      description: this.createdArchiveItem.value.images1.description
+    };
+    this.newArchiveItemImage2 = {
+      id: this.createdArchiveItem.value.images2.id,
+      url: this.createdArchiveItem.value.images2.url,
+      name: this.createdArchiveItem.value.images2.name,
+      description: this.createdArchiveItem.value.images2.description
+    };
+    this.newArchiveItemImage3 = {
+      id: this.createdArchiveItem.value.images3.id,
+      url: this.createdArchiveItem.value.images3.url,
+      name: this.createdArchiveItem.value.images3.name,
+      description: this.createdArchiveItem.value.images3.description
     };
   
     this.newArchiveItemVideos = {
@@ -187,9 +261,17 @@ export class CreatearchiveitemComponent implements OnInit {
       aliases: this.newAliases,
       shortdescription: this.createdArchiveItem.value.shortdescription,
       longdescription: this.createdArchiveItem.value.longdescription,
-      dates: [this.newArchiveItemDates],
+      dates: [
+        this.newArchiveItemDate0,
+        this.newArchiveItemDate1
+      ],
       tags: this.newTags,
-      images: [this.newArchiveItemImages],
+      images: [
+        this.newArchiveItemImage0,
+        this.newArchiveItemImage1,
+        this.newArchiveItemImage2,
+        this.newArchiveItemImage3
+      ],
       videos: [this.newArchiveItemVideos],
       websiteURLs: [this.newArchiveItemWebsiteURLs],
       assets: [this.newArchiveItemAssets],

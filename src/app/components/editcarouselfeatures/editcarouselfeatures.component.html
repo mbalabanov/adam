@@ -23,8 +23,12 @@
                 <div [formGroup]="featuredEdited" class="form-group" *ngFor="let item of featuredItemsArray">
                     <h4>Featured Item {{ item.id }} </h4>
                     <div formGroupName="featured{{ item.id }}" class="form-group alert alert-secondary">
-                        <label class="mt-2"><strong>ID:</strong></label>
-                        <input type="number" formControlName="id" class="form-control" readonly>
+                        <div class="mt-2 input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><strong>Item Id:</strong></div>
+                            </div>
+                            <input type="text" formControlName="id" class="form-control" readonly>
+                        </div>
                         <label class="mt-2"><strong>Image:</strong></label>
                         <input type="text" formControlName="image" class="form-control" required>
                         <label class="mt-2"><strong>Title:</strong></label>

@@ -32,7 +32,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                <button type="button" class="btn btn-danger" (click)="deleteThis(archiveItem.category, archiveItem.id)" data-dismiss="modal" routerLink="/category/{{ archiveCategory }}">Delete</button>
+                                <button type="button" class="btn btn-danger" (click)="deleteThis(archiveItem.category, archiveItem.id)" data-dismiss="modal" routerLink="/archive">Delete</button>
                             </div>
                         </div>
                     </div>
@@ -101,12 +101,13 @@
             </tr>
             <tr>
                 <th scope="row">Aliases:</th>
-                <td *ngIf="archiveItem.aliases?.length">{{ archiveItem.aliases }}</td>
-                <td *ngIf="!archiveItem.aliases?.length">None</td>
+                <td *ngIf="archiveItem.aliases[0]?.length">{{ archiveItem.aliases }}</td>
+                <td *ngIf="!archiveItem.aliases[0]?.length">None</td>
             </tr>
             <tr>
                 <th scope="row">Dates:</th>
-                <td><span *ngFor="let dateitem of archiveItem.dates">{{ dateitem.label }}{{ dateitem.date | date }}</span></td>
+                <td *ngIf="archiveItem.dates[0].label?.length"><span *ngFor="let dateitem of archiveItem.dates">{{ dateitem.label }}{{ dateitem.date | date }}</span></td>
+                <td *ngIf="!archiveItem.dates[0].label?.length">None</td>
             </tr>
             <tr>
                 <th scope="row">Summary:</th>
@@ -128,10 +129,10 @@
             <div class="row mt-4">
                 <div class="col-12">
                     <h4>Keywords</h4>
-                    <p *ngIf="archiveItem.tags?.length" class="mt-4">
+                    <p *ngIf="archiveItem.tags[0]?.length" class="mt-4">
                         <a class="btn btn-warning m-1" *ngFor="let tag of archiveItem.tags" routerLink="/search/{{tag}}">{{ tag }}</a>
                     </p>
-                    <p *ngIf="!archiveItem.tags?.length" class="mt-4">
+                    <p *ngIf="!archiveItem.tags[0]?.length" class="mt-4">
                         No keywords or tags available.
                     </p>
                 </div>
@@ -144,12 +145,14 @@
             <h3>Images</h3>
             </div>
         </div>
-        <div *ngIf="!archiveItem.images?.length" class="row pt-3 border">
-            <div class="col-6 text-center">
-                No related images available.
+        <div *ngIf="!archiveItem.images[0].url?.length" class="row pt-3 border">
+            <div class="col-12">
+                <p class="text-center">
+                    No related images available.
+                </p>
             </div>
         </div>
-        <div *ngIf="archiveItem.images?.length" class="row pt-3 border">
+        <div *ngIf="archiveItem.images[0].url?.length" class="row pt-3 border">
             <div class="col-6 text-center" *ngFor="let item of archiveItem.images" (click)="setCarouselActiveID(item.id)">
             <a href="#" data-toggle="modal" data-target="#carouselModal" >
                 <img src="{{ item.url }}" class="img-fluid rounded-lg" alt="{{ item.name }}">
@@ -158,6 +161,7 @@
             </div>
         </div>
 
+        <!-- Modal for Image Carousel -->
         <div class="modal fade" id="carouselModal" tabindex="-1" aria-labelledby="carouselModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-xl">
             <div class="modal-content">
@@ -202,10 +206,10 @@
             </div>
         </div>
         <div class="row border">
-            <div *ngIf="!archiveItem.videos?.length" class="col-12 p-3">
-                <p>No related videos available.</p>
+            <div *ngIf="!archiveItem.videos[0].url?.length" class="col-12 p-3">
+                <p class="text-center">No related videos available.</p>
             </div>
-            <div *ngIf="archiveItem.videos?.length" class="col-12 p-3">
+            <div *ngIf="archiveItem.videos[0].url?.length" class="col-12 p-3">
                 <p *ngFor="let item of archiveItem.videos" class="text-center alert alert-primary">
                     <a href="{{ item.url }}" target="_blank">{{ item.name }}</a>
                 </p>
@@ -218,10 +222,10 @@
             </div>
         </div>
         <div class="row border">
-            <div *ngIf="!archiveItem.websiteURLs?.length" class="col-12 p-3">
-                <p>No related websites available.</p>
+            <div *ngIf="!archiveItem.websiteURLs[0].url?.length" class="col-12 p-3">
+                <p class="text-center">No related websites available.</p>
             </div>
-            <div  *ngIf="archiveItem.videos?.length" class="col-12 p-3">
+            <div  *ngIf="archiveItem.websiteURLs[0].url?.length" class="col-12 p-3">
                 <p *ngFor="let item of archiveItem.websiteURLs" class="text-center alert alert-success">
                     <a href="{{ item.url }}" target="_blank">{{ item.name }}</a>
                 </p>
@@ -234,10 +238,10 @@
             </div>
         </div>
         <div class="row border">
-            <div *ngIf="!archiveItem.assets?.length" class="col-12 p-3">
-                <p>No related assets available.</p>
+            <div *ngIf="!archiveItem.assets[0].url?.length" class="col-12 p-3">
+                <p class="text-center">No related assets available.</p>
             </div>
-            <div *ngIf="archiveItem.assets?.length" class="col-12 p-3">
+            <div *ngIf="archiveItem.assets[0].url?.length" class="col-12 p-3">
                 <p *ngFor="let item of archiveItem.assets" class="text-center alert alert-secondary">
                     <a href="{{ item.url }}" target="_blank">{{ item.name }}</a>
                 </p>
@@ -256,23 +260,23 @@
 <div class="row">
     <!-- Related persons -->
     <div class="col-lg-2 col-md-3 text-center my-1" *ngFor="let item of relatedPersons">
-    <a routerLink="/item/persons/{{ item.id }}"><img src="{{ item.images[0].url }}" alt="{{ item.name }}" class="img-fluid rounded"></a>
-    <span class="badge badge-secondary">Person</span>
-    <p><a routerLink="/item/persons/{{ item.id }}">{{ item.name }}</a></p>
+        <a routerLink="/item/persons/{{ item.id }}"><img src="{{ item.images[0].url }}" alt="{{ item.name }}" class="img-fluid rounded"></a>
+        <span class="badge badge-secondary">Person</span>
+        <p><a routerLink="/item/persons/{{ item.id }}">{{ item.name }}</a></p>
     </div>
 
     <!-- Related artifacts -->
     <div class="col-lg-2 col-md-3 text-center my-1" *ngFor="let item of relatedArtifacts">
-    <a routerLink="/item/artifacts/{{ item.id }}"><img src="{{ item.images[0].url }}" alt="{{ item.name }}" class="img-fluid rounded"></a>
-    <span class="badge badge-secondary">Artifact</span>
-    <p><a routerLink="/item/artifacts/{{ item.id }}">{{ item.name }}</a></p>
+        <a routerLink="/item/artifacts/{{ item.id }}"><img src="{{ item.images[0].url }}" alt="{{ item.name }}" class="img-fluid rounded"></a>
+        <span class="badge badge-secondary">Artifact</span>
+        <p><a routerLink="/item/artifacts/{{ item.id }}">{{ item.name }}</a></p>
     </div>
 
     <!-- Related events -->
     <div class="col-lg-2 col-md-3 text-center my-1" *ngFor="let item of relatedEvents">
-    <a routerLink="/item/events/{{ item.id }}"><img src="{{ item.images[0].url }}" alt="{{ item.name }}" class="img-fluid rounded"></a>
-    <span class="badge badge-secondary">Event</span>
-    <p><a routerLink="/item/events/{{ item.id }}">{{ item.name }}</a></p>
+        <a routerLink="/item/events/{{ item.id }}"><img src="{{ item.images[0].url }}" alt="{{ item.name }}" class="img-fluid rounded"></a>
+        <span class="badge badge-secondary">Event</span>
+        <p><a routerLink="/item/events/{{ item.id }}">{{ item.name }}</a></p>
     </div>
 </div>
 

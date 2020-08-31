@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 export class ApirequestsService {
 
-  private baseURL = 'https://adam-interface.herokuapp.com/'; // Change to http://localhost:5003/ for locally running API server
+  private baseURL = 'http://localhost:5003/'; // Change to https://adam-interface.herokuapp.com/ for locally running API server
   private archiveUrl: string = this.baseURL + 'all';
   private artifactsUrl: string = this.baseURL + 'artifacts';
   private personsUrl: string = this.baseURL + 'persons';

@@ -14,15 +14,18 @@
                 </button>
             </div>
             <div class="modal-body">
-
                 <div [formGroup]="createdArchiveItem" class="form-group">
-                    <label class="mt-2"><strong>ID:</strong></label>
-                    <input type="text" formControlName="id" class="form-control" readonly>
+                    <div class="mt-2 input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><strong>Item Id:</strong></div>
+                        </div>
+                        <input type="text" formControlName="id" class="form-control" readonly>
+                    </div>
                     <label class="mt-2"><strong>Category:</strong></label>
                     <select formControlName="category" class="form-control">
-                        <option>artifacts</option>
-                        <option>persons</option>
-                        <option>events</option>
+                        <option selected value="artifacts">artifacts</option>
+                        <option value="persons">persons</option>
+                        <option value="events">events</option>
                     </select>
                     <label class="mt-2"><strong>Name:&nbsp;</strong></label><span *ngIf="name.invalid" class="badge badge-pill badge-secondary">Required</span>
                     <input type="text" formControlName="name" class="form-control">
@@ -33,18 +36,28 @@
                     <label class="mt-2"><strong>Long Description:&nbsp;</strong></label><span *ngIf="longdescription.invalid" class="badge badge-pill badge-secondary">Required</span>
                     <textarea formControlName="longdescription" class="form-control" rows="8"></textarea>
                     <label class="mt-2"><strong>Dates:</strong></label>
-                    <div formGroupName="dates" class="alert alert-secondary">
-                        <label for="datelabel" class="mt-2"><strong>Date Label:</strong></label>
+                    <div formGroupName="date0" class="alert alert-secondary">
+                        <label for="datelabel" class="mt-2"><strong>First Date Label:</strong></label>
                         <input type="text" formControlName="label" id="datelabel" class="form-control">
-                        <label class="mt-2"><strong>Date:</strong></label>
+                        <label class="mt-2"><strong>First Date:</strong></label>
+                        <input type="text" formControlName="date" class="form-control">
+                    </div>
+                    <div formGroupName="date1" class="alert alert-secondary">
+                        <label for="datelabel" class="mt-2"><strong>Second Date Label:</strong></label>
+                        <input type="text" formControlName="label" id="datelabel" class="form-control">
+                        <label class="mt-2"><strong>Second Date:</strong></label>
                         <input type="text" formControlName="date" class="form-control">
                     </div>
                     <label class="mt-2"><strong>Tags/Keywords:&nbsp;</strong></label>
                     <input type="text" formControlName="tags" class="form-control">
                     <label class="mt-2"><strong>Images:&nbsp;</strong></label>
-                    <div formGroupName="images" class="alert alert-secondary">
-                        <label class="mt-2"><strong>id:&nbsp;</strong></label><span *ngIf="imagesid.invalid" class="badge badge-pill badge-secondary">Required</span>
-                        <input type="text" formControlName="id" class="form-control">
+                    <div formGroupName="images0" class="alert alert-secondary">
+                        <div class="mt-2 input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><strong>Image Id:</strong></div>
+                            </div>
+                            <input type="text" formControlName="id" class="form-control" readonly>
+                        </div>
                         <label class="mt-2"><strong>URL:&nbsp;</strong></label><span *ngIf="imagesurl.invalid" class="badge badge-pill badge-secondary">Required</span>
                         <input type="text" formControlName="url" class="form-control">
                         <label class="mt-2"><strong>Name:&nbsp;</strong></label><span *ngIf="imagesname.invalid" class="badge badge-pill badge-secondary">Required</span>
@@ -52,10 +65,62 @@
                         <label class="mt-2"><strong>Description:</strong></label>
                         <input type="text" formControlName="description" class="form-control">
                     </div>
-                    <label class="mt-2"><strong>Videos:</strong></label>
+                    <div id="image1fields">
+                        <div formGroupName="images1" class="alert alert-secondary">
+                            <div class="mt-2 input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><strong>Image Id:</strong></div>
+                                </div>
+                                <input type="text" formControlName="id" class="form-control" readonly>
+                            </div>
+                            <label class="mt-2"><strong>URL:</strong></label>
+                            <input type="text" formControlName="url" class="form-control">
+                            <label class="mt-2"><strong>Name:</strong></label>
+                            <input type="text" formControlName="name" class="form-control">
+                            <label class="mt-2"><strong>Description:</strong></label>
+                            <input type="text" formControlName="description" class="form-control">
+                        </div>
+                    </div>
+                    <div id="image2fields">
+                        <div formGroupName="images2" class="alert alert-secondary">
+                            <div class="mt-2 input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><strong>Image Id:</strong></div>
+                                </div>
+                                <input type="text" formControlName="id" class="form-control" readonly>
+                            </div>
+                            <label class="mt-2"><strong>URL:</strong></label>
+                            <input type="text" formControlName="url" class="form-control">
+                            <label class="mt-2"><strong>Name:</strong></label>
+                            <input type="text" formControlName="name" class="form-control">
+                            <label class="mt-2"><strong>Description:</strong></label>
+                            <input type="text" formControlName="description" class="form-control">
+                        </div>
+                    </div>
+                    <div id="image3fields">
+                        <div formGroupName="images3" class="alert alert-secondary">
+                            <div class="mt-2 input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><strong>Image Id:</strong></div>
+                                </div>
+                                <input type="text" formControlName="id" class="form-control" readonly>
+                            </div>
+                            <label class="mt-2"><strong>URL:</strong></label>
+                            <input type="text" formControlName="url" class="form-control">
+                            <label class="mt-2"><strong>Name:</strong></label>
+                            <input type="text" formControlName="name" class="form-control">
+                            <label class="mt-2"><strong>Description:</strong></label>
+                            <input type="text" formControlName="description" class="form-control">
+                        </div>
+                    </div>
+                    <label class="mt-2"><strong>Video:</strong></label>
                     <div formGroupName="videos" class="alert alert-secondary">
-                        <label class="mt-2"><strong>id:</strong></label>
-                        <input type="text" formControlName="id" class="form-control">
+                        <div class="mt-2 input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><strong>Video Id:</strong></div>
+                            </div>
+                            <input type="text" formControlName="id" class="form-control" readonly>
+                        </div>
                         <label class="mt-2"><strong>URL:</strong></label>
                         <input type="text" formControlName="url" class="form-control">
                         <label class="mt-2"><strong>Name:</strong></label>
@@ -63,19 +128,27 @@
                         <label class="mt-2"><strong>Description:</strong></label>
                         <input type="text" formControlName="description" class="form-control">
                     </div>
-                    <label class="mt-2"><strong>Websites:</strong></label>
-                    <div formGroupName="videos" class="alert alert-secondary">
-                        <label class="mt-2"><strong>id:</strong></label>
-                        <input type="text" formControlName="id" class="form-control">
+                    <label class="mt-2"><strong>Website:</strong></label>
+                    <div formGroupName="websiteURLs" class="alert alert-secondary">
+                        <div class="mt-2 input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><strong>Website Id:</strong></div>
+                            </div>
+                            <input type="text" formControlName="id" class="form-control" readonly>
+                        </div>
                         <label class="mt-2"><strong>URL:</strong></label>
                         <input type="text" formControlName="url" class="form-control">
                         <label class="mt-2"><strong>Name:</strong></label>
                         <input type="text" formControlName="name" class="form-control">
                     </div>
-                    <label class="mt-2"><strong>Assets:</strong></label>
+                    <label class="mt-2"><strong>Asset:</strong></label>
                     <div formGroupName="assets" class="alert alert-secondary">
-                        <label class="mt-2"><strong>id:</strong></label>
-                        <input type="text" formControlName="id" class="form-control">
+                        <div class="mt-2 input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><strong>Asset Id:</strong></div>
+                            </div>
+                            <input type="text" formControlName="id" class="form-control" readonly>
+                        </div>
                         <label class="mt-2"><strong>Name:</strong></label>
                         <input type="text" formControlName="name" class="form-control">
                         <label class="mt-2"><strong>URL:</strong></label>
@@ -93,7 +166,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary" [disabled]="createdArchiveItem.invalid" (click)="saveNewArchiveItem()" data-dismiss="modal" >Save changes</button>
-                <span *ngIf="createdArchiveItem.invalid" class="badge badge-pill badge-danger">Data incomplete</span>
+                <span *ngIf="createdArchiveItem.invalid" class="badge badge-pill badge-danger px-3 py-1">Data<br>incomplete</span>
             </div>
         </div>
     </div>

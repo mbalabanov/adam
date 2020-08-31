@@ -20,8 +20,12 @@
                     <div [formGroup]="newsEdited" class="form-group" *ngFor="let item of newsItemsArray">
                         <h4>News Articles "{{ item.id | titlecase }}" </h4>
                         <div formGroupName="news{{ item.id }}" class="form-group alert alert-secondary">
-                            <label class="mt-2"><strong>ID:</strong></label>
-                            <input type="text" formControlName="id" class="form-control" readonly>
+                            <div class="mt-2 input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><strong>Item Id:</strong></div>
+                                </div>
+                                <input type="text" formControlName="id" class="form-control" readonly>
+                            </div>
                             <label class="mt-2"><strong>Title:</strong></label>
                             <input type="text" formControlName="title" class="form-control" required>
                             <label class="mt-2"><strong>Thumbnail Image:</strong></label>

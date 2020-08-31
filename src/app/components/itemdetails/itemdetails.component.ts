@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵConsole } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
@@ -22,7 +22,7 @@ export class ItemdetailsComponent implements OnInit {
     relatedEvents: Array<object> = [];
 
     // Variables for editing archive item details
-    editingFormArchiveItem = new FormGroup({});
+    editingFormArchiveItem = new FormGroup({ });
 
     editedArchiveItem: ArchiveItemClass = { 
         id: '',
