@@ -30,8 +30,25 @@
                         <input type="text" formControlName="firstimage" class="form-control">
                         <label class="mt-2"><strong>Second Image:</strong></label>
                         <input type="text" formControlName="secondimage" class="form-control">
-                        <label class="mt-2"><strong>Article Text:</strong></label>
-                        <textarea formControlName="articletext" class="form-control" rows="8"></textarea>
+                        <label class="mt-2"><strong>Article Text "{{ item.id | titlecase }}":</strong></label>
+                        <editor formControlName="articletext"
+                            apiKey="kzw0zdrheylzt0ms8wq28xfgawoi9ltzt8n4t76a42uphen2"
+                            [init]="{
+                                height: 500,
+                                menubar: false,
+                                plugins: [
+                                'advlist autolink lists link image charmap print',
+                                'preview anchor searchreplace visualblocks code',
+                                'fullscreen insertdatetime media table paste',
+                                'help wordcount'
+                                ],
+                                toolbar:
+                                'undo redo | formatselect | bold italic | \
+                                alignleft aligncenter alignright alignjustify | \
+                                bullist numlist outdent indent | help'
+                            }"
+                            >
+                        </editor>
                     </div>
                 </div>
             </div>

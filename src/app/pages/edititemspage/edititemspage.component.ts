@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 
 @Component({

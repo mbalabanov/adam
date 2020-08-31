@@ -27,6 +27,7 @@
     "@angular/router": "~10.0.6",
     "@auth0/auth0-spa-js": "^1.11.0",
     "@nguniversal/express-engine": "^10.0.2",
+    "@tinymce/tinymce-angular": "^4.1.0",
     "domino": "^2.1.6",
     "express": "^4.15.2",
     "ng2-date-picker": "^10.0.0",

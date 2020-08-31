@@ -27,14 +27,31 @@
                         <option value="persons">persons</option>
                         <option value="events">events</option>
                     </select>
-                    <label class="mt-2"><strong>Name:&nbsp;</strong></label><span *ngIf="name.invalid" class="badge badge-pill badge-secondary">Required</span>
+                    <label class="mt-2"><strong>Name:&nbsp;</strong></label><span *ngIf="name.invalid" class="badge badge-pill badge-warning">Required</span>
                     <input type="text" formControlName="name" class="form-control">
                     <label class="mt-2"><strong>Aliases:</strong></label>
                     <input type="text" formControlName="aliases" class="form-control">
-                    <label class="mt-2"><strong>Short Description:&nbsp;</strong></label><span *ngIf="shortdescription.invalid" class="badge badge-pill badge-secondary">Required</span>
+                    <label class="mt-2"><strong>Short Description:&nbsp;</strong></label><span *ngIf="shortdescription.invalid" class="badge badge-pill badge-warning">Required</span>
                     <input type="text" formControlName="shortdescription" class="form-control">
-                    <label class="mt-2"><strong>Long Description:&nbsp;</strong></label><span *ngIf="longdescription.invalid" class="badge badge-pill badge-secondary">Required</span>
-                    <textarea formControlName="longdescription" class="form-control" rows="8"></textarea>
+                    <label class="mt-2"><strong>Long Description:&nbsp;</strong></label><span *ngIf="longdescription.invalid" class="badge badge-pill badge-warning">Required</span>
+                    <editor formControlName="longdescription"
+                        apiKey="kzw0zdrheylzt0ms8wq28xfgawoi9ltzt8n4t76a42uphen2"
+                        [init]="{
+                            height: 500,
+                            menubar: false,
+                            plugins: [
+                            'advlist autolink lists link image charmap print',
+                            'preview anchor searchreplace visualblocks code',
+                            'fullscreen insertdatetime media table paste',
+                            'help wordcount'
+                            ],
+                            toolbar:
+                            'undo redo | formatselect | bold italic | \
+                            alignleft aligncenter alignright alignjustify | \
+                            bullist numlist outdent indent | help'
+                        }"
+                        >
+                    </editor>
                     <label class="mt-2"><strong>Dates:</strong></label>
                     <div formGroupName="date0" class="form-inline alert alert-secondary">
                         <label for="datelabel" class="mr-2"><strong>First Date Label:</strong></label>
@@ -58,9 +75,9 @@
                             </div>
                             <input type="text" formControlName="id" class="form-control" readonly>
                         </div>
-                        <label class="mt-2"><strong>URL:&nbsp;</strong></label><span *ngIf="imagesurl.invalid" class="badge badge-pill badge-secondary">Required</span>
+                        <label class="mt-2"><strong>URL:&nbsp;</strong></label><span *ngIf="imagesurl.invalid" class="badge badge-pill badge-warning">Required</span>
                         <input type="text" formControlName="url" class="form-control">
-                        <label class="mt-2"><strong>Name:&nbsp;</strong></label><span *ngIf="imagesname.invalid" class="badge badge-pill badge-secondary">Required</span>
+                        <label class="mt-2"><strong>Name:&nbsp;</strong></label><span *ngIf="imagesname.invalid" class="badge badge-pill badge-warning">Required</span>
                         <input type="text" formControlName="name" class="form-control">
                         <label class="mt-2"><strong>Description:</strong></label>
                         <input type="text" formControlName="description" class="form-control">

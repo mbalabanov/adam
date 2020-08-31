@@ -3,7 +3,6 @@ import { FormGroup, FormControl, Validators, FormBuilder, FormArray } from '@ang
 import { AuthService } from '../../services/auth.service';
 import { ApirequestsService } from '../../services/apirequests.service';
 import { ArchiveItemClass, ArchiveItemDates, ArchiveItemImages, ArchiveItemVideos, ArchiveItemWebsiteURLs, ArchiveItemAssets } from '../../classes/archiveitemclass';
-import {DpDatePickerModule} from 'ng2-date-picker';
 
 
 @Component({

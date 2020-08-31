@@ -97,4 +97,9 @@ export class ApirequestsService {
     return this.http.post<any>(tempAchiveUrl, itemData, this.httpOptions);
   };
 
+  putArchiveItem(itemData, category, id): Observable<any> {
+    let tempEditAchiveUrl = this.baseURL + category + '/' + id;
+    return this.http.post<any>(tempEditAchiveUrl, itemData, this.httpOptions);
+  };
+
 }

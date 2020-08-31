@@ -8,6 +8,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { CookieService } from 'ngx-cookie-service';
 import {DpDatePickerModule} from 'ng2-date-picker';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 import { ApirequestsService } from './services/apirequests.service';
 
@@ -82,7 +83,8 @@ import { TrackingComponent } from './components/tracking/tracking.component';
     Ng2SearchPipeModule,
     HttpClientModule,
     NgxPaginationModule,
-    DpDatePickerModule
+    DpDatePickerModule,
+    EditorModule
   ],
   providers: [ApirequestsService, CookieService],
   bootstrap: [AppComponent]
