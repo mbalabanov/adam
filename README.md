@@ -1,4 +1,4 @@
-# Archive of Digital Art & Media
+# Archive of Demo Art & Media
 
 ![ADAM - Archive of Demo Art & Media](documentation/assets/adam-logo.png)
 
