@@ -66,15 +66,6 @@ export class EditcompliancepagesComponent implements OnInit {
 
   }
 
-    // Get the required fields for validation
-    get title() {
-      return this.compliancePagesEdited.get('title'); // The compliance page needs a title
-    }
-
-    get articletext() {
-      return this.compliancePagesEdited.get('articletext'); // The compliance page needs a text
-    }
-
   saveCompliancePages() {
 
     this.compliancePagesOriginal.content = [];

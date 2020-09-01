@@ -35,7 +35,7 @@
                             <label class="mt-2"><strong>Short Description:</strong></label>
                             <input type="text" formControlName="shortdescription" class="form-control" required>
                             <label class="mt-2"><strong>Article Text:</strong></label>
-                            <editor  id="editornews" formControlName="articletext"
+                            <editor formControlName="articletext"
                                 apiKey="kzw0zdrheylzt0ms8wq28xfgawoi9ltzt8n4t76a42uphen2"
                                 [init]="{
                                     height: 500,
@@ -61,7 +61,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" (click)="saveNews()" data-dismiss="modal">Save changes</button>
+                <button type="button" class="btn btn-primary" [disabled]="newsEdited.invalid" (click)="saveNews()" data-dismiss="modal">Save changes</button>
+                <span *ngIf="newsEdited.invalid" class="badge badge-pill badge-danger px-3 py-1">Data<br>incomplete</span>
             </div>
         </div>
     </div>

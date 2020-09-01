@@ -43,7 +43,8 @@
             </div>
             <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" (click)="saveFeaturedItems()" data-dismiss="modal">Save changes</button>
+            <button type="button" class="btn btn-primary" [disabled]="featuredEdited.invalid" (click)="saveFeaturedItems()" data-dismiss="modal">Save changes</button>
+            <span *ngIf="featuredEdited.invalid" class="badge badge-pill badge-danger px-3 py-1">Data<br>incomplete</span>
             </div>
         </div>
     </div>

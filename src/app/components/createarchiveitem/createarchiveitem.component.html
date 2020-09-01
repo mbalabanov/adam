@@ -34,7 +34,7 @@
                     <label class="mt-2"><strong>Short Description:&nbsp;</strong></label><span *ngIf="shortdescription.invalid" class="badge badge-pill badge-warning">Required</span>
                     <input type="text" formControlName="shortdescription" class="form-control">
                     <label class="mt-2"><strong>Long Description:&nbsp;</strong></label><span *ngIf="longdescription.invalid" class="badge badge-pill badge-warning">Required</span>
-                    <editor id="editornewitem" formControlName="longdescription"
+                    <editor formControlName="longdescription"
                         apiKey="kzw0zdrheylzt0ms8wq28xfgawoi9ltzt8n4t76a42uphen2"
                         [init]="{
                             height: 500,

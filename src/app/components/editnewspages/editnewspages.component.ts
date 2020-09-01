@@ -27,24 +27,24 @@ export class EditnewspagesComponent implements OnInit {
           newsn0: new FormGroup({
             id: new FormControl(this.newsItemsArray[0].id, Validators.required), 
             title: new FormControl(this.newsItemsArray[0].title, Validators.required),
-            image: new FormControl(this.newsItemsArray[0].image, Validators.required),
-            largeimage: new FormControl(this.newsItemsArray[0].largeimage, Validators.required),
+            image: new FormControl(this.newsItemsArray[0].image),
+            largeimage: new FormControl(this.newsItemsArray[0].largeimage),
             shortdescription: new FormControl(this.newsItemsArray[0].shortdescription, Validators.required),
             articletext: new FormControl(this.newsItemsArray[0].articletext, Validators.required)
           }),
           newsn1: new FormGroup({
             id: new FormControl(this.newsItemsArray[1].id, Validators.required), 
             title: new FormControl(this.newsItemsArray[1].title, Validators.required),
-            image: new FormControl(this.newsItemsArray[1].image, Validators.required),
-            largeimage: new FormControl(this.newsItemsArray[1].largeimage, Validators.required),
+            image: new FormControl(this.newsItemsArray[1].image),
+            largeimage: new FormControl(this.newsItemsArray[1].largeimage),
             shortdescription: new FormControl(this.newsItemsArray[1].shortdescription, Validators.required),
             articletext: new FormControl(this.newsItemsArray[1].articletext, Validators.required)
           }),
           newsn2: new FormGroup({
             id: new FormControl(this.newsItemsArray[2].id, Validators.required), 
             title: new FormControl(this.newsItemsArray[2].title, Validators.required),
-            image: new FormControl(this.newsItemsArray[2].image, Validators.required),
-            largeimage: new FormControl(this.newsItemsArray[2].largeimage, Validators.required),
+            image: new FormControl(this.newsItemsArray[2].image),
+            largeimage: new FormControl(this.newsItemsArray[2].largeimage),
             shortdescription: new FormControl(this.newsItemsArray[2].shortdescription, Validators.required),
             articletext: new FormControl(this.newsItemsArray[2].articletext, Validators.required)
           }),
