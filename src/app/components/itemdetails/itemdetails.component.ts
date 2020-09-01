@@ -1,4 +1,4 @@
-import { Component, OnInit, ɵConsole } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
@@ -10,6 +10,7 @@ import { ArchiveItemClass, ArchiveItemDates, ArchiveItemImages, ArchiveItemVideo
   templateUrl: './itemdetails.component.html',
   styleUrls: ['./itemdetails.component.css']
 })
+
 export class ItemdetailsComponent implements OnInit {
 
     // Variables for displaying archive item details
@@ -42,12 +43,38 @@ export class ItemdetailsComponent implements OnInit {
         events: []
     };
 
-    editedArchiveItemDates: ArchiveItemDates = {
+    editedArchiveItemDate0: ArchiveItemDates = {
         label: '',
         date: ''
     };
 
-    editedArchiveItemImages: ArchiveItemImages = {
+    editedArchiveItemDate1: ArchiveItemDates = {
+        label: '',
+        date: ''
+    };
+
+    editedArchiveItemImage0: ArchiveItemImages = {
+        id: '',
+        url: '',
+        name: '',
+        description: ''
+    };
+
+    editedArchiveItemImage1: ArchiveItemImages = {
+        id: '',
+        url: '',
+        name: '',
+        description: ''
+    };
+
+    editedArchiveItemImage2: ArchiveItemImages = {
+        id: '',
+        url: '',
+        name: '',
+        description: ''
+    };
+
+    editedArchiveItemImage3: ArchiveItemImages = {
         id: '',
         url: '',
         name: '',
@@ -103,95 +130,207 @@ export class ItemdetailsComponent implements OnInit {
 
     assignValuesToFormItem() {
 
+        let tempDatesArray: Array<any> = [];
+        for(let datesIndex = 0; datesIndex < 2; datesIndex++) {
+            if(this.archiveItem.dates[datesIndex]) {
+                tempDatesArray.push(this.archiveItem.dates[datesIndex]);
+            } else {
+                let emptydate: ArchiveItemDates = {
+                    label: '',
+                    date: ''
+                };
+                tempDatesArray.push(emptydate);
+            }
+        };
+
+        let tempImagesArray: Array<any> = [];
+
+        for(let imageIndex = 0; imageIndex < 4; imageIndex++) {
+            if(this.archiveItem.images[imageIndex]) {
+                tempImagesArray.push(this.archiveItem.images[imageIndex]);
+            } else {
+                let emptyImage: ArchiveItemImages = {
+                    id: '',
+                    url: '',
+                    name: '',
+                    description: ''
+                };
+                tempImagesArray.push(emptyImage);
+            }
+        };
+
         this.editingFormArchiveItem = new FormGroup({
             id: new FormControl(this.archiveItem.id, Validators.required),
-            category:  new FormControl(this.archiveItem.category, Validators.required),
+            category:  new FormControl(this.archiveItem.category),
             name: new FormControl(this.archiveItem.name, Validators.required),
-            aliases: new FormControl(this.archiveItem.aliases, Validators.required), 
-            shortdescription: new FormControl(this.archiveItem.shortdescription, Validators.required),
-            longdescription: new FormControl(this.archiveItem.longdescription, Validators.required),
-            dates: new FormGroup({
-                label: new FormControl(this.archiveItem.dates[0].label,Validators.required),
-                date: new FormControl(this.archiveItem.dates[0].date,Validators.required),
+            aliases: new FormControl(this.archiveItem.aliases.toString()),
+            shortdescription: new FormControl(this.archiveItem.shortdescription),
+            longdescription: new FormControl(this.archiveItem.longdescription),
+            date0: new FormGroup({
+                label: new FormControl(tempDatesArray[0].label),
+                date: new FormControl(tempDatesArray[0].date),
             }),
-            tags: new FormControl(this.archiveItem.tags, Validators.required),
-            images: new FormGroup({
-                id: new FormControl(this.archiveItem.images[0].id,Validators.required),
-                url: new FormControl(this.archiveItem.images[0].url,Validators.required),
-                name: new FormControl(this.archiveItem.images[0].name,Validators.required),
-                description: new FormControl(this.archiveItem.images[0].description,Validators.required)
+            date1: new FormGroup({
+                label: new FormControl(tempDatesArray[1].label),
+                date: new FormControl(tempDatesArray[1].date),
+            }),
+            tags: new FormControl(this.archiveItem.tags.toString()),
+            image0: new FormGroup({
+                id: new FormControl(tempImagesArray[0].id),
+                url: new FormControl(tempImagesArray[0].url, Validators.required),
+                name: new FormControl(tempImagesArray[0].name),
+                description: new FormControl(tempImagesArray[0].description)
+            }),
+            image1: new FormGroup({
+                id: new FormControl(tempImagesArray[1].id),
+                url: new FormControl(tempImagesArray[1].url),
+                name: new FormControl(tempImagesArray[1].name),
+                description: new FormControl(tempImagesArray[1].description)
+            }),
+            image2: new FormGroup({
+                id: new FormControl(tempImagesArray[2].id),
+                url: new FormControl(tempImagesArray[2].url),
+                name: new FormControl(tempImagesArray[2].name),
+                description: new FormControl(tempImagesArray[2].description)
+            }),
+            image3: new FormGroup({
+                id: new FormControl(tempImagesArray[3].id),
+                url: new FormControl(tempImagesArray[3].url),
+                name: new FormControl(tempImagesArray[3].name),
+                description: new FormControl(tempImagesArray[3].description)
             }),
             videos: new FormGroup({
-                id: new FormControl(this.archiveItem.videos[0].id,Validators.required),
-                url: new FormControl(this.archiveItem.videos[0].url,Validators.required),
-                name: new FormControl(this.archiveItem.videos[0].name,Validators.required),
-                description: new FormControl(this.archiveItem.videos[0].description,Validators.required)
+                id: new FormControl(this.archiveItem.videos[0].id),
+                url: new FormControl(this.archiveItem.videos[0].url),
+                name: new FormControl(this.archiveItem.videos[0].name),
+                description: new FormControl(this.archiveItem.videos[0].description)
             }),
             websiteURLs: new FormGroup({
-                id: new FormControl(this.archiveItem.websiteURLs[0].id,Validators.required),
-                url: new FormControl(this.archiveItem.websiteURLs[0].url,Validators.required),
-                name: new FormControl(this.archiveItem.websiteURLs[0],Validators.required)
+                id: new FormControl(this.archiveItem.websiteURLs[0].id),
+                url: new FormControl(this.archiveItem.websiteURLs[0].url),
+                name: new FormControl(this.archiveItem.websiteURLs[0].name)
             }),
             assets: new FormGroup({
-                id: new FormControl(this.archiveItem.assets[0].id,Validators.required),
-                name: new FormControl(this.archiveItem.assets[0].name,Validators.required),
-                url: new FormControl(this.archiveItem.assets[0].url,Validators.required)
+                id: new FormControl(this.archiveItem.assets[0].id),
+                name: new FormControl(this.archiveItem.assets[0].name),
+                url: new FormControl(this.archiveItem.assets[0].url)
               }),
-            artifacts: new FormControl(this.archiveItem.artifacts, Validators.required),
-            persons: new FormControl(this.archiveItem.persons, Validators.required),
-            events: new FormControl(this.archiveItem.events, Validators.required)
+            artifacts: new FormControl(this.archiveItem.artifacts.toString()),
+            persons: new FormControl(this.archiveItem.persons.toString()),
+            events: new FormControl(this.archiveItem.events.toString())
         });
     }
 
-    saveNewArchiveItem() {
+    saveEditedArchiveItem() {
 
-        this.editedArchiveItemDates = {
-            label: this.editingFormArchiveItem.value.dates.label,
-            date: this.editingFormArchiveItem.value.dates.date
+        this.editedArchiveItemDate0 = {
+            label: this.editingFormArchiveItem.value.date0.label,
+            date: this.editingFormArchiveItem.value.date0.date
+        };
+
+        this.editedArchiveItemDate1 = {
+            label: this.editingFormArchiveItem.value.date1.label,
+            date: this.editingFormArchiveItem.value.date1.date
         };
         
-        this.editedArchiveItemImages = {
-            id: this.editingFormArchiveItem.value.images.id,
-            url: this.editingFormArchiveItem.value.images.url,
-            name: this.editingFormArchiveItem.value.images.name,
-            description: this.editingFormArchiveItem.value.images.description
-          };
+        this.editedArchiveItemImage0 = {
+            id: this.editingFormArchiveItem.value.image0.id,
+            url: this.editingFormArchiveItem.value.image0.url,
+            name: this.editingFormArchiveItem.value.image0.name,
+            description: this.editingFormArchiveItem.value.image0.description
+        };
+
+        this.editedArchiveItemImage1 = {
+            id: this.editingFormArchiveItem.value.image1.id,
+            url: this.editingFormArchiveItem.value.image1.url,
+            name: this.editingFormArchiveItem.value.image1.name,
+            description: this.editingFormArchiveItem.value.image1.description
+        };
+
+        this.editedArchiveItemImage2 = {
+            id: this.editingFormArchiveItem.value.image2.id,
+            url: this.editingFormArchiveItem.value.image2.url,
+            name: this.editingFormArchiveItem.value.image2.name,
+            description: this.editingFormArchiveItem.value.image2.description
+        };
+
+        this.editedArchiveItemImage3 = {
+            id: this.editingFormArchiveItem.value.image3.id,
+            url: this.editingFormArchiveItem.value.image3.url,
+            name: this.editingFormArchiveItem.value.image3.name,
+            description: this.editingFormArchiveItem.value.image3.description
+        };
         
-          this.editedArchiveItemVideos = {
+        this.editedArchiveItemVideos = {
             id: this.editingFormArchiveItem.value.videos.id,
             url: this.editingFormArchiveItem.value.videos.url,
             name: this.editingFormArchiveItem.value.videos.name,
             description: this.editingFormArchiveItem.value.videos.description
-          };
+        };
         
-          this.editedArchiveItemWebsiteURLs = {
+        this.editedArchiveItemWebsiteURLs = {
             id: this.editingFormArchiveItem.value.websiteURLs.id,
             url: this.editingFormArchiveItem.value.websiteURLs.url,
             name: this.editingFormArchiveItem.value.websiteURLs.name,
-          };
+        };
         
-          this.editedArchiveItemAssets = {
+        this.editedArchiveItemAssets = {
             id: this.editingFormArchiveItem.value.assets.id,
             url: this.editingFormArchiveItem.value.assets.url,
             name: this.editingFormArchiveItem.value.assets.name,
-          };
-          if(this.editingFormArchiveItem.value.aliases.length)
-          this.editedAliases = this.editingFormArchiveItem.value.aliases.split(',');
-          this.editedTags = this.editingFormArchiveItem.value.tags.split(',');
-          this.editedRelatedArtifacts = this.editingFormArchiveItem.value.artifacts.split(',');
-          this.editedRelatedPersons = this.editingFormArchiveItem.value.persons.split(',');
-          this.editedRelatedEvents = this.editingFormArchiveItem.value.events.split(',');
+        };
 
-          this.editedArchiveItem = { 
-            id: this.archiveItem.id,
-            category: this.archiveItem.category,
-            name: this.archiveItem.name,
+        if(this.editingFormArchiveItem.value.aliases.length > 0){
+            this.editedAliases = this.editingFormArchiveItem.value.aliases.split(',');
+        } else {
+            this.editedAliases = [];
+        }
+
+        if(this.editingFormArchiveItem.value.tags.length > 0){
+            this.editedTags = this.editingFormArchiveItem.value.tags.split(',');
+        } else {
+            this.editedTags = [];
+        }
+
+        if(this.editingFormArchiveItem.value.artifacts.length > 0){
+            let tempArtifacts = this.editingFormArchiveItem.value.artifacts.split(/\s/).join('');
+            this.editedRelatedArtifacts = tempArtifacts.split(',');
+        } else {
+            this.editedRelatedArtifacts = [];
+        }
+
+        if(this.editingFormArchiveItem.value.persons.length > 0){
+            let tempPersons = this.editingFormArchiveItem.value.persons.split(/\s/).join('');
+            this.editedRelatedPersons = tempPersons.split(',');
+        } else {
+            this.editedRelatedPersons = [];
+        }
+
+        if(this.editingFormArchiveItem.value.events.length > 0){
+            let tempEvents = this.editingFormArchiveItem.value.events.split(/\s/).join('');
+            this.editedRelatedEvents = tempEvents.split(',');
+        } else {
+            this.editedRelatedEvents = [];
+        }
+
+        this.editedArchiveItem = { 
+            id: this.editingFormArchiveItem.value.id,
+            category: this.editingFormArchiveItem.value.category,
+            name: this.editingFormArchiveItem.value.name,
             aliases: this.editedAliases,
-            shortdescription: this.archiveItem.shortdescription,
-            longdescription: this.archiveItem.longdescription,
-            dates: [this.editedArchiveItemDates],
+            shortdescription: this.editingFormArchiveItem.value.shortdescription,
+            longdescription: this.editingFormArchiveItem.value.longdescription,
+            dates: [
+                this.editedArchiveItemDate0,
+                this.editedArchiveItemDate1
+            ],
             tags: this.editedTags,
-            images: [this.editedArchiveItemImages],
+            images: [
+                this.editedArchiveItemImage0,
+                this.editedArchiveItemImage1,
+                this.editedArchiveItemImage2,
+                this.editedArchiveItemImage3
+            ],
             videos: [this.editedArchiveItemVideos],
             websiteURLs: [this.editedArchiveItemWebsiteURLs],
             assets: [this.editedArchiveItemAssets],
@@ -199,9 +338,42 @@ export class ItemdetailsComponent implements OnInit {
             persons: this.editedRelatedPersons,
             events: this.editedRelatedEvents
         };
+
+        // Send composite object to API request service
+        this.apirequestsService.putArchiveItem(JSON.stringify(this.editedArchiveItem), this.archiveItem.category, this.archiveItem.id).subscribe((data)=>{
+            console.log('Request successful');
+        });
+
+        // Reload page to show changed content
+        window.location.reload();
     }
 
-constructor(private apirequestsService: ApirequestsService, private route: ActivatedRoute, public auth: AuthService ) { }
+    constructor(private apirequestsService: ApirequestsService, private route: ActivatedRoute, public auth: AuthService ) { }
+
+    // Date Picker Settings
+    config = {
+        firstDayOfWeek: 'su',
+        monthFormat: 'MMM, YYYY',
+        disableKeypress: false,
+        allowMultiSelect: false,
+        closeOnSelect: undefined,
+        closeOnSelectDelay: 100,
+        onOpenDelay: 0,
+        weekDayFormat: 'ddd',
+        appendTo: document.body,
+        drops: 'down',
+        opens: 'right',
+        showNearMonthDays: true,
+        showWeekNumbers: false,
+        enableMonthSelector: true,
+        format: "YYYY-MM-DD",
+        yearFormat: 'YYYY',
+        showGoToCurrent: true,
+        dayBtnFormat: 'DD',
+        monthBtnFormat: 'MMM',
+        multipleYearsNavigateBy: 10,
+        showMultipleYearsNavigation: false
+    };
 
 ngOnInit(): void {
 

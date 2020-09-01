@@ -12,10 +12,12 @@ import { ArchiveItemClass, ArchiveItemDates, ArchiveItemImages, ArchiveItemVideo
 })
 export class CreatearchiveitemComponent implements OnInit {
 
+  // Function for random ID of archive item
   generatedRndId: String = '';
   todayObj: number = Date.now();
   createdArchiveItem = new FormGroup({ });
 
+  // New Objects and their composite pieces for created archive items
   newArchiveItem: ArchiveItemClass = { 
     id: '',
     category: '',
@@ -93,6 +95,7 @@ export class CreatearchiveitemComponent implements OnInit {
     name: '',
   };
 
+  // Array definition for simple arrays in the objects
   newAliases: Array<string> = [];
   newTags: Array<string> = [];
   newRelatedArtifacts: Array<string> = [];
@@ -128,8 +131,10 @@ export class CreatearchiveitemComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.generatedRndId = 'a' + Math.floor(Math.random() * 10) + '_' + this.todayObj;
+    // Generate random ID for new item
+    this.generatedRndId = 'id' + Math.floor(Math.random() * 10) + '_' + this.todayObj;
 
+    // Formgroups for the form
     this.createdArchiveItem = new FormGroup({ 
       id: new FormControl(this.generatedRndId), 
       category: new FormControl('artifacts'),
@@ -193,33 +198,30 @@ export class CreatearchiveitemComponent implements OnInit {
 
   }
 
-  // Get the form data for validation
+  // Get the required fields for validation
   get name() {
-    return this.createdArchiveItem.get('name');
+    return this.createdArchiveItem.get('name'); // The item needs a name
   }
 
   get shortdescription() {
-    return this.createdArchiveItem.get('shortdescription');
+    return this.createdArchiveItem.get('shortdescription'); // The item needs a short desciption (for search results)
   }
 
   get longdescription() {
-    return this.createdArchiveItem.get('longdescription');
+    return this.createdArchiveItem.get('longdescription'); // The item needs a long description for item details
   }
 
   get imagesurl() {
-    return this.createdArchiveItem.get('images0.url');
+    return this.createdArchiveItem.get('images0.url'); // At least one image URL must be entered (necessary for the thumbnail)
   }
 
   get imagesname() {
-    return this.createdArchiveItem.get('images0.name');
+    return this.createdArchiveItem.get('images0.name'); // At least one image name must be entered
   }
 
   saveNewArchiveItem() {
 
-    let tempImage = {
-
-    };
-
+    // Populate the objects with entered form data
     this.newArchiveItemDate0 = {
       label: this.createdArchiveItem.value.date0.label,
       date: this.createdArchiveItem.value.date0.date
@@ -274,11 +276,38 @@ export class CreatearchiveitemComponent implements OnInit {
       name: this.createdArchiveItem.value.assets.name,
     };
 
-    this.newAliases = this.createdArchiveItem.value.aliases.split(',');
-    this.newTags = this.createdArchiveItem.value.tags.split(',');
-    this.newRelatedArtifacts = this.createdArchiveItem.value.artifacts.split(',');
-    this.newRelatedPersons = this.createdArchiveItem.value.persons.split(',');
-    this.newRelatedEvents = this.createdArchiveItem.value.events.split(',');
+    if(this.createdArchiveItem.value.aliases.length > 0){
+        this.newAliases = this.createdArchiveItem.value.aliases.split(',');
+    } else {
+        this.newAliases = [];
+    }
+
+    if(this.createdArchiveItem.value.tags.length > 0){
+        this.newTags = this.createdArchiveItem.value.tags.split(',');
+    } else {
+        this.newTags = [];
+    }
+
+    if(this.createdArchiveItem.value.artifacts.length > 0){
+      let tempArtifacts = this.createdArchiveItem.value.artifacts.split(/\s/).join('');
+        this.newRelatedArtifacts = tempArtifacts.split(',');
+    } else {
+        this.newRelatedArtifacts = [];
+    }
+
+    if(this.createdArchiveItem.value.persons.length > 0){
+      let tempPersons = this.createdArchiveItem.value.persons.split(/\s/).join('');
+        this.newRelatedPersons = tempPersons.split(',');
+    } else {
+        this.newRelatedPersons = [];
+    }
+
+    if(this.createdArchiveItem.value.events.length > 0){
+        let tempEvents = this.createdArchiveItem.value.events.split(/\s/).join('');
+        this.newRelatedEvents = tempEvents.split(',');
+    } else {
+        this.newRelatedEvents = [];
+    }
 
     this.newArchiveItem = {
       id: this.createdArchiveItem.value.id,
@@ -306,8 +335,7 @@ export class CreatearchiveitemComponent implements OnInit {
       events: this.newRelatedEvents
     };
 
-    console.log(this.newArchiveItem);
-
+    // Send composite object to API request service
     this.apirequestsService.postArchiveItem(JSON.stringify(this.newArchiveItem), this.createdArchiveItem.value.category).subscribe((data)=>{
       console.log('Request successful');
     });
