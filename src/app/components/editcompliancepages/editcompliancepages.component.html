@@ -24,13 +24,13 @@
                             </div>
                             <input type="text" formControlName="id" class="form-control" readonly>
                         </div>
-                        <label class="mt-2"><strong>Title:</strong></label>
+                        <label class="mt-2"><strong>Title:</strong></label><span *ngIf="name.invalid" class="badge badge-pill badge-warning">Required</span>
                         <input type="text" formControlName="title" class="form-control">
                         <label class="mt-2"><strong>First Image:</strong></label>
                         <input type="text" formControlName="firstimage" class="form-control">
                         <label class="mt-2"><strong>Second Image:</strong></label>
                         <input type="text" formControlName="secondimage" class="form-control">
-                        <label class="mt-2"><strong>Article Text "{{ item.id | titlecase }}":</strong></label>
+                        <label class="mt-2"><strong>Article Text "{{ item.id | titlecase }}":</strong></label><span *ngIf="name.invalid" class="badge badge-pill badge-warning">Required</span>
                         <editor formControlName="articletext"
                             apiKey="kzw0zdrheylzt0ms8wq28xfgawoi9ltzt8n4t76a42uphen2"
                             [init]="{
@@ -54,7 +54,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" (click)="saveCompliancePages()" data-dismiss="modal">Save changes</button>
+                <button type="button" class="btn btn-primary" [disabled]="compliancePagesEdited.invalid" (click)="saveCompliancePages()" data-dismiss="modal">Save changes</button>
+                <span *ngIf="compliancePagesEdited.invalid" class="badge badge-pill badge-danger px-3 py-1">Data<br>incomplete</span>
             </div>
         </div>
     </div>

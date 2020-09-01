@@ -27,7 +27,7 @@ export class CompliancearticleComponent implements OnInit {
         });
 
     });
-
+    
   }
 
 }
