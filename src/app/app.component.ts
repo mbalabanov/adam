@@ -8,7 +8,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class AppComponent {
 
-  title = 'Archive of Digital Art & Media';
+  title = 'Archive of Demo Art & Media';
 
   constructor(private cookieService: CookieService) {}
 
