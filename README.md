@@ -283,11 +283,12 @@ d. Einloggen
     
 e. Eintrag mit Fotos und Video URLs hochladen
 
-
 ### 5.1 Mobile App Wireframes
 ![Mobile App](documentation/assets/mobile-app-wireframes.png)
 
 [« Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
+
+![Mobile App](documentation/assets/demoarchive.png)
 
 ## 6. DB und API
 
