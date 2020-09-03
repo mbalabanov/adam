@@ -259,7 +259,7 @@ Untenstehend finden Sie die ursprünglichen Wireframes des öffentlichen Bereich
 
 ![ADAM - Wireframes](documentation/assets/adam-wireframes-v0_5.png)
 
-### 4.5 *Nicht-öffentlicher Bereich* im selben Web-Frontend mit...
+### 4.5 Nicht-öffentlicher Bereich im selben Web-Frontend mit...
 
 4.5.1 **Redaktionsansicht** in der Benutzer mit Editor-Rechten bestehende Einträge bearbeiten können (Edit-Funktion wird nur nach dem Einloggen sichtbar) sowie neue Einträge erstellen können (Funktion für einen neuen Eintrag ist auch erst nach dem Einloggen sichtbar). Dieser Bereich befindet sich im Angular Webfrontend.
 
@@ -274,6 +274,8 @@ Untenstehend finden Sie die ursprünglichen Wireframes des Redaktionsbereichs, d
 [« Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
 
 ## 5. Konzept der Mobile App
+
+Falls noch Entwicklungszeit übrigbleibt wird noch Optional eine Mobile App entwickelt mit folgenden Features. 
 
 a. Ansicht aller in der Mobile App vorbereiteter Einträge
     
