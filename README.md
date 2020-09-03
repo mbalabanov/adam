@@ -81,7 +81,9 @@ Diese Seiten dienen zur Information.
 
 ## 4. Die Struktur von ADAM
 
-### 4.1 _API-Server_ auf Heroku unter Verwendung von MongoDB mit Schnittstellen für...
+![ADAM - Struktur](documentation/assets/structure.png)
+
+### 4.1 API-Server auf Heroku zwischen dem Web-Frontend und MongoDB mit Schnittstellen für...
 
 - Ansehen/holen bestehender Einträge (GET)
     - `/artifacts`
@@ -116,7 +118,7 @@ Diese Seiten dienen zur Information.
 
 Für mehr Details zur API siehe Dokumentation weiter unten.
 
-### 4.2 _Öffentlicher Bereich im Web-Frontend_ und fünf Arten von Ansichten:
+### 4.2 Öffentlicher Bereich im Web-Frontend und fünf Arten von Ansichten:
 
 ![ADAM - Data Model](documentation/assets/sitemap-public.png)
 
