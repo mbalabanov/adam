@@ -1,3 +1,24 @@
+<!-- This is the boilerplate page for COMPLIANCE information (about,
+     legal imprint, privacy policy, terms of use, cookie policy).
+     The compliancearticle.component reads the type of compliance page from
+     the URL and displays the right content from the data.
+ 
+     PAGE STRUCTURE
+     ┌──────────┐ 
+     │Compliance│ 1. navbar.component with search and
+     │   Page   │    login (uses auth.service for login,
+     └──────────┘    sends search queries to search page).
+                  2. compliancearticle.component to
+                     display the text of the current
+                     compliance page based on URL slug
+                     (uses apirequests.service to GET the
+                     compliance text).
+                  3. footer.component.
+                  4. cookiewarning.component. -->
+
+<!-- Angular Universal SSR should only render the navbar on the client side, because the authentication
+     through Auth0.com (login/register in the navbar) requires the DOM. The server does not have a DOM. -->
+
 <app-navbar *ngIf="isBrowser"></app-navbar>
 <div class="container toppadding">
     <app-compliancearticle></app-compliancearticle>
