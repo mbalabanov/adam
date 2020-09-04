@@ -1,28 +1,47 @@
+<!-- This is a static CONTACT form for users to send messages to the archive's administrators.
+     The form is as yet not functional and will use Elastic Mail to send the form's content as an email.
+
+     PAGE STRUCTURE
+     ┌──────────┐ 
+     │ Contact  │ 1. navbar.component with search
+     │   Page   │    and login (uses auth.service
+     └──────────┘    for login, sends search queries
+                     to search page).
+                  2. Static information with
+                     infos and contact form.
+                  3. footer.component.
+                  4. cookiewarning.component. -->
+
+
+<!-- Angular Universal SSR should only render the navbar on the client side, because the authentication
+     through Auth0.com (login/register in the navbar) requires the DOM. The server does not have a DOM. -->
+
 <app-navbar *ngIf="isBrowser"></app-navbar>
 
 <div class="container toppadding">
-	<div class="row my-4">
+ 	<div class="row my-4">
 		<div class="col-12 text-center">
 			<h2>Contact ADAM</h2>
 		</div>
-    </div>
-	<div class="row my-4">
+	</div>
 
-	    <div class="col-lg-5 offset-1 mb-4 px-3">
-	        <h3>ADAM<br>Archive of Demo Art & Media</h3>
-	        <p><strong>Address:</strong><br>
-	        Muster Straße 12/4<br>
-	        1080 Vienna</p>
-	        <p><strong>Tel:</strong>&nbsp;0123 / 123 456 789</p>
+	<div class="row my-4">
+		
+		<!-- Contact information and office location in Google Maps iframe -->
+	    	<div class="col-lg-5 offset-1 mb-4 px-3">
+	        	<h3>ADAM<br>Archive of Demo Art & Media</h3>
+	        	<p><strong>Address:</strong><br>Muster Straße 12/4<br>1080 Vienna</p>
+	        	<p><strong>Tel:</strong>&nbsp;0123 / 123 456 789</p>
 			<p><strong>Email:</strong>&nbsp;<a href="mailto:info@demoarchive.art">info@demoarchive.art</a></p>
 			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2658.869284806061!2d16.339884951619755!3d48.20913365405089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476d07eeb1d1eacb%3A0x117e06e3ee00668f!2sStolzenthalergasse%2012%2C%201080%20Wien%2C%20%C3%96sterreich!5e0!3m2!1sde!2sbg!4v1596720943439!5m2!1sde!2sbg" width="340" height="340" frameborder="0" style="border:1px solid gray;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-	    </div>
+		</div>
 
-        <div class="col-lg-5 px-4">
-            <app-contactform></app-contactform>
-        </div>
-
-    </div>
+		<!-- Static contact form -->
+		<div class="col-lg-5 px-4">
+			<app-contactform></app-contactform>
+		</div>
+	</div>
 </div>
+
 <app-footer></app-footer>
 <app-cookiewarning></app-cookiewarning>
