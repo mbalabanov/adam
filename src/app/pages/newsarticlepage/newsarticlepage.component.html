@@ -1,3 +1,27 @@
+<!-- This view displays the full NEWS ARTICLE.
+     A news article consists of a title, a large introductory image, a smaller
+     side image, a short description, and the article's main text.
+
+     The newsarticle.component reads the article's ID from the URL and displays
+     the article's content.
+
+     PAGE STRUCTURE
+     ┌──────────┐ 
+     │   News   │ 1. navbar.component with search
+     │ Article  │    and login (uses auth.service
+     │   Page   │    for login, sends search queries
+     └──────────┘    to search page).
+                  2. newsarticle.component to
+                     show the text of the current
+                     news item based on URL slug
+                     (uses apirequests.service to
+                     GET the news item).
+                  3. footer.component.
+                  4. cookiewarning.component. -->
+
+<!-- Angular Universal SSR should only render the navbar on the client side, because the authentication
+     through Auth0.com (login/register in the navbar) requires the DOM. The server does not have a DOM. -->
+
 <app-navbar *ngIf="isBrowser"></app-navbar>
 <div class="container-fluid toppadding">
     <app-newsarticle></app-newsarticle>
