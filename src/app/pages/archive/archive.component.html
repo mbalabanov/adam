@@ -1,16 +1,17 @@
-<!--
-    PAGE STRUCTURE
-    ┌──────────┐ 
-    │ Archive  │ 1. navbar.component with search
-    │   Page   │    and login (uses auth.service
-    └──────────┘    for login, sends search queries
-                    to search page).
-                 2. archivecategories.component
-                    (uses apirequests.service to
-                    GET category infos)
-                 3. footer.component.
-                 4. cookiewarning.component.
--->
+<!-- This page presents users with the three ARCHIVE CATEGORIES (artifacts, persons and events).
+     It provides a search field which forwards the search term into the filter on the search page.
+
+     PAGE STRUCTURE
+     ┌──────────┐ 
+     │ Archive  │ 1. navbar.component with search
+     │   Page   │    and login (uses auth.service
+     └──────────┘    for login, sends search queries
+                     to search page).
+                  2. archivecategories.component
+                     (uses apirequests.service to
+                     GET category infos)
+                  3. footer.component.
+                  4. cookiewarning.component. -->
 
 <!-- Angular Universal SSR should only render the navbar on the client side, because the authentication
      through Auth0.com (login/register in the navbar) requires the DOM. The server does not have a DOM. -->
