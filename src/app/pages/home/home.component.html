@@ -1,24 +1,34 @@
 
-<!--
-    PAGE STRUCTURE
-    ┌──────────┐ 
-    │   Home   │ 1. navbar.component with search and login (uses auth.service for
-    │   Page   │    login, sends search queries to search page).
-    └──────────┘ 2. carousel.component showing featured items (uses
-                    apirequests.service to GET featured items).
-                 3. Static information on purpose of archive.
-                 4. archivecategories.component with search and links to the three
-                    categories (uses apirequests.service to GET category infos).
-                 5. Static information on how to contribute.
-                 6. newslist.component showing current news stories (uses
-                    apirequests.service to GET news items).
-                 7. footer.component.
-                 8. cookiewarning.component.
--->
+<!-- This is the archive application's FRONT PAGE.
+     It provides users with an introduction to the Archive's purpose (static information),
+     shows a carousel of featured items (images, text, linked to the item detail pages),
+     provides a search in the navbar and in the archive categories, and features an
+     aggregated list of the news.
 
-<app-navbar></app-navbar>
+     PAGE STRUCTURE
+     ┌──────────┐ 
+     │   Home   │ 1. navbar.component with search and login (uses auth.service for
+     │   Page   │    login, sends search queries to search page).
+     └──────────┘ 2. carousel.component showing featured items (uses
+                     apirequests.service to GET featured items).
+                  3. Static information on purpose of archive.
+                  4. archivecategories.component with search and links to the three
+                     categories (uses apirequests.service to GET category infos).
+                  5. Static information on how to contribute.
+                  6. newslist.component showing current news stories (uses
+                     apirequests.service to GET news items).
+                  7. footer.component.
+                  8. cookiewarning.component. -->
+
+<!-- Angular Universal SSR should only render the navbar on the client side, because the authentication
+     through Auth0.com (login/register in the navbar) requires the DOM. The server does not have a DOM. -->
+
+<app-navbar *ngIf="isBrowser"></app-navbar>
+
+<!-- Featured items -->
 <app-carousel></app-carousel>
 
+<!-- Description of the archive's purpose -->
 <div class="row my-md-2 py-3 mt-2 px-3">
     <div class="col-8 offset-2 pr-3 text-center">
         <h1>Archive of Demo Art & Media</h1>
@@ -26,12 +36,14 @@
     </div>
 </div>
 
+<!-- Search and archive categories -->
 <div class="row choices">
-	<div class="container">
-		<app-archivecategories></app-archivecategories>
+    <div class="container">
+	<app-archivecategories></app-archivecategories>
     </div>
 </div>
 
+<!-- Call for contributions -->
 <div class="container">
     <div class="row pt-4 mt-2">
         <div class="col-12 text-center">
@@ -68,6 +80,7 @@
     </div>
 </div>
 
+<!-- Separator content -->
 <div class="row p-3 text-white" id="features">
     <div class="col-12 mt-3 py-4 text-center">
         <h4>At the Cross section of Art & Technology</h4>
@@ -76,6 +89,7 @@
     </div>
 </div>
 
+<!-- List of news items -->
 <div class="container">
 	<app-newslist></app-newslist>
 </div>
