@@ -1,4 +1,19 @@
-<app-navbar *ngIf="isBrowser"></app-navbar>
+<!-- This is the USER PROFILE page that can only be accessed, when a user is logged in.
+     In the authprofile.component users are presented with the profile data provided
+     by the auth.service through Auth0.com.
+
+     PAGE STRUCTURE
+     ┌──────────┐ 
+     │   User   │ 1. navbar.component with search
+     │ Profile  │    and login (uses auth.service
+     │   Page   │    for login, sends search queries
+     └──────────┘    to search page).
+                  2. authprofile.component (uses
+                     auth.service for user profile data).
+                  3. footer.component.
+                  4. cookiewarning.component. -->
+
+<app-navbar></app-navbar>
 <div class="container toppadding">
     <app-authprofile></app-authprofile>
 </div>
