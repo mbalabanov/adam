@@ -1,3 +1,17 @@
+<!--
+    PAGE STRUCTURE
+    ┌──────────┐ 
+    │ Archive  │ 1. navbar.component with search
+    │   Page   │    and login (uses auth.service
+    └──────────┘    for login, sends search queries
+                    to search page).
+                 2. archivecategories.component
+                    (uses apirequests.service to
+                    GET category infos)
+                 3. footer.component.
+                 4. cookiewarning.component.
+-->
+
 <app-navbar *ngIf="isBrowser"></app-navbar>
 <div class="container toppadding">
     <app-archivecategories></app-archivecategories>
