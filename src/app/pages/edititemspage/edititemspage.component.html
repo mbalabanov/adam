@@ -1,3 +1,25 @@
+<!-- This view enables users who are logged in as editors to CREATE ARCHIVE ITEMS and EDIT FEATURED ITEMS, COMPLIANCE NEWS PAGES.
+     It is only accessible if a user is logged in (verified through Angular routing).
+
+     PAGE STRUCTURE
+     ┌──────────┐ 
+     │   Edit   │ 1. navbar.component with search and
+     │  Items   │    login (uses auth.service for login,
+     │   Page   │    sends search queries to search page).
+     └──────────┘ 2. createarchiveitem.component (uses
+                     apirequests.service to PUT new items).
+                  3. editcarouselfeatures.component
+                     (uses apirequests.service to GET and
+                     PUT featured items).
+                  4. editnewspages.component (uses
+                     apirequests.service to GET and PUT news).
+                  5. editcompliancepages.component
+                     (uses apirequests.service to GET and
+                     PUT compliance pages).
+                  6. footer.component.
+                  7. cookiewarning.component. -->
+
+
 <app-navbar></app-navbar>
 <div class="container toppadding mb-4">
     <div class="row">
@@ -8,7 +30,8 @@
             <div class="row">
                 <div class="col-md-6 mt-2">
                     <div class="card p-3">
-
+                        
+                        <!-- This component provides the information, the button trigger and the modal to create new archive items -->
                         <app-createarchiveitem></app-createarchiveitem>
 
                     </div>
@@ -16,6 +39,7 @@
                 <div class="col-md-6 mt-2">
                     <div class="card p-3">
 
+                        <!-- This component provides the information, the button trigger and the modal to edit the featured items in the carousel on home -->
                         <app-editcarouselfeatures></app-editcarouselfeatures>
 
                     </div>
@@ -26,6 +50,7 @@
                 <div class="col-md-6 mt-2">
                     <div class="card p-3">
 
+                        <!-- This component provides the information, the button trigger and the modal to edit the contents of the compliance pages -->
                         <app-editcompliancepages></app-editcompliancepages>
 
                     </div>
@@ -33,6 +58,7 @@
                 <div class="col-md-6 mt-2">
                     <div class="card p-3">
 
+                        <!-- This component provides the information, the button trigger and the modal to edit the news articles -->
                         <app-editnewspages></app-editnewspages>
 
                     </div>
