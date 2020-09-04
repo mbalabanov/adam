@@ -12,6 +12,9 @@
                  4. cookiewarning.component.
 -->
 
+<!-- Angular Universal SSR should only render the navbar on the client side, because the authentication
+     through Auth0.com (login/register in the navbar) requires the DOM. The server does not have a DOM. -->
+
 <app-navbar *ngIf="isBrowser"></app-navbar>
 <div class="container toppadding">
     <app-archivecategories></app-archivecategories>
