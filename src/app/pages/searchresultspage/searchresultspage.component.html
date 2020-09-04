@@ -1,3 +1,35 @@
+<!-- This it the SEARCH RESULT PAGE where all search queries
+     from the search field in the navbar and the search field
+     on the archive page are sent to.
+     The searchall.component gets all items from the API, reads
+     the search term from the URL and feeds it into the search
+     input field that uses ng-searchfilter to filter the items
+     based on the entered term. If the URL does not deliver a
+     search term, then all items are displayed unfiltered.
+     All item data is READY to be displayed, the ng-pagination
+     restricts the SIMULTANEOUSLY visible items and provides a
+     pagination to see more items.
+     The item cards show the category, the name, an image, the
+     short description and a link to the item's details page.
+
+     PAGE STRUCTURE
+     ┌──────────┐
+     │  Search  │ 1. navbar.component with
+     │ Results  │    search and login (uses
+     │   Page   │    auth.service for login,
+     └──────────┘    sends search queries to
+                     this search page).
+                  2. searchall.component with
+                     a searchfilter and
+                     pagination for the results
+                     (uses apirequests.component
+                     to GET category items).
+                  3. footer.component.
+                  4. cookiewarning.component. -->
+
+<!-- Angular Universal SSR should only render the navbar on the client side, because the authentication
+     through Auth0.com (login/register in the navbar) requires the DOM. The server does not have a DOM. -->
+
 <app-navbar *ngIf="isBrowser"></app-navbar>
 <div class="container toppadding">
     <app-searchall></app-searchall>
