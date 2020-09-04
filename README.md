@@ -17,7 +17,7 @@
 ## 1. Beschreibung
 ADAM ist ein Projekt von Marin Balabanov als Übung für den Einsatz von Webtechnologien. In diesem **Archive of Demo Art & Media** auf [demoarchive.art](http://demoarchive.art/) können Benutzer nach digitalen Demo-Kunstwerken suchen. Auf den Detailseiten finden sie eine Beschreibung des jeweiligen Demo-Kunstwerks, sowie Fotos/Screenshots und Links zu Videos, und falls vorhanden ZIP-Dateien oder Diskimages mit den Originaldateien des Kunstwerks. Zudem finden sich Informationen über die Künstler, und bei welchen Events ihre Werke ausgestellt wurden.
 
-Die hier besprochenen Kunstwerke gehören der [Demoszene](https://de.wikipedia.org/wiki/Demoszene) an. Unter **Demos** versteht man digitale Exhtzeit-Kunst oft mit Musikuntermalung. Für die Künstler der Demoszene stellen Hardware-Einschränkungen einen Ansporn dar. Oft werden künstliche Einschränkungen vorab beschlossen, an die man sich halten muss, z.B. eine maximale Speichergröße der ausführbaren Dateien (oft nur 64Kb), oder es muss auf bestimmter Retro-Hardware mit all ihren Einschränkungen entwickelt werden (z.B. Commodore 64 oder Sinclair ZX Spectrum aus dem Jahr 1982, Atari ST oder Commodore Amiga aus dem Jahr 1985 usw.).
+Die hier besprochenen Kunstwerke gehören der [Demoszene](https://de.wikipedia.org/wiki/Demoszene) an. Unter **Demos** versteht man digitale Exhtzeit-Kunst oft mit Musikuntermalung. Für die Künstler der Demoszene stellen Hardware-Einschränkungen einen Ansporn dar. Oft werden künstliche Einschränkungen vorab beschlossen, an die man sich halten muss, z.B. eine maximale Speichergröße der ausführbaren Dateien (oft nur 64Kb), oder es muss auf bestimmter Retro-Hardware mit all ihren Einschränkungen entwickelt werden (z.B. Commodore 64 oder Sinclair ZX Spectrum aus dem Jahr 1982, Atari ST oder Commodore Amiga aus dem Jahr 1985, usw.).
 
 Dieses Projekt dient nur zu Übungszwecken und wurde vom "Archive of Digital Art" (ADA) der Donau Universität Krems inspiriert. Es dient als Übungsprojekt für die Anwendung zeitgemäßer Webtechnologien wie NodeJS, Angular und Heroku (in weitere Folge kommen noch Cordova, MongoDB und AWS S3 dazu).
 
@@ -122,11 +122,7 @@ ADAM ist ein Web-Frontend, das über eine API Daten von einer MongoDB bezieht un
 
 Für mehr Details zur API siehe Dokumentation weiter unten.
 
-### 4.2 Öffentlicher Bereich im Web-Frontend und fünf Arten von Ansichten:
-
-Das Web-Frontend wurde mit Angular entwickelt. Es läuft als Angular Universal SSR App auf Heroku.
-
-### 4.3 Routing-Strategien
+### 4.2 Routing-Strategien
 Eine Angular-App läuft normalerweise vollkommen client-seitig (und kann Daten von einem Server beziehen). Für dieses Projekt war dieses Standardverhalten nicht geeignet. Anwender sollten in der Lage sein, die URL eines Eintrags mit anderen zu teilen. Das übliche Verhalten von Angular beruht auf der sogenannten "path location strategy". Hierbei wird die URL client-seitig gebildet, deshalb kann eine URL nicht mit anderen geteilt werden. Wenn eine geteilte URL (z.B. https://app.demoarchive.art/item/artifacts/a1 ) bei bestehender "path location strategy" von anderen Usern eingegeben werden, dann erhalten diese eine 404-Fehlermeldung, da ihre Instanz der Angular-Anwendung die URL noch nicht gebildet hat. Dieses Standardverhalten von Angular mit der "path location strategy" war somit nicht für das ADAM Web-Frontend geeignet.
 
 Für Angular-Apps mit Website-Charakter ist die sogenannte "hash location strategy" vorgesehen. Hier wird an die Domain ein Hash-Zeichen (Raute) angehängt, bevor der Rest der Domain angehängt wird (z.B. https://app.demoarchive.art/#/item/artifacts/a1 ). Dies ermöglicht es, die URL eines Eintrages an andere zu verschicken und als Lesezeichen zu speichern. Doch auch die "hash location strategy" ist nicht für die ADAM-App geeignet. Die verwendet Auth0.com für die Authentisierung (Login und Registrierung) von Benutzern. Wenn User sich über Auth0.com eingeloggen, werden sie wieder an die ADAM-App zurückgeschickt. Auth0.com gibt einen Callback an den auth.service zurück. Doch durch die "hash location strategy" von Angular geht der Callback verloren. Ohne Anpassungen, die den Rahmen dieses Projekts bei weitem überschreiten, können Auth0.com und die "hash location strategy" nicht gemeinsam verwendet werden.
@@ -139,30 +135,32 @@ Doch auch für die fehlende DOM auf Seite des Servers, sieht Angular Universal e
 
 Soweit zum Exkurs über den Aufwand, der notwendig war, um dieser Angular App ein Verhalten zu verpassen, das für die allermeisten anderen Websites selbstverständlich ist, ohne auch nur einen Finger zu rühren.
 
+### 4.3 Öffentlicher Bereich im Web-Frontend und fünf Arten von Ansichten:
 
-### 4.4 Sitemap
+Das Web-Frontend wurde mit Angular entwickelt. Es läuft als Angular Universal SSR App auf Heroku.
+
 ![ADAM - Sitemap](documentation/assets/sitemap-public.png)
 
-4.4.1 **Startseite** mit Karussell für Einträge, die von Admins als "besonders interessant" markierte wurden, sowie ein Grid mit acht der chronologisch zuletzt publizierten Einträge, allgemeine Informationen über die Plattform, Suchfunktion und eine Kategorienauswahl, die beide auf die Suchergebnisseite mit Filtermöglichkeiten führt.
+4.3.1 **Startseite** mit Karussell für Einträge, die von Admins als "besonders interessant" markierte wurden, sowie ein Grid mit acht der chronologisch zuletzt publizierten Einträge, allgemeine Informationen über die Plattform, Suchfunktion und eine Kategorienauswahl, die beide auf die Suchergebnisseite mit Filtermöglichkeiten führt.
 
-4.4.2 **Suchergebnisseite** auf der die Suchergebnisse gefiltert werden können.
+4.3.2 **Suchergebnisseite** auf der die Suchergebnisse gefiltert werden können.
 
-4.4.3 **Detailseite,** die für die Detailansicht eines Artefakts, eines Künstlers und eines Events verwendet wird. Das Layout besteht aus einer Beschreibung, eines Fotobereichs, eines Bereichs für ein eingebettetes Video und darunter einer Liste an verwandten Einträgen:
+4.3.3 **Detailseite,** die für die Detailansicht eines Artefakts, eines Künstlers und eines Events verwendet wird. Das Layout besteht aus einer Beschreibung, eines Fotobereichs, eines Bereichs für ein eingebettetes Video und darunter einer Liste an verwandten Einträgen:
     a. Bei einer _Künstler-Detailseite_ eine Liste der Arbeiten des Künstlers.
     b. Bei einer _Artefakt-Detailseite_ eine Liste der Künstler, die das Kunstwerk erschaffen haben
     C. Bei einer _Detailseite über ein Event_ eine Liste der ausgestellten Werke.
 
-4.4.4 **Informationsseite,** in der allgemeine Informationen zu einem Thema stehen mit Text und Bildern, z.B. Artikel über Neuigkeiten, aber auch Nutzungsbedingungen und Datenschutzerklärung
+4.3.4 **Informationsseite,** in der allgemeine Informationen zu einem Thema stehen mit Text und Bildern, z.B. Artikel über Neuigkeiten, aber auch Nutzungsbedingungen und Datenschutzerklärung
 
-4.4.5 Seite für den **Login bzw. die Registrierung** über den auth0.com Service
+4.3.5 Seite für den **Login bzw. die Registrierung** über den auth0.com Service
 
-4.4.6 **News-Seiten** mit dynamischem Inhalt. Diese beziehen ihren Inhalt über die API (/news und /news:id).
+4.3.6 **News-Seiten** mit dynamischem Inhalt. Diese beziehen ihren Inhalt über die API (/news und /news:id).
 
-4.4.7 Diverse **Info-Seiten** über die allgemeine Bedienung des Kunstarchivs (z.B. "About", "Privacy Policy" und andere Complaince-Seiten). Diese beziehen ihren Inhalt ebenfalls über die API (/compliance).
+4.3.7 Diverse **Info-Seiten** über die allgemeine Bedienung des Kunstarchivs (z.B. "About", "Privacy Policy" und andere Complaince-Seiten). Diese beziehen ihren Inhalt ebenfalls über die API (/compliance).
 
-4.4.8 Die **Kontaktseite** ist statisch und hat ein Kontaktformular.
+4.3.8 Die **Kontaktseite** ist statisch und hat ein Kontaktformular.
 
-### 4.5 Umgesetzte Struktur
+### 4.4 Umgesetzte Struktur
 Die folgende Struktur wurde auch tatächlich umgesetzt (hier mit einer Auflistung sämtlicher Components, die auf den Einzelseiten verwendet werden). Dieses Diagram entstand mit [MonoDraw](https://monodraw.helftone.com).
 
 ````
@@ -275,19 +273,19 @@ Die folgende Struktur wurde auch tatächlich umgesetzt (hier mit einer Auflistun
 
 ````
 
-### 4.6 Wireframes Besucheransicht
+### 4.5 Wireframes Besucheransicht
 Untenstehend finden Sie die ursprünglichen Wireframes des öffentlichen Bereichs, den Benutzer besuchen können, ohne vorher einloggen zu müssen.
 
 ![ADAM - Wireframes](documentation/assets/adam-wireframes-v0_5.png)
 
-### 4.7 Nicht-öffentlicher Bereich im selben Web-Frontend mit...
+### 4.6 Nicht-öffentlicher Bereich im selben Web-Frontend mit...
 
-**4.7.1 Redaktionsansicht** in der Benutzer mit Editor-Rechten bestehende Einträge bearbeiten können (Edit-Funktion wird nur nach dem Einloggen sichtbar) sowie neue Einträge erstellen können (Funktion für einen neuen Eintrag ist auch erst nach dem Einloggen sichtbar). Dieser Bereich befindet sich im Angular Webfrontend.
+**4.6.1 Redaktionsansicht** in der Benutzer mit Editor-Rechten bestehende Einträge bearbeiten können (Edit-Funktion wird nur nach dem Einloggen sichtbar) sowie neue Einträge erstellen können (Funktion für einen neuen Eintrag ist auch erst nach dem Einloggen sichtbar). Dieser Bereich befindet sich im Angular Webfrontend.
 
-**4.7.2 Admin-Bereich,** um Benutzer zu verwalten (deaktivieren und reaktivieren). Dieser Bereich befindet sich in Auth0.com
+**4.6.2 Admin-Bereich,** um Benutzer zu verwalten (deaktivieren und reaktivieren). Dieser Bereich befindet sich in Auth0.com
 
 
-### 4.8 Wireframes Redaktionsansicht
+### 4.7 Wireframes Redaktionsansicht
 Untenstehend finden Sie die ursprünglichen Wireframes des Redaktionsbereichs, der nur für Benutzer zugänglich ist, die sich vorher eingeloggt haben.
 
 ![ADAM - Data Model](documentation/assets/create-object.png)
