@@ -1,3 +1,23 @@
+<!-- This view displays the items in a specific CATEGORY (e.g. artifacts, persons, events)
+     The categorylist.component reads the category from the URL to display the correct items.
+
+     PAGE STRUCTURE
+     ┌──────────┐ 
+     │ Category │ 1. navbar.component with search
+     │   List   │    and login (uses auth.service for
+     │   page   │    login, sends search queries to
+     └──────────┘    search page).
+                  2. categorylist.component (uses
+                     apirequests.service to GET this
+                     category's infos).
+                  3. footer.component.
+                  4. cookiewarning.component.
+
+-->
+
+<!-- Angular Universal SSR should only render the navbar on the client side, because the authentication
+     through Auth0.com (login/register in the navbar) requires the DOM. The server does not have a DOM. -->
+
 <app-navbar *ngIf="isBrowser"></app-navbar>
 <div class="toppadding">
     <app-categorylist></app-categorylist>
