@@ -1,3 +1,21 @@
+
+<!--
+    PAGE STRUCTURE
+    ┌──────────┐ 
+    │   Home   │ 1. navbar.component with search and login (uses auth.service for
+    │   Page   │    login, sends search queries to search page).
+    └──────────┘ 2. carousel.component showing featured items (uses
+                    apirequests.service to GET featured items).
+                 3. Static information on purpose of archive.
+                 4. archivecategories.component with search and links to the three
+                    categories (uses apirequests.service to GET category infos).
+                 5. Static information on how to contribute.
+                 6. newslist.component showing current news stories (uses
+                    apirequests.service to GET news items).
+                 7. footer.component.
+                 8. cookiewarning.component.
+-->
+
 <app-navbar></app-navbar>
 <app-carousel></app-carousel>
 
