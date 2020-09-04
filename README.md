@@ -83,7 +83,7 @@ Diese Seiten dienen zur Information.
 
 ## 4. Die Struktur von ADAM
 
-ADAM ist ein Web-Frontend, das über eine API Daten von einer MongoDB bezieht und diese umgekehrt über die API auch in der MongoDB aktualisiert, schreibt und löscht.
+ADAM ist ein Web-Frontend, das über eine API Daten von einer MongoDB bezieht und umgekehrt diese Daten über die API auch in der MongoDB aktualisiert, hinenschreibt oder löscht.
 
 ![ADAM - Struktur](documentation/assets/structure.png)
 
