@@ -1,6 +1,49 @@
+<!-- This view displays the DETAILS OF AN INDIVIDUAL ARCHIVE ITEM.
+     Despite the apparent simplicity of this template, the item details page
+     is the most complex view in the app.
+     The itemdetails.component reads the category and the ID of the item and displays all
+     the detailed information of the item in a table with the item's main characteristics,
+     the short description, the long description and keywords (tags). These are linked to
+     the search page and send the respective keyword into the search/filter field.
+     The images are provided as thumbnails and used to populate a carousel that opens in
+     a modal. Videos, assets and websites are linked to open in a separate browser window/tab.
+     Other archive items that are related to the one detailed in the view are provided as IDs
+     in the main item's data. The related item's name, image and short description are pulled
+     individually from the API and displayed in the related items area of the details page.
+
+     This view provides users with the option to share the item's detail page as a URL (a modal
+     dialog opens allowing the user to copy the URL to the clipboard), or as a post through
+     Facebook and Twitter (in this case, the URL is appended to the link for a new post on the
+     respective social media service, which opens in a new browser window/tab).
+
+     If a user is logged in, then they are presented with buttons to EDIT or DELETE the item.
+     Clicking on the delete button opens a confirmation modal dialog and the delete request is
+     only sent to the API if the user confirms this.
+     Clicking on the edit button opens a modal with the form prepulated with the item's data.
+     When editing an item users are required to provide the item's name, a short description, a long
+     description and at least one image with its URL and name. When the user confirms the changes
+     in the modal, the view is reloaded with the new information.
+
+     It is fair to state, that the itemdetails.component does too much and ideally should
+     be split into multiple components.
+
+
+     PAGE STRUCTURE
+     ┌──────────┐ 
+     │   Item   │ 1. navbar.component with search and login
+     │ Details  │    (uses auth.service for login, sends
+     │   Page   │    search queries to search page).
+     └──────────┘ 2. itemdetails.component (uses
+                     apirequests.service to GET item details
+                     and auth.service to allow
+                     editing/deleting the item).
+                  3. footer.component.
+                  4. cookiewarning.component. -->
+
+<!-- Angular Universal SSR should only render the navbar on the client side, because the authentication
+     through Auth0.com (login/register in the navbar) requires the DOM. The server does not have a DOM. -->
+
 <app-navbar *ngIf="isBrowser"></app-navbar>
-
-<app-itemdetails *ngIf="isBrowser"></app-itemdetails>
-
+<app-itemdetails></app-itemdetails>
 <app-footer></app-footer>
 <app-cookiewarning></app-cookiewarning>
