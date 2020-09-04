@@ -5,7 +5,7 @@
 ## Inhaltsverzeichnis
 1. [Beschreibung](#1-beschreibung)
 2. [Bestandteile und Installation](#2-bestandteile-und-installation)
-3. [Detailansicht](#3-detailansicht)
+3. [Details der unterschiedlichen Views](#3-details-der-unterschiedlichen-views)
 4. [Die Struktur von ADAM](#4-die-struktur-von-adam)
 5. [Konzept der Mobile App](#5-konzept-mobile-app)
 6. [DB und API](#6-db-und-api)
@@ -23,14 +23,14 @@ Dieses Projekt dient nur zu Übungszwecken und wurde vom "Archive of Digital Art
 
 **Die Bilder in diesem Projekt sind nur Platzhalter von [adobestock.com](http://adobestock.com). Sie sind zwar Teil dieses Repositories, sind aber nicht zur allgemeinen Verwendung freigegeben.**
 
-ADAM besteht aus vier Teilen: Einem **API-Server** auf [adam-interface.herokuapp.com](https://adam-interface.herokuapp.com) mit Schnittstellen, um die Daten abzurufen, sowie einer Website mit einem **öffentlichen Bereich** auf [demoarchive.art](http://demoarchive.art/), in dem Besucher die Informationen über die digitalen Demo-Kunstwerke finden, und einem **Redaktionsbereich,** in dem Redakteure neue Inhalte einpflegen und bearbeiten können, und Administratoren die Rechte verwalten können. Zu guter Letzt ist eine **Mobile-App** geplant, mit der man Einträge erstellen kann, Fotos und Videos hochladen kann.
+ADAM besteht aus vier Teilen: Einem **API-Server** auf [adam-interface.herokuapp.com](https://adam-interface.herokuapp.com) mit Schnittstellen, um die Daten abzurufen, sowie einem Web-Frontend mit einem **öffentlichen Bereich** auf [demoarchive.art](http://demoarchive.art/), in dem Besucher die Informationen über die digitalen Demo-Kunstwerke finden, und einem **Redaktionsbereich,** in dem Redakteure neue Inhalte einpflegen und bearbeiten können, und Administratoren die Rechte verwalten können. Zu guter Letzt ist eine **Mobile-App** geplant, mit der man Einträge erstellen kann, Fotos und Videos hochladen kann.
 
 [« Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
 
 ## 2. Bestandteile und Installation
 Das Projekt besteht aus den folgenden Repositories:
 - **ADAM API Server** [github.com/mbalabanov/adam](https://github.com/mbalabanov/adam) (läuft auf Heroku auf [adam-interface.herokuapp.com](http://adam-interface.herokuapp.com))
-- **ADAM Web Frontend** [github.com/mbalabanov/adam-api](https://github.com/mbalabanov/adam-api) (läuft auf Heroku  auf [adam-frontend.herokuapp.com](https://adam-frontend.herokuapp.com) mit CNAME-Eintrag auf [app.demoarchive.art](https://app.demoarchive.art))
+- **ADAM Web-Frontend** [github.com/mbalabanov/adam-api](https://github.com/mbalabanov/adam-api) (läuft auf Heroku  auf [adam-frontend.herokuapp.com](https://adam-frontend.herokuapp.com) mit CNAME-Eintrag auf [app.demoarchive.art](https://app.demoarchive.art))
 
 ### 2.1 Installation
 Der ADAM API Server (Repository auf [github.com/mbalabanov/adam-api](https://github.com/mbalabanov/adam-api)) läuft unter NodeJS/Express. So starten Sie den Server lokal auf Port 5003:
@@ -57,13 +57,15 @@ Eigentlich kann man eine Angular Universal app auch mit `npm run dev:ssr` lokal 
 Der Grund dafür ist, dass Auth0 die DOM im Browser anspricht, aber die serverseitige App die DOM nicht kennt. Ich verwende derzeit die Domino-Bibliothek, um dem Server eine DOM vorzugaukeln, doch Auth0 erwartet eine echte DOM und gibt sporadisch Fehlermeldungen in der Angular CLI aus (funktioniert Client/Browser-seitig aber weiterhin hervorragend). Dies geschieht relativ selten im Vergleich zu den unzähligen SSR-Fehlermeldungen, die ohne Domino ausgegeben werden.
 
 ### 2.2 Frontend und API lokal ausführen
-Bitte zu beachten: Wenn Sie für das Web Frontend den lokal laufenden API Server verwenden möchten, dann findet Sie die URL der API in der Datei `src/app/apirequestservice.service.ts`.
+Bitte zu beachten: Wenn Sie für das Web-Frontend den lokal laufenden API Server verwenden möchten, dann findet Sie die URL der API in der Datei `src/app/apirequestservice.service.ts`.
 
 Diese einfach auf `http://localhost:5003` ändern, dann läuft alles nur lokal. So kann man das Frontend auf `http://localhost:4200` ausführen und sämtliche Daten von der API auf `http://localhost:5003` beziehen.
 
 [« Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
 
-## 3. Detailansicht
+## 3. Details der unterschiedlichen Views
+
+Hier ein Überblick der einzelenen Seitenansichten (Views).
 
 ### 3.1 Hauptseiten (Home, Search und Details)
 Hier können Benutzer nach Werken, Künstlern und Events suchen und die Details ansehen.
@@ -80,6 +82,8 @@ Diese Seiten dienen zur Information.
 [« Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
 
 ## 4. Die Struktur von ADAM
+
+ADAM ist ein Web-Frontend, das über eine API Daten von einer MongoDB bezieht und diese umgekehrt über die API auch in der MongoDB aktualisiert, schreibt und löscht.
 
 ![ADAM - Struktur](documentation/assets/structure.png)
 
@@ -120,28 +124,45 @@ Für mehr Details zur API siehe Dokumentation weiter unten.
 
 ### 4.2 Öffentlicher Bereich im Web-Frontend und fünf Arten von Ansichten:
 
-![ADAM - Data Model](documentation/assets/sitemap-public.png)
+Das Web-Frontend wurde mit Angular entwickelt. Es läuft als Angular Universal SSR App auf Heroku.
 
-4.2.1 **Startseite** mit Karussell für Einträge, die von Admins als "besonders interessant" markierte wurden, sowie ein Grid mit acht der chronologisch zuletzt publizierten Einträge, allgemeine Informationen über die Plattform, Suchfunktion und eine Kategorienauswahl, die beide auf die Suchergebnisseite mit Filtermöglichkeiten führt.
+### 4.2 Routing-Strategien
+Eine Angular-App läuft normalerweise vollkommen client-seitig (und kann Daten von einem Server beziehen). Für dieses Projekt war dieses Standardverhalten nicht geeignet. Anwender sollten in der Lage sein, die URL eines Eintrags mit anderen zu teilen. Das übliche Verhalten von Angular beruht auf der sogenannten "path location strategy". Hierbei wird die URL client-seitig gebildet, deshalb kann eine URL nicht mit anderen geteilt werden. Wenn eine geteilte URL (z.B. https://app.demoarchive.art/item/artifacts/a1 ) bei bestehender "path location strategy" von anderen Usern eingegeben werden, dann erhalten diese eine 404-Fehlermeldung, da ihre Instanz der Angular-Anwendung die URL noch nicht gebildet hat. Dieses Standardverhalten von Angular mit der "path location strategy" war somit nicht für das ADAM Web-Frontend geeignet.
 
-4.2.2 **Suchergebnisseite** auf der die Suchergebnisse gefiltert werden können.
+Für Angular-Apps mit Website-Charakter ist die sogenannte "hash location strategy" vorgesehen. Hier wird an die Domain ein Hash-Zeichen (Raute) angehängt, bevor der Rest der Domain angehängt wird (z.B. https://app.demoarchive.art/#/item/artifacts/a1 ). Dies ermöglicht es, die URL eines Eintrages an andere zu verschicken und als Lesezeichen zu speichern. Doch auch die "hash location strategy" ist nicht für die ADAM-App geeignet. Die verwendet Auth0.com für die Authentisierung (Login und Registrierung) von Benutzern. Wenn User sich über Auth0.com eingeloggen, werden sie wieder an die ADAM-App zurückgeschickt. Auth0.com gibt einen Callback an den auth.service zurück. Doch durch die "hash location strategy" von Angular geht der Callback verloren. Ohne Anpassungen, die den Rahmen dieses Projekts bei weitem überschreiten, können Auth0.com und die "hash location strategy" nicht gemeinsam verwendet werden.
 
-4.2.3 **Detailseite,** die für die Detailansicht eines Artefakts, eines Künstlers und eines Events verwendet wird. Das Layout besteht aus einer Beschreibung, eines Fotobereichs, eines Bereichs für ein eingebettetes Video und darunter einer Liste an verwandten Einträgen:
+Die Lösung für die Anfoderung einer teilbaren URL ist der Einsatz von Angular Universal SSR. Hier wird zwar die "path location strategy" (das Standardverhalten) beibehalten. Allerdings wird beim ersten Aufruf der Angular-App die jeweilige Seite server-seitig zusammengestellt (gerendert). Das bedeutet, dass eine URL wie https://app.demoarchive.art/item/artifacts/a1 (also ohne "#") zuerst server-seitig gerendert wird, also durchaus geteilt werden kann. Angular Universal hat einen weiteren Vorteile, den "herkömmliche" Websites immer schon hatten, die Site kann von Suchmaschinen gecrawlt und indiziert werden.
+
+Allerdings gibt es hier einen Wermutstropfen. Da einzelen Seiten/Views der App server-seitig gerendert werden, darf die DOM nicht ohne User-Interaktion angesprochen werden, weil der Server keine DOM kennt. Das wiederum führt zu kleinen, aber nicht kritischen Konflikten mit Auth0.com, das seinerseits die DOM anspricht. Diese Konflikte sind keine KO-Kriterien, weil sie sich nur als serverseitige Fehlermeldungen  äußern, ohne die Funktionsweise zu beeinträchtigen. Wenn die Authentisierung vom Anwender aufgerufen wird, dann verhält sich die App wie vorgesehen. Da die ständigen server-seitigen Fehlermeldungen während der lokalen Entwicklung störend sind, wird davon abgeraten `npm run dev:ssr` zum Starten der App zu verwenden und stattdessen auf das bewährte `ng serve` zurückzugreifen. Trotzdem wird empfohlen, sicherheitshalber gelegentlich auch mit `npm run dev:ssr` zu testen.
+
+Doch auch für die fehlende DOM auf Seite des Servers, sieht Angular Universal ein Workaround vor. Mit dem Domino-Modul kann der App auf dem Server eine DOM "vorgegaukelt" werden. Dieses Modul kommt bei ADAM zum Einsatz. Dadurch werden die Angular Universal-Fehlermeldungen komplett vermieden... allerdings kommen nun Fehlermeldungen vom auth.service, der die Auth0.com-Authentisierung anspricht, weil dieses Service mit einer vorgegaukelten DOM nichts anfangen kann und eine echte, ehrliche DOM erwartet. Diese server-seitigen Fehlermeldungen sind allerdings viel seltener, und auch hier beeinträchtigen sie die Funktionsweise der App überhaupt nicht.
+
+Soweit zum Exkurs über den Aufwand, der notwendig war, um dieser Angular App ein Verhalten zu verpassen, das für die allermeisten anderen Websites selbstverständlich ist, ohne auch nur einen Finger zu rühren.
+
+
+### 4.3 Sitemap
+![ADAM - Sitemap](documentation/assets/sitemap-public.png)
+
+4.3.1 **Startseite** mit Karussell für Einträge, die von Admins als "besonders interessant" markierte wurden, sowie ein Grid mit acht der chronologisch zuletzt publizierten Einträge, allgemeine Informationen über die Plattform, Suchfunktion und eine Kategorienauswahl, die beide auf die Suchergebnisseite mit Filtermöglichkeiten führt.
+
+4.3.2 **Suchergebnisseite** auf der die Suchergebnisse gefiltert werden können.
+
+4.3.3 **Detailseite,** die für die Detailansicht eines Artefakts, eines Künstlers und eines Events verwendet wird. Das Layout besteht aus einer Beschreibung, eines Fotobereichs, eines Bereichs für ein eingebettetes Video und darunter einer Liste an verwandten Einträgen:
     a. Bei einer _Künstler-Detailseite_ eine Liste der Arbeiten des Künstlers.
     b. Bei einer _Artefakt-Detailseite_ eine Liste der Künstler, die das Kunstwerk erschaffen haben
     C. Bei einer _Detailseite über ein Event_ eine Liste der ausgestellten Werke.
 
-4.2.4 **Informationsseite,** in der allgemeine Informationen zu einem Thema stehen mit Text und Bildern, z.B. Artikel über Neuigkeiten, aber auch Nutzungsbedingungen und Datenschutzerklärung
+4.3.4 **Informationsseite,** in der allgemeine Informationen zu einem Thema stehen mit Text und Bildern, z.B. Artikel über Neuigkeiten, aber auch Nutzungsbedingungen und Datenschutzerklärung
 
-4.2.5 Seite für den **Login bzw. die Registrierung** über den auth0.com Service
+4.3.5 Seite für den **Login bzw. die Registrierung** über den auth0.com Service
 
-4.2.6 **News-Seiten** mit dynamischem Inhalt. Diese beziehen ihren Inhalt über die API (/news und /news:id).
+4.3.6 **News-Seiten** mit dynamischem Inhalt. Diese beziehen ihren Inhalt über die API (/news und /news:id).
 
-4.2.7 Diverse **Info-Seiten** über die allgemeine Bedienung des Kunstarchivs (z.B. "About", "Privacy Policy" und andere Complaince-Seiten). Diese beziehen ihren Inhalt ebenfalls über die API (/compliance).
+4.3.7 Diverse **Info-Seiten** über die allgemeine Bedienung des Kunstarchivs (z.B. "About", "Privacy Policy" und andere Complaince-Seiten). Diese beziehen ihren Inhalt ebenfalls über die API (/compliance).
 
-4.2.8 Die **Kontaktseite** ist statisch und hat ein Kontaktformular.
+4.3.8 Die **Kontaktseite** ist statisch und hat ein Kontaktformular.
 
-### 4.3 Umgesetzte Struktur
+### 4.4 Umgesetzte Struktur
 Die folgende Struktur wurde auch tatächlich umgesetzt (hier mit einer Auflistung sämtlicher Components, die auf den Einzelseiten verwendet werden). Dieses Diagram entstand mit [MonoDraw](https://monodraw.helftone.com).
 
 ````
@@ -254,19 +275,19 @@ Die folgende Struktur wurde auch tatächlich umgesetzt (hier mit einer Auflistun
 
 ````
 
-### 4.4 Wireframes Besucheransicht
+### 4.5 Wireframes Besucheransicht
 Untenstehend finden Sie die ursprünglichen Wireframes des öffentlichen Bereichs, den Benutzer besuchen können, ohne vorher einloggen zu müssen.
 
 ![ADAM - Wireframes](documentation/assets/adam-wireframes-v0_5.png)
 
-### 4.5 Nicht-öffentlicher Bereich im selben Web-Frontend mit...
+### 4.6 Nicht-öffentlicher Bereich im selben Web-Frontend mit...
 
-4.5.1 **Redaktionsansicht** in der Benutzer mit Editor-Rechten bestehende Einträge bearbeiten können (Edit-Funktion wird nur nach dem Einloggen sichtbar) sowie neue Einträge erstellen können (Funktion für einen neuen Eintrag ist auch erst nach dem Einloggen sichtbar). Dieser Bereich befindet sich im Angular Webfrontend.
+**4.6.1 Redaktionsansicht** in der Benutzer mit Editor-Rechten bestehende Einträge bearbeiten können (Edit-Funktion wird nur nach dem Einloggen sichtbar) sowie neue Einträge erstellen können (Funktion für einen neuen Eintrag ist auch erst nach dem Einloggen sichtbar). Dieser Bereich befindet sich im Angular Webfrontend.
 
-4.5.2 **Admin-Bereich,** um Benutzer zu verwalten (deaktivieren und reaktivieren). Dieser Bereich befindet sich in Auth0.com
+**4.6.2 Admin-Bereich,** um Benutzer zu verwalten (deaktivieren und reaktivieren). Dieser Bereich befindet sich in Auth0.com
 
 
-### 4.6 Wireframes Redaktionsansicht
+### 4.7 Wireframes Redaktionsansicht
 Untenstehend finden Sie die ursprünglichen Wireframes des Redaktionsbereichs, der nur für Benutzer zugänglich ist, die sich vorher eingeloggt haben.
 
 ![ADAM - Data Model](documentation/assets/create-object.png)
