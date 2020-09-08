@@ -512,7 +512,7 @@ Die API ist verfügbar unter [adam-interface.herokuapp.com](https://adam-interfa
 [« Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
 
 ## 9. Aktualisierungen
--**8. September 2020:** Collections angepasst an die Erfordernisse von MongoDB, Source Code teilweise dokumentiert, Rohfassung von Erklärvideo [youtu.be/5qT9ATVqtbk](https://youtu.be/5qT9ATVqtbk) fertiggestellt.
+- **8. September 2020:** Collections angepasst an die Erfordernisse von MongoDB, Source Code teilweise dokumentiert, Rohfassung von Erklärvideo [youtu.be/5qT9ATVqtbk](https://youtu.be/5qT9ATVqtbk) fertiggestellt.
 - **1. September 2020:** Existierende Archiveinträge können nun bearbeitet werden und die Eingabeformulare werden nun auf Vollständigkeit validiert. Der integrierte TinyMCE und ein Datepicker machen die Contenteingabe komfortabler.
 - **27. August 2020:** Im Redaktionsbereich kann man jetzt neue Archiveinträge anlegen, sowie News-Artikel, Compliance-Seiten und featured Items ändern. Allerdings kann man noch nicht die bestehenden Archiveinträge ändern und die Eingabeformulare werden auch noch nicht validiert.
 - **22. August 2020:** App komplett aufgeräumt und auf Angular Unversal konvertiert ( läuft auf  [adam-frontend.herokuapp.com](https://adam-frontend.herokuapp.com) mit CNAME-Eintrag auf [app.demoarchive.art](https://app.demoarchive.art) )
