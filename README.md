@@ -19,9 +19,16 @@ ADAM ist ein Projekt von Marin Balabanov als Übung für den Einsatz von Webtech
 
 Die hier besprochenen Kunstwerke gehören der [Demoszene](https://de.wikipedia.org/wiki/Demoszene) an. Unter **Demos** versteht man digitale Echtzeit-Kunst oft mit Musikuntermalung. Für die Künstler der Demoszene stellen Hardware-Einschränkungen einen Ansporn dar. Oft werden künstliche Einschränkungen vorab beschlossen, an die man sich halten muss, z.B. eine maximale Speichergröße der ausführbaren Dateien (oft nur 64Kb), oder es muss auf bestimmter Retro-Hardware mit all ihren Einschränkungen entwickelt werden (z.B. Commodore 64 oder Sinclair ZX Spectrum aus dem Jahr 1982, Atari ST oder Commodore Amiga aus dem Jahr 1985, usw.).
 
+### 1.1 Erklärvideo über das ADAM-Projekt
+In diesem Erklärvideo wird der Zweck und die Funktionsweise von ADAM erklärt, sowie die kunsthistorische Bedeutung der Demo-Szene angeschnitten: [youtu.be/5qT9ATVqtbk](https://youtu.be/5qT9ATVqtbk)
+
+### 1.2 Disclaimer
+
 Dieses Projekt dient nur zu Übungszwecken und wurde vom "Archive of Digital Art" (ADA) der Donau Universität Krems inspiriert. Es dient als Übungsprojekt für die Anwendung zeitgemäßer Webtechnologien wie NodeJS, Angular und Heroku (in weiterer Folge kommen noch MongoDB und AWS S3 dazu).
 
 **Die Bilder in diesem Projekt sind nur Platzhalter von [adobestock.com](http://adobestock.com). Sie sind zwar Teil dieses Repositories, sind aber nicht zur allgemeinen Verwendung freigegeben.**
+
+### 1.3 Source Code Repositores
 
 ADAM besteht aus drei Teilen: Einem **API-Server** auf [adam-interface.herokuapp.com](https://adam-interface.herokuapp.com) mit Schnittstellen, um die Daten abzurufen, sowie einem Web-Frontend mit einem **öffentlichen Bereich** auf [demoarchive.art](http://demoarchive.art/), in dem Besucher die Informationen über die digitalen Demo-Kunstwerke finden, und einem **Redaktionsbereich,** in dem Redakteure neue Inhalte einpflegen und bearbeiten können, und Administratoren die Rechte verwalten können. 
 
