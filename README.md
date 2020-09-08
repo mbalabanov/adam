@@ -375,7 +375,7 @@ Die API ist verfügbar unter [adam-interface.herokuapp.com](https://adam-interfa
 
 ```
 {
-    "id": "a0",
+    "_id": "a0123456",
     "category": "artifacts",
     "name": "Varoph Lorem Ipsum",
     "aliases": ["Lemon Dance", "Folklore Elephant"],
@@ -391,25 +391,21 @@ Die API ist verfügbar unter [adam-interface.herokuapp.com](https://adam-interfa
     ],
     "images": [
         {
-            "id": "0",
             "url": "assets/img/artifacts/artifacts1.jpg",
             "name": "Venenatis Cursus Nullam",
             "description": "Cras justo odio, dapibus ac facilisis in, egestas eget quam."
         },
         {
-            "id": "1",
             "url": "assets/img/collections/collections1.jpg",
             "name": "Sed diam nonumy eirmod tempor",
             "description": "Labore et dolore magna aliquyam erat, sed diam voluptua."
         },
         {
-            "id": "2",
             "url": "assets/img/portraits/portrait07.jpg",
             "name": "Cras Ligula Consectetur Tortor",
             "description": "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor."
         },
         {
-            "id": "3",
             "url": "assets/img/additional/additional-01.jpg",
             "name": "Sollicitudin Inceptos Parturient",
             "description": "Nulla vitae elit libero, a pharetra augue."
@@ -417,19 +413,16 @@ Die API ist verfügbar unter [adam-interface.herokuapp.com](https://adam-interfa
     ],
     "videos": [
         {
-            "id": "0",
             "url": "https://youtu.be/sUx-f686Wg4",
             "name": "Consetetur sadipscing Sit Lorem",
             "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
         },
         {
-            "id": "1",
             "url": "https://www.youtube.com/watch?v=w54uNAuqE1Y",
             "name": "Consetetur sadipscing",
             "description": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
         },
         {
-            "id": "2",
             "url": "https://youtu.be/oarR61SeY8E",
             "name": "Elit Justo Pellentesque",
             "description": "Cras mattis consectetur purus sit amet fermentum."
@@ -437,28 +430,45 @@ Die API ist verfügbar unter [adam-interface.herokuapp.com](https://adam-interfa
     ],
     "websiteURLs": [
         {
-            "id": "0",
             "name": "Medien Art Net",
             "url": "http://www.medienkunstnetz.de/mediaartnet/"
         }
     ],
     "assets": [
         {
-            "id": "0",
             "name": "Native executable",
             "url": "http://pacidemo.planet-d.net/archives/POV003.ZIP"
         }
-    ],
-    "artifacts": [],
-    "persons": [
-        "p0",
-        "p1",
-        "p2"
-    ],
-    "events": [
-        "e1",
-        "e2"
-    ]
+	"artifacts" : [
+		{
+			"related_id" : ObjectId("5f5295737f3fe44a067daea3"),
+			"name" : "Praesent Luptatum Bustdraugh"
+		},
+		{
+			"related_id" : ObjectId("5f5295737f3fe44a067daea4"),
+			"name" : "Tempor Soluta"
+		},
+		{
+			"related_id" : ObjectId("5f5295737f3fe44a067daea5"),
+			"name" : "Stet Clita Kasd"
+		}
+	],
+	"persons" : [
+		{
+			"related_id" : ObjectId("5f5296337f3fe44a067daeac"),
+			"name" : "Name Liber"
+		}
+	],
+	"events" : [
+		{
+			"related_id" : ObjectId("5f5296eb7f3fe44a067daead"),
+			"name" : "Accusam et Justo"
+		},
+		{
+			"related_id" : ObjectId("5f5296eb7f3fe44a067daeb0"),
+			"name" : "Vero Eos Wornbrake"
+		}
+	]
 }
 ```
 
