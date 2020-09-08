@@ -20,10 +20,9 @@ ADAM ist ein Projekt von Marin Balabanov als Übung für den Einsatz von Webtech
 Die hier besprochenen Kunstwerke gehören der [Demoszene](https://de.wikipedia.org/wiki/Demoszene) an. Unter **Demos** versteht man digitale Echtzeit-Kunst oft mit Musikuntermalung. Für die Künstler der Demoszene stellen Hardware-Einschränkungen einen Ansporn dar. Oft werden künstliche Einschränkungen vorab beschlossen, an die man sich halten muss, z.B. eine maximale Speichergröße der ausführbaren Dateien (oft nur 64Kb), oder es muss auf bestimmter Retro-Hardware mit all ihren Einschränkungen entwickelt werden (z.B. Commodore 64 oder Sinclair ZX Spectrum aus dem Jahr 1982, Atari ST oder Commodore Amiga aus dem Jahr 1985, usw.).
 
 ### 1.1 Erklärvideo über das ADAM-Projekt
-In diesem Erklärvideo wird der Zweck und die Funktionsweise von ADAM erklärt, sowie die kunsthistorische Bedeutung der Demo-Szene angeschnitten: [youtu.be/5qT9ATVqtbk](https://youtu.be/5qT9ATVqtbk)
+In dieser Rohfassung des Erklärvideos wird der Zweck und die Funktionsweise von ADAM erklärt, sowie die kunsthistorische Bedeutung der Demo-Szene angeschnitten: [youtu.be/5qT9ATVqtbk](https://youtu.be/5qT9ATVqtbk)
 
 ### 1.2 Disclaimer
-
 Dieses Projekt dient nur zu Übungszwecken und wurde vom "Archive of Digital Art" (ADA) der Donau Universität Krems inspiriert. Es dient als Übungsprojekt für die Anwendung zeitgemäßer Webtechnologien wie NodeJS, Angular und Heroku (in weiterer Folge kommen noch MongoDB und AWS S3 dazu).
 
 **Die Bilder in diesem Projekt sind nur Platzhalter von [adobestock.com](http://adobestock.com). Sie sind zwar Teil dieses Repositories, sind aber nicht zur allgemeinen Verwendung freigegeben.**
@@ -513,6 +512,7 @@ Die API ist verfügbar unter [adam-interface.herokuapp.com](https://adam-interfa
 [« Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
 
 ## 9. Aktualisierungen
+-**8. September 2020:** Collections angepasst an die Erfordernisse von MongoDB, Source Code teilweise dokumentiert, Rohfassung von Erklärvideo [youtu.be/5qT9ATVqtbk](https://youtu.be/5qT9ATVqtbk) fertiggestellt.
 - **1. September 2020:** Existierende Archiveinträge können nun bearbeitet werden und die Eingabeformulare werden nun auf Vollständigkeit validiert. Der integrierte TinyMCE und ein Datepicker machen die Contenteingabe komfortabler.
 - **27. August 2020:** Im Redaktionsbereich kann man jetzt neue Archiveinträge anlegen, sowie News-Artikel, Compliance-Seiten und featured Items ändern. Allerdings kann man noch nicht die bestehenden Archiveinträge ändern und die Eingabeformulare werden auch noch nicht validiert.
 - **22. August 2020:** App komplett aufgeräumt und auf Angular Unversal konvertiert ( läuft auf  [adam-frontend.herokuapp.com](https://adam-frontend.herokuapp.com) mit CNAME-Eintrag auf [app.demoarchive.art](https://app.demoarchive.art) )
