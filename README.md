@@ -28,7 +28,7 @@ Dieses Projekt dient nur zu Übungszwecken und wurde vom "Archive of Digital Art
 
 **Die Bilder in diesem Projekt sind nur Platzhalter von [adobestock.com](http://adobestock.com). Sie sind zwar Teil dieses Repositories, sind aber nicht zur allgemeinen Verwendung freigegeben.**
 
-### 1.3 Source Code Repositores
+### 1.3 ADAM auf demoarchive.art
 
 ADAM besteht aus drei Teilen: Einem **API-Server** auf [adam-interface.herokuapp.com](https://adam-interface.herokuapp.com) mit Schnittstellen, um die Daten abzurufen, sowie einem Web-Frontend mit einem **öffentlichen Bereich** auf [demoarchive.art](http://demoarchive.art/), in dem Besucher die Informationen über die digitalen Demo-Kunstwerke finden, und einem **Redaktionsbereich,** in dem Redakteure neue Inhalte einpflegen und bearbeiten können, und Administratoren die Rechte verwalten können. 
 
