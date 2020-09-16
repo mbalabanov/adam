@@ -16,6 +16,7 @@ export class SearchresultspageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
   }
 
 }
