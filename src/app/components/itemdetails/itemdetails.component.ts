@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Testability } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
@@ -101,7 +101,6 @@ export class ItemdetailsComponent implements OnInit {
 
     deleteThis(dataType, id) {
         this.apirequestsService.deleteItem(dataType, id).subscribe((data)=>{
-            console.log('Request successful');
     });
 
     }
@@ -319,7 +318,6 @@ export class ItemdetailsComponent implements OnInit {
 
         // Send composite object to API request service
         this.apirequestsService.putArchiveItem(JSON.stringify(this.editedArchiveItem), this.archiveItem.category, this.archiveItem.id).subscribe((data)=>{
-            console.log('Request successful');
         });
 
         // Reload page to show changed content

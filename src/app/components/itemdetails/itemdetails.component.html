@@ -33,7 +33,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                <button type="button" class="btn btn-danger" (click)="deleteThis(archiveItem.category, archiveItem._id)" data-dismiss="modal" routerLink="/archive">Delete</button>
+                                <button type="button" class="btn btn-danger" (click)="deleteThis(archiveItem.category, archiveItem.id)" data-dismiss="modal" routerLink="/archive">Delete</button>
                             </div>
                         </div>
                     </div>
@@ -160,6 +160,7 @@
         </div>
 
         <!-- Modal for Image Carousel -->
+        <!-- Images and text information are passed onto the carousel in the modal. The URL is used as an ID. -->
         <div class="modal fade" id="carouselModal" tabindex="-1" aria-labelledby="carouselModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-xl">
             <div class="modal-content">
@@ -279,7 +280,7 @@
 </div>
 
 <!-- Modal for editing items -->
-<!-- Users enter the information, it is then passed to the API request service and sent as POST to API. -->
+<!-- Users enter the information, it is then passed to the API request service and sent as POST -->
 <div class="modal fade" id="editItem" tabindex="-1" aria-labelledby="editItem" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-scrollable">
         <div class="modal-content">
