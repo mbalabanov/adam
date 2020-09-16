@@ -8,7 +8,7 @@ import { ApirequestsService } from '../../services/apirequests.service';
 })
 export class NewslistComponent implements OnInit {
 
-  newsitems: any = {};
+  newsitems: any = [];
 
   constructor(private apirequestsService: ApirequestsService) { }
 

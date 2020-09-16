@@ -48,28 +48,24 @@ export class CreatearchiveitemComponent implements OnInit {
 
 
   newArchiveItemImage0: ArchiveItemImages = {
-    id: '',
     url: '',
     name: '',
     description: ''
   };
 
   newArchiveItemImage1: ArchiveItemImages = {
-    id: '',
     url: '',
     name: '',
     description: ''
   };
 
   newArchiveItemImage2: ArchiveItemImages = {
-    id: '',
     url: '',
     name: '',
     description: ''
   };
 
   newArchiveItemImage3: ArchiveItemImages = {
-    id: '',
     url: '',
     name: '',
     description: ''
@@ -77,20 +73,17 @@ export class CreatearchiveitemComponent implements OnInit {
 
 
   newArchiveItemVideos: ArchiveItemVideos = {
-    id: '',
     url: '',
     name: '',
     description: ''
   };
 
   newArchiveItemWebsiteURLs: ArchiveItemWebsiteURLs = {
-    id: '',
     url: '',
     name: '',
   };
 
   newArchiveItemAssets: ArchiveItemAssets = {
-    id: '',
     url: '',
     name: '',
   };
@@ -136,7 +129,7 @@ export class CreatearchiveitemComponent implements OnInit {
 
     // Formgroups for the form
     this.createdArchiveItem = new FormGroup({ 
-      id: new FormControl(this.generatedRndId), 
+      id: new FormControl(''), 
       category: new FormControl('artifacts'),
       name: new FormControl('',Validators.required),
       aliases: new FormControl(''),
@@ -152,42 +145,35 @@ export class CreatearchiveitemComponent implements OnInit {
       }),
       tags: new FormControl(''),
       images0: new FormGroup({
-        id: new FormControl('0'),
         url: new FormControl('',Validators.required),
         name: new FormControl('',Validators.required),
         description: new FormControl('')
       }),
       images1: new FormGroup({
-        id: new FormControl('1'),
         url: new FormControl(''),
         name: new FormControl(''),
         description: new FormControl('')
       }),
       images2: new FormGroup({
-        id: new FormControl('2'),
         url: new FormControl(''),
         name: new FormControl(''),
         description: new FormControl('')
       }),
       images3: new FormGroup({
-        id: new FormControl('3'),
         url: new FormControl(''),
         name: new FormControl(''),
         description: new FormControl('')
       }),
       videos: new FormGroup({
-        id: new FormControl('0'),
         url: new FormControl(''),
         name: new FormControl(''),
         description: new FormControl('')
       }),
       websiteURLs: new FormGroup({
-        id: new FormControl('0'),
         url: new FormControl(''),
         name: new FormControl('')
       }),
       assets: new FormGroup({
-        id: new FormControl('0'),
         name: new FormControl(''),
         url: new FormControl('')
       }),
@@ -233,45 +219,38 @@ export class CreatearchiveitemComponent implements OnInit {
     };
   
     this.newArchiveItemImage0 = {
-      id: this.createdArchiveItem.value.images0.id,
       url: this.createdArchiveItem.value.images0.url,
       name: this.createdArchiveItem.value.images0.name,
       description: this.createdArchiveItem.value.images0.description
     };
     this.newArchiveItemImage1 = {
-      id: this.createdArchiveItem.value.images1.id,
       url: this.createdArchiveItem.value.images1.url,
       name: this.createdArchiveItem.value.images1.name,
       description: this.createdArchiveItem.value.images1.description
     };
     this.newArchiveItemImage2 = {
-      id: this.createdArchiveItem.value.images2.id,
       url: this.createdArchiveItem.value.images2.url,
       name: this.createdArchiveItem.value.images2.name,
       description: this.createdArchiveItem.value.images2.description
     };
     this.newArchiveItemImage3 = {
-      id: this.createdArchiveItem.value.images3.id,
       url: this.createdArchiveItem.value.images3.url,
       name: this.createdArchiveItem.value.images3.name,
       description: this.createdArchiveItem.value.images3.description
     };
   
     this.newArchiveItemVideos = {
-      id: this.createdArchiveItem.value.videos.id,
       url: this.createdArchiveItem.value.videos.url,
       name: this.createdArchiveItem.value.videos.name,
       description: this.createdArchiveItem.value.videos.description
     };
   
     this.newArchiveItemWebsiteURLs = {
-      id: this.createdArchiveItem.value.websiteURLs.id,
       url: this.createdArchiveItem.value.websiteURLs.url,
       name: this.createdArchiveItem.value.websiteURLs.name,
     };
   
     this.newArchiveItemAssets = {
-      id: this.createdArchiveItem.value.assets.id,
       url: this.createdArchiveItem.value.assets.url,
       name: this.createdArchiveItem.value.assets.name,
     };
@@ -310,7 +289,7 @@ export class CreatearchiveitemComponent implements OnInit {
     }
 
     this.newArchiveItem = {
-      id: this.createdArchiveItem.value.id,
+      id: '',
       category: this.createdArchiveItem.value.category,
       name: this.createdArchiveItem.value.name,
       aliases: this.newAliases,

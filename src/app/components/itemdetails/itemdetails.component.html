@@ -33,7 +33,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                <button type="button" class="btn btn-danger" (click)="deleteThis(archiveItem.category, archiveItem.id)" data-dismiss="modal" routerLink="/archive">Delete</button>
+                                <button type="button" class="btn btn-danger" (click)="deleteThis(archiveItem.category, archiveItem._id)" data-dismiss="modal" routerLink="/archive">Delete</button>
                             </div>
                         </div>
                     </div>
@@ -151,7 +151,7 @@
             </div>
         </div>
         <div *ngIf="archiveItem.images[0].url?.length" class="row pt-3 border">
-            <div class="col-6 text-center" *ngFor="let item of archiveItem.images" (click)="setCarouselActiveID(item.id)">
+            <div class="col-6 text-center" *ngFor="let item of archiveItem.images" (click)="setCarouselActiveID(item.url)">
             <a href="#" data-toggle="modal" data-target="#carouselModal" >
                 <img src="{{ item.url }}" class="img-fluid rounded-lg" alt="{{ item.name }}">
                 <p>{{ item.name }}</p>
@@ -176,7 +176,7 @@
                     <li data-target="#carouselCaptions" *ngFor="let item of archiveItem.images; let isFirst = first" [class.active]="isFirst"></li>
                     </ol>
                     <div class="carousel-inner">
-                    <div class="carousel-item" *ngFor="let item of archiveItem.images; let isFirst = first" [class.active]="isFirst" id="{{ item.id }}">
+                    <div class="carousel-item" *ngFor="let item of archiveItem.images; let isFirst = first" [class.active]="isFirst" id="{{ item.url }}">
                         <img src="{{ item.url }}" class="d-block w-100" alt="{{ item.name }}" >
                     </div>
                     </div>
@@ -258,27 +258,28 @@
 <div class="row">
     <!-- Related persons -->
     <div class="col-lg-2 col-md-3 text-center my-1" *ngFor="let item of relatedPersons">
-        <a routerLink="/item/persons/{{ item.id }}"><img src="{{ item.images[0].url }}" alt="{{ item.name }}" class="img-fluid rounded"></a>
+        <a routerLink="/item/persons/{{ item._id }}"><img src="{{ item.images[0].url }}" alt="{{ item.name }}" class="img-fluid rounded"></a>
         <span class="badge badge-secondary">Person</span>
-        <p><a routerLink="/item/persons/{{ item.id }}">{{ item.name }}</a></p>
+        <p><a routerLink="/item/persons/{{ item._id }}">{{ item.name }}</a></p>
     </div>
 
     <!-- Related artifacts -->
     <div class="col-lg-2 col-md-3 text-center my-1" *ngFor="let item of relatedArtifacts">
-        <a routerLink="/item/artifacts/{{ item.id }}"><img src="{{ item.images[0].url }}" alt="{{ item.name }}" class="img-fluid rounded"></a>
+        <a routerLink="/item/artifacts/{{ item._id }}"><img src="{{ item.images[0].url }}" alt="{{ item.name }}" class="img-fluid rounded"></a>
         <span class="badge badge-secondary">Artifact</span>
-        <p><a routerLink="/item/artifacts/{{ item.id }}">{{ item.name }}</a></p>
+        <p><a routerLink="/item/artifacts/{{ item._id }}">{{ item.name }}</a></p>
     </div>
 
     <!-- Related events -->
     <div class="col-lg-2 col-md-3 text-center my-1" *ngFor="let item of relatedEvents">
-        <a routerLink="/item/events/{{ item.id }}"><img src="{{ item.images[0].url }}" alt="{{ item.name }}" class="img-fluid rounded"></a>
+        <a routerLink="/item/events/{{ item._id }}"><img src="{{ item.images[0].url }}" alt="{{ item.name }}" class="img-fluid rounded"></a>
         <span class="badge badge-secondary">Event</span>
-        <p><a routerLink="/item/events/{{ item.id }}">{{ item.name }}</a></p>
+        <p><a routerLink="/item/events/{{ item._id }}">{{ item.name }}</a></p>
     </div>
 </div>
 
 <!-- Modal for editing items -->
+<!-- Users enter the information, it is then passed to the API request service and sent as POST to API. -->
 <div class="modal fade" id="editItem" tabindex="-1" aria-labelledby="editItem" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-scrollable">
         <div class="modal-content">
@@ -298,7 +299,7 @@
                 </div>
                 <div class="mt-2 input-group">
                     <div class="input-group-prepend">
-                        <div class="input-group-text"><strong>Categrory:</strong></div>
+                        <div class="input-group-text"><strong>Category:</strong></div>
                     </div>
                     <input type="text" formControlName="category" class="form-control" readonly>
                 </div>
@@ -345,12 +346,6 @@
                 <input type="text" formControlName="tags" class="form-control">
                 <label class="mt-2"><strong>Images:</strong></label>
                 <div formGroupName="image0" class="alert alert-secondary">
-                    <div class="mt-2 input-group">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text"><strong>Image Id:</strong></div>
-                        </div>
-                        <input type="text" formControlName="id" class="form-control" readonly>
-                    </div>
                     <label class="mt-2"><strong>URL:</strong></label>
                     <input type="text" formControlName="url" class="form-control">
                     <label class="mt-2"><strong>Name:</strong></label>
@@ -359,12 +354,6 @@
                     <input type="text" formControlName="description" class="form-control">
                 </div>
                 <div formGroupName="image1" class="alert alert-secondary">
-                    <div class="mt-2 input-group">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text"><strong>Image Id:</strong></div>
-                        </div>
-                        <input type="text" formControlName="id" class="form-control" readonly>
-                    </div>
                     <label class="mt-2"><strong>URL:</strong></label>
                     <input type="text" formControlName="url" class="form-control">
                     <label class="mt-2"><strong>Name:</strong></label>
@@ -373,12 +362,6 @@
                     <input type="text" formControlName="description" class="form-control">
                 </div>
                 <div formGroupName="image2" class="alert alert-secondary">
-                    <div class="mt-2 input-group">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text"><strong>Image Id:</strong></div>
-                        </div>
-                        <input type="text" formControlName="id" class="form-control" readonly>
-                    </div>
                     <label class="mt-2"><strong>URL:</strong></label>
                     <input type="text" formControlName="url" class="form-control">
                     <label class="mt-2"><strong>Name:</strong></label>
@@ -387,12 +370,6 @@
                     <input type="text" formControlName="description" class="form-control">
                 </div>
                 <div formGroupName="image3" class="alert alert-secondary">
-                    <div class="mt-2 input-group">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text"><strong>Image Id:</strong></div>
-                        </div>
-                        <input type="text" formControlName="id" class="form-control" readonly>
-                    </div>
                     <label class="mt-2"><strong>URL:</strong></label>
                     <input type="text" formControlName="url" class="form-control">
                     <label class="mt-2"><strong>Name:</strong></label>
@@ -402,12 +379,6 @@
                 </div>
                 <label class="mt-2"><strong>Videos:</strong></label>
                 <div formGroupName="videos" class="alert alert-secondary">
-                    <div class="mt-2 input-group">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text"><strong>Video Id:</strong></div>
-                        </div>
-                        <input type="text" formControlName="id" class="form-control" readonly>
-                    </div>
                     <label class="mt-2"><strong>URL:</strong></label>
                     <input type="text" formControlName="url" class="form-control">
                     <label class="mt-2"><strong>Name:</strong></label>
@@ -417,12 +388,6 @@
                 </div>
                 <label class="mt-2"><strong>Websites:</strong></label>
                 <div formGroupName="websiteURLs" class="alert alert-secondary">
-                    <div class="mt-2 input-group">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text"><strong>Website Id:</strong></div>
-                        </div>
-                        <input type="text" formControlName="id" class="form-control" readonly>
-                    </div>
                     <label class="mt-2"><strong>URL:</strong></label>
                     <input type="text" formControlName="url" class="form-control">
                     <label class="mt-2"><strong>Name:</strong></label>
@@ -430,12 +395,6 @@
                 </div>
                 <label class="mt-2"><strong>Assets:</strong></label>
                 <div formGroupName="assets" class="alert alert-secondary">
-                    <div class="mt-2 input-group">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text"><strong>Asset Id:</strong></div>
-                        </div>
-                        <input type="text" formControlName="id" class="form-control" readonly>
-                    </div>
                     <label class="mt-2"><strong>Name:</strong></label>
                     <input type="text" formControlName="name" class="form-control">
                     <label class="mt-2"><strong>URL:</strong></label>

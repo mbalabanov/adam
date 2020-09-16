@@ -11,8 +11,8 @@ import { ApirequestsService } from '../../services/apirequests.service';
 })
 export class CategorylistComponent implements OnInit {
 
-  archiveCategories: Array<object> = [];
-  archiveCategory: any = {};
+  
+  archiveCategory: any  = [];
   searchText;
 
   public filter: string = '';
@@ -44,26 +44,26 @@ ngOnInit(): void {
 
           switch (catSlug) {
               case 'events': {
-                  this.apirequestsService.getEvents()
-                  .subscribe(data => {
-                      this.archiveCategory = data;
-                      });
-                      break;
-                  }
+                this.apirequestsService.getEvents()
+                .subscribe(data => {
+                    this.archiveCategory = data;
+                    });
+                    break;
+                }
               case 'persons': {
-                  this.apirequestsService.getPersons()
-                  .subscribe(data => {
-                      this.archiveCategory = data;
-                      });
-                      break;
-                  }
+                this.apirequestsService.getPersons()
+                .subscribe(data => {
+                    this.archiveCategory = data;
+                    });
+                    break;
+                }
               case 'artifacts': {
-                  this.apirequestsService.getArtifacts()
-                  .subscribe(data => {
-                      this.archiveCategory = data;
-                      });
-                      break;
-                  }
+                this.apirequestsService.getArtifacts()
+                .subscribe(data => {
+                    this.archiveCategory = data;
+                    });
+                    break;
+                }
           }
 
       });

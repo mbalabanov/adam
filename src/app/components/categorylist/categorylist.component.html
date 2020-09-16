@@ -5,12 +5,12 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
                 <li class="breadcrumb-item"><a routerLink="/archive">Archive</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Archive category: {{ archiveCategory.name }}</li>
+                <li class="breadcrumb-item active" aria-current="page">Archive category: {{ archiveCategory[0].category }}</li>
             </ol>
         </nav>
 			<div class="dropdown ml-2 mb-2">
 				<button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					Archive Category:  {{ archiveCategory.name }}
+					Archive Category:  {{ archiveCategory[0].category }}
 				</button>
 				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
 					<a href="#" class="dropdown-item" routerLink="/category/artifacts" routerLinkActive="active">Artifacts</a>
@@ -23,9 +23,9 @@
 
 	<div class="row">
 		<div class="col-10 offset-1 text-center">
-			<h2>Archive Category: {{ archiveCategory.name }}</h2>
+			<h2>Archive Category: {{ archiveCategory[0].category }}</h2>
 			<h3>At present, all items in this category only contain placeholder text.</h3>
-			<h4 class="mt-3">Search {{ archiveCategory.name }}</h4>
+			<h4 class="mt-3">Search {{ archiveCategory[0].category }}</h4>
 		</div>
 	</div>
 	<div class="row">
@@ -44,7 +44,7 @@
 
 		<div class="row">
 			<div class="col-12 text-center">
-				<h4 *ngIf="searchText">Search results for "{{ searchText }}" in {{ archiveCategory.name }}:</h4>
+				<h4 *ngIf="searchText">Search results for "{{ searchText }}" in {{ archiveCategory[1].category }}:</h4>
 				<pagination-template #p="paginationApi" [id]="config.id" (pageChange)="config.currentPage = $event">
 	
 					<nav aria-label="Search results">
@@ -73,9 +73,9 @@
 				</pagination-template>
 	
 				<div class="row mb-5 ">
-					<div class="col-lg-3 col-md-3 col-sm-6 text-center shadow-sm" *ngFor="let item of archiveCategory.content | filter:searchText | paginate: config">
-						<a routerLink="/item/{{ item.category }}/{{ item.id }}"><img src="{{ item.images[0].url }}" alt="{{ item.name }}" class="img-fluid rounded"></a>
-						<h4 class="mt-2"><a routerLink="/item/{{ item.category }}/{{ item.id }}">{{ item.name }}</a></h4>
+					<div class="col-lg-3 col-md-3 col-sm-6 text-center shadow-sm" *ngFor="let item of archiveCategory | filter:searchText | paginate: config">
+						<a routerLink="/item/{{ item.category }}/{{ item._id }}"><img src="{{ item.images[0].url }}" alt="{{ item.name }}" class="img-fluid rounded"></a>
+						<h4 class="mt-2"><a routerLink="/item/{{ item.category }}/{{ item._id }}">{{ item.name }}</a></h4>
 						<p>{{ item.shortdescription }}</p>
 						<p><a class="btn btn-outline-secondary ml-1 mt-2" routerLink="/item/{{ item.category | lowercase }}/{{ item.id }}">Details</a></p>
 					</div>

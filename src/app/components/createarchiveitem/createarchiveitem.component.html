@@ -15,12 +15,6 @@
             </div>
             <div class="modal-body">
                 <div [formGroup]="createdArchiveItem" class="form-group">
-                    <div class="mt-2 input-group">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text"><strong>Item Id:</strong></div>
-                        </div>
-                        <input type="text" formControlName="id" class="form-control" readonly>
-                    </div>
                     <label class="mt-2"><strong>Category:</strong></label>
                     <select formControlName="category" class="form-control">
                         <option selected value="artifacts">artifacts</option>
@@ -69,12 +63,6 @@
                     <input type="text" formControlName="tags" class="form-control">
                     <label class="mt-2"><strong>Images:&nbsp;</strong></label>
                     <div formGroupName="images0" class="alert alert-secondary">
-                        <div class="mt-2 input-group">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text"><strong>Image Id:</strong></div>
-                            </div>
-                            <input type="text" formControlName="id" class="form-control" readonly>
-                        </div>
                         <label class="mt-2"><strong>URL:&nbsp;</strong></label><span *ngIf="imagesurl.invalid" class="badge badge-pill badge-warning">Required</span>
                         <input type="text" formControlName="url" class="form-control">
                         <label class="mt-2"><strong>Name:&nbsp;</strong></label><span *ngIf="imagesname.invalid" class="badge badge-pill badge-warning">Required</span>
@@ -84,12 +72,6 @@
                     </div>
                     <div id="image1fields">
                         <div formGroupName="images1" class="alert alert-secondary">
-                            <div class="mt-2 input-group">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text"><strong>Image Id:</strong></div>
-                                </div>
-                                <input type="text" formControlName="id" class="form-control" readonly>
-                            </div>
                             <label class="mt-2"><strong>URL:</strong></label>
                             <input type="text" formControlName="url" class="form-control">
                             <label class="mt-2"><strong>Name:</strong></label>
@@ -100,12 +82,6 @@
                     </div>
                     <div id="image2fields">
                         <div formGroupName="images2" class="alert alert-secondary">
-                            <div class="mt-2 input-group">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text"><strong>Image Id:</strong></div>
-                                </div>
-                                <input type="text" formControlName="id" class="form-control" readonly>
-                            </div>
                             <label class="mt-2"><strong>URL:</strong></label>
                             <input type="text" formControlName="url" class="form-control">
                             <label class="mt-2"><strong>Name:</strong></label>
@@ -116,12 +92,6 @@
                     </div>
                     <div id="image3fields">
                         <div formGroupName="images3" class="alert alert-secondary">
-                            <div class="mt-2 input-group">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text"><strong>Image Id:</strong></div>
-                                </div>
-                                <input type="text" formControlName="id" class="form-control" readonly>
-                            </div>
                             <label class="mt-2"><strong>URL:</strong></label>
                             <input type="text" formControlName="url" class="form-control">
                             <label class="mt-2"><strong>Name:</strong></label>
@@ -132,12 +102,6 @@
                     </div>
                     <label class="mt-2"><strong>Video:</strong></label>
                     <div formGroupName="videos" class="alert alert-secondary">
-                        <div class="mt-2 input-group">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text"><strong>Video Id:</strong></div>
-                            </div>
-                            <input type="text" formControlName="id" class="form-control" readonly>
-                        </div>
                         <label class="mt-2"><strong>URL:</strong></label>
                         <input type="text" formControlName="url" class="form-control">
                         <label class="mt-2"><strong>Name:</strong></label>
@@ -147,12 +111,6 @@
                     </div>
                     <label class="mt-2"><strong>Website:</strong></label>
                     <div formGroupName="websiteURLs" class="alert alert-secondary">
-                        <div class="mt-2 input-group">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text"><strong>Website Id:</strong></div>
-                            </div>
-                            <input type="text" formControlName="id" class="form-control" readonly>
-                        </div>
                         <label class="mt-2"><strong>URL:</strong></label>
                         <input type="text" formControlName="url" class="form-control">
                         <label class="mt-2"><strong>Name:</strong></label>
@@ -160,12 +118,6 @@
                     </div>
                     <label class="mt-2"><strong>Asset:</strong></label>
                     <div formGroupName="assets" class="alert alert-secondary">
-                        <div class="mt-2 input-group">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text"><strong>Asset Id:</strong></div>
-                            </div>
-                            <input type="text" formControlName="id" class="form-control" readonly>
-                        </div>
                         <label class="mt-2"><strong>Name:</strong></label>
                         <input type="text" formControlName="name" class="form-control">
                         <label class="mt-2"><strong>URL:</strong></label>

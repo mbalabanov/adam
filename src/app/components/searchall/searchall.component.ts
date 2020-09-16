@@ -10,11 +10,7 @@ import { ApirequestsService } from '../../services/apirequests.service';
 })
 export class SearchallComponent implements OnInit {
 
-  rawData: any = {};
-  allArtifacts: Array<object> = [];
-  allPersons: Array<object> = [];
-  allEvents: Array<object> = [];
-  allData: Array<object> = [];
+  allData: any = [];
   searchText = '';
   searchSlug;
 
@@ -40,17 +36,12 @@ export class SearchallComponent implements OnInit {
 
 	ngOnInit(): void {
 
-
     this.route.paramMap.subscribe(params => {
       this.searchSlug = params.get('params');
       this.searchText = this.searchSlug;
 
       this.apirequestsService.getData().subscribe(data => {
-        this.rawData = data;
-        this.allArtifacts = this.rawData.artifacts.content;
-        this.allPersons = this.rawData.persons.content;
-        this.allEvents = this.rawData.events.content;
-        this.allData = this.allArtifacts.concat(this.allPersons, this.allEvents);
+        this.allData = data;
       });
 
     });

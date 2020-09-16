@@ -54,48 +54,41 @@ export class ItemdetailsComponent implements OnInit {
     };
 
     editedArchiveItemImage0: ArchiveItemImages = {
-        id: '',
         url: '',
         name: '',
         description: ''
     };
 
     editedArchiveItemImage1: ArchiveItemImages = {
-        id: '',
         url: '',
         name: '',
         description: ''
     };
 
     editedArchiveItemImage2: ArchiveItemImages = {
-        id: '',
         url: '',
         name: '',
         description: ''
     };
 
     editedArchiveItemImage3: ArchiveItemImages = {
-        id: '',
         url: '',
         name: '',
         description: ''
     };
 
     editedArchiveItemVideos: ArchiveItemVideos = {
-        id: '',
         url: '',
         name: '',
         description: ''
     };
 
     editedArchiveItemWebsiteURLs: ArchiveItemWebsiteURLs = {
-        id: '',
         url: '',
         name: '',
     };
 
     editedArchiveItemAssets: ArchiveItemAssets = {
-        id: '',
         url: '',
         name: '',
     };
@@ -150,7 +143,6 @@ export class ItemdetailsComponent implements OnInit {
                 tempImagesArray.push(this.archiveItem.images[imageIndex]);
             } else {
                 let emptyImage: ArchiveItemImages = {
-                    id: '',
                     url: '',
                     name: '',
                     description: ''
@@ -160,7 +152,7 @@ export class ItemdetailsComponent implements OnInit {
         };
 
         this.editingFormArchiveItem = new FormGroup({
-            id: new FormControl(this.archiveItem.id, Validators.required),
+            id: new FormControl(this.archiveItem._id, Validators.required),
             category:  new FormControl(this.archiveItem.category),
             name: new FormControl(this.archiveItem.name, Validators.required),
             aliases: new FormControl(this.archiveItem.aliases.toString()),
@@ -176,42 +168,35 @@ export class ItemdetailsComponent implements OnInit {
             }),
             tags: new FormControl(this.archiveItem.tags.toString()),
             image0: new FormGroup({
-                id: new FormControl(tempImagesArray[0].id),
                 url: new FormControl(tempImagesArray[0].url, Validators.required),
                 name: new FormControl(tempImagesArray[0].name),
                 description: new FormControl(tempImagesArray[0].description)
             }),
             image1: new FormGroup({
-                id: new FormControl(tempImagesArray[1].id),
                 url: new FormControl(tempImagesArray[1].url),
                 name: new FormControl(tempImagesArray[1].name),
                 description: new FormControl(tempImagesArray[1].description)
             }),
             image2: new FormGroup({
-                id: new FormControl(tempImagesArray[2].id),
                 url: new FormControl(tempImagesArray[2].url),
                 name: new FormControl(tempImagesArray[2].name),
                 description: new FormControl(tempImagesArray[2].description)
             }),
             image3: new FormGroup({
-                id: new FormControl(tempImagesArray[3].id),
                 url: new FormControl(tempImagesArray[3].url),
                 name: new FormControl(tempImagesArray[3].name),
                 description: new FormControl(tempImagesArray[3].description)
             }),
             videos: new FormGroup({
-                id: new FormControl(this.archiveItem.videos[0].id),
                 url: new FormControl(this.archiveItem.videos[0].url),
                 name: new FormControl(this.archiveItem.videos[0].name),
                 description: new FormControl(this.archiveItem.videos[0].description)
             }),
             websiteURLs: new FormGroup({
-                id: new FormControl(this.archiveItem.websiteURLs[0].id),
                 url: new FormControl(this.archiveItem.websiteURLs[0].url),
                 name: new FormControl(this.archiveItem.websiteURLs[0].name)
             }),
             assets: new FormGroup({
-                id: new FormControl(this.archiveItem.assets[0].id),
                 name: new FormControl(this.archiveItem.assets[0].name),
                 url: new FormControl(this.archiveItem.assets[0].url)
               }),
@@ -234,48 +219,41 @@ export class ItemdetailsComponent implements OnInit {
         };
         
         this.editedArchiveItemImage0 = {
-            id: this.editingFormArchiveItem.value.image0.id,
             url: this.editingFormArchiveItem.value.image0.url,
             name: this.editingFormArchiveItem.value.image0.name,
             description: this.editingFormArchiveItem.value.image0.description
         };
 
         this.editedArchiveItemImage1 = {
-            id: this.editingFormArchiveItem.value.image1.id,
             url: this.editingFormArchiveItem.value.image1.url,
             name: this.editingFormArchiveItem.value.image1.name,
             description: this.editingFormArchiveItem.value.image1.description
         };
 
         this.editedArchiveItemImage2 = {
-            id: this.editingFormArchiveItem.value.image2.id,
             url: this.editingFormArchiveItem.value.image2.url,
             name: this.editingFormArchiveItem.value.image2.name,
             description: this.editingFormArchiveItem.value.image2.description
         };
 
         this.editedArchiveItemImage3 = {
-            id: this.editingFormArchiveItem.value.image3.id,
             url: this.editingFormArchiveItem.value.image3.url,
             name: this.editingFormArchiveItem.value.image3.name,
             description: this.editingFormArchiveItem.value.image3.description
         };
         
         this.editedArchiveItemVideos = {
-            id: this.editingFormArchiveItem.value.videos.id,
             url: this.editingFormArchiveItem.value.videos.url,
             name: this.editingFormArchiveItem.value.videos.name,
             description: this.editingFormArchiveItem.value.videos.description
         };
         
         this.editedArchiveItemWebsiteURLs = {
-            id: this.editingFormArchiveItem.value.websiteURLs.id,
             url: this.editingFormArchiveItem.value.websiteURLs.url,
             name: this.editingFormArchiveItem.value.websiteURLs.name,
         };
         
         this.editedArchiveItemAssets = {
-            id: this.editingFormArchiveItem.value.assets.id,
             url: this.editingFormArchiveItem.value.assets.url,
             name: this.editingFormArchiveItem.value.assets.name,
         };
@@ -314,7 +292,7 @@ export class ItemdetailsComponent implements OnInit {
         }
 
         this.editedArchiveItem = { 
-            id: this.editingFormArchiveItem.value.id,
+            id: this.editingFormArchiveItem.value._id,
             category: this.editingFormArchiveItem.value.category,
             name: this.editingFormArchiveItem.value.name,
             aliases: this.editedAliases,
@@ -395,19 +373,19 @@ ngOnInit(): void {
                     this.archiveItem = data;
 
                     for (let individualPerson of this.archiveItem.persons) {
-                        this.apirequestsService.getPerson(individualPerson).subscribe(data => {
+                        this.apirequestsService.getPerson(individualPerson.related_id).subscribe(data => {
                             this.relatedPersons.push(data);
                         });
                     };
             
                     for (let individualArtifact of this.archiveItem.artifacts) {
-                        this.apirequestsService.getArtifact(individualArtifact).subscribe(data => {
+                        this.apirequestsService.getArtifact(individualArtifact.related_id).subscribe(data => {
                             this.relatedArtifacts.push(data);
                         });
                     };
             
                     for (let individualEvent of this.archiveItem.events) {
-                        this.apirequestsService.getEvent(individualEvent).subscribe(data => {
+                        this.apirequestsService.getEvent(individualEvent.related_id).subscribe(data => {
                             this.relatedEvents.push(data);
                         });
                     };
@@ -422,19 +400,19 @@ ngOnInit(): void {
                     this.archiveItem = data;
 
                     for (let individualPerson of this.archiveItem.persons) {
-                        this.apirequestsService.getPerson(individualPerson).subscribe(data => {
+                        this.apirequestsService.getPerson(individualPerson.related_id).subscribe(data => {
                             this.relatedPersons.push(data);
                         });
                     };
             
                     for (let individualArtifact of this.archiveItem.artifacts) {
-                        this.apirequestsService.getArtifact(individualArtifact).subscribe(data => {
+                        this.apirequestsService.getArtifact(individualArtifact.related_id).subscribe(data => {
                             this.relatedArtifacts.push(data);
                         });
                     };
             
                     for (let individualEvent of this.archiveItem.events) {
-                        this.apirequestsService.getEvent(individualEvent).subscribe(data => {
+                        this.apirequestsService.getEvent(individualEvent.related_id).subscribe(data => {
                             this.relatedEvents.push(data);
                         });
                     };
@@ -449,19 +427,19 @@ ngOnInit(): void {
                     this.archiveItem = data;
 
                     for (let individualPerson of this.archiveItem.persons) {
-                        this.apirequestsService.getPerson(individualPerson).subscribe(data => {
+                        this.apirequestsService.getPerson(individualPerson.related_id).subscribe(data => {
                             this.relatedPersons.push(data);
                         });
                     };
             
                     for (let individualArtifact of this.archiveItem.artifacts) {
-                        this.apirequestsService.getArtifact(individualArtifact).subscribe(data => {
+                        this.apirequestsService.getArtifact(individualArtifact.related_id).subscribe(data => {
                             this.relatedArtifacts.push(data);
                         });
                     };
             
                     for (let individualEvent of this.archiveItem.events) {
-                        this.apirequestsService.getEvent(individualEvent).subscribe(data => {
+                        this.apirequestsService.getEvent(individualEvent.related_id).subscribe(data => {
                             this.relatedEvents.push(data);
                         });
                     };

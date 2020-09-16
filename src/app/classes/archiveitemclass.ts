@@ -6,27 +6,23 @@ export interface ArchiveItemDates {
 }
 
 export interface ArchiveItemImages {
-    id: string;
     url: string;
     name: string;
     description: string;
 }
 
 export interface ArchiveItemVideos {
-    id: string;
     url: string;
     name: string;
     description: string;
 }
 
 export interface ArchiveItemWebsiteURLs {
-    id: string;
     name: string;
     url: string;
 }
 
 export interface ArchiveItemAssets {
-    id: string;
     name: string;
     url: string;
 }

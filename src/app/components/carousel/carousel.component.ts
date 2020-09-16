@@ -8,7 +8,7 @@ import { ApirequestsService } from '../../services/apirequests.service';
 })
 export class CarouselComponent implements OnInit {
 
-  featured: any = {};
+  featured: any = [];
 
   constructor(private apirequestsService: ApirequestsService) { }
 
