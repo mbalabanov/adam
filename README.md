@@ -3,17 +3,17 @@
 ![ADAM - Archive of Demo Art & Media](documentation/assets/adam-logo.png)
 
 ## Inhaltsverzeichnis
-1. [Erklärvideo](#0-erklärvideo)
-2. [Beschreibung](#1-beschreibung)
-3. [Bestandteile und Installation](#2-bestandteile-und-installation)
-4. [Details der unterschiedlichen Views](#3-details-der-unterschiedlichen-views)
-5. [Die Struktur von ADAM](#4-die-struktur-von-adam)
-6. [Konzept der Mobile App](#5-konzept-mobile-app)
-7. [DB und API](#6-db-und-api)
-8. [Benutzerrollen](#7-benutzerrollen)
-9. [Technologien](#8-technologien)
-10. [Aktualisierungen](#9-aktualisierungen)
-11. [Projektplan](#10-projektplan)
+1. [Erklärvideo](#1-erklärvideo)
+2. [Beschreibung](#2-beschreibung)
+3. [Bestandteile und Installation](#3-bestandteile-und-installation)
+4. [Details der unterschiedlichen Views](#4-details-der-unterschiedlichen-views)
+5. [Die Struktur von ADAM](#5-die-struktur-von-adam)
+6. [Konzept der Mobile App](#6-konzept-mobile-app)
+7. [DB und API](#7-db-und-api)
+8. [Benutzerrollen](#8-benutzerrollen)
+9. [Technologien](#9-technologien)
+10. [Aktualisierungen](#10-aktualisierungen)
+11. [Projektplan](#11-projektplan)
 
 ## 1. Erklärvideo
 Einleitend finden Sie hier den direkten Link zum Erklärvideo auf Youtube. Erklärt wird der Zweck und die Funktionsweise von ADAM, zudem wird die kunsthistorische Bedeutung der Demo-Szene angeschnitten: [youtu.be/pwi1-JSts-Q](https://youtu.be/pwi1-JSts-Q)
