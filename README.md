@@ -548,8 +548,8 @@ Die API ist verfügbar unter [adam-interface.herokuapp.com](https://adam-interfa
 
 - **Bis 11. September 2020:** Umstellung der API, MongoDB anzusprechen.
 
-- **Bis 18. September 2020:** Bugfixes und Erweiterungen. Möglicherweise Konvertierung der Webapp auf eine mobile App.
+- **Bis 18. September 2020:** Bugfixes und Erweiterungen.
 
-- **Bis 25. September 2020:** Bugfixes und Erweiterungen. Möglicherweise Konvertierung der Webapp auf eine mobile App.
+- **Bis 25. September 2020:** Bugfixes und Erweiterungen.
 
 [« Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
