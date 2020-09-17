@@ -512,8 +512,8 @@ Die API ist verfügbar unter [adam-interface.herokuapp.com](https://adam-interfa
 [« Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
 
 ## 9. Aktualisierungen
-- **16. September 2020:** Datenbank läuft jetzt auf MongoDB Atlas unter mongodb+srv://<username>:<password>@cluster0.xuhkf.mongodb.net/<dbname>. Sämtliche Daten des Web-Frontends werden bereits über die API vom MongoDB-Cluster bezogen, POST funktioniert ebenfalls bereits, allerdings ist PUT noch nicht fertig.
-- **8. September 2020:** Collections angepasst an die Erfordernisse von MongoDB, Source Code teilweise dokumentiert, Rohfassung von Erklärvideo [youtu.be/RAahtmNdJSk](https://youtu.be/RAahtmNdJSk) fertiggestellt.
+- **16. September 2020:** Datenbank läuft jetzt auf MongoDB Atlas unter mongodb+srv://<username>:<password>@cluster0.xuhkf.mongodb.net/<dbname>. Daten des Web-Frontends werden  über die API vom MongoDB-Cluster bezogen (GET und POST, aber PUT noch nicht).
+- **8. September 2020:** Collections angepasst an die Erfordernisse von MongoDB, Source Code teilweise dokumentiert, Rohfassung von Erklärvideo [youtu.be/pwi1-JSts-Q](https://youtu.be/pwi1-JSts-Q) fertiggestellt.
 - **1. September 2020:** Existierende Archiveinträge können nun bearbeitet werden und die Eingabeformulare werden nun auf Vollständigkeit validiert. Der integrierte TinyMCE und ein Datepicker machen die Contenteingabe komfortabler.
 - **27. August 2020:** Im Redaktionsbereich kann man jetzt neue Archiveinträge anlegen, sowie News-Artikel, Compliance-Seiten und featured Items ändern. Allerdings kann man noch nicht die bestehenden Archiveinträge ändern und die Eingabeformulare werden auch noch nicht validiert.
 - **22. August 2020:** App komplett aufgeräumt und auf Angular Unversal konvertiert ( läuft auf  [adam-frontend.herokuapp.com](https://adam-frontend.herokuapp.com) mit CNAME-Eintrag auf [app.demoarchive.art](https://app.demoarchive.art) )
@@ -533,6 +533,8 @@ Die API ist verfügbar unter [adam-interface.herokuapp.com](https://adam-interfa
 [« Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
 
 ## 10. Projektplan
+
+![Projektplan](documentation/assets/projektplan.png)
 
 - **Bis 16. Juli 2020:** Konzept, Wireframes, Datenmodell, detaillierter Ablaufplan und Projektplan. API-Server mit Musterdatensätzen auf Heroku. API-Aufrufe funktionieren und liefern Daten zurück.
 
