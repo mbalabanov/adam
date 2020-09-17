@@ -25,6 +25,7 @@ export class ItemdetailsComponent implements OnInit {
     // Variables for editing archive item details
     editingFormArchiveItem = new FormGroup({ });
 
+    // Create the object to be edited (will be populated in the Angular Form)
     editedArchiveItem: ArchiveItemClass = { 
         id: '',
         category: '',
@@ -43,6 +44,7 @@ export class ItemdetailsComponent implements OnInit {
         events: []
     };
 
+    // These are the objects for the two dates in the date array
     editedArchiveItemDate0: ArchiveItemDates = {
         label: '',
         date: ''
@@ -53,6 +55,7 @@ export class ItemdetailsComponent implements OnInit {
         date: ''
     };
 
+    // These are the image objects for the image infos in the image array
     editedArchiveItemImage0: ArchiveItemImages = {
         url: '',
         name: '',
@@ -77,34 +80,45 @@ export class ItemdetailsComponent implements OnInit {
         description: ''
     };
 
+    // These are the video object for the video infos in the video array
     editedArchiveItemVideos: ArchiveItemVideos = {
         url: '',
         name: '',
         description: ''
     };
 
+    // These are the website URL object for the website infos in the website array
     editedArchiveItemWebsiteURLs: ArchiveItemWebsiteURLs = {
         url: '',
         name: '',
     };
 
+    // These are the asset object for the asset infos in the asset array
     editedArchiveItemAssets: ArchiveItemAssets = {
         url: '',
         name: '',
     };
 
+    // These are the straight arrays ready for the use in the form
     editedAliases: Array<string> = [];
     editedTags: Array<string> = [];
     editedRelatedArtifacts: Array<string> = [];
     editedRelatedPersons: Array<string> = [];
     editedRelatedEvents: Array<string> = [];
 
+    // These arrays are needed for the IDs of the related items in the form
+    onlyIdsRelatedArtifacts: Array<string> = [];
+    onlyIdsRelatedPersons: Array<string> = [];
+    onlyIdsRelatedEvents: Array<string> = [];
+
+    // This function is called by the delete button and sends the delete data to the API
     deleteThis(dataType, id) {
         this.apirequestsService.deleteItem(dataType, id).subscribe((data)=>{
     });
 
     }
 
+    // Sets the correct image IDs in the carousel
     setCarouselActiveID(id){
         var elems = document.querySelectorAll('.active');
         [].forEach.call(elems, function(el) {
@@ -114,15 +128,19 @@ export class ItemdetailsComponent implements OnInit {
         activeElem.classList.add('active');
     };
 
+    // This function is called when you click on the Share Link button and then on the copy button
     clipboardItemURL(itemurl) {
         itemurl.select();  
         document.execCommand('copy');  
         itemurl.setSelectionRange(0, 0);  
     }
 
+    // This function populates the modal with the edit form with the values of the current page item
     assignValuesToFormItem() {
 
+        // First the temporary arrays that hold the date values are generated
         let tempDatesArray: Array<any> = [];
+
         for(let datesIndex = 0; datesIndex < 2; datesIndex++) {
             if(this.archiveItem.dates[datesIndex]) {
                 tempDatesArray.push(this.archiveItem.dates[datesIndex]);
@@ -135,6 +153,7 @@ export class ItemdetailsComponent implements OnInit {
             }
         };
 
+        // Then the temporary arrays that hold the image values are generated
         let tempImagesArray: Array<any> = [];
 
         for(let imageIndex = 0; imageIndex < 4; imageIndex++) {
@@ -150,6 +169,7 @@ export class ItemdetailsComponent implements OnInit {
             }
         };
 
+        // This is the actual form for editing the item on the page
         this.editingFormArchiveItem = new FormGroup({
             id: new FormControl(this.archiveItem._id, Validators.required),
             category:  new FormControl(this.archiveItem.category),
@@ -199,76 +219,94 @@ export class ItemdetailsComponent implements OnInit {
                 name: new FormControl(this.archiveItem.assets[0].name),
                 url: new FormControl(this.archiveItem.assets[0].url)
               }),
-            artifacts: new FormControl(this.archiveItem.artifacts.toString()),
-            persons: new FormControl(this.archiveItem.persons.toString()),
-            events: new FormControl(this.archiveItem.events.toString())
+            artifacts: new FormControl(this.onlyIdsRelatedArtifacts),
+            persons: new FormControl(this.onlyIdsRelatedPersons),
+            events: new FormControl(this.onlyIdsRelatedEvents)
         });
     }
 
+    // This function grabs the values from the form and sends them it the component for further relaying to the API.
     saveEditedArchiveItem() {
 
+        // The first date input needs to be turned into an object
         this.editedArchiveItemDate0 = {
             label: this.editingFormArchiveItem.value.date0.label,
             date: this.editingFormArchiveItem.value.date0.date
         };
 
+        // The second date input needs to be turned into an object
+        // (so that the objects can populate the array in the main object)
         this.editedArchiveItemDate1 = {
             label: this.editingFormArchiveItem.value.date1.label,
             date: this.editingFormArchiveItem.value.date1.date
         };
         
+        // The first image input needs to be turned into an object
+        // (so that the objects can populate the array in the main object)
         this.editedArchiveItemImage0 = {
             url: this.editingFormArchiveItem.value.image0.url,
             name: this.editingFormArchiveItem.value.image0.name,
             description: this.editingFormArchiveItem.value.image0.description
         };
 
+        // The second image input needs to be turned into an object
+        // (so that the objects can populate the array in the main object)
         this.editedArchiveItemImage1 = {
             url: this.editingFormArchiveItem.value.image1.url,
             name: this.editingFormArchiveItem.value.image1.name,
             description: this.editingFormArchiveItem.value.image1.description
         };
 
+        // The third image input needs to be turned into an object
+        // (so that the objects can populate the array in the main object)
         this.editedArchiveItemImage2 = {
             url: this.editingFormArchiveItem.value.image2.url,
             name: this.editingFormArchiveItem.value.image2.name,
             description: this.editingFormArchiveItem.value.image2.description
         };
 
+        // The fourth image input needs to be turned into an object
+        // (so that the objects can populate the array in the main object)
         this.editedArchiveItemImage3 = {
             url: this.editingFormArchiveItem.value.image3.url,
             name: this.editingFormArchiveItem.value.image3.name,
             description: this.editingFormArchiveItem.value.image3.description
         };
         
+        // The video input needs to be turned into an object
         this.editedArchiveItemVideos = {
             url: this.editingFormArchiveItem.value.videos.url,
             name: this.editingFormArchiveItem.value.videos.name,
             description: this.editingFormArchiveItem.value.videos.description
         };
-        
+
+        // The input of the related website URLS needs to be turned into an object
         this.editedArchiveItemWebsiteURLs = {
             url: this.editingFormArchiveItem.value.websiteURLs.url,
             name: this.editingFormArchiveItem.value.websiteURLs.name,
         };
-        
+
+        // The asset input needs to be turned into an object
         this.editedArchiveItemAssets = {
             url: this.editingFormArchiveItem.value.assets.url,
             name: this.editingFormArchiveItem.value.assets.name,
         };
 
+        // Aliases need to be split into an array (or else turned into an empty array)
         if(this.editingFormArchiveItem.value.aliases.length > 0){
             this.editedAliases = this.editingFormArchiveItem.value.aliases.split(',');
         } else {
             this.editedAliases = [];
         }
 
+        // Tags need to be split into an array (or else turned into an empty array)
         if(this.editingFormArchiveItem.value.tags.length > 0){
             this.editedTags = this.editingFormArchiveItem.value.tags.split(',');
         } else {
             this.editedTags = [];
         }
 
+        // The related Artifacts need to be split into an array (or else turned into an empty array)
         if(this.editingFormArchiveItem.value.artifacts.length > 0){
             let tempArtifacts = this.editingFormArchiveItem.value.artifacts.split(/\s/).join('');
             this.editedRelatedArtifacts = tempArtifacts.split(',');
@@ -276,6 +314,7 @@ export class ItemdetailsComponent implements OnInit {
             this.editedRelatedArtifacts = [];
         }
 
+        // The related Persons need to be split into an array (or else turned into an empty array)
         if(this.editingFormArchiveItem.value.persons.length > 0){
             let tempPersons = this.editingFormArchiveItem.value.persons.split(/\s/).join('');
             this.editedRelatedPersons = tempPersons.split(',');
@@ -283,6 +322,7 @@ export class ItemdetailsComponent implements OnInit {
             this.editedRelatedPersons = [];
         }
 
+        // The related Events need to be split into an array (or else turned into an empty array)
         if(this.editingFormArchiveItem.value.events.length > 0){
             let tempEvents = this.editingFormArchiveItem.value.events.split(/\s/).join('');
             this.editedRelatedEvents = tempEvents.split(',');
@@ -290,6 +330,8 @@ export class ItemdetailsComponent implements OnInit {
             this.editedRelatedEvents = [];
         }
 
+        // This is the main object with the archived item.
+        // It is populated with the inputs as well as the objects and arrays prepared above.
         this.editedArchiveItem = { 
             id: this.editingFormArchiveItem.value._id,
             category: this.editingFormArchiveItem.value.category,
@@ -316,12 +358,11 @@ export class ItemdetailsComponent implements OnInit {
             events: this.editedRelatedEvents
         };
 
-        // Send composite object to API request service
-        this.apirequestsService.putArchiveItem(JSON.stringify(this.editedArchiveItem), this.archiveItem.category, this.archiveItem.id).subscribe((data)=>{
+        console.log('NOCH IN DEN ITEMDETAILS');
+        // Send composite main object to API request service
+        this.apirequestsService.putArchiveItem(JSON.stringify(this.editedArchiveItem), this.archiveItem.category, this.archiveItem._id).subscribe((data)=>{
         });
 
-        // Reload page to show changed content
-        window.location.reload();
     }
 
     constructor(private apirequestsService: ApirequestsService, private route: ActivatedRoute, public auth: AuthService ) { }
@@ -355,15 +396,23 @@ ngOnInit(): void {
 
     let itemSlug;
 
+    // Gets the URL and its parameters and splits them in to the item category (category) and the itemId.
+    // Category can be artifacts, persons or events, the itemId is numeric value of the MongoDB ObjectId
     this.route.paramMap.subscribe(params => {
         this.archiveCategory = params.get('categoryId');
         itemSlug = params.get('itemId');
+
+        // Stores the page URL for the share function
         this.pageUrl = this.archiveCategory + '/' + itemSlug;
 
+        // Prepares the arrays for related items, that are only store as IDs in the main page item.
         this.relatedArtifacts = [];
         this.relatedPersons = [];
         this.relatedEvents = [];
 
+        // This fucntion gets the necessary data to display the item based on its category (the switch) and its ID (the function call)
+        // When the item data has been received, the loop gets the related items stored in the main item based on their ID and pushes the individual items into the arrays above.
+        // The loops also populate the IDs of the related objects in the arrays, so that they can be put into the respecitve form fields.
         switch (this.archiveCategory) {
             case 'events': {
                 this.apirequestsService.getEvent(itemSlug)
@@ -371,18 +420,21 @@ ngOnInit(): void {
                     this.archiveItem = data;
 
                     for (let individualPerson of this.archiveItem.persons) {
+                        this.onlyIdsRelatedPersons.push(individualPerson.related_id);
                         this.apirequestsService.getPerson(individualPerson.related_id).subscribe(data => {
                             this.relatedPersons.push(data);
                         });
                     };
             
                     for (let individualArtifact of this.archiveItem.artifacts) {
+                        this.onlyIdsRelatedArtifacts.push(individualArtifact.related_id);
                         this.apirequestsService.getArtifact(individualArtifact.related_id).subscribe(data => {
                             this.relatedArtifacts.push(data);
                         });
                     };
             
                     for (let individualEvent of this.archiveItem.events) {
+                        this.onlyIdsRelatedEvents.push(individualEvent.related_id);
                         this.apirequestsService.getEvent(individualEvent.related_id).subscribe(data => {
                             this.relatedEvents.push(data);
                         });
@@ -398,18 +450,21 @@ ngOnInit(): void {
                     this.archiveItem = data;
 
                     for (let individualPerson of this.archiveItem.persons) {
+                        this.onlyIdsRelatedPersons.push(individualPerson.related_id);
                         this.apirequestsService.getPerson(individualPerson.related_id).subscribe(data => {
                             this.relatedPersons.push(data);
                         });
                     };
             
                     for (let individualArtifact of this.archiveItem.artifacts) {
+                        this.onlyIdsRelatedArtifacts.push(individualArtifact.related_id);
                         this.apirequestsService.getArtifact(individualArtifact.related_id).subscribe(data => {
                             this.relatedArtifacts.push(data);
                         });
                     };
             
                     for (let individualEvent of this.archiveItem.events) {
+                        this.onlyIdsRelatedEvents.push(individualEvent.related_id);
                         this.apirequestsService.getEvent(individualEvent.related_id).subscribe(data => {
                             this.relatedEvents.push(data);
                         });
@@ -425,18 +480,21 @@ ngOnInit(): void {
                     this.archiveItem = data;
 
                     for (let individualPerson of this.archiveItem.persons) {
+                        this.onlyIdsRelatedPersons.push(individualPerson.related_id);
                         this.apirequestsService.getPerson(individualPerson.related_id).subscribe(data => {
                             this.relatedPersons.push(data);
                         });
                     };
             
                     for (let individualArtifact of this.archiveItem.artifacts) {
+                        this.onlyIdsRelatedArtifacts.push(individualArtifact.related_id);
                         this.apirequestsService.getArtifact(individualArtifact.related_id).subscribe(data => {
                             this.relatedArtifacts.push(data);
                         });
                     };
             
                     for (let individualEvent of this.archiveItem.events) {
+                        this.onlyIdsRelatedEvents.push(individualEvent.related_id);
                         this.apirequestsService.getEvent(individualEvent.related_id).subscribe(data => {
                             this.relatedEvents.push(data);
                         });
