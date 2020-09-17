@@ -308,6 +308,7 @@ export class ItemdetailsComponent implements OnInit {
 
         // The related Artifacts need to be split into an array (or else turned into an empty array)
         if(this.editingFormArchiveItem.value.artifacts.length > 0){
+            console.log(this.editingFormArchiveItem.value.artifacts);
             let tempArtifacts = this.editingFormArchiveItem.value.artifacts.split(/\s/).join('');
             this.editedRelatedArtifacts = tempArtifacts.split(',');
         } else {
@@ -316,6 +317,7 @@ export class ItemdetailsComponent implements OnInit {
 
         // The related Persons need to be split into an array (or else turned into an empty array)
         if(this.editingFormArchiveItem.value.persons.length > 0){
+            console.log(this.editingFormArchiveItem.value.persons);
             let tempPersons = this.editingFormArchiveItem.value.persons.split(/\s/).join('');
             this.editedRelatedPersons = tempPersons.split(',');
         } else {
@@ -324,6 +326,7 @@ export class ItemdetailsComponent implements OnInit {
 
         // The related Events need to be split into an array (or else turned into an empty array)
         if(this.editingFormArchiveItem.value.events.length > 0){
+            console.log(this.editingFormArchiveItem.value.events);
             let tempEvents = this.editingFormArchiveItem.value.events.split(/\s/).join('');
             this.editedRelatedEvents = tempEvents.split(',');
         } else {
@@ -353,9 +356,9 @@ export class ItemdetailsComponent implements OnInit {
             videos: [this.editedArchiveItemVideos],
             websiteURLs: [this.editedArchiveItemWebsiteURLs],
             assets: [this.editedArchiveItemAssets],
-            artifacts: this.editedRelatedArtifacts,
-            persons: this.editedRelatedPersons,
-            events: this.editedRelatedEvents
+            artifacts: this.editingFormArchiveItem.value.artifacts,
+            persons: this.editingFormArchiveItem.value.persons,
+            events: this.editingFormArchiveItem.value.events
         };
 
         console.log('NOCH IN DEN ITEMDETAILS');
