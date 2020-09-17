@@ -3,6 +3,7 @@
 ![ADAM - Archive of Demo Art & Media](documentation/assets/adam-logo.png)
 
 ## Inhaltsverzeichnis
+0. [Erklärvideo](#0-erklärvideo)
 1. [Beschreibung](#1-beschreibung)
 2. [Bestandteile und Installation](#2-bestandteile-und-installation)
 3. [Details der unterschiedlichen Views](#3-details-der-unterschiedlichen-views)
@@ -14,21 +15,21 @@
 9. [Aktualisierungen](#9-aktualisierungen)
 10. [Projektplan](#10-projektplan)
 
+## 0. Erklärvideo
+Einleitend finden Sie hier den direkten Link zum Erklärvideo auf Youtube. Erklärt wird der Zweck und die Funktionsweise von ADAM, zudem wird die kunsthistorische Bedeutung der Demo-Szene angeschnitten: [youtu.be/pwi1-JSts-Q](https://youtu.be/pwi1-JSts-Q)
+{% include youtubePlayer.html id="pwi1-JSts-Q" %}
+
 ## 1. Beschreibung
 ADAM ist ein Projekt von Marin Balabanov als Übung für den Einsatz von Webtechnologien. In diesem **Archive of Demo Art & Media** auf [demoarchive.art](http://demoarchive.art/) können Benutzer nach digitalen Demo-Kunstwerken suchen. Auf den Detailseiten finden sie eine Beschreibung des jeweiligen Demo-Kunstwerks, sowie Fotos/Screenshots und Links zu Videos, und falls vorhanden ZIP-Dateien oder Diskimages mit den Originaldateien des Kunstwerks. Zudem finden sich Informationen über die Künstler, und bei welchen Events ihre Werke ausgestellt wurden.
 
 Die hier besprochenen Kunstwerke gehören der [Demoszene](https://de.wikipedia.org/wiki/Demoszene) an. Unter **Demos** versteht man digitale Echtzeit-Kunst oft mit Musikuntermalung. Für die Künstler der Demoszene stellen Hardware-Einschränkungen einen Ansporn dar. Oft werden künstliche Einschränkungen vorab beschlossen, an die man sich halten muss, z.B. eine maximale Speichergröße der ausführbaren Dateien (oft nur 64Kb), oder es muss auf bestimmter Retro-Hardware mit all ihren Einschränkungen entwickelt werden (z.B. Commodore 64 oder Sinclair ZX Spectrum aus dem Jahr 1982, Atari ST oder Commodore Amiga aus dem Jahr 1985, usw.).
 
-### 1.1 Erklärvideo über das ADAM-Projekt
-In dieser Rohfassung des Erklärvideos wird der Zweck und die Funktionsweise von ADAM erklärt, sowie die kunsthistorische Bedeutung der Demo-Szene angeschnitten: [youtu.be/5qT9ATVqtbk](https://youtu.be/5qT9ATVqtbk)
-
-### 1.2 Disclaimer
+### 1.1 Disclaimer
 Dieses Projekt dient nur zu Übungszwecken und wurde vom "Archive of Digital Art" (ADA) der Donau Universität Krems inspiriert. Es dient als Übungsprojekt für die Anwendung zeitgemäßer Webtechnologien wie NodeJS, Angular und Heroku (in weiterer Folge kommen noch MongoDB und AWS S3 dazu).
 
 **Die Bilder in diesem Projekt sind nur Platzhalter von [adobestock.com](http://adobestock.com). Sie sind zwar Teil dieses Repositories, sind aber nicht zur allgemeinen Verwendung freigegeben.**
 
-### 1.3 ADAM auf demoarchive.art
-
+### 1.2 ADAM auf demoarchive.art
 ADAM besteht aus drei Teilen: Einem **API-Server** auf [adam-interface.herokuapp.com](https://adam-interface.herokuapp.com) mit Schnittstellen, um die Daten abzurufen, sowie einem Web-Frontend mit einem **öffentlichen Bereich** auf [demoarchive.art](http://demoarchive.art/), in dem Besucher die Informationen über die digitalen Demo-Kunstwerke finden, und einem **Redaktionsbereich,** in dem Redakteure neue Inhalte einpflegen und bearbeiten können, und Administratoren die Rechte verwalten können. 
 
 [« Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
