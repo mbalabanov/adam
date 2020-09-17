@@ -17,7 +17,8 @@
 
 ## 0. Erklärvideo
 Einleitend finden Sie hier den direkten Link zum Erklärvideo auf Youtube. Erklärt wird der Zweck und die Funktionsweise von ADAM, zudem wird die kunsthistorische Bedeutung der Demo-Szene angeschnitten: [youtu.be/pwi1-JSts-Q](https://youtu.be/pwi1-JSts-Q)
-{% include youtubePlayer.html id="pwi1-JSts-Q" %}
+
+<iframe width="560" height="315" src="https://www.youtube.com/pwi1-JSts-Q" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
 
 ## 1. Beschreibung
 ADAM ist ein Projekt von Marin Balabanov als Übung für den Einsatz von Webtechnologien. In diesem **Archive of Demo Art & Media** auf [demoarchive.art](http://demoarchive.art/) können Benutzer nach digitalen Demo-Kunstwerken suchen. Auf den Detailseiten finden sie eine Beschreibung des jeweiligen Demo-Kunstwerks, sowie Fotos/Screenshots und Links zu Videos, und falls vorhanden ZIP-Dateien oder Diskimages mit den Originaldateien des Kunstwerks. Zudem finden sich Informationen über die Künstler, und bei welchen Events ihre Werke ausgestellt wurden.
