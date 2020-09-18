@@ -173,8 +173,6 @@ Das Web-Frontend wurde mit Angular entwickelt. Es läuft als Angular Universal S
 ### 5.4 Umgesetzte Struktur
 Die folgende Struktur wurde auch tatächlich umgesetzt (hier mit einer Auflistung sämtlicher Components, die auf den Einzelseiten verwendet werden). Dieses Diagram entstand mit [MonoDraw](https://monodraw.helftone.com).
 
-![test2](test2.drawio.svg)
-
 ````
     +-+-+-+-+ +-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+
     |A|D|A|M| |F|R|O|N|T|E|N|D| |S|T|R|U|C|T|U|R|E|
