@@ -11,7 +11,8 @@ import { ApirequestsService } from '../../services/apirequests.service';
 })
 export class CategorylistComponent implements OnInit {
 
-  
+  catSlug: string = '';
+
   archiveCategory: any  = [];
   searchText;
 
@@ -37,12 +38,10 @@ constructor(private apirequestsService: ApirequestsService, private route: Activ
 
 ngOnInit(): void {
 
-      let catSlug;
-
       this.route.paramMap.subscribe(params => {
-          catSlug = params.get('categoryId');
+          this.catSlug = params.get('categoryId');
 
-          switch (catSlug) {
+          switch (this.catSlug) {
               case 'events': {
                 this.apirequestsService.getEvents()
                 .subscribe(data => {

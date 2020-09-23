@@ -33,7 +33,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                <button type="button" class="btn btn-danger" (click)="deleteThis(archiveItem.category, archiveItem.id)" data-dismiss="modal" routerLink="/archive">Delete</button>
+                                <button type="button" class="btn btn-danger" (click)="deleteThis(archiveCategory, archiveItem.id)" data-dismiss="modal" routerLink="/archive">Delete</button>
                             </div>
                         </div>
                     </div>
@@ -69,7 +69,22 @@
 
 <!-- Error message for non-existent IDs -->
 <div *ngIf="!archiveItem.name" class="container">
-    <div class="row my-4">
+    <div *ngIf="!timeElapsed" class="row my-5">
+        <div class="col-12 py-5 my-5">
+            <div id="loader">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="loading"></div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="timeElapsed" class="row my-4">
         <div class="col-lg-12 alert alert-danger text-center p-5" role="alert">
             <h1>This archive item does not exist.</h1>
             <p>Please return to the <strong>archive category</strong> or the <strong>main archive page.</strong></p>
@@ -104,7 +119,7 @@
             </tr>
             <tr>
                 <th scope="row">Dates:</th>
-                <td *ngIf="archiveItem.dates[0].label?.length"><span class="mr-2" *ngFor="let dateitem of archiveItem.dates"><span class="mr-1">{{ dateitem.label }}</span>{{ dateitem.date | date }}.</span></td>
+                <td *ngIf="archiveItem.dates[0].label?.length"><span class="mr-2" *ngFor="let dateitem of archiveItem.dates"><span class="mr-1">{{ dateitem.label }}</span>{{ dateitem.date | date }}</span></td>
                 <td *ngIf="!archiveItem.dates[0].label?.length">None</td>
             </tr>
             <tr>
@@ -312,6 +327,7 @@
                 <label class="mt-2"><strong>Short Description:</strong></label>
                 <input type="text" formControlName="shortdescription" class="form-control">
                 <label class="mt-2"><strong>Long Description:</strong></label>
+                <!-- The TinyMCE text editor is inserted here -->
                 <editor formControlName="longdescription"
                     apiKey="kzw0zdrheylzt0ms8wq28xfgawoi9ltzt8n4t76a42uphen2"
                     [init]="{
@@ -412,7 +428,7 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary"  [disabled]="editingFormArchiveItem.invalid" (click)="saveEditedArchiveItem()" data-dismiss="modal" routerLink="/item/{{pageUrl}}#123">Save changes</button>
+            <button type="button" class="btn btn-primary"  [disabled]="editingFormArchiveItem.invalid" (click)="saveEditedArchiveItem()" data-dismiss="modal" routerLink="/item/{{ archiveCategory }}/{{ archiveItem._id }}#">Save changes</button>
             <span *ngIf="editingFormArchiveItem.invalid" class="badge badge-pill badge-danger px-3 py-1">Data<br>incomplete</span>
         </div>
         </div>

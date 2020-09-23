@@ -1,4 +1,4 @@
-import { Component, OnInit, Testability } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
@@ -13,14 +13,23 @@ import { ArchiveItemClass, ArchiveItemDates, ArchiveItemImages, ArchiveItemVideo
 
 export class ItemdetailsComponent implements OnInit {
 
+    timeElapsed: boolean = false;
+
+    // Timer for item not found
+    loadTimer() {
+        setTimeout(() => {
+            this.timeElapsed = true;
+        }, 3000);
+    };
+
     // Variables for displaying archive item details
     archiveCategory: string = '';
     archiveItem: any = {};
     pageUrl: string;
 
-    relatedArtifacts: Array<object> = [];
-    relatedPersons: Array<object> = [];
-    relatedEvents: Array<object> = [];
+    relatedArtifacts: Array<string> = [];
+    relatedPersons: Array<string> = [];
+    relatedEvents: Array<string> = [];
 
     // Variables for editing archive item details
     editingFormArchiveItem = new FormGroup({ });
@@ -106,11 +115,6 @@ export class ItemdetailsComponent implements OnInit {
     editedRelatedPersons: Array<string> = [];
     editedRelatedEvents: Array<string> = [];
 
-    // These arrays are needed for the IDs of the related items in the form
-    onlyIdsRelatedArtifacts: Array<string> = [];
-    onlyIdsRelatedPersons: Array<string> = [];
-    onlyIdsRelatedEvents: Array<string> = [];
-
     // This function is called by the delete button and sends the delete data to the API
     deleteThis(dataType, id) {
         this.apirequestsService.deleteItem(dataType, id).subscribe((data)=>{
@@ -172,7 +176,7 @@ export class ItemdetailsComponent implements OnInit {
         // This is the actual form for editing the item on the page
         this.editingFormArchiveItem = new FormGroup({
             id: new FormControl(this.archiveItem._id, Validators.required),
-            category:  new FormControl(this.archiveItem.category),
+            category:  new FormControl(this.archiveCategory),
             name: new FormControl(this.archiveItem.name, Validators.required),
             aliases: new FormControl(this.archiveItem.aliases.toString()),
             shortdescription: new FormControl(this.archiveItem.shortdescription),
@@ -219,9 +223,9 @@ export class ItemdetailsComponent implements OnInit {
                 name: new FormControl(this.archiveItem.assets[0].name),
                 url: new FormControl(this.archiveItem.assets[0].url)
               }),
-            artifacts: new FormControl(this.onlyIdsRelatedArtifacts),
-            persons: new FormControl(this.onlyIdsRelatedPersons),
-            events: new FormControl(this.onlyIdsRelatedEvents)
+            artifacts: new FormControl(this.archiveItem.artifacts.toString()),
+            persons: new FormControl(this.archiveItem.persons.toString()),
+            events: new FormControl(this.archiveItem.events.toString())
         });
     }
 
@@ -308,27 +312,21 @@ export class ItemdetailsComponent implements OnInit {
 
         // The related Artifacts need to be split into an array (or else turned into an empty array)
         if(this.editingFormArchiveItem.value.artifacts.length > 0){
-            console.log(this.editingFormArchiveItem.value.artifacts);
-            let tempArtifacts = this.editingFormArchiveItem.value.artifacts.split(/\s/).join('');
-            this.editedRelatedArtifacts = tempArtifacts.split(',');
+            this.editedRelatedArtifacts  = this.editingFormArchiveItem.value.artifacts.split(',');
         } else {
             this.editedRelatedArtifacts = [];
         }
 
         // The related Persons need to be split into an array (or else turned into an empty array)
         if(this.editingFormArchiveItem.value.persons.length > 0){
-            console.log(this.editingFormArchiveItem.value.persons);
-            let tempPersons = this.editingFormArchiveItem.value.persons.split(/\s/).join('');
-            this.editedRelatedPersons = tempPersons.split(',');
+            this.editedRelatedPersons = this.editingFormArchiveItem.value.persons.split(',');
         } else {
             this.editedRelatedPersons = [];
         }
 
         // The related Events need to be split into an array (or else turned into an empty array)
         if(this.editingFormArchiveItem.value.events.length > 0){
-            console.log(this.editingFormArchiveItem.value.events);
-            let tempEvents = this.editingFormArchiveItem.value.events.split(/\s/).join('');
-            this.editedRelatedEvents = tempEvents.split(',');
+            this.editedRelatedEvents = this.editingFormArchiveItem.value.events.split(',');
         } else {
             this.editedRelatedEvents = [];
         }
@@ -337,7 +335,7 @@ export class ItemdetailsComponent implements OnInit {
         // It is populated with the inputs as well as the objects and arrays prepared above.
         this.editedArchiveItem = { 
             id: this.editingFormArchiveItem.value._id,
-            category: this.editingFormArchiveItem.value.category,
+            category: this.archiveCategory,
             name: this.editingFormArchiveItem.value.name,
             aliases: this.editedAliases,
             shortdescription: this.editingFormArchiveItem.value.shortdescription,
@@ -356,14 +354,13 @@ export class ItemdetailsComponent implements OnInit {
             videos: [this.editedArchiveItemVideos],
             websiteURLs: [this.editedArchiveItemWebsiteURLs],
             assets: [this.editedArchiveItemAssets],
-            artifacts: this.editingFormArchiveItem.value.artifacts,
-            persons: this.editingFormArchiveItem.value.persons,
-            events: this.editingFormArchiveItem.value.events
+            artifacts: this.editedRelatedArtifacts,
+            persons: this.editedRelatedPersons,
+            events: this.editedRelatedEvents
         };
 
-        console.log('NOCH IN DEN ITEMDETAILS');
         // Send composite main object to API request service
-        this.apirequestsService.putArchiveItem(JSON.stringify(this.editedArchiveItem), this.archiveItem.category, this.archiveItem._id).subscribe((data)=>{
+        this.apirequestsService.putArchiveItem(JSON.stringify(this.editedArchiveItem), this.archiveCategory, this.archiveItem._id).subscribe((data)=>{
         });
 
     }
@@ -397,6 +394,8 @@ export class ItemdetailsComponent implements OnInit {
 
 ngOnInit(): void {
 
+    this.loadTimer();
+
     let itemSlug;
 
     // Gets the URL and its parameters and splits them in to the item category (category) and the itemId.
@@ -413,7 +412,7 @@ ngOnInit(): void {
         this.relatedPersons = [];
         this.relatedEvents = [];
 
-        // This fucntion gets the necessary data to display the item based on its category (the switch) and its ID (the function call)
+        // This function gets the necessary data to display the item based on its category (the switch) and its ID (the function call)
         // When the item data has been received, the loop gets the related items stored in the main item based on their ID and pushes the individual items into the arrays above.
         // The loops also populate the IDs of the related objects in the arrays, so that they can be put into the respecitve form fields.
         switch (this.archiveCategory) {
@@ -423,22 +422,19 @@ ngOnInit(): void {
                     this.archiveItem = data;
 
                     for (let individualPerson of this.archiveItem.persons) {
-                        this.onlyIdsRelatedPersons.push(individualPerson.related_id);
-                        this.apirequestsService.getPerson(individualPerson.related_id).subscribe(data => {
+                        this.apirequestsService.getPerson(individualPerson).subscribe(data => {
                             this.relatedPersons.push(data);
                         });
                     };
             
                     for (let individualArtifact of this.archiveItem.artifacts) {
-                        this.onlyIdsRelatedArtifacts.push(individualArtifact.related_id);
-                        this.apirequestsService.getArtifact(individualArtifact.related_id).subscribe(data => {
+                        this.apirequestsService.getArtifact(individualArtifact).subscribe(data => {
                             this.relatedArtifacts.push(data);
                         });
                     };
             
                     for (let individualEvent of this.archiveItem.events) {
-                        this.onlyIdsRelatedEvents.push(individualEvent.related_id);
-                        this.apirequestsService.getEvent(individualEvent.related_id).subscribe(data => {
+                        this.apirequestsService.getEvent(individualEvent).subscribe(data => {
                             this.relatedEvents.push(data);
                         });
                     };
@@ -453,22 +449,19 @@ ngOnInit(): void {
                     this.archiveItem = data;
 
                     for (let individualPerson of this.archiveItem.persons) {
-                        this.onlyIdsRelatedPersons.push(individualPerson.related_id);
-                        this.apirequestsService.getPerson(individualPerson.related_id).subscribe(data => {
+                        this.apirequestsService.getPerson(individualPerson).subscribe(data => {
                             this.relatedPersons.push(data);
                         });
                     };
             
                     for (let individualArtifact of this.archiveItem.artifacts) {
-                        this.onlyIdsRelatedArtifacts.push(individualArtifact.related_id);
-                        this.apirequestsService.getArtifact(individualArtifact.related_id).subscribe(data => {
+                        this.apirequestsService.getArtifact(individualArtifact).subscribe(data => {
                             this.relatedArtifacts.push(data);
                         });
                     };
             
                     for (let individualEvent of this.archiveItem.events) {
-                        this.onlyIdsRelatedEvents.push(individualEvent.related_id);
-                        this.apirequestsService.getEvent(individualEvent.related_id).subscribe(data => {
+                        this.apirequestsService.getEvent(individualEvent).subscribe(data => {
                             this.relatedEvents.push(data);
                         });
                     };
@@ -483,22 +476,19 @@ ngOnInit(): void {
                     this.archiveItem = data;
 
                     for (let individualPerson of this.archiveItem.persons) {
-                        this.onlyIdsRelatedPersons.push(individualPerson.related_id);
-                        this.apirequestsService.getPerson(individualPerson.related_id).subscribe(data => {
+                        this.apirequestsService.getPerson(individualPerson).subscribe(data => {
                             this.relatedPersons.push(data);
                         });
                     };
             
                     for (let individualArtifact of this.archiveItem.artifacts) {
-                        this.onlyIdsRelatedArtifacts.push(individualArtifact.related_id);
-                        this.apirequestsService.getArtifact(individualArtifact.related_id).subscribe(data => {
+                        this.apirequestsService.getArtifact(individualArtifact).subscribe(data => {
                             this.relatedArtifacts.push(data);
                         });
                     };
             
                     for (let individualEvent of this.archiveItem.events) {
-                        this.onlyIdsRelatedEvents.push(individualEvent.related_id);
-                        this.apirequestsService.getEvent(individualEvent.related_id).subscribe(data => {
+                        this.apirequestsService.getEvent(individualEvent).subscribe(data => {
                             this.relatedEvents.push(data);
                         });
                     };
