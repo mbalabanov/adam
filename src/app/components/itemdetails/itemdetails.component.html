@@ -13,7 +13,6 @@
             </nav>
 
             <div *ngIf="auth.loggedIn" >
-
                 <button class="btn btn-outline-danger btn-sm ml-2 mb-2" data-toggle="modal" data-target="#editItem">Edit item</button>
                 <button class="btn btn-danger btn-sm ml-2 mb-2" data-toggle="modal" data-target="#deleteItemModal">Delete item</button>
 
@@ -363,32 +362,52 @@
                 <input type="text" formControlName="tags" class="form-control">
                 <label class="mt-2"><strong>Images:</strong></label>
                 <div formGroupName="image0" class="alert alert-secondary">
-                    <label class="mt-2"><strong>URL:</strong></label>
-                    <input type="text" formControlName="url" class="form-control">
+                    <div class="input-group">
+                        <label class="mt-2"><strong>URL:</strong></label>
+                        <input type="text" formControlName="url" class="form-control" id="imagepath0">
+                        <div class="input-group-append">
+                            <button class="btn btn-secondary btn-sm" type="button"  data-toggle="modal" data-target="#imageUploadModal"  (click)="getImagePath('imagepath0')">Upload image</button>
+                         </div>
+                    </div>
                     <label class="mt-2"><strong>Name:</strong></label>
                     <input type="text" formControlName="name" class="form-control">
                     <label class="mt-2"><strong>Description:</strong></label>
                     <input type="text" formControlName="description" class="form-control">
                 </div>
                 <div formGroupName="image1" class="alert alert-secondary">
-                    <label class="mt-2"><strong>URL:</strong></label>
-                    <input type="text" formControlName="url" class="form-control">
+                    <div class="input-group">
+                        <label class="mt-2"><strong>URL:</strong></label>
+                        <input type="text" formControlName="url" class="form-control" id="imagepath1">
+                        <div class="input-group-append">
+                            <button class="btn btn-secondary btn-sm" type="button"  data-toggle="modal" data-target="#imageUploadModal" (click)="getImagePath('imagepath1')">Upload image</button>
+                        </div>
+                    </div>
                     <label class="mt-2"><strong>Name:</strong></label>
                     <input type="text" formControlName="name" class="form-control">
                     <label class="mt-2"><strong>Description:</strong></label>
                     <input type="text" formControlName="description" class="form-control">
                 </div>
                 <div formGroupName="image2" class="alert alert-secondary">
-                    <label class="mt-2"><strong>URL:</strong></label>
-                    <input type="text" formControlName="url" class="form-control">
+                    <div class="input-group">
+                        <label class="mt-2"><strong>URL:</strong></label>
+                        <input type="text" formControlName="url" class="form-control" id="imagepath2">
+                        <div class="input-group-append">
+                            <button class="btn btn-secondary btn-sm" type="button"  data-toggle="modal" data-target="#imageUploadModal" (click)="getImagePath('imagepath2')">Upload image</button>
+                        </div>
+                    </div>
                     <label class="mt-2"><strong>Name:</strong></label>
                     <input type="text" formControlName="name" class="form-control">
                     <label class="mt-2"><strong>Description:</strong></label>
                     <input type="text" formControlName="description" class="form-control">
                 </div>
                 <div formGroupName="image3" class="alert alert-secondary">
-                    <label class="mt-2"><strong>URL:</strong></label>
-                    <input type="text" formControlName="url" class="form-control">
+                    <div class="input-group">
+                        <label class="mt-2"><strong>URL:</strong></label>
+                        <input type="text" formControlName="url" class="form-control" id="imagepath3">
+                        <div class="input-group-append">
+                            <button class="btn btn-secondary btn-sm " style="border:none;" type="button"  data-toggle="modal" data-target="#imageUploadModal" (click)="getImagePath('imagepath3')">Upload image</button>
+                        </div>
+                    </div>
                     <label class="mt-2"><strong>Name:</strong></label>
                     <input type="text" formControlName="name" class="form-control">
                     <label class="mt-2"><strong>Description:</strong></label>
@@ -434,3 +453,28 @@
         </div>
     </div>
 </div>
+
+<!-- Modal for image uploads-->
+<div class="modal fade" id="imageUploadModal" tabindex="-1" aria-labelledby="imageUploadModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="imageUploadModalLabel">Image Upload</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <h3>{{ tempimagepath }}</h3>
+                <label for="imageFileUpload">Upload image file to ADAM account on <a href="https://imgur.com" target="_blank">Imgur</a>.</label>
+                <input type="file" class="form-control-file" id="imageFileUpload">
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="uploadImage(tempimagepath, imageFileUpload)" data-dismiss="modal">Upload</button>
+        </div>
+      </div>
+    </div>
+  </div>

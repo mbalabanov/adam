@@ -32,6 +32,13 @@ export class ItemdetailsComponent implements OnInit {
     relatedPersons: Array<string> = [];
     relatedEvents: Array<string> = [];
 
+    imagepath0: string;
+    imagepath1: string;
+    imagepath2: string;
+    imagepath3: string;
+
+    tempimagepath: string;
+
     // Variables for editing archive item details
     editingFormArchiveItem = new FormGroup({ });
 
@@ -119,9 +126,14 @@ export class ItemdetailsComponent implements OnInit {
     // This function is called by the delete button and sends the delete data to the API
     deleteThis(dataType, id) {
         this.apirequestsService.deleteItem(dataType, id).subscribe((data)=>{
-    });
-
+        });
     }
+
+    getImagePath(imagepath) {
+        this.tempimagepath = imagepath
+        console.log(imagepath);
+        console.log(this.tempimagepath);
+    };
 
     // Sets the correct image IDs in the carousel
     setCarouselActiveID(id){
