@@ -13,14 +13,15 @@ import { ArchiveItemClass, ArchiveItemDates, ArchiveItemImages, ArchiveItemVideo
 
 export class ItemdetailsComponent implements OnInit {
 
+    // Timer for "item not found" message
     timeElapsed: boolean = false;
-
-    // Timer for item not found
     loadTimer() {
         setTimeout(() => {
             this.timeElapsed = true;
         }, 3000);
     };
+
+    randomAddress: number;
 
     // Variables for displaying archive item details
     archiveCategory: string = '';
@@ -141,6 +142,8 @@ export class ItemdetailsComponent implements OnInit {
 
     // This function populates the modal with the edit form with the values of the current page item
     assignValuesToFormItem() {
+
+        this.randomAddress = Math.floor((Math.random() * 10) + 1)
 
         // First the temporary arrays that hold the date values are generated
         let tempDatesArray: Array<any> = [];

@@ -19,13 +19,14 @@ export class NewsarticleComponent implements OnInit {
 
     this.route.paramMap.subscribe(params => {
       articleSlug = params.get('postId');
+      console.log('Web-Frontend')
       this.apirequestsService.getNewsItem(articleSlug)
       .subscribe(news => {
-          this.newsitem = news;
+        this.newsitem = news;
       });
       this.apirequestsService.getNews()
-      .subscribe(news => {
-          this.newsitems = news;
+        .subscribe(news => {
+        this.newsitems = news;
       });
     });
   

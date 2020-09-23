@@ -21,27 +21,30 @@ export class EditnewspagesComponent implements OnInit {
     this.apirequestsService.getNews()
         .subscribe(newsdata => {
         this.newsOriginal = newsdata;
-        this.newsItemsArray = this.newsOriginal.content;
+        this.newsItemsArray = this.newsOriginal;
 
         this.newsEdited = new FormGroup({
-          newsn0: new FormGroup({
-            id: new FormControl(this.newsItemsArray[0].id, Validators.required), 
+          news0: new FormGroup({
+            _id: new FormControl(this.newsItemsArray[0]._id, Validators.required), 
+            uniquename: new FormControl(this.newsItemsArray[0].uniquename, Validators.required),
             title: new FormControl(this.newsItemsArray[0].title, Validators.required),
             image: new FormControl(this.newsItemsArray[0].image),
             largeimage: new FormControl(this.newsItemsArray[0].largeimage),
             shortdescription: new FormControl(this.newsItemsArray[0].shortdescription, Validators.required),
             articletext: new FormControl(this.newsItemsArray[0].articletext, Validators.required)
           }),
-          newsn1: new FormGroup({
-            id: new FormControl(this.newsItemsArray[1].id, Validators.required), 
+          news1: new FormGroup({
+            _id: new FormControl(this.newsItemsArray[1]._id, Validators.required), 
+            uniquename: new FormControl(this.newsItemsArray[1].uniquename, Validators.required),
             title: new FormControl(this.newsItemsArray[1].title, Validators.required),
             image: new FormControl(this.newsItemsArray[1].image),
             largeimage: new FormControl(this.newsItemsArray[1].largeimage),
             shortdescription: new FormControl(this.newsItemsArray[1].shortdescription, Validators.required),
             articletext: new FormControl(this.newsItemsArray[1].articletext, Validators.required)
           }),
-          newsn2: new FormGroup({
-            id: new FormControl(this.newsItemsArray[2].id, Validators.required), 
+          news2: new FormGroup({
+            _id: new FormControl(this.newsItemsArray[2]._id, Validators.required), 
+            uniquename: new FormControl(this.newsItemsArray[2].uniquename, Validators.required),
             title: new FormControl(this.newsItemsArray[2].title, Validators.required),
             image: new FormControl(this.newsItemsArray[2].image),
             largeimage: new FormControl(this.newsItemsArray[2].largeimage),
@@ -54,19 +57,14 @@ export class EditnewspagesComponent implements OnInit {
   }
 
   saveNews() {
-
-    this.newsOriginal.content = [];
-
-    // Push edited news into emptied news array
-    this.newsOriginal.content.push(this.newsEdited.value.newsn0);
-    this.newsOriginal.content.push(this.newsEdited.value.newsn1);
-    this.newsOriginal.content.push(this.newsEdited.value.newsn2);
-
-    console.log(this.newsOriginal);
-
-    this.apirequestsService.putNewsArticles(JSON.stringify(this.newsOriginal)).subscribe((data)=>{
+    this.apirequestsService.putNewsArticles(JSON.stringify(this.newsEdited.value.news0)).subscribe((data)=>{
       console.log('Request successful');
     });
-
+    this.apirequestsService.putNewsArticles(JSON.stringify(this.newsEdited.value.news1)).subscribe((data)=>{
+      console.log('Request successful');
+    });
+    this.apirequestsService.putNewsArticles(JSON.stringify(this.newsEdited.value.news2)).subscribe((data)=>{
+      console.log('Request successful');
+    });
   }
 }

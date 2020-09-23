@@ -6,9 +6,9 @@
 </div>
 <div class="row px-md-4">
     <div class="col-md-4 text-left pb-5 bloglist" *ngFor="let item of newsitems; index as postId">
-        <a [routerLink]="['/newsarticle', item.id]"><img src="{{ item.image }}" alt="{{ item.title }}" class="rounded-lg"></a>
-        <h3 class="py-2"><a [routerLink]="['/newsarticle', item.id]">{{ item.title }}</a></h3>
+        <a [routerLink]="['/newsarticle', item.uniquename]"><img src="{{ item.image }}" alt="{{ item.title }}" class="rounded-lg"></a>
+        <h3 class="py-2"><a [routerLink]="['/newsarticle', item.uniquename]">{{ item.title }}</a></h3>
         <p>{{ item.shortdescription }}</p>
-        <p><a class="btn btn-outline-secondary" [routerLink]="['/newsarticle', item.id]">Read article</a></p>
+        <p><a class="btn btn-outline-secondary" [routerLink]="['/newsarticle', item.uniquename]">Read article</a></p>
     </div>
 </div>

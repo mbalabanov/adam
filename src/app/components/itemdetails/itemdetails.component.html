@@ -1,7 +1,7 @@
 <div class="toppadding container-fluid">
 
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-12">            
             <!-- Breadcrumbs -->
             <nav aria-label="breadcrumb" class="mt-2">
                 <ol class="breadcrumb">
@@ -428,7 +428,7 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary"  [disabled]="editingFormArchiveItem.invalid" (click)="saveEditedArchiveItem()" data-dismiss="modal" routerLink="/item/{{ archiveCategory }}/{{ archiveItem._id }}#">Save changes</button>
+            <button type="button" class="btn btn-primary"  [disabled]="editingFormArchiveItem.invalid" (click)="saveEditedArchiveItem()" data-dismiss="modal" routerLink="/item/{{ archiveCategory }}/{{ archiveItem._id }}#{{ randomAddress }}">Save changes</button>
             <span *ngIf="editingFormArchiveItem.invalid" class="badge badge-pill badge-danger px-3 py-1">Data<br>incomplete</span>
         </div>
         </div>

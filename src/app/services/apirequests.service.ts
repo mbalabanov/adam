@@ -8,13 +8,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 export class ApirequestsService {
 
-  private baseURL = 'https://adam-interface.herokuapp.com/'; // Change to https://adam-interface.herokuapp.com/ or http://localhost:5003/ to locally run the API server
+  private baseURL = 'https://adam-interface.herokuapp.com/'; // Change to https://adam-interface.herokuapp.com/ for production API or http://localhost:5003/ to locally run the API server
   private archiveUrl: string = this.baseURL + 'all';
   private artifactsUrl: string = this.baseURL + 'artifacts';
   private personsUrl: string = this.baseURL + 'persons';
   private eventsUrl: string = this.baseURL + 'events';
   private newsUrl: string = this.baseURL + 'news';
-  private newsItemUrl: string = this.baseURL + 'newsitem';
   private featuredUrl: string = this.baseURL + 'featured';
   private complianceUrl: string = this.baseURL + 'compliance';
 
@@ -61,7 +60,7 @@ export class ApirequestsService {
   }
 
   getNewsItem(id): Observable<any> {
-    return this.http.get<any>(this.newsItemUrl + '/' + id);
+    return this.http.get<any>(this.newsUrl + '/' + id);
   }
 
   getFeatured(): Observable<any> {
@@ -99,9 +98,7 @@ export class ApirequestsService {
   };
 
   putArchiveItem(itemData, category, id): Observable<any> {
-    console.log(itemData);
     let tempEditAchiveUrl = this.baseURL + category + '/' + id;
-    console.log(tempEditAchiveUrl);
     return this.http.put<any>(tempEditAchiveUrl, itemData, this.httpOptions);
   };
 
