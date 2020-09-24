@@ -16,7 +16,7 @@ export class CategorylistpageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
 
 }

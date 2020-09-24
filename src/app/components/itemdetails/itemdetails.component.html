@@ -363,10 +363,10 @@
                 <label class="mt-2"><strong>Images:</strong></label>
                 <div formGroupName="image0" class="alert alert-secondary">
                     <div class="input-group">
-                        <label class="mt-2"><strong>URL:</strong></label>
+                        <label class="mt-2 mr-2"><strong>URL:</strong></label>
                         <input type="text" formControlName="url" class="form-control" id="imagepath0">
                         <div class="input-group-append">
-                            <button class="btn btn-secondary btn-sm" type="button"  data-toggle="modal" data-target="#imageUploadModal"  (click)="getImagePath('imagepath0')">Upload image</button>
+                            <button class="btn btn-warning btn-sm" type="button"  data-toggle="modal" data-target="#uploader"  (click)="getImagePath(0)">Upload image</button>
                          </div>
                     </div>
                     <label class="mt-2"><strong>Name:</strong></label>
@@ -376,10 +376,10 @@
                 </div>
                 <div formGroupName="image1" class="alert alert-secondary">
                     <div class="input-group">
-                        <label class="mt-2"><strong>URL:</strong></label>
-                        <input type="text" formControlName="url" class="form-control" id="imagepath1">
+                        <label class="mt-2 mr-2"><strong>URL:</strong></label>
+                        <input type="text" formControlName="url" class="form-control">
                         <div class="input-group-append">
-                            <button class="btn btn-secondary btn-sm" type="button"  data-toggle="modal" data-target="#imageUploadModal" (click)="getImagePath('imagepath1')">Upload image</button>
+                            <button class="btn btn-warning btn-sm" type="button"  data-toggle="modal" data-target="#uploader" (click)="getImagePath(1)">Upload image</button>
                         </div>
                     </div>
                     <label class="mt-2"><strong>Name:</strong></label>
@@ -389,10 +389,10 @@
                 </div>
                 <div formGroupName="image2" class="alert alert-secondary">
                     <div class="input-group">
-                        <label class="mt-2"><strong>URL:</strong></label>
-                        <input type="text" formControlName="url" class="form-control" id="imagepath2">
+                        <label class="mt-2 mr-2"><strong>URL:</strong></label>
+                        <input type="text" formControlName="url" class="form-control">
                         <div class="input-group-append">
-                            <button class="btn btn-secondary btn-sm" type="button"  data-toggle="modal" data-target="#imageUploadModal" (click)="getImagePath('imagepath2')">Upload image</button>
+                            <button class="btn btn-warning btn-sm" type="button"  data-toggle="modal" data-target="#uploader" (click)="getImagePath(2)">Upload image</button>
                         </div>
                     </div>
                     <label class="mt-2"><strong>Name:</strong></label>
@@ -402,10 +402,10 @@
                 </div>
                 <div formGroupName="image3" class="alert alert-secondary">
                     <div class="input-group">
-                        <label class="mt-2"><strong>URL:</strong></label>
-                        <input type="text" formControlName="url" class="form-control" id="imagepath3">
+                        <label class="mt-2 mr-2"><strong>URL:</strong></label>
+                        <input type="text" formControlName="url" class="form-control">
                         <div class="input-group-append">
-                            <button class="btn btn-secondary btn-sm " style="border:none;" type="button"  data-toggle="modal" data-target="#imageUploadModal" (click)="getImagePath('imagepath3')">Upload image</button>
+                            <button class="btn btn-warning btn-sm" style="border: none" type="button"  data-toggle="modal" data-target="#uploader" (click)="getImagePath(3)">Upload image</button>
                         </div>
                     </div>
                     <label class="mt-2"><strong>Name:</strong></label>
@@ -455,26 +455,34 @@
 </div>
 
 <!-- Modal for image uploads-->
-<div class="modal fade" id="imageUploadModal" tabindex="-1" aria-labelledby="imageUploadModal" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="imageUploadModalLabel">Image Upload</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <div class="form-group">
-                <h3>{{ tempimagepath }}</h3>
-                <label for="imageFileUpload">Upload image file to ADAM account on <a href="https://imgur.com" target="_blank">Imgur</a>.</label>
-                <input type="file" class="form-control-file" id="imageFileUpload">
+<div class="modal fade" id="uploader" tabindex="-1" role="dialog" aria-labelledby="uploadImageModal" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="uploadImageModal">Image Upload</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Upload image file to ADAM account on <a href="https://imgur.com" target="_blank">Imgur</a>.</p>
+                <p>
+                    <label class="mylabel" for="upload">Choose image:</label><br />
+                    <input type="file" id="upload" (change)="handleImage($event)" />
+                </p>
+                <button type="button" class="btn btn-warning uploadbutton" (click)="uploadImage()">Upload image</button>
+                <div *ngIf="imageData" class="alert alert-secondary p-2 mt-4">
+                    <p>Your uploaded image:</p>
+                    <p>
+                        <img src="{{ imageData }}" class="img-fluid">
+                    </p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button  *ngIf="imageData" type="button" class="btn btn-primary" (click)="storeImagePath()" data-dismiss="modal">Save Path</button>
+                <span *ngIf="!imageData" class="badge badge-pill badge-danger px-3 py-1">No new<br>upload</span>
             </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" (click)="uploadImage(tempimagepath, imageFileUpload)" data-dismiss="modal">Upload</button>
-        </div>
-      </div>
     </div>
-  </div>
+</div>

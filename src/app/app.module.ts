@@ -41,6 +41,7 @@ import { ContactformComponent } from './components/contactform/contactform.compo
 import { NewsarticleComponent } from './components/newsarticle/newsarticle.component';
 import { AuthprofileComponent } from './components/authprofile/authprofile.component';
 import { TrackingComponent } from './components/tracking/tracking.component';
+import { UploadService } from './services/uploadimage.service';
 
 @NgModule({
   declarations: [
@@ -86,7 +87,7 @@ import { TrackingComponent } from './components/tracking/tracking.component';
     DpDatePickerModule,
     EditorModule
   ],
-  providers: [ApirequestsService, CookieService],
+  providers: [ApirequestsService, CookieService, UploadService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

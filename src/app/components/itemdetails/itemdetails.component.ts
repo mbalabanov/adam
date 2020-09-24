@@ -4,6 +4,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { ApirequestsService } from '../../services/apirequests.service';
 import { ArchiveItemClass, ArchiveItemDates, ArchiveItemImages, ArchiveItemVideos, ArchiveItemWebsiteURLs, ArchiveItemAssets } from '../../classes/archiveitemclass';
+import { UploadService } from '../../services/uploadimage.service';
 
 @Component({
   selector: 'app-itemdetails',
@@ -21,6 +22,7 @@ export class ItemdetailsComponent implements OnInit {
         }, 3000);
     };
 
+    // Variable for random address to be appended to current page URL so that it can be reloaded without being logged out
     randomAddress: number;
 
     // Variables for displaying archive item details
@@ -31,11 +33,6 @@ export class ItemdetailsComponent implements OnInit {
     relatedArtifacts: Array<string> = [];
     relatedPersons: Array<string> = [];
     relatedEvents: Array<string> = [];
-
-    imagepath0: string;
-    imagepath1: string;
-    imagepath2: string;
-    imagepath3: string;
 
     tempimagepath: string;
 
@@ -129,12 +126,6 @@ export class ItemdetailsComponent implements OnInit {
         });
     }
 
-    getImagePath(imagepath) {
-        this.tempimagepath = imagepath
-        console.log(imagepath);
-        console.log(this.tempimagepath);
-    };
-
     // Sets the correct image IDs in the carousel
     setCarouselActiveID(id){
         var elems = document.querySelectorAll('.active');
@@ -188,7 +179,7 @@ export class ItemdetailsComponent implements OnInit {
             }
         };
 
-        // This is the actual form for editing the item on the page
+        // This is the actual form for editing populated wit the item data on the page
         this.editingFormArchiveItem = new FormGroup({
             id: new FormControl(this.archiveItem._id, Validators.required),
             category:  new FormControl(this.archiveCategory),
@@ -380,7 +371,7 @@ export class ItemdetailsComponent implements OnInit {
 
     }
 
-    constructor(private apirequestsService: ApirequestsService, private route: ActivatedRoute, public auth: AuthService ) { }
+    constructor(private apirequestsService: ApirequestsService, private route: ActivatedRoute, public auth: AuthService, private uploadService: UploadService ) { }
 
     // Date Picker Settings
     config = {
@@ -407,8 +398,47 @@ export class ItemdetailsComponent implements OnInit {
         showMultipleYearsNavigation: false
     };
 
+    // Variables and function for image upload to Imgur
+    private base64textString: string="";
+
+    handleImage(e){
+    var images = e.target.files;
+    var image = images[0];
+    
+    if (images && image) {
+        var reader = new FileReader();
+        reader.onload =this.handleReaderLoaded.bind(this);
+        reader.readAsBinaryString(image);
+      }
+    }
+ 
+    handleReaderLoaded(readerEvt) {
+        var binaryString = readerEvt.target.result;
+        this.base64textString = btoa(binaryString);
+    }
+
+    imageData: string;
+    errorMessage: string;
+
+    uploadImage(){
+        this.uploadService.uploaddata(this.base64textString)
+            .then(
+                data => this.imageData = data.data.link,
+                error =>this.errorMessage = <any>error
+            );
+    }
+
+    getImagePath(id) {
+        this.tempimagepath = 'image' + id + '.url';
+    };
+
+    storeImagePath(){
+        this.editingFormArchiveItem.get(this.tempimagepath).setValue(this.imageData);
+    }
+
 ngOnInit(): void {
 
+    // Starts the Timer for progress wheel
     this.loadTimer();
 
     let itemSlug;
