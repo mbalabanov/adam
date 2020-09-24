@@ -28,7 +28,7 @@ ADAM ist ein Projekt von Marin Balabanov als Übung für den Einsatz von Webtech
 Die hier besprochenen Kunstwerke gehören der [Demoszene](https://de.wikipedia.org/wiki/Demoszene) an. Unter **Demos** versteht man digitale Echtzeit-Kunst oft mit Musikuntermalung. Für die Künstler der Demoszene stellen Hardware-Einschränkungen einen Ansporn dar. Oft werden künstliche Einschränkungen vorab beschlossen, an die man sich halten muss, z.B. eine maximale Speichergröße der ausführbaren Dateien (oft nur 64Kb), oder es muss auf bestimmter Retro-Hardware mit all ihren Einschränkungen entwickelt werden (z.B. Commodore 64 oder Sinclair ZX Spectrum aus dem Jahr 1982, Atari ST oder Commodore Amiga aus dem Jahr 1985, usw.).
 
 ### 2.1 Disclaimer
-Dieses Projekt dient nur zu Übungszwecken und wurde vom "Archive of Digital Art" (ADA) der Donau Universität Krems inspiriert. Es dient als Übungsprojekt für die Anwendung zeitgemäßer Webtechnologien wie NodeJS, Angular und Heroku (in weiterer Folge kommen noch MongoDB und AWS S3 dazu).
+Dieses Projekt dient nur zu Übungszwecken und wurde vom "Archive of Digital Art" (ADA) der Donau Universität Krems inspiriert. Es dient als Übungsprojekt für die Anwendung zeitgemäßer Webtechnologien wie NodeJS, Angular, Heroku, MongoDB und Imgur.
 
 **Die Bilder in diesem Projekt sind nur Platzhalter von [adobestock.com](http://adobestock.com). Sie sind zwar Teil dieses Repositories, sind aber nicht zur allgemeinen Verwendung freigegeben.**
 
@@ -506,7 +506,7 @@ Die API ist verfügbar unter [adam-interface.herokuapp.com](https://adam-interfa
 - Express
 - MongoDB
 - Heroku (Hosting)
-- Amazon S3 (Bilder Hosting)
+- Imgur (Bilder Hosting)
 
 **Mobile App:**
 - Node JS
@@ -516,6 +516,7 @@ Die API ist verfügbar unter [adam-interface.herokuapp.com](https://adam-interfa
 [« Zurück zum Inhaltsverzeichnis](#inhaltsverzeichnis)
 
 ## 10. Aktualisierungen
+- **24. September 2020:** Erste funktionierende Version des Bilderuploads zu [Imgur](https://imgur.com). Bereinigung von Bugs beim Bearbeiten von Beiträgen
 - **16. September 2020:** Datenbank läuft jetzt auf MongoDB Atlas unter mongodb+srv://<username>:<password>@cluster0.xuhkf.mongodb.net/<dbname>. Daten des Web-Frontends werden  über die API vom MongoDB-Cluster bezogen (GET und POST, aber PUT noch nicht).
 - **8. September 2020:** Collections angepasst an die Erfordernisse von MongoDB, Source Code teilweise dokumentiert, Rohfassung von Erklärvideo [youtu.be/pwi1-JSts-Q](https://youtu.be/pwi1-JSts-Q) fertiggestellt.
 - **1. September 2020:** Existierende Archiveinträge können nun bearbeitet werden und die Eingabeformulare werden nun auf Vollständigkeit validiert. Der integrierte TinyMCE und ein Datepicker machen die Contenteingabe komfortabler.
