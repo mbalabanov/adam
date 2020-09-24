@@ -35,6 +35,7 @@ export class ItemdetailsComponent implements OnInit {
     relatedEvents: Array<string> = [];
 
     tempimagepath: string;
+    previousimagepath: string;
 
     // Variables for editing archive item details
     editingFormArchiveItem = new FormGroup({ });
@@ -430,6 +431,8 @@ export class ItemdetailsComponent implements OnInit {
 
     getImagePath(id) {
         this.tempimagepath = 'image' + id + '.url';
+        this.previousimagepath = this.editingFormArchiveItem.get(this.tempimagepath).value;
+        console.log(this.previousimagepath);
     };
 
     storeImagePath(){
