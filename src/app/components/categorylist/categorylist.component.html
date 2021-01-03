@@ -77,7 +77,7 @@
 						<a routerLink="/item/{{ item.category }}/{{ item._id }}"><img src="{{ item.images[0].url }}" alt="{{ item.name }}" class="img-fluid rounded"></a>
 						<h4 class="mt-2"><a routerLink="/item/{{ item.category }}/{{ item._id }}">{{ item.name }}</a></h4>
 						<p>{{ item.shortdescription }}</p>
-						<p><a class="btn btn-outline-secondary ml-1 mt-2" routerLink="/item/{{ item.category | lowercase }}/{{ item.id }}">Details</a></p>
+						<p><a class="btn btn-outline-secondary ml-1 mt-2" routerLink="/item/{{ item.category }}/{{ item.id }}">Details</a></p>
 					</div>
 				</div>
 	
